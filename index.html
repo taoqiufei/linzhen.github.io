@@ -81,10 +81,12 @@
     .featured-link:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
     .project-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; }
     .project-card { min-width: 0; border: 1px solid var(--line); background: var(--paper-light); transition: border-color .2s, transform .25s; }
+    .project-card-wide { grid-column:span 2; }
     a.project-card { display:block; color:inherit; text-decoration:none; }
     .project-card:hover { border-color:var(--accent); transform: translateY(-2px); }
     .project-card:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
     .project-visual { aspect-ratio: 1.42 / 1; }
+    .project-card-wide .project-visual { aspect-ratio: 2.7 / 1; }
     .project-meta { padding: 13px 15px 16px; min-height: 88px; }
     .project-meta .project-index { color: var(--muted); font-size: 9px; }
     .project-meta h3 { font: 500 17px/1.3 var(--serif); letter-spacing: -.02em; margin: 8px 0 5px; }
@@ -218,7 +220,9 @@
       .wordmark .divider,.wordmark .cn { display:none; }
       .hero h1 { font-size:66px; }
       .project-grid { grid-template-columns:1fr; }
+      .project-card-wide { grid-column:span 1; }
       .project-visual { aspect-ratio:1.5 / 1; }
+      .project-card-wide .project-visual { aspect-ratio:1.5 / 1; }
     }
     @media(prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto!important; transition:none!important; animation:none!important; } }
   </style>
@@ -272,7 +276,7 @@
           </div>
         </a>
         <div class="project-grid">
-          <a class="project-card" href="bag-it-all.html" aria-label="打开《袋我上岸》项目详情与视频" data-aria-zh="打开《袋我上岸》项目详情与视频" data-aria-en="Open Bag it All project and videos">
+          <a class="project-card project-card-wide" href="bag-it-all.html" aria-label="打开《袋我上岸》项目详情与视频" data-aria-zh="打开《袋我上岸》项目详情与视频" data-aria-en="Open Bag it All project and videos">
             <div class="visual project-visual bag" aria-hidden="true"><img class="preview-image" src="assets/images/bag-it-all-preview.png" alt="" draggable="false"></div>
             <div class="project-meta"><span class="project-index">02</span><h3>Bag it All <span class="title-translation" data-language-content="zh">袋我上岸</span></h3><p><span data-language-content="zh">俯视角·探索·吞噬</span><span data-language-content="en" hidden>Top-down · Exploration · Consumption</span> <span class="collab"><span data-language-content="zh">合作项目</span><span data-language-content="en" hidden>TEAM PROJECT</span></span></p></div>
           </a>
