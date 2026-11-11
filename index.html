@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10191b">
+  <meta name="description" content="林蓁的创意作品集，收录游戏设计、游戏世界观与角色设计、室内设计项目。">
+  <title>林蓁｜创意作品集</title>
+  <style>
+    :root {
+      --paper: #10191b;
+      --paper-light: #1a2828;
+      --ink: #e8e2d2;
+      --muted: #a4aa9d;
+      --line: #364746;
+      --line-dark: #586961;
+      --accent: #c0a46a;
+      --serif: "Noto Serif SC", "Songti SC", Georgia, serif;
+      --sans: "Noto Sans SC", "Microsoft YaHei", Arial, sans-serif;
+      --mono: "DM Mono", "SFMono-Regular", Consolas, monospace;
+    }
+    * { box-sizing: border-box; }
+    [hidden] { display:none!important; }
+    html { scroll-behavior: smooth; scroll-padding-top: 82px; }
+    body { margin: 0; background:radial-gradient(ellipse at 15% 0%,rgba(72,101,89,.23),transparent 36%),radial-gradient(ellipse at 91% 23%,rgba(122,102,62,.11),transparent 32%),var(--paper); color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+    body::before { content:""; position:fixed; inset:0; z-index:0; pointer-events:none; opacity:.48; background-image:radial-gradient(circle 1px at 7% 16%,rgba(220,205,168,.8) 0 1px,transparent 1.5px),radial-gradient(circle 1px at 19% 63%,rgba(220,205,168,.62) 0 1px,transparent 1.5px),radial-gradient(circle 1px at 31% 27%,rgba(220,205,168,.55) 0 1px,transparent 1.5px),radial-gradient(circle 1px at 43% 78%,rgba(220,205,168,.6) 0 1px,transparent 1.5px),radial-gradient(circle 1px at 56% 13%,rgba(220,205,168,.72) 0 1px,transparent 1.5px),radial-gradient(circle 1px at 68% 52%,rgba(220,205,168,.52) 0 1px,transparent 1.5px),radial-gradient(circle 1px at 79% 21%,rgba(220,205,168,.64) 0 1px,transparent 1.5px),radial-gradient(circle 1px at 91% 68%,rgba(220,205,168,.7) 0 1px,transparent 1.5px),radial-gradient(ellipse at 22% 37%,rgba(76,116,101,.14),transparent 38%),radial-gradient(ellipse at 78% 72%,rgba(80,75,116,.11),transparent 36%); }
+    body::after { content:""; position:fixed; inset:0; z-index:0; pointer-events:none; opacity:.22; background-image:radial-gradient(ellipse 48% 19% at 49% 43%,rgba(106,139,166,.09),transparent 76%),linear-gradient(132deg,transparent 20%,rgba(111,135,165,.025) 49%,transparent 73%),radial-gradient(circle 1.5px at 11% 31%,rgba(243,231,201,.9) 0 1px,transparent 2px),radial-gradient(circle 1px at 24% 72%,rgba(199,221,233,.9) 0 1px,transparent 1.8px),radial-gradient(circle 1.5px at 38% 17%,rgba(243,231,201,.9) 0 1px,transparent 2px),radial-gradient(circle 1px at 53% 63%,rgba(199,221,233,.85) 0 1px,transparent 1.8px),radial-gradient(circle 1.5px at 67% 28%,rgba(243,231,201,.9) 0 1px,transparent 2px),radial-gradient(circle 1px at 82% 57%,rgba(199,221,233,.9) 0 1px,transparent 1.8px),radial-gradient(circle 1.5px at 94% 16%,rgba(243,231,201,.9) 0 1px,transparent 2px); animation: galaxy-shimmer 8s ease-in-out infinite alternate; }
+    body > * { position:relative; z-index:1; }
+    @keyframes galaxy-shimmer { from { opacity:.12; filter:brightness(.86); } to { opacity:.34; filter:brightness(1.24); } }
+    a { color: inherit; text-decoration: none; }
+    .shell { width: min(1240px, calc(100% - 88px)); margin: 0 auto; }
+    .topbar { height: 74px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 24px; border-bottom: 1px solid var(--line-dark); }
+    .wordmark { display: flex; align-items: center; gap: 13px; color: var(--ink); font: 10px var(--mono); letter-spacing: .14em; }
+    .wordmark .mark { width: 29px; height: 29px; border: 1px solid var(--accent); border-radius:50%; color:var(--accent); display: grid; place-items: center; font: 13px var(--serif); letter-spacing: 0; }
+    .wordmark .divider { height: 17px; width: 1px; background: var(--line-dark); }
+    .wordmark .cn { font: 12px var(--sans); letter-spacing: .08em; }
+    .nav { display: flex; gap: 31px; align-items: center; font-size: 12px; color: var(--muted); }
+    .nav { justify-self: end; }
+    .nav a { position: relative; padding: 8px 0; transition: color .2s; }
+    .nav a:hover { color: var(--accent); }
+    .nav a::after { content: ""; position: absolute; height: 1px; background: var(--accent); left: 0; right: 100%; bottom: 2px; transition: right .2s; }
+    .nav a:hover::after { right: 0; }
+    .language-switch { display:flex; align-items:center; gap:5px; }
+    .language-switch button { min-width:45px; padding:7px 9px; border:1px solid var(--line); background:transparent; color:var(--muted); font:9px var(--mono); letter-spacing:.04em; cursor:pointer; transition:color .2s,border-color .2s,background .2s; }
+    .language-switch button:hover,.language-switch button[aria-pressed="true"] { border-color:var(--accent); color:var(--accent); background:rgba(192,164,106,.08); }
+    .language-switch button:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
+    .hero { position:relative; min-height: 350px; padding: 69px 0 55px; display: grid; grid-template-columns: 1.12fr .88fr; align-items: end; gap: 42px; border-bottom: 1px solid var(--line-dark); overflow:hidden; }
+    .hero::after { content:""; position:absolute; width:260px; aspect-ratio:1; right:6%; top:28px; border:1px solid rgba(192,164,106,.19); border-radius:50%; box-shadow:0 0 0 25px rgba(192,164,106,.025),0 0 0 56px rgba(192,164,106,.018); pointer-events:none; }
+    .hero::before { content:""; position:absolute; z-index:0; width:4px; height:4px; right:25%; top:77px; border-radius:50%; background:var(--accent); opacity:.72; box-shadow:53px 42px 0 -1px var(--accent),-42px 127px 0 -1px var(--accent); pointer-events:none; }
+    .hero > * { position:relative; z-index:1; }
+    .eyebrow, .section-kicker, .project-index, .mini-label { font: 10px var(--mono); letter-spacing: .12em; color: var(--accent); text-transform: uppercase; }
+    .hero h1 { position:relative; isolation:isolate; display:inline-block; margin:17px 0 0; font:500 clamp(68px,9vw,122px)/.96 var(--serif); letter-spacing:.08em; color:#e9e0ca; background:linear-gradient(145deg,#f2ead9 5%,#d0c39f 52%,#a8b5a7 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; filter:drop-shadow(0 5px 16px rgba(0,0,0,.28)); }
+    .hero h1 .hero-pinyin { display:inline-block; margin-left:.32em; position:relative; top:-.16em; font:500 clamp(22px,3vw,37px)/1 "Segoe Script","Brush Script MT","Lucida Handwriting",cursive; letter-spacing:.035em; color:#d8c18a; background:none; -webkit-text-fill-color:#d8c18a; filter:drop-shadow(0 0 10px rgba(192,164,106,.22)); }
+    .hero h1::before { content:""; position:absolute; z-index:-1; inset:-28% -24% -16%; pointer-events:none; background:radial-gradient(ellipse at 50% 58%,rgba(192,164,106,.15),rgba(92,119,103,.08) 42%,transparent 72%); filter:blur(12px); }
+    .hero h1::after { content:""; position:absolute; left:5%; right:1%; bottom:-.2em; height:1px; pointer-events:none; background:linear-gradient(90deg,transparent,rgba(192,164,106,.7) 28%,rgba(168,181,167,.48) 72%,transparent); box-shadow:0 0 12px rgba(192,164,106,.16); }
+    .hero-right { display: flex; justify-content: space-between; align-items: end; gap: 24px; padding-bottom: 7px; }
+    .discipline-list { font-size: 14px; line-height: 2.05; letter-spacing: .015em; }
+    .discipline-list > div > span:first-child { color: var(--muted); margin-right: 11px; font: 10px var(--mono); }
+    .hero-note { max-width: 168px; border-left: 1px solid var(--accent); padding-left: 17px; color: var(--muted); font-size: 11px; line-height: 1.8; }
+    main { padding-bottom: 95px; }
+    .section { padding-top: 65px; }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 20px; margin-bottom: 25px; padding-bottom: 13px; border-bottom: 1px solid var(--line); }
+    .section-title-wrap { display: flex; align-items: baseline; gap: 17px; }
+    .section-kicker { color: var(--muted); }
+    .section h2 { margin: 0; font: 500 clamp(26px, 3.4vw, 38px)/1.1 var(--serif); letter-spacing: -.045em; }
+    .section-count { color: var(--muted); font: 10px var(--mono); letter-spacing: .06em; white-space: nowrap; }
+    .featured { display: grid; grid-template-columns: 1.28fr .72fr; background:var(--paper-light); border: 1px solid var(--line); margin-bottom: 14px; box-shadow:0 18px 50px rgba(0,0,0,.12); }
+    .visual { position: relative; overflow: hidden; isolation: isolate; }
+    .feature-visual { min-height: 340px; }
+    .feature-visual.dream::after { content:""; position:absolute; inset:42% 0 0; z-index:1; pointer-events:none; background:linear-gradient(0deg,rgba(12,17,17,.8),rgba(12,17,17,.18) 54%,transparent); }
+    .feature-title-overlay { position:absolute; z-index:2; left:5%; bottom:7%; font:500 clamp(30px,4.4vw,51px)/1.1 "Segoe Script","Brush Script MT","Bodoni MT","Didot",cursive,var(--serif); letter-spacing:.015em; background:linear-gradient(102deg,#fff5df 0%,#ead5ae 30%,#c6e3e8 54%,#e4d8f1 77%,#fff3dc 100%); background-size:190% 100%; background-clip:text; -webkit-background-clip:text; -webkit-text-fill-color:transparent; -webkit-text-stroke:.3px rgba(246,234,216,.58); filter:drop-shadow(0 0 8px rgba(193,220,230,.62)) drop-shadow(0 0 18px rgba(212,190,238,.34)) drop-shadow(0 3px 13px rgba(0,0,0,.9)); animation:dream-title-shimmer 9s ease-in-out infinite alternate; }
+    .feature-title-overlay::before { content:attr(data-title); position:absolute; inset:0; z-index:-1; color:#cce9ef; -webkit-text-fill-color:#cce9ef; opacity:.5; filter:blur(12px); transform:scale(1.025); pointer-events:none; }
+    @keyframes dream-title-shimmer { from { background-position:0% 50%; } to { background-position:100% 50%; } }
+    .feature-copy { padding: 32px 35px; display: flex; flex-direction: column; justify-content: space-between; min-height: 340px; }
+    .feature-copy .project-index { color: var(--muted); }
+    .feature-copy h3 { margin: auto 0 10px; font: 500 clamp(30px, 4vw, 48px)/1.08 var(--serif); letter-spacing: -.055em; }
+    .feature-copy p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.8; }
+    .feature-bottom { border-top: 1px solid var(--line); padding-top: 15px; margin-top: 24px; color: var(--muted); font: 10px var(--mono); letter-spacing: .03em; }
+    .featured-link { color:inherit; text-decoration:none; }
+    .featured-link:hover { border-color:var(--accent); }
+    .featured-link:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
+    .project-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; }
+    .project-card { min-width: 0; border: 1px solid var(--line); background: var(--paper-light); transition: border-color .2s, transform .25s; }
+    a.project-card { display:block; color:inherit; text-decoration:none; }
+    .project-card:hover { border-color:var(--accent); transform: translateY(-2px); }
+    .project-card:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
+    .project-visual { aspect-ratio: 1.42 / 1; }
+    .project-meta { padding: 13px 15px 16px; min-height: 88px; }
+    .project-meta .project-index { color: var(--muted); font-size: 9px; }
+    .project-meta h3 { font: 500 17px/1.3 var(--serif); letter-spacing: -.02em; margin: 8px 0 5px; }
+    .project-meta p { font-size: 10px; color: var(--muted); line-height: 1.55; margin: 0; }
+    .feature-copy h3 .title-translation { display:block; margin-top:9px; font:13px/1.4 var(--sans); letter-spacing:.03em; color:var(--muted); }
+    .preview-image { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; }
+    .project-meta h3 .title-translation { display:block; margin-top:4px; font:10px/1.4 var(--sans); letter-spacing:.04em; color:var(--muted); }
+    .collab { border: 1px solid var(--line-dark); padding: 2px 5px; font: 8px var(--mono); color:var(--accent); margin-left: 5px; white-space: nowrap; }
+    .art-label { position: absolute; top: 15px; left: 16px; z-index: 3; color:var(--ink); font: 9px var(--mono); letter-spacing: .1em; text-shadow:0 1px 7px rgba(0,0,0,.55); }
+    .art-label.light { color: #f0eee7; }
+    .art-noise { position: absolute; inset: 0; opacity: .1; z-index: -1; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.15'/%3E%3C/svg%3E"); mix-blend-mode: screen; pointer-events: none; }
+    /* Restrained, abstract cover studies keep the grid composed until project images are added. */
+    .dream { background: linear-gradient(136deg,#d7d1c2,#9b9b8b 56%,#626a63); }
+    .bag { background:linear-gradient(140deg,#a58e7b,#736f64 60%,#4d5550); }
+    .mission { background:linear-gradient(155deg,#506565,#263c3e 58%,#192628); }
+    .core { background:linear-gradient(140deg,#a7a58e,#717b6d 58%,#4c5953); }
+    .rene { background:linear-gradient(140deg,#171513,#30261c 54%,#171513); }
+    .rene .preview-image { object-position:30% center; }
+    .phantasm { background:#111014; }
+    .marble { background:#111922; }
+    .pulse { background:#081523; }
+    .pulse .preview-image { filter:saturate(.72); }
+    .durian { background:#273d3c; }
+    .durian .preview-image { image-rendering:pixelated; }
+    .interior-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; }
+    .interior-card { display:block; border:1px solid var(--line); background:var(--paper-light); transition:border-color .2s,transform .25s; }
+    .interior-card:hover { border-color:var(--accent); transform:translateY(-2px); }
+    .interior-preview { aspect-ratio:1.47 / 1; position:relative; overflow:hidden; display:grid; place-items:center; background-color:#1d2a2a; }
+    .interior-preview:before { content:""; position:absolute; inset:12px; border:1px solid rgba(192,164,106,.54); opacity:.5; }
+    .interior-preview:after { content:""; position:absolute; width:42%; height:62%; right:18%; bottom:12%; border:1px solid #958665; opacity:.42; box-shadow:-94px 21px 0 -1px #1d2a2a,-94px 21px 0 0 #958665; }
+    .interior-preview .hatch { position:absolute; inset:0; opacity:.2; background:repeating-linear-gradient(135deg,transparent 0 17px,#64736a 18px,#64736a 19px,transparent 20px 36px); mask-image:linear-gradient(90deg,transparent,black 25%,black 75%,transparent); }
+    .interior-preview .slot-label { position:relative; z-index:1; display:flex; align-items:center; gap:9px; padding:8px 11px; border:1px solid rgba(192,164,106,.55); background:rgba(16,25,27,.88); color:#d5ccb7; font:9px var(--mono); letter-spacing:.08em; }
+    .interior-preview .slot-label i { width:6px; height:6px; border:1px solid var(--accent); border-radius:50%; }
+    .interior-preview .preview-num { display:none; }
+    .interior-preview.lume { background-color:#233431; }
+    .interior-preview.lume:before,.interior-preview.lume:after { display:none; }
+    .interior-preview.longterm { background-color:#34483d; }
+    .interior-preview.longterm:before { inset:38% 0 0; border:0; opacity:1; background:linear-gradient(0deg,rgba(12,18,17,.62),transparent 80%); }
+    .interior-preview.longterm:after { display:none; }
+    .interior-preview.longterm .preview-image { object-position:center; filter:saturate(.84); }
+    .interior-preview.longterm .hatch,.interior-preview.longterm .slot-label { display:none; }
+    .interior-preview.resource { background-color:#d5e1d5; }
+    .interior-preview.resource:before { inset:38% 0 0; border:0; opacity:1; background:linear-gradient(0deg,rgba(10,23,17,.58),transparent 78%); }
+    .interior-preview.resource:after { display:none; }
+    .interior-preview.resource .preview-image { object-position:center; }
+    .interior-preview.resource .hatch,.interior-preview.resource .slot-label { display:none; }
+    .lume-feature-visual { background:#233431; }
+    .lume-feature-visual .preview-image { object-position:center 54%; }
+    .interior-preview.amphitrite { background-color:#223230; }
+    .interior-preview.amphitrite:after { width:57%; height:40%; right:12%; bottom:16%; border-radius:50% 50% 0 0; }
+    .interior-preview.amphitrite:before,.interior-preview.amphitrite:after { display:none; }
+    .interior-preview.marc { background-color:#292b2b; }
+    .interior-preview.marc:after { width:26%; height:68%; right:26%; bottom:10%; box-shadow:-75px 0 0 -1px #292b2b,-75px 0 0 0 #958665,75px 0 0 -1px #292b2b,75px 0 0 0 #958665; }
+    .interior-preview.marc:before,.interior-preview.marc:after { display:none; }
+    .interior-preview.marc .preview-image { object-position:center; }
+    .interior-preview.ac { background-color:#223238; }
+    .interior-preview.ac:before,.interior-preview.ac:after { display:none; }
+    .interior-preview.ac:after { width:53%; height:33%; right:17%; bottom:19%; box-shadow:0 0 0 10px #223238,0 0 0 11px #958665; }
+    .interior-preview.millwork { background-color:#302f29; }
+    .interior-preview.millwork:after { width:54%; height:65%; right:16%; bottom:10%; background:repeating-linear-gradient(90deg,transparent 0 13px,#958665 14px,#958665 15px,transparent 16px 29px); }
+    .interior-preview.display-case:before,.interior-preview.display-case:after { display:none; }
+    .interior-preview.reception:before,.interior-preview.reception:after { display:none; }
+    .interior-preview.succulent-cover:before,.interior-preview.succulent-cover:after { display:none; }
+    .interior-copy { padding:15px 17px 17px; }
+    .interior-copy h3 { margin:0 0 5px; font:500 18px/1.25 var(--serif); }
+    .interior-copy p { margin:0; color:var(--muted); font-size:10px; line-height:1.6; }
+    .artwork-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
+    .artwork-card { border:1px solid var(--line); background:var(--paper-light); }
+    .artwork-preview { min-height:278px; aspect-ratio:1.8 / 1; position:relative; overflow:hidden; display:flex; flex-direction:column; justify-content:flex-end; padding:24px; }
+    .artwork-preview .artwork-name { position:relative; z-index:2; font:500 clamp(28px,4vw,40px)/1 var(--serif); letter-spacing:-.04em; }
+    .artwork-preview .artwork-note { position:relative; z-index:2; margin-top:8px; font-size:11px; color:#e8e5db; }
+    .heirs { color:#f1eee6; background:linear-gradient(155deg,#b9a889,#7c776a 55%,#444d47); }
+    .heirs:before { content:""; position:absolute; right:13%; top:13%; width:98px; height:98px; border-radius:50%; background:#e7dfcb; box-shadow:0 0 42px #e7dfcb55; }
+    .heirs:after { content:""; position:absolute; right:0; bottom:-20%; width:75%; height:82%; background:#424b45; clip-path:polygon(0 100%,0 78%,28% 20%,43% 59%,68% 0,100% 83%,100% 100%); opacity:.85; }
+    a.artwork-card { display:block; color:inherit; text-decoration:none; }
+    a.artwork-card:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
+    .genesis { color:#f1eee6; background:#273b56; }
+    .artwork-preview.genesis img { position:absolute; inset:0; z-index:0; width:100%; height:100%; object-fit:cover; }
+    .genesis:before { content:none; }
+    .genesis:after { content:""; position:absolute; inset:0; width:auto; height:auto; border:0; border-radius:0; right:0; bottom:0; top:0; transform:none; background:linear-gradient(180deg,rgba(4,9,18,.04) 25%,rgba(4,9,18,.66)); }
+    .artwork-preview.heirs img { position:absolute; inset:0; z-index:0; width:100%; height:100%; object-fit:cover; }
+    .heirs:before { content:none; }
+    .heirs:after { content:""; position:absolute; inset:0; width:auto; height:auto; border:0; border-radius:0; right:0; bottom:0; top:0; transform:none; background:linear-gradient(180deg,rgba(4,9,18,.02) 20%,rgba(4,9,18,.72)); }
+    .section-rule { margin-top:26px; border-top:1px solid var(--line); }
+    footer { border-top:1px solid var(--line-dark); padding:18px 0 24px; display:flex; justify-content:space-between; color:var(--muted); font:9px var(--mono); letter-spacing:.08em; }
+    footer a:hover { color:var(--accent); }
+    @media(max-width:900px) {
+      .shell { width:min(100% - 56px, 900px); }
+      .project-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+      .interior-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+      .hero { min-height:310px; }
+    }
+    @media(max-width:650px) {
+      html { scroll-padding-top:65px; }
+      .shell { width:calc(100% - 36px); }
+      .topbar { height:auto; min-height:62px; padding:9px 0; grid-template-columns:1fr auto; gap:9px; }
+      .nav { grid-column:1 / -1; grid-row:2; justify-self:stretch; justify-content:space-between; gap:10px; }
+      .language-switch { gap:3px; }
+      .language-switch button { min-width:38px; padding:6px 7px; font-size:8px; }
+      .nav { gap:16px; font-size:10px; }
+      .wordmark { gap:8px; font-size:9px; }
+      .wordmark .cn { font-size:10px; }
+      .hero { min-height:0; padding:62px 0 35px; grid-template-columns:1fr; gap:27px; }
+      .hero h1 { font-size:76px; }
+      .hero-right { align-items:end; }
+      .discipline-list { font-size:13px; }
+      .hero-note { max-width:145px; }
+      .section { padding-top:48px; }
+      .section-head { align-items:start; flex-direction:column; gap:8px; margin-bottom:17px; }
+      .section-title-wrap { gap:10px; }
+      .section-count { padding-left:37px; }
+      .featured { grid-template-columns:1fr; }
+      .feature-visual { min-height:245px; }
+      .feature-copy { min-height:220px; padding:22px; }
+      .feature-copy h3 { font-size:35px; margin-top:32px; }
+      .project-grid { gap:10px; }
+      .project-meta { padding:11px 11px 13px; min-height:91px; }
+      .project-meta h3 { font-size:15px; }
+      .project-meta p { font-size:9px; }
+      .project-visual { aspect-ratio:1.15 / 1; }
+      .interior-grid,.artwork-grid { grid-template-columns:1fr; gap:11px; }
+      .interior-preview { aspect-ratio:1.5 / 1; }
+      .artwork-preview { min-height:235px; }
+      main { padding-bottom:63px; }
+    }
+    @media(max-width:390px) {
+      .topbar { gap:7px; }
+      .nav { gap:9px; font-size:8px; }
+      .language-switch button { min-width:34px; padding:5px 5px; font-size:7px; }
+      .nav a { white-space:nowrap; }
+      .wordmark .divider,.wordmark .cn { display:none; }
+      .hero h1 { font-size:66px; }
+      .project-grid { grid-template-columns:1fr; }
+      .project-visual { aspect-ratio:1.5 / 1; }
+    }
+    @media(prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto!important; transition:none!important; animation:none!important; } }
+  </style>
+</head>
+<body>
+  <header class="shell topbar">
+    <a class="wordmark" href="#top" aria-label="回到林蓁作品集顶部" data-aria-zh="回到林蓁作品集顶部" data-aria-en="Back to the top of Lin Zhen's portfolio">
+      <span class="mark">林</span><span class="cn">林蓁</span><span class="divider"></span><span>PORTFOLIO</span>
+    </a>
+    <div class="language-switch" role="group" aria-label="选择页面语言" data-aria-zh="选择页面语言" data-aria-en="Select page language">
+      <button type="button" data-language-button="zh" aria-pressed="true">中文</button>
+      <button type="button" data-language-button="en" aria-pressed="false">English</button>
+    </div>
+    <nav class="nav" aria-label="主导航" data-aria-zh="主导航" data-aria-en="Main navigation">
+      <a href="#game-design"><span data-language-content="zh">游戏设计</span><span data-language-content="en" hidden>Game Design</span></a>
+      <a href="#interior"><span data-language-content="zh">室内设计</span><span data-language-content="en" hidden>Interior Design</span></a>
+      <a href="#game-art"><span data-language-content="zh">游戏世界观/角色设计</span><span data-language-content="en" hidden>World & Character Design</span></a>
+    </nav>
+  </header>
+  <div class="shell" id="top">
+    <section class="hero" aria-labelledby="page-title">
+      <div>
+        <div class="eyebrow"><span data-language-content="zh">精选作品</span><span data-language-content="en" hidden>SELECTED WORK</span></div>
+        <h1 id="page-title">林蓁<span class="hero-pinyin">Linzhen</span></h1>
+      </div>
+      <div class="hero-right">
+        <div class="discipline-list">
+          <div><span>01</span><span data-language-content="zh">游戏设计</span><span data-language-content="en" hidden>Game Design</span></div>
+          <div><span>02</span><span data-language-content="zh">室内设计</span><span data-language-content="en" hidden>Interior Design</span></div>
+          <div><span>03</span><span data-language-content="zh">游戏世界观/角色设计</span><span data-language-content="en" hidden>World & Character Design</span></div>
+        </div>
+        <div class="hero-note"><span data-language-content="zh">以游戏设计为主要方向<br>并收录空间与视觉项目</span><span data-language-content="en" hidden>Focused on game design<br>with selected spatial and visual work</span></div>
+      </div>
+    </section>
+    <main>
+      <section class="section" id="game-design" aria-labelledby="game-design-title">
+        <div class="section-head">
+          <div class="section-title-wrap"><span class="section-kicker">01</span><h2 id="game-design-title"><span data-language-content="zh">游戏设计</span><span data-language-content="en" hidden>Game Design</span></h2></div>
+          <span class="section-count"><span data-language-content="zh">09 个项目</span><span data-language-content="en" hidden>09 PROJECTS</span></span>
+        </div>
+        <a class="featured featured-link" href="the-same-dream.html" aria-label="打开《复梦》项目详情与视频" data-aria-zh="打开《复梦》项目详情与视频" data-aria-en="Open The Same Dream project and videos">
+          <div class="visual feature-visual dream" aria-hidden="true">
+            <img class="preview-image" src="assets/images/the-same-dream-preview-1920x1080.png" alt="" draggable="false">
+            <span class="feature-title-overlay" data-title="The Same Dream">The Same Dream</span>
+          </div>
+          <div class="feature-copy">
+            <span class="project-index"><span data-language-content="zh">平台跳跃迷宫</span><span data-language-content="en" hidden>PLATFORMING MAZE</span></span>
+            <h3>The Same Dream <span class="title-translation" data-language-content="zh">复梦</span></h3>
+            <p><span data-language-content="zh">第一人称·平台跳跃·迷宫</span><span data-language-content="en" hidden>First-person · Platforming · Maze</span></p>
+            <span class="feature-bottom"><span data-language-content="zh">游戏设计&nbsp;&nbsp; / &nbsp;&nbsp;01 · 查看项目详情与视频 →</span><span data-language-content="en" hidden>GAME DESIGN&nbsp;&nbsp; / &nbsp;&nbsp;01 · VIEW PROJECT & VIDEO →</span></span>
+          </div>
+        </a>
+        <div class="project-grid">
+          <a class="project-card" href="bag-it-all.html" aria-label="打开《袋我上岸》项目详情与视频" data-aria-zh="打开《袋我上岸》项目详情与视频" data-aria-en="Open Bag it All project and videos">
+            <div class="visual project-visual bag" aria-hidden="true"><img class="preview-image" src="assets/images/bag-it-all-preview.png" alt="" draggable="false"></div>
+            <div class="project-meta"><span class="project-index">02</span><h3>Bag it All <span class="title-translation" data-language-content="zh">袋我上岸</span></h3><p><span data-language-content="zh">俯视角·探索·吞噬</span><span data-language-content="en" hidden>Top-down · Exploration · Consumption</span> <span class="collab"><span data-language-content="zh">合作项目</span><span data-language-content="en" hidden>TEAM PROJECT</span></span></p></div>
+          </a>
+          <a class="project-card" href="last-mission.html" aria-label="打开《此行不归》项目详情" data-aria-zh="打开《此行不归》项目详情" data-aria-en="Open The Last Mission project">
+            <div class="visual project-visual mission" aria-hidden="true"><img class="preview-image" src="assets/images/last-mission-cover.png" alt="" draggable="false"></div>
+            <div class="project-meta"><span class="project-index">03</span><h3>The Last Mission <span class="title-translation" data-language-content="zh">此行不归</span></h3><p><span data-language-content="zh">第一人称·射击</span><span data-language-content="en" hidden>First-person · Shooter</span> <span class="collab"><span data-language-content="zh">合作项目</span><span data-language-content="en" hidden>TEAM PROJECT</span></span></p></div>
+          </a>
+          <a class="project-card" href="guardian-core.html" aria-label="打开《守护核心》项目详情" data-aria-zh="打开《守护核心》项目详情" data-aria-en="Open Protect The Core project details">
+            <div class="visual project-visual core" aria-hidden="true"><img class="preview-image" src="assets/images/protect-the-core-preview-v6.png" alt="" draggable="false"></div>
+            <div class="project-meta"><span class="project-index">04</span><h3>Protect The Core! <span class="title-translation" data-language-content="zh">守护核心</span></h3><p><span data-language-content="zh">俯视角·射击·塔防</span><span data-language-content="en" hidden>Top-down · Shooter · Tower Defence</span></p></div>
+          </a>
+          <a class="project-card" href="rene.html" aria-label="打开《瑞尼》跨界游戏项目详情" data-aria-zh="打开《瑞尼》跨界游戏项目详情" data-aria-en="Open Rene cross-disciplinary game project">
+            <div class="visual project-visual rene" aria-hidden="true"><img class="preview-image" src="assets/images/rene-preview.png" alt="" draggable="false"></div>
+            <div class="project-meta"><span class="project-index">05</span><h3>Rene <span class="title-translation" data-language-content="zh">瑞尼</span></h3><p><span data-language-content="zh">实体·解谜</span><span data-language-content="en" hidden>Physical · Puzzle</span> <span class="collab"><span data-language-content="zh">合作项目</span><span data-language-content="en" hidden>TEAM PROJECT</span></span></p></div>
+          </a>
+          <a class="project-card" href="phantasm.html" aria-label="打开《幻景》桌游设计项目详情" data-aria-zh="打开《幻景》桌游设计项目详情" data-aria-en="Open Phantasm board game design project">
+            <div class="visual project-visual phantasm" aria-hidden="true"><img class="preview-image" src="assets/images/phantasm-preview.png" alt="" draggable="false"></div>
+            <div class="project-meta"><span class="project-index">06</span><h3>Phantasm <span class="title-translation" data-language-content="zh">幻景</span></h3><p><span data-language-content="zh">卡牌·策略·桌游</span><span data-language-content="en" hidden>Cards · Strategy · Board Game</span></p></div>
+          </a>
+          <a class="project-card" href="marble-commander.html" aria-label="打开《弹珠指挥官》项目详情" data-aria-zh="打开《弹珠指挥官》项目详情" data-aria-en="Open Marble Commander project details">
+            <div class="visual project-visual marble" aria-hidden="true"><img class="preview-image" src="assets/images/marble-commander-preview.png" alt="" draggable="false"></div>
+            <div class="project-meta"><span class="project-index">07</span><h3>Marble Commander <span class="title-translation" data-language-content="zh">弹珠指挥官</span></h3><p><span data-language-content="zh">俯视角·策略·桌球</span><span data-language-content="en" hidden>Top-down · Strategy · Billiards</span></p></div>
+          </a>
+          <a class="project-card" href="durian.html" aria-label="打开《家猫德里安》项目详情" data-aria-zh="打开《家猫德里安》项目详情" data-aria-en="Open Durian project">
+            <div class="visual project-visual durian" aria-hidden="true"><img class="preview-image" src="assets/images/durian-preview.png" alt="" draggable="false"></div>
+            <div class="project-meta"><span class="project-index">08</span><h3>Durian <span class="title-translation" data-language-content="zh">家猫德里安</span></h3><p><span data-language-content="zh">横板·像素·探索解谜</span><span data-language-content="en" hidden>Side-scrolling · Pixel Art · Exploration Puzzle</span></p></div>
+          </a>
+          <a class="project-card" href="pulse-runner.html" aria-label="打开《脉冲疾行》项目详情" data-aria-zh="打开《脉冲疾行》项目详情" data-aria-en="Open Pulse Runner project details">
+            <div class="visual project-visual pulse" aria-hidden="true"><img class="preview-image" src="assets/images/pulse-runner-preview.png" alt="" draggable="false"></div>
+            <div class="project-meta"><span class="project-index">09</span><h3>Pulse Runner <span class="title-translation" data-language-content="zh">脉冲疾行</span></h3><p><span data-language-content="zh">横板·跑酷</span><span data-language-content="en" hidden>Side-scrolling · Runner</span></p></div>
+          </a>
+        </div>
+      </section>
+
+      <section class="section" id="interior" aria-labelledby="interior-title">
+        <div class="section-head">
+          <div class="section-title-wrap"><span class="section-kicker">02</span><h2 id="interior-title"><span data-language-content="zh">室内设计</span><span data-language-content="en" hidden>Interior Design</span></h2></div>
+          <span class="section-count"><span data-language-content="zh">09 个项目</span><span data-language-content="en" hidden>09 PROJECTS</span></span>
+        </div>
+        <a class="featured featured-link lume-featured" href="lume-art-therapy-centre.html" aria-label="打开 Lume 艺术疗愈中心项目详情" data-aria-zh="打开 Lume 艺术疗愈中心项目详情" data-aria-en="Open Lume Art Therapy Centre project">
+          <div class="visual feature-visual lume-feature-visual" aria-hidden="true"><img class="preview-image" src="assets/images/lume/cover.png" alt="" draggable="false"></div>
+          <div class="feature-copy">
+            <span class="project-index"><span data-language-content="zh">室内设计 · 艺术疗愈中心</span><span data-language-content="en" hidden>INTERIOR DESIGN · ART THERAPY CENTRE</span></span>
+            <h3>Lume <span class="title-translation" data-language-content="zh">艺术疗愈中心</span></h3>
+            <p><span data-language-content="zh">以自然节律与艺术体验为核心，为交流、创作与情绪修复提供支持的疗愈环境。</span><span data-language-content="en" hidden>A restorative environment shaped by natural rhythms and art, supporting connection, creativity and emotional wellbeing.</span></p>
+            <span class="feature-bottom"><span data-language-content="zh">室内设计&nbsp;&nbsp; / &nbsp;&nbsp;01 · 查看完整项目 →</span><span data-language-content="en" hidden>INTERIOR DESIGN&nbsp;&nbsp; / &nbsp;&nbsp;01 · VIEW PROJECT →</span></span>
+          </div>
+        </a>
+        <div class="interior-grid">
+          <a class="interior-card" href="amphitrite.html" aria-label="打开 Amphitrite 水主题餐厅合作项目详情" data-aria-zh="打开 Amphitrite 水主题餐厅合作项目详情" data-aria-en="Open Amphitrite water-themed restaurant project">
+            <div class="interior-preview amphitrite" aria-hidden="true"><img class="preview-image" src="assets/images/water-restaurant/cover.jpg" alt="Amphitrite 餐厅内部渲染图，呈现波浪形天花与冰川感座席。" draggable="false"><span class="preview-num">02 / 2023</span></div>
+            <div class="interior-copy"><h3>Amphitrite</h3><p><span data-language-content="zh">餐厅</span><span data-language-content="en" hidden>Restaurant</span> <span class="collab"><span data-language-content="zh">合作项目</span><span data-language-content="en" hidden>TEAM PROJECT</span></span></p></div>
+          </a>
+          <a class="interior-card" href="evergreen-house.html" aria-label="打开 Evergreen House 长期照护中心项目详情" data-aria-zh="打开 Evergreen House 长期照护中心项目详情" data-aria-en="Open Evergreen House long-term care home project">
+            <div class="interior-preview longterm" aria-hidden="true"><img class="preview-image" src="assets/images/evergreen-house/indoor-garden-cover.png" alt="" draggable="false"><span class="preview-num">03 / 2024</span></div>
+            <div class="interior-copy"><h3>Evergreen House</h3><p><span data-language-content="zh">长期照护中心</span><span data-language-content="en" hidden>Long-Term Care Home</span></p></div>
+          </a>
+          <a class="interior-card" href="ac-studio.html" aria-label="打开 AC Studio 企业空间合作项目详情" data-aria-zh="打开 AC Studio 企业空间合作项目详情" data-aria-en="Open AC Studio corporate interior project">
+            <div class="interior-preview ac" aria-hidden="true"><img class="preview-image" src="assets/images/ac-studio/cover.jpg" alt="AC Studio 接待区效果图" draggable="false"><span class="preview-num">04 / 2023</span></div>
+            <div class="interior-copy"><h3>AC Studio</h3><p><span data-language-content="zh">企业空间</span><span data-language-content="en" hidden>Corporate Interior</span> <span class="collab"><span data-language-content="zh">合作项目</span><span data-language-content="en" hidden>TEAM PROJECT</span></span></p></div>
+          </a>
+          <a class="interior-card" href="old-weston-road-home.html" aria-label="打开 Old Weston Road Home 合作项目详情" data-aria-zh="打开 Old Weston Road Home 合作项目详情" data-aria-en="Open Old Weston Road Home project">
+            <div class="interior-preview resource" aria-hidden="true"><img class="preview-image" src="assets/images/old-weston-road/lounge-cover.png" alt="" draggable="false"><span class="preview-num">05 / 2023</span></div>
+            <div class="interior-copy"><h3>Old Weston Road Home</h3><p><span data-language-content="zh">社区资源中心</span><span data-language-content="en" hidden>Community Resource Centre</span> <span class="collab"><span data-language-content="zh">合作项目</span><span data-language-content="en" hidden>TEAM PROJECT</span></span></p></div>
+          </a>
+          <a class="interior-card" href="marc-jacobs.html" aria-label="打开 Marc Jacobs 零售空间设计项目详情" data-aria-zh="打开 Marc Jacobs 零售空间设计项目详情" data-aria-en="Open Marc Jacobs retail interior project">
+            <div class="interior-preview marc" aria-hidden="true"><img class="preview-image" src="assets/images/marc-jacobs/cover.jpg" alt="Marc Jacobs 零售店外观渲染图" draggable="false"><span class="preview-num">06 / 2022</span></div>
+            <div class="interior-copy"><h3>Marc Jacobs</h3><p><span data-language-content="zh">零售空间</span><span data-language-content="en" hidden>Retail</span></p></div>
+          </a>
+          <a class="interior-card" href="jewelry-display-cabinet.html" aria-label="打开 Display Cabinet 珠宝展示柜设计项目详情" data-aria-zh="打开 Display Cabinet 珠宝展示柜设计项目详情" data-aria-en="Open Display Cabinet project">
+            <div class="interior-preview millwork display-case" aria-hidden="true"><img class="preview-image" src="assets/images/display-case/cover.png" alt="" draggable="false"><span class="preview-num">07 / 2023</span></div>
+            <div class="interior-copy"><h3>Display Cabinet</h3><p><span data-language-content="zh">木作</span><span data-language-content="en" hidden>Millwork</span></p></div>
+          </a>
+          <a class="interior-card" href="house-of-succulents.html" aria-label="打开 House of Succulents 多肉植物之家住宅设计项目详情" data-aria-zh="打开 House of Succulents 多肉植物之家住宅设计项目详情" data-aria-en="Open House of Succulents residential project">
+            <div class="interior-preview residential succulent-cover" aria-hidden="true"><img class="preview-image" src="assets/images/house-of-succulents/cover.jpg" alt="" draggable="false"><span class="preview-num">08 / 2022</span></div>
+            <div class="interior-copy"><h3>House of Succulents</h3><p><span data-language-content="zh">住宅设计</span><span data-language-content="en" hidden>Residential</span></p></div>
+          </a>
+          <a class="interior-card" href="reception-desk.html" aria-label="打开 Reception Desk 前台木作设计项目详情" data-aria-zh="打开 Reception Desk 前台木作设计项目详情" data-aria-en="Open Reception Desk millwork project">
+            <div class="interior-preview millwork reception" aria-hidden="true"><img class="preview-image" src="assets/images/reception-desk/cover-refined.png" alt="木饰面前台效果图，结合木格栅、绿植墙与内嵌垂吊植物花槽。" draggable="false"><span class="preview-num">09 / 2023</span></div>
+            <div class="interior-copy"><h3>Reception Desk</h3><p><span data-language-content="zh">木作</span><span data-language-content="en" hidden>Millwork</span></p></div>
+          </a>
+        </div>
+      </section>
+
+      <section class="section" id="game-art" aria-labelledby="game-art-title">
+        <div class="section-head">
+          <div class="section-title-wrap"><span class="section-kicker">03</span><h2 id="game-art-title"><span data-language-content="zh">游戏世界观/角色设计</span><span data-language-content="en" hidden>World & Character Design</span></h2></div>
+          <span class="section-count"><span data-language-content="zh">02 个项目</span><span data-language-content="en" hidden>02 PROJECTS</span></span>
+        </div>
+        <div class="artwork-grid">
+          <a class="artwork-card" href="heirs.html" aria-label="打开《继承者》东方古风叙事设计项目页" data-aria-zh="打开《继承者》东方古风叙事设计项目页" data-aria-en="Open Heirs eastern fantasy narrative design project">
+            <div class="artwork-preview heirs"><img src="assets/images/heirs-preview.png" alt="" draggable="false"><span class="art-label light"><span data-language-content="zh">01 / 东方古风</span><span data-language-content="en" hidden>01 / EASTERN FANTASY</span></span><span class="artwork-name">Heirs</span><span class="artwork-note"><span data-language-content="zh">继承者 · 世界观与角色设计</span><span data-language-content="en" hidden>World & Character Design</span></span><div class="art-noise"></div></div>
+            <div class="interior-copy"><h3><span data-language-content="zh">Heirs · 继承者</span><span data-language-content="en" hidden>Heirs</span></h3><p><span data-language-content="zh">古代奇幻风格设计</span><span data-language-content="en" hidden>Ancient Fantasy</span></p></div>
+          </a>
+          <a class="artwork-card" href="genesis.html" aria-label="打开《创世纪元》世界观与角色设计项目页" data-aria-zh="打开《创世纪元》世界观与角色设计项目页" data-aria-en="Open Era of Genesis world and character design project">
+            <div class="artwork-preview genesis"><img src="assets/images/genesis-preview.png" alt="" draggable="false"><span class="art-label light"><span data-language-content="zh">02 / 未来奇幻</span><span data-language-content="en" hidden>02 / FUTURE FANTASY</span></span><span class="artwork-name">Era of Genesis</span><span class="artwork-note"><span data-language-content="zh">创世纪元 · 世界观与角色设计</span><span data-language-content="en" hidden>World & Character Design</span></span><div class="art-noise"></div></div>
+            <div class="interior-copy"><h3><span data-language-content="zh">Era of Genesis · 创世纪元</span><span data-language-content="en" hidden>Era of Genesis</span></h3><p><span data-language-content="zh">未来奇幻风格设计</span><span data-language-content="en" hidden>Future Fantasy</span></p></div>
+          </a>
+        </div>
+      </section>
+    </main>
+  </div>
+  <footer class="shell"><span>林蓁 / PORTFOLIO</span><a href="#top"><span data-language-content="zh">返回顶部 ↑</span><span data-language-content="en" hidden>Back to Top ↑</span></a></footer>
+  <script>
+    (() => {
+      const buttons = document.querySelectorAll("[data-language-button]");
+      const content = document.querySelectorAll("[data-language-content]");
+      const applyLanguage = (language) => {
+        document.documentElement.lang = language === "zh" ? "zh-CN" : "en";
+        content.forEach((element) => { element.hidden = element.dataset.languageContent !== language; });
+        buttons.forEach((button) => button.setAttribute("aria-pressed", String(button.dataset.languageButton === language)));
+        document.querySelectorAll("[data-aria-zh]").forEach((element) => { element.setAttribute("aria-label", language === "zh" ? element.dataset.ariaZh : element.dataset.ariaEn); });
+        document.title = language === "zh" ? "林蓁｜创意作品集" : "Lin Zhen | Portfolio";
+        document.querySelector('meta[name="description"]').content = language === "zh"
+          ? "林蓁的创意作品集，收录游戏设计、游戏世界观与角色设计、室内设计项目。"
+          : "Lin Zhen's portfolio featuring game design, world and character design, and interior projects.";
+        try { localStorage.setItem("portfolio-language", language); } catch (_) {}
+        try {
+          const current = new URL(window.location.href);
+          current.searchParams.set("lang", language);
+          history.replaceState(null, "", current.href);
+        } catch (_) {}
+        try {
+          document.querySelectorAll("a[href]").forEach((anchor) => {
+            const href = anchor.getAttribute("href");
+            if (!href || href.startsWith("#")) return;
+            const destination = new URL(href, window.location.href);
+            if (destination.protocol === window.location.protocol && destination.pathname.toLowerCase().endsWith(".html")) {
+              destination.searchParams.set("lang", language);
+              anchor.href = destination.href;
+            }
+          });
+        } catch (_) {}
+      };
+      buttons.forEach((button) => button.addEventListener("click", () => applyLanguage(button.dataset.languageButton)));
+      let language = new URLSearchParams(window.location.search).get("lang");
+      if (language !== "en" && language !== "zh") {
+        try { language = localStorage.getItem("portfolio-language"); } catch (_) {}
+      }
+      applyLanguage(language === "en" ? "en" : "zh");
+    })();
+  </script>
+</body>
+</html>
+
+
+
+
+
+

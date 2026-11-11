@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101416">
+  <meta name="description" content="Phantasm《幻景》卡牌策略桌游设计：世界观、游戏规则、角色、生物卡与对局示例。">
+  <title>林蓁｜Phantasm 幻景</title>
+  <style>
+    :root{--paper:#101416;--panel:#1b2222;--ink:#eee5d4;--muted:#aaa99d;--line:#394342;--line-dark:#58615c;--accent:#e5b54f;--green:#8dba73;--blue:#78c5de;--serif:"Noto Serif SC","Songti SC",Georgia,serif;--sans:"Nunito Sans","Microsoft YaHei UI","Noto Sans SC","Arial Rounded MT Bold",Arial,sans-serif;--sans-zh:"YouYuan","幼圆","MiSans","Microsoft YaHei UI","Noto Sans SC",sans-serif;--mono:"DM Mono","SFMono-Regular",Consolas,monospace}
+    *{box-sizing:border-box}*[hidden]{display:none!important}html{scroll-behavior:smooth;scroll-padding-top:82px}body{margin:0;background:radial-gradient(ellipse at 12% 0%,rgba(107,81,32,.18),transparent 34%),radial-gradient(ellipse at 94% 26%,rgba(42,85,94,.18),transparent 35%),var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.28;background-image:radial-gradient(circle 1px at 8% 15%,rgba(229,181,79,.7) 0 1px,transparent 1.5px),radial-gradient(circle 1px at 37% 72%,rgba(120,197,222,.65) 0 1px,transparent 1.5px),radial-gradient(circle 1px at 76% 33%,rgba(141,186,115,.6) 0 1px,transparent 1.5px)}body>*{position:relative;z-index:1}a{color:inherit;text-decoration:none}.shell{width:min(1240px,calc(100% - 88px));margin:0 auto}
+    .topbar{height:74px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:18px;border-bottom:1px solid var(--line-dark)}.wordmark{display:flex;align-items:center;gap:13px;font:10px var(--mono);letter-spacing:.14em}.mark{width:29px;height:29px;border:1px solid var(--accent);border-radius:50%;color:var(--accent);display:grid;place-items:center;font:13px var(--serif)}.cn{font:12px var(--sans-zh);letter-spacing:.08em}.divider{height:17px;width:1px;background:var(--line-dark)}.back-link{justify-self:end;font-size:12px;color:var(--muted)}.back-link:hover{color:var(--accent)}.lang-switch{display:flex;gap:5px}.lang-switch button{padding:6px 10px;border:1px solid var(--line-dark);background:transparent;color:var(--muted);font:9px var(--mono);cursor:pointer}.lang-switch button[aria-pressed="true"]{border-color:var(--accent);color:var(--accent)}main{padding-bottom:64px}html[lang="zh-CN"] body{font-family:var(--sans-zh)}html[lang="zh-CN"] .hero h1 span{font-family:var(--sans-zh);font-weight:600;letter-spacing:.04em}html[lang="zh-CN"] .section-head h2,html[lang="zh-CN"] .video-head h2{font-family:var(--sans-zh);font-weight:650;letter-spacing:.02em}
+    .breadcrumb{padding-top:22px;color:var(--accent);font:9px var(--mono);letter-spacing:.1em}.breadcrumb span{margin:0 8px;color:var(--line-dark)}.hero{display:grid;grid-template-columns:1fr 1fr;gap:38px;align-items:center;padding:26px 0 34px;border-bottom:1px solid var(--line-dark)}.eyebrow,.section-kicker,.board-index{color:var(--accent);font:10px var(--mono);letter-spacing:.12em;text-transform:uppercase}.hero h1{margin:17px 0 0;font:500 clamp(46px,6vw,76px)/.98 var(--serif);letter-spacing:-.06em}.hero h1 span{display:block;margin-top:13px;color:var(--muted);font:500 18px/1.4 var(--sans);letter-spacing:.04em}.lead{max-width:510px;margin:20px 0 0;color:#d2caba;font-size:14px;line-height:1.9}.facts{display:flex;gap:24px;flex-wrap:wrap;margin:25px 0 0;padding-top:14px;border-top:1px solid var(--line)}.fact{display:grid;gap:6px}.fact dt{color:var(--muted);font:9px var(--mono);letter-spacing:.1em}.fact dd{margin:0;font-size:11px}.cover{position:relative;margin:0;overflow:hidden;aspect-ratio:1.55/1;border:1px solid var(--line-dark);background:#101416}.cover img{display:block;width:100%;height:100%;object-fit:cover}.cover figcaption{position:absolute;left:0;right:0;bottom:0;padding:34px 16px 13px;background:linear-gradient(0deg,rgba(0,0,0,.82),transparent);color:#fff1d2;font:9px var(--mono);letter-spacing:.14em}
+    .intro-strip{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:14px 0;border-bottom:1px solid var(--line);color:var(--muted);font:9px var(--mono);letter-spacing:.09em}.contents{display:flex;gap:16px;flex-wrap:wrap}.contents a:hover{color:var(--accent)}.section{padding-top:34px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:18px;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--line)}.section-title{display:flex;align-items:baseline;gap:14px}.section-head h2{margin:0;font:500 clamp(22px,3vw,30px)/1.15 var(--serif);letter-spacing:-.04em}.section-note{color:var(--muted);font:9px var(--mono);letter-spacing:.09em}
+    .board{margin:0 0 20px;padding:12px;border:1px solid var(--line);background:rgba(27,34,34,.84)}.board-image{margin:0;background:#f1ece4;border:1px solid #636b63;overflow:hidden}.board-image img{display:block;width:100%;height:auto;cursor:zoom-in}.board-image figcaption{padding:8px 11px;color:#67695f;background:#f1ece4;font:9px var(--mono);letter-spacing:.06em}.translation{padding:19px 6px 5px}.translation-head{display:flex;align-items:baseline;gap:12px;margin-bottom:14px}.translation-head h3{margin:0;font:500 clamp(20px,2.4vw,27px)/1.25 var(--serif)}.translation-head .en-title{color:var(--muted);font:9px var(--mono);letter-spacing:.06em}.translation-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.info-card{padding:14px 16px;border:1px solid rgba(88,97,92,.6);background:rgba(8,13,14,.36)}.info-card h4{margin:0 0 8px;color:#f2dfb7;font:600 13px/1.5 var(--sans)}.info-card p,.info-card li{color:#d4d1c4;font-size:12px;line-height:1.8}.info-card p{margin:0 0 8px}.info-card p:last-child{margin-bottom:0}.info-card ol,.info-card ul{margin:0;padding-left:1.5em}.info-card li+li{margin-top:4px}.wide{grid-column:1/-1}.tag{display:inline-block;margin:3px 5px 0 0;padding:3px 7px;border:1px solid var(--line-dark);color:#ddd5c5;font-size:10px;line-height:1.45}.character-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.creature-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.creature-card{border-top:2px solid var(--green)}.creature-card:nth-child(3n+2){border-color:var(--blue)}.creature-card:nth-child(3n){border-color:var(--accent)}.creature-card h4{margin-bottom:6px}.small-note{margin:12px 0 0;padding:10px 12px;border-left:2px solid var(--accent);color:var(--muted);font-size:11px;line-height:1.7}.step-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.step{display:grid;grid-template-columns:30px 1fr;gap:10px;align-items:start;padding:12px;border:1px solid rgba(88,97,92,.55);background:rgba(8,13,14,.32)}.step-num{display:grid;place-items:center;width:25px;height:25px;border:1px solid var(--accent);border-radius:50%;color:var(--accent);font:10px var(--mono)}.step p{margin:1px 0 0;color:#d4d1c4;font-size:12px;line-height:1.8}.page-footer{display:flex;justify-content:space-between;gap:16px;margin-top:34px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font:9px var(--mono);letter-spacing:.08em}.page-footer a:hover{color:var(--accent)}
+    .image-viewer{position:fixed;z-index:1000;inset:0;width:min(96vw,1500px);height:min(94vh,1100px);max-width:none;max-height:none;margin:auto;padding:38px 14px 14px;border:1px solid var(--line-dark);background:rgba(8,14,14,.97);color:var(--ink)}.image-viewer[open]{display:grid;place-items:center}.image-viewer::backdrop{background:rgba(0,0,0,.88);backdrop-filter:blur(4px)}.image-viewer img{display:block;width:100%;height:100%;object-fit:contain;cursor:zoom-out}.image-viewer-close{position:absolute;right:9px;top:7px;width:29px;height:29px;border:1px solid var(--line-dark);border-radius:50%;background:var(--panel);color:var(--ink);font:20px/1 var(--sans);cursor:pointer}.image-viewer-close:hover{border-color:var(--accent);color:var(--accent)}main img.zoomable{cursor:zoom-in}
+    .video-section{padding:24px 0 30px;border-bottom:1px solid var(--line)}
+    .video-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:13px}
+    .video-head h2{margin:0;font:500 22px/1.3 var(--serif)}
+.video-frame{aspect-ratio:16/9;overflow:hidden;border:1px solid var(--line-dark);background:#090a0a}.video-embed{display:block;width:100%;height:100%;border:0;background:#090a0a}.video-meta{display:flex;align-items:baseline;justify-content:space-between;gap:14px;padding-top:10px;color:var(--muted);font-size:10px}.video-meta strong{color:var(--accent);font:500 13px var(--serif)}.video-meta a{color:var(--muted);font-size:9px;text-decoration:none}.video-meta a:hover{color:var(--accent)}
+    @media(max-width:560px){.video-head h2{font-size:20px}}
+    @media(max-width:850px){.shell{width:min(100% - 48px,760px)}.hero{grid-template-columns:1fr;gap:24px}.cover{max-height:420px}.contents{gap:12px}.creature-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:560px){.shell{width:calc(100% - 32px)}.topbar{height:64px;gap:7px}.lang-switch{gap:3px}.lang-switch button{padding:6px 7px;font-size:8px}.wordmark{gap:9px;font-size:8px}.cn{font-size:10px}.back-link{font-size:11px}.breadcrumb{padding-top:17px}.hero{padding:20px 0 25px}.hero h1{font-size:52px}.hero h1 span{font-size:15px}.facts{gap:17px}.intro-strip{align-items:flex-start;flex-direction:column;gap:9px}.contents{gap:10px}.section{padding-top:28px}.section-head{align-items:start;flex-direction:column;gap:8px}.board{padding:8px;margin-bottom:12px}.translation{padding:15px 2px 3px}.translation-grid,.character-grid,.creature-grid,.step-grid{grid-template-columns:1fr}.wide{grid-column:auto}.info-card{padding:12px}.info-card p,.info-card li,.step p{font-size:11px}.page-footer{flex-direction:column}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
+    .cn-board{box-sizing:border-box;padding:clamp(18px,3vw,34px);border:1px solid #394843;background:linear-gradient(145deg,#1b2825,#121a19 68%);color:#ece6d8;font-family:'YouYuan','幼圆','Microsoft YaHei UI','Noto Sans SC',sans-serif;overflow:visible}.board-image [data-language-content][hidden]{display:none!important}
+    .cn-board h3,.cn-board h4,.cn-board h5,.cn-board p{margin-top:0}.cn-board h3{margin-bottom:8px;font-size:clamp(22px,2.5vw,32px);font-weight:600;letter-spacing:.02em}.cn-board-overline{margin:0 0 10px!important;color:#d7ad68;font:10px var(--mono);letter-spacing:.13em}.cn-board-heading{padding-bottom:17px;margin-bottom:20px;border-bottom:1px solid #45534d}.cn-board-heading>p:last-child{margin:0;color:#aeb9b1;font-size:13px;line-height:1.8}
+    .cn-concept-board{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(220px,.8fr);gap:clamp(18px,3vw,38px);align-items:center}.cn-concept-copy{align-self:center;max-width:900px}.cn-concept-copy h3{margin:0 0 17px}.cn-concept-copy>p:not(.cn-board-overline){color:#c9cec5;font-size:14px;line-height:1.95}.cn-concept-cover{margin:0;padding:8px;border:1px solid #42564f;background:linear-gradient(145deg,#22322e,#111918);box-shadow:0 12px 30px #0004}.cn-concept-cover img{display:block;width:100%;height:auto;aspect-ratio:1.2;object-fit:contain;background:#080b0c}.cn-feature-line{display:grid;gap:6px;padding:13px 0;border-top:1px solid #384640}.cn-feature-line span{color:#aab3a9;font-size:11px}.cn-feature-line strong{font-size:13px;font-weight:600;color:#f0d9ad}
+    .cn-rules-columns{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(235px,.8fr);gap:14px}.cn-rules-primary,.cn-rules-side{display:grid;gap:12px;align-content:start}.cn-rule-panel{padding:16px;border:1px solid #34443f;background:#1b2926}.cn-rule-panel h4{margin:0 0 13px;color:#edd3a1;font-size:15px;font-weight:600}.cn-rule-panel p{margin:0;color:#c7cec6;font-size:12px;line-height:1.8}.cn-flow-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.cn-flow-grid>div{padding:13px;background:#131e1c;border:1px solid #34443f}.cn-flow-grid b,.cn-character-card>div>span{display:block;margin-bottom:9px;color:#d5aa67;font:10px var(--mono)}.cn-flow-grid strong{font-size:13px}.cn-flow-grid p{margin:8px 0 0;color:#b9c2ba;font-size:11px}.cn-action-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.cn-action-row>div{display:grid;gap:5px;padding:12px;background:#14201e;border-top:2px solid #72a99b}.cn-action-row span,.cn-action-row small{color:#aeb9b1;font-size:10px}.cn-action-row strong{font-size:12px}.cn-rule-note{margin:12px 0 0!important;padding-top:10px;border-top:1px solid #374640}.cn-victory{display:grid;grid-template-columns:auto 1fr;align-items:baseline;gap:8px 15px;border-color:#886d45}.cn-victory span{color:#d7ad68;font-size:11px}.cn-victory strong{font-size:16px}.cn-victory small{grid-column:1/-1;color:#bac2b9;font-size:11px;line-height:1.7}
+    .cn-character-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.cn-character-card{display:flex;flex-direction:column;min-width:0;border:1px solid #3d4c46;background:#16221f}.cn-character-card>img{display:block;width:100%;height:auto;aspect-ratio:360/550;object-fit:cover;background:#050809}.cn-character-card>div{padding:14px}.cn-character-card h4{margin:0 0 9px;font-size:20px;color:#f0d9ad}.cn-character-card p{min-height:92px;margin:0 0 12px;color:#c4cdc4;font-size:11px;line-height:1.8}.cn-character-card strong{display:block;padding-top:10px;border-top:1px solid #37453f;color:#e2c58c;font-size:11px;line-height:1.7}
+    .cn-item-system{display:grid;grid-template-columns:minmax(190px,.75fr) minmax(0,1.8fr);gap:16px;padding:16px;margin-bottom:20px;border:1px solid #3b4b45;background:#182522}.cn-item-intro h4,.cn-creature-heading h4{margin:0 0 8px;color:#f0d9ad;font-size:16px}.cn-item-intro p,.cn-creature-heading p{margin:0;color:#bdc7bd;font-size:12px;line-height:1.8}.cn-item-actions{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.cn-item-actions>div{display:flex;flex-direction:column;gap:7px;align-items:flex-start;min-height:190px;padding:11px;border:1px solid #3a4b45;background:#121b19}.cn-item-actions span{color:#70a79c;font:10px var(--mono)}.cn-item-actions strong{font-size:13px}.cn-item-actions small{color:#aeb9b1;font-size:10px;line-height:1.6}.cn-item-action-card{display:block;width:52px;height:78px;object-fit:contain;align-self:flex-end;margin-top:auto;background:#050708}.cn-creature-heading{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin:0 0 12px}.cn-creature-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.cn-creature-grid article{display:grid;grid-template-columns:88px minmax(0,1fr);min-height:166px;overflow:hidden;border:1px solid #3a4943;background:#1a2825}.cn-creature-grid img{width:88px;height:100%;min-height:166px;object-fit:cover;background:#040608}.cn-creature-grid article>div{padding:12px 12px 10px}.cn-creature-grid span{color:#7eb6a8;font:9px var(--mono);line-height:1.5}.cn-creature-grid h5{margin:5px 0 7px;font-size:15px;color:#f0d9ad}.cn-creature-grid p{margin:0;color:#c3ccc3;font-size:10px;line-height:1.7}
+    .cn-components-layout{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr);gap:16px}.cn-component-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}.cn-component-list>div{display:grid;grid-template-columns:auto 1fr;align-items:baseline;gap:3px 10px;padding:13px;border:1px solid #34443e;background:#1a2825}.cn-component-list b{grid-row:span 2;color:#d6ad68;font:22px var(--mono)}.cn-component-list span{font-size:13px}.cn-component-list small{color:#aeb9b1;font-size:10px;line-height:1.65}.cn-board-diagram{padding:16px;border:1px solid #576960;background:#121c1a}.cn-board-label{margin-bottom:12px;color:#d9bb82;font-size:11px}.cn-creature-slots{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.cn-creature-slots span{display:grid;place-items:center;aspect-ratio:1.15;border:1px solid #75a89a;background:linear-gradient(145deg,#263833,#172420);color:#e5d1a4;font:14px var(--mono)}.cn-player-zones{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}.cn-player-zones>div{display:grid;gap:5px;padding:10px;border:1px solid #3b4944}.cn-player-zones b{color:#d5aa67;font-size:11px}.cn-player-zones span{color:#aeb9b1;font-size:9px;line-height:1.6}.cn-board-lanes{display:flex;gap:8px;margin-top:8px}.cn-board-lanes span{flex:1;padding:7px;border:1px dashed #58655e;text-align:center;color:#bdc6bd;font-size:10px}.cn-mission-note{display:flex;gap:14px;align-items:baseline;margin-top:14px;padding:13px 15px;border-left:2px solid #d7ad68;background:#192622}.cn-mission-note strong{flex:none;color:#dfc58e;font-size:12px}.cn-mission-note span{color:#c6cec6;font-size:11px;line-height:1.7}
+    .cn-example-table{padding:14px;margin:0 0 15px;border:1px solid #3c4b45;background:#17231f}.cn-table-label{display:block;margin-bottom:10px;color:#d6ad68;font-size:11px}.cn-example-table .cn-table-rows{display:grid;gap:7px}.cn-table-rows>div{display:grid;grid-template-columns:90px repeat(4,minmax(48px,72px));gap:7px;align-items:center}.cn-table-rows>div>span{color:#aeb9b1;font-size:10px}.cn-example-table b{display:grid;place-items:center;min-height:40px;border:1px solid #7fae9a;background:#253732;color:#f0d9ad;font:12px var(--mono)}.cn-example-table b small{margin-top:3px;color:#aeb9b1;font:8px 'YouYuan','幼圆','Microsoft YaHei UI',sans-serif}.cn-example-table p{margin:10px 0 0;color:#aeb9b1;font-size:10px}.cn-step-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:0;padding:0;list-style:none;counter-reset:steps}.cn-step-grid li{display:grid;grid-template-columns:34px 1fr;gap:10px;padding:13px;border:1px solid #364640;background:#192622}.cn-step-grid li>b{display:grid;place-items:center;width:28px;height:28px;border:1px solid #d7ad68;border-radius:50%;color:#e0bd7a;font:10px var(--mono)}.cn-step-grid h4{margin:1px 0 5px;color:#ead5a9;font-size:13px}.cn-step-grid p{margin:0;color:#bdc7bd;font-size:10px;line-height:1.7}.cn-example-summary{display:flex;gap:14px;align-items:baseline;margin-top:13px;padding:12px 14px;border:1px solid #69583a;background:#221f18}.cn-example-summary span{color:#d6ad68;font-size:11px}.cn-example-summary strong{color:#f0dfbd;font-size:12px}
+    @media(max-width:850px){.cn-concept-board{grid-template-columns:minmax(0,1.45fr) minmax(180px,.8fr)}.cn-components-layout{grid-template-columns:1fr}.cn-character-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.cn-rules-columns{grid-template-columns:1fr}.cn-creature-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:560px){.cn-board{padding:15px}.cn-concept-board{grid-template-columns:1fr}.cn-concept-cover{width:min(100%,420px);justify-self:center}.cn-concept-cover img{aspect-ratio:16/9}.cn-flow-grid{grid-template-columns:1fr}.cn-flow-grid>div{display:grid;grid-template-columns:26px 1fr;gap:0 9px}.cn-flow-grid b{grid-row:span 2}.cn-flow-grid p{margin-top:4px}.cn-action-row{grid-template-columns:1fr}.cn-action-row>div{grid-template-columns:auto 1fr;align-items:baseline}.cn-action-row small{grid-column:2}.cn-character-grid,.cn-creature-grid,.cn-component-list,.cn-step-grid{grid-template-columns:1fr}.cn-character-card{display:grid;grid-template-columns:105px minmax(0,1fr)}.cn-character-card>img{height:100%;aspect-ratio:auto}.cn-character-card p{min-height:0}.cn-item-system{grid-template-columns:1fr}.cn-item-actions{grid-template-columns:repeat(2,minmax(0,1fr))}.cn-creature-heading{display:block}.cn-creature-heading p{margin-top:5px}.cn-mission-note,.cn-example-summary{display:grid;gap:5px}.cn-table-rows>div{grid-template-columns:70px repeat(4,minmax(30px,1fr));gap:4px}.cn-table-rows>div>span{font-size:9px}.cn-example-table b{min-height:36px}}
+
+    .cn-item-visuals{display:flex;align-items:flex-end;justify-content:flex-end;min-height:96px;margin-top:10px}.cn-item-back-wrap{display:grid;justify-items:center;gap:4px;color:#d9bb82;font-size:9px}.cn-item-back{display:block;width:62px;height:86px;object-fit:contain;border:0;background:transparent}
+    .cn-component-list>div{grid-template-columns:auto minmax(0,1fr);align-items:baseline}.cn-component-list b{grid-row:span 2}
+    .cn-board-art{display:block;width:100%;height:210px;object-fit:contain;margin-top:12px;border:1px solid #31423b;background:#030506}
+    .cn-step-grid li{grid-template-columns:28px minmax(0,1fr);align-content:start}.cn-step-grid li>b{grid-row:span 2}.cn-step-image{grid-column:2;display:block;width:100%;aspect-ratio:1.68;object-fit:cover;border:1px solid #40514b;background:#050708}
+    @media(max-width:780px){.cn-components-layout{grid-template-columns:1fr}.cn-component-list{grid-template-columns:repeat(2,minmax(0,1fr))}.cn-board-art{height:auto;max-height:300px}}
+    .cn-character-card>img{object-fit:contain;aspect-ratio:350/537;background:#050708}
+    .cn-creature-grid article{grid-template-columns:minmax(88px,108px) minmax(0,1fr);min-height:0;align-items:stretch}.cn-creature-grid article>img{display:block;width:100%;height:auto;min-height:0;aspect-ratio:212/325;object-fit:contain;align-self:start;background:#030506}
+    .cn-mission-gallery{margin:14px 0 0;padding:12px;border:1px solid #3c4b45;background:#111a18}.cn-mission-caption{margin:0 0 9px;color:#d9bb82;font-size:11px}.cn-mission-gallery img{display:block;width:100%;height:auto;border:0;background:#050708}.cn-token-gallery{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}.cn-token-gallery figure{margin:0;padding:12px;border:1px solid #3c4b45;background:#111a18}.cn-token-gallery figcaption{margin:0 0 8px;color:#d9bb82;font-size:11px}.cn-token-gallery img{display:block;width:100%;height:150px;object-fit:contain;background:#050708}
+    @media(max-width:560px){.cn-character-card>img{height:auto;min-height:0;aspect-ratio:350/537;object-fit:contain;align-self:start}.cn-component-list{grid-template-columns:1fr}.cn-creature-grid article{grid-template-columns:105px minmax(0,1fr)}.cn-token-gallery{grid-template-columns:1fr}.cn-item-actions>div{min-height:175px}}
+      .side-toc{position:fixed;top:50%;right:16px;z-index:50;width:164px;max-height:80vh;transform:translateY(-50%);padding:10px;border:1px solid var(--line);background:rgba(12,17,16,.97);box-shadow:0 10px 32px #0008;backdrop-filter:blur(12px);color:var(--muted);font:10px var(--mono);letter-spacing:.04em}.side-toc summary{display:flex;align-items:center;justify-content:space-between;gap:8px;cursor:pointer;list-style:none;padding:4px 2px 10px;border-bottom:1px solid var(--line);color:var(--accent);letter-spacing:.12em}.side-toc summary::-webkit-details-marker{display:none}.side-toc summary:after{content:"−";font-size:14px}.side-toc:not([open]) summary:after{content:"+"}.side-toc nav{display:grid;gap:0;padding-top:5px;max-height:calc(80vh - 44px);overflow-y:auto}.side-toc nav a{display:block;padding:8px 4px;border-bottom:1px solid rgba(88,105,97,.38);line-height:1.45;text-decoration:none}.side-toc nav a:hover{color:var(--accent);background:rgba(192,164,106,.08)}.side-toc nav .to-top{margin-top:5px;border:0;color:var(--accent)}.toc-mobile-label{display:none}@media(min-width:700px) and (max-width:1199px){.side-toc{right:12px;width:132px;padding:8px}.side-toc nav a{padding:7px 2px;font-size:9px}}@media(max-width:699px){.side-toc{top:auto;right:14px;bottom:16px;width:auto;max-height:none;transform:none;padding:0;border:0;background:transparent;box-shadow:none;backdrop-filter:none}.side-toc summary{width:48px;height:48px;justify-content:center;padding:0;border:1px solid var(--line);border-radius:50%;background:rgba(12,17,16,.97);box-shadow:0 5px 18px #0008;font:10px var(--sans);letter-spacing:0}.side-toc summary:after{display:none}.side-toc .toc-title{display:none}.side-toc .toc-mobile-label{display:inline}.side-toc nav{position:absolute;right:0;bottom:60px;width:min(235px,calc(100vw - 32px));max-height:70vh;padding:8px;border:1px solid var(--line);background:rgba(12,17,16,.98);box-shadow:0 10px 28px #0008}.side-toc:not([open]) nav{display:none}}
+  </style>
+</head>
+<body id="top">
+  <header class="topbar shell">
+    <a class="wordmark" href="index.html" aria-label="返回作品集首页"><span class="mark">林</span><span class="cn">林蓁</span><span class="divider"></span><span>PORTFOLIO</span></a>
+    <div class="lang-switch" role="group" aria-label="选择页面语言" data-label-zh="选择页面语言" data-label-en="Choose language"><button type="button" data-language-button="zh" aria-pressed="true">中文</button><button type="button" data-language-button="en" aria-pressed="false">English</button></div>
+    <a class="back-link" href="index.html#game-design"><span data-language-content="zh">← 返回游戏设计</span><span data-language-content="en" hidden>← Back to Game Design</span></a>
+  </header>
+    <details class="side-toc" id="page-toc" open>
+    <summary><span class="toc-title"><span data-language-content="zh">项目目录</span><span data-language-content="en" hidden>CONTENTS</span></span><span class="toc-mobile-label"><span data-language-content="zh">目录</span><span data-language-content="en" hidden>MENU</span></span></summary>
+    <nav aria-label="项目目录" data-label-zh="项目目录" data-label-en="Project contents">
+      <a href="#videos"><span data-language-content="zh">项目视频</span><span data-language-content="en" hidden>Project Video</span></a>
+      <a href="#concept"><span data-language-content="zh">01　世界观与玩法</span><span data-language-content="en" hidden>01　World & Mechanics</span></a>
+      <a href="#rules"><span data-language-content="zh">02　游戏规则</span><span data-language-content="en" hidden>02　Game Rules</span></a>
+      <a href="#characters"><span data-language-content="zh">03　探险者与角色</span><span data-language-content="en" hidden>03　Explorers & Characters</span></a>
+      <a href="#cards"><span data-language-content="zh">04　道具卡与生物卡</span><span data-language-content="en" hidden>04　Item & Creature Cards</span></a>
+      <a href="#components"><span data-language-content="zh">05　任务与游戏组件</span><span data-language-content="en" hidden>05　Missions & Components</span></a>
+      <a href="#example"><span data-language-content="zh">06　对局示例</span><span data-language-content="en" hidden>06　Gameplay Example</span></a>
+      <a class="to-top" href="#top"><span data-language-content="zh">返回顶部 ↑</span><span data-language-content="en" hidden>Back to Top ↑</span></a>
+    </nav>
+  </details>
+  <main class="shell">
+    <div class="breadcrumb"><span data-language-content="zh">游戏设计</span><span data-language-content="en" hidden>GAME DESIGN</span><span>/</span>06</div>
+    <section class="hero" aria-labelledby="project-title">
+      <div>
+        <div class="eyebrow"><span data-language-content="zh">06 / 桌面游戏</span><span data-language-content="en" hidden>06 / TABLETOP GAME</span></div>
+        <h1 id="project-title">Phantasm<span><span data-language-content="zh">幻景 · 卡牌策略桌游</span><span data-language-content="en" hidden>Fantasy Card Strategy Game</span></span></h1>
+        <p class="lead"><span data-language-content="zh">《幻景》是一款奇幻主题的卡牌策略桌游。玩家操控公共区域中的生物卡，组合完成任务并争夺积分；角色技能与道具卡提供多种策略选择。</span><span data-language-content="en" hidden>Phantasm is a fantasy card strategy game. Players manipulate creatures in a shared play area, combine them to complete missions and score points, while character skills and item cards open up different strategies.</span></p>
+        <dl class="facts"><div class="fact"><dt><span data-language-content="zh">游戏类型</span><span data-language-content="en" hidden>TYPE</span></dt><dd><span data-language-content="zh">桌面卡牌策略</span><span data-language-content="en" hidden>Tabletop card strategy</span></dd></div><div class="fact"><dt><span data-language-content="zh">核心机制</span><span data-language-content="en" hidden>CORE MECHANICS</span></dt><dd><span data-language-content="zh">卡牌操作 · 任务竞逐</span><span data-language-content="en" hidden>Card manipulation · Mission race</span></dd></div><div class="fact"><dt><span data-language-content="zh">胜利条件</span><span data-language-content="en" hidden>WIN CONDITION</span></dt><dd><span data-language-content="zh">率先获得 5 分</span><span data-language-content="en" hidden>First to score 5 points</span></dd></div><div class="fact"><dt><span data-language-content="zh">创作年份</span><span data-language-content="en" hidden>PROJECT YEAR</span></dt><dd>2024</dd></div><div class="fact"><dt><span data-language-content="zh">制作工具</span><span data-language-content="en" hidden>TOOLS</span></dt><dd>Procreate · Photoshop</dd></div></dl>
+      </div>
+      <figure class="cover"><img src="assets/images/phantasm-preview.png" alt="幻景桌游棋盘与奇幻生物卡牌效果图。"><figcaption><span data-language-content="zh">幻景 / 卡牌策略桌游</span><span data-language-content="en" hidden>PHANTASM / CARD STRATEGY GAME</span></figcaption></figure>
+    </section>
+    <div class="intro-strip"><span><span data-language-content="zh">项目图板</span><span data-language-content="en" hidden>PROJECT BOARDS</span></span><nav class="contents" aria-label="项目目录" data-label-zh="项目目录" data-label-en="Project contents"><a href="#videos"><span data-language-content="zh">视频</span><span data-language-content="en" hidden>Video</span></a><a href="#concept"><span data-language-content="zh">世界观</span><span data-language-content="en" hidden>World</span></a><a href="#rules"><span data-language-content="zh">游戏规则</span><span data-language-content="en" hidden>Rules</span></a><a href="#characters"><span data-language-content="zh">角色卡</span><span data-language-content="en" hidden>Characters</span></a><a href="#cards"><span data-language-content="zh">物品与生物卡</span><span data-language-content="en" hidden>Items & Creatures</span></a><a href="#components"><span data-language-content="zh">任务与组件</span><span data-language-content="en" hidden>Components</span></a><a href="#example"><span data-language-content="zh">对局示例</span><span data-language-content="en" hidden>Example</span></a></nav></div>
+    <section class="video-section" id="videos" aria-labelledby="videos-title">
+      <div class="video-head"><h2 id="videos-title"><span data-language-content="zh">游戏视频</span><span data-language-content="en" hidden>Gameplay Video</span></h2><span class="section-note"><span data-language-content="zh">实机演示 · 16:9</span><span data-language-content="en" hidden>GAMEPLAY · 16:9</span></span></div>
+      <div class="video-frame"><iframe class="video-embed" src="https://player.bilibili.com/player.html?bvid=BV1PgWE6QE6A&amp;p=1&amp;autoplay=0&amp;danmaku=0" title="幻景玩法演示（哔哩哔哩）" data-title-zh="幻景玩法演示（哔哩哔哩）" data-title-en="Phantasm gameplay demonstration on Bilibili" loading="lazy" referrerpolicy="no-referrer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+      <div class="video-meta"><strong><span data-language-content="zh">幻景玩法演示</span><span data-language-content="en" hidden>Phantasm Gameplay Demonstration</span></strong><a href="https://www.bilibili.com/video/BV1PgWE6QE6A/" target="_blank" rel="noopener noreferrer"><span data-language-content="zh">在哔哩哔哩打开 ↗</span><span data-language-content="en" hidden>Open on Bilibili ↗</span></a></div>
+    </section>
+
+    <section class="section" id="concept" aria-labelledby="concept-title">
+      <div class="section-head"><div class="section-title"><span class="section-kicker">01</span><h2 id="concept-title"><span data-language-content="zh">世界观与核心玩法</span><span data-language-content="en" hidden>World & Core Mechanics</span></h2></div><span class="section-note"><span data-language-content="zh">故事背景 / 核心玩法</span><span data-language-content="en" hidden>CONCEPT / OVERVIEW</span></span></div>
+      <article class="board">
+        <figure class="board-image"><img data-language-content="en" hidden loading="lazy" decoding="async" src="assets/images/phantasm/01-concept.png" alt="Phantasm 概念板：奇幻卡牌与游戏背景介绍。"><div class="cn-board cn-concept-board" data-language-content="zh">
+          <div class="cn-concept-copy">
+            <p class="cn-board-overline">幻景 / 世界观</p>
+            <h3>古老圣所的秘药传说</h3>
+            <p>传说一座古老圣所中藏有能治愈百病的秘药。四位来自不同地域的探险者各怀使命，聚集于这片神秘领域。</p>
+            <p>他们需要借助道具，让天性相克的生物彼此交战，在争夺宝藏后逃离圣所。</p>
+            <div class="cn-feature-line"><span>核心玩法</span><strong>交换卡牌 · 调整位置 · 触发生物能力</strong></div>
+            <div class="cn-feature-line"><span>胜利目标</span><strong>完成任务并率先取得 5 分</strong></div>
+          </div>
+          <figure class="cn-concept-cover"><img src="assets/images/phantasm-preview.png" alt="幻景桌游封面：奇幻生物卡牌、计分标记与棋盘。" loading="lazy" decoding="async"></figure>
+        </div><figcaption><span data-language-content="zh">图板 01 · 世界观与核心玩法</span><span data-language-content="en" hidden>BOARD 01 · CONCEPT</span></figcaption></figure>
+        
+      </article>
+    </section>
+
+    <section class="section" id="rules" aria-labelledby="rules-title">
+      <div class="section-head"><div class="section-title"><span class="section-kicker">02</span><h2 id="rules-title"><span data-language-content="zh">游戏准备与回合规则</span><span data-language-content="en" hidden>Setup & Turn Structure</span></h2></div><span class="section-note"><span data-language-content="zh">游戏准备 / 回合流程</span><span data-language-content="en" hidden>GAME SETUP / GAMEPLAY</span></span></div>
+      <article class="board">
+        <figure class="board-image"><img data-language-content="en" hidden loading="lazy" decoding="async" src="assets/images/phantasm/02-rules.png" alt="Phantasm 游戏准备与玩法规则说明板。"><div class="cn-board cn-rules-board" data-language-content="zh">
+          <div class="cn-board-heading"><p class="cn-board-overline">02 / 游戏规则</p><h3>从开局布置到任务得分</h3><p>两名玩家轮流改变中央生物卡阵列，寻找完成任务的机会。</p></div>
+          <div class="cn-rules-columns">
+            <div class="cn-rules-primary">
+              <section class="cn-rule-panel"><h4>开局准备</h4><div class="cn-flow-grid">
+                <div><b>01</b><strong>摆放生物卡</strong><p>中央先放 4 张背面朝上的生物卡，再覆盖 4 张正面朝上的卡。</p></div>
+                <div><b>02</b><strong>领取起始手牌</strong><p>每位玩家抽 1 张角色卡、3 张道具卡与 3 张任务卡。</p></div>
+                <div><b>03</b><strong>决定先后手</strong><p>掷判定币决定行动顺序，之后双方轮流行动。</p></div>
+              </div></section>
+              <section class="cn-rule-panel"><h4>每回合选择一项行动</h4><div class="cn-action-row">
+                <div><span>打出</span><strong>1 张道具卡</strong><small>执行卡牌效果</small></div>
+                <div><span>抽取</span><strong>1 张道具卡</strong><small>手牌最多 5 张</small></div>
+                <div><span>抽取</span><strong>1 张任务卡</strong><small>手牌最多 5 张</small></div>
+              </div><p class="cn-rule-note">手牌达到上限时，可先弃牌再抽。抽取任务卡后，本回合不能再抽取或打出道具卡。</p></section>
+              <section class="cn-rule-panel cn-victory"><span>回合目标</span><strong>完成任务，累计 5 分</strong><small>任务结算后，本回合结束；对应生物卡洗回牌库并补入新卡。</small></section>
+            </div>
+            <aside class="cn-rules-side">
+              <section class="cn-rule-panel"><h4>信息公开</h4><p>道具卡与任务卡暗置；角色卡对所有玩家公开。</p></section>
+              <section class="cn-rule-panel"><h4>角色能力</h4><p>可在回合任意时点免费发动一次。发动后翻面，翻回前不能再次使用。</p></section>
+              <section class="cn-rule-panel"><h4>生物能力</h4><p>单张生物卡每位玩家的回合最多发动一次。旋转触发后，玩家可以选择不执行。</p></section>
+              <section class="cn-rule-panel"><h4>卡牌操作</h4><p>交换、旋转、翻面或洗回时，生物卡正反面作为整体操作。</p></section>
+              <section class="cn-rule-panel"><h4>弃牌堆重洗</h4><p>物品牌库抽空后，将弃牌洗匀作为新的抽牌堆。</p></section>
+            </aside>
+          </div>
+        </div><figcaption><span data-language-content="zh">图板 02 · 游戏准备与回合规则</span><span data-language-content="en" hidden>BOARD 02 · GAME SETUP & GAMEPLAY</span></figcaption></figure>
+        
+      </article>
+    </section>
+
+    <section class="section" id="characters" aria-labelledby="characters-title">
+      <div class="section-head"><div class="section-title"><span class="section-kicker">03</span><h2 id="characters-title"><span data-language-content="zh">探险者与角色能力</span><span data-language-content="en" hidden>Explorers & Character Skills</span></h2></div><span class="section-note"><span data-language-content="zh">角色设定 / 专属能力</span><span data-language-content="en" hidden>CHARACTER CARDS</span></span></div>
+      <article class="board">
+        <figure class="board-image"><img data-language-content="en" hidden loading="lazy" decoding="async" src="assets/images/phantasm/03-characters.png" alt="四位探险者角色卡及其专属能力和背景故事。"><div class="cn-board cn-characters-board" data-language-content="zh">
+          <div class="cn-board-heading"><p class="cn-board-overline">03 / 探险者</p><h3>四位角色，各有独特能力</h3><p>角色背景与技能共同影响玩家在公共牌阵中的选择。</p></div>
+          <div class="cn-character-grid">
+            <article class="cn-character-card"><img src="assets/images/phantasm/cn-inserts/card-character-01.png" alt="剑士完整角色卡面"><div><span>01 / 角色</span><h4>剑士</h4><p>龙族与人类的后裔，在森林村庄长大。为守护故乡，他踏上寻找秘药的旅程。</p><strong>技能：洗回一张生物卡，获得 1 分。</strong></div></article>
+            <article class="cn-character-card"><img src="assets/images/phantasm/cn-inserts/card-character-02.png" alt="法师完整角色卡面"><div><span>02 / 角色</span><h4>法师</h4><p>来自精灵预言者家族，出生时便被预言将为族群带来希望。他以魔法穿越时空边界。</p><strong>技能：旋转 1–4 号位中的 2 或 3 张生物卡。</strong></div></article>
+            <article class="cn-character-card"><img src="assets/images/phantasm/cn-inserts/card-character-03.png" alt="驭兽师完整角色卡面"><div><span>03 / 角色</span><h4>驭兽师</h4><p>来自海族，长期探索海域、追寻神秘生物，最终独自进入古老圣所。</p><strong>技能：发动一张朝向自己的生物卡能力。</strong></div></article>
+            <article class="cn-character-card"><img src="assets/images/phantasm/cn-inserts/card-character-04.png" alt="发明家完整角色卡面"><div><span>04 / 角色</span><h4>发明家</h4><p>来自繁华都城，因发明不被认可而进入奇幻领域，想以实力赢得传说中的宝藏。</p><strong>技能：抽取 1 张任务卡与 1 张道具卡。</strong></div></article>
+          </div>
+        </div><figcaption><span data-language-content="zh">图板 03 · 探险者与角色能力</span><span data-language-content="en" hidden>BOARD 03 · CHARACTER CARDS</span></figcaption></figure>
+        
+      </article>
+    </section>
+
+    <section class="section" id="cards" aria-labelledby="cards-title">
+      <div class="section-head"><div class="section-title"><span class="section-kicker">04</span><h2 id="cards-title"><span data-language-content="zh">道具卡与生物卡</span><span data-language-content="en" hidden>Items & Creature Cards</span></h2></div><span class="section-note"><span data-language-content="zh">卡牌效果 / 生物图鉴</span><span data-language-content="en" hidden>ITEMS / CREATURES</span></span></div>
+      <article class="board">
+        <figure class="board-image"><img data-language-content="en" hidden loading="lazy" decoding="async" src="assets/images/phantasm/04-cards.png" alt="道具卡操作说明、生物卡规则与六种生物介绍。"><div class="cn-board cn-cards-board" data-language-content="zh">
+          <div class="cn-board-heading"><p class="cn-board-overline">04 / 卡牌系统</p><h3>道具改变阵列，生物带来变数</h3><p>两类卡牌共同构成操作空间与任务策略。</p></div>
+          <section class="cn-item-system"><div class="cn-item-intro"><h4>道具卡 · 每种 4 张</h4><p>用于改变公共区域中生物卡的位置、朝向与正反面，也能触发面向玩家的生物能力。</p><div class="cn-item-visuals"><div class="cn-item-back-wrap"><span>卡背</span><img class="cn-item-back" loading="lazy" decoding="async" src="assets/images/phantasm/cn-inserts/item-card-back.png" alt="道具卡背面图示"></div></div></div><div class="cn-item-actions">
+            <div><span>01</span><strong>交换</strong><small>横向交换两张卡的位置</small><img class="cn-item-action-card" loading="lazy" decoding="async" src="assets/images/phantasm/cn-inserts/item-action-swap-trim.png" alt="交换道具卡卡面"></div><div><span>02</span><strong>翻面</strong><small>横向或纵向翻转卡牌</small><img class="cn-item-action-card" loading="lazy" decoding="async" src="assets/images/phantasm/cn-inserts/item-action-flip-trim.png" alt="翻面道具卡卡面"></div><div><span>03</span><strong>旋转</strong><small>触发面向自己的生物能力</small><img class="cn-item-action-card" loading="lazy" decoding="async" src="assets/images/phantasm/cn-inserts/item-action-rotate-trim.png" alt="旋转道具卡卡面"></div><div><span>04</span><strong>判定</strong><small>掷币后按奇偶选择 1/3 或 2/4 号位</small><img class="cn-item-action-card" loading="lazy" decoding="async" src="assets/images/phantasm/cn-inserts/item-action-judgement-trim.png" alt="判定道具卡卡面"></div>
+          </div></section>
+          <div class="cn-creature-heading"><h4>六种生物 · 每种 2 张</h4><p>每种生物都有正置与逆置效果，方向会改变能力。</p></div>
+          <div class="cn-creature-grid">
+            <article><img src="assets/images/phantasm/cn-inserts/card-creature-trim-01.png" alt="幻粉蝶完整生物卡面"><div><span>01 / 旋转与交换</span><h5>幻粉蝶</h5><p>翅粉会使敌人迷失方向，再以毒液发起攻击。</p></div></article>
+            <article><img src="assets/images/phantasm/cn-inserts/card-creature-trim-02.png" alt="幻鸟完整生物卡面"><div><span>02 / 翻面与触发</span><h5>幻鸟</h5><p>模仿并操纵折射光，改变自身或其他生物的外观，引敌入陷阱。</p></div></article>
+            <article><img src="assets/images/phantasm/cn-inserts/card-creature-trim-03.png" alt="巨型真菌完整生物卡面"><div><span>03 / 触发与旋转</span><h5>巨型真菌</h5><p>以气味吸引生物，使猎物迷失方向，再用菌丝缠住并吸取养分。</p></div></article>
+            <article><img src="assets/images/phantasm/cn-inserts/card-creature-trim-04.png" alt="掠食蜥完整生物卡面"><div><span>04 / 交换与弃置</span><h5>掠食蜥</h5><p>迅捷的捕食者令其他生物避而远之，被捕获的猎物会被迅速吞噬。</p></div></article>
+            <article><img src="assets/images/phantasm/cn-inserts/card-creature-trim-05.png" alt="拟态生物完整生物卡面"><div><span>05 / 翻面与抽牌</span><h5>拟态生物</h5><p>能包裹并消化万物，吞食其他生物后可获得其能力，体内偶尔还留有道具。</p></div></article>
+            <article><img src="assets/images/phantasm/cn-inserts/card-creature-trim-06.png" alt="夜光植物完整生物卡面"><div><span>06 / 抽牌与旋转</span><h5>夜光植物</h5><p>会发光的藤蔓能缠住敌人或包裹物体，储藏腔里可能藏有补给与珍贵物品。</p></div></article>
+          </div>
+        </div><figcaption><span data-language-content="zh">图板 04 · 道具卡与生物卡</span><span data-language-content="en" hidden>BOARD 04 · ITEM CARDS & CREATURE CARDS</span></figcaption></figure>
+        
+      </article>
+    </section>
+
+    <section class="section" id="components" aria-labelledby="components-title">
+      <div class="section-head"><div class="section-title"><span class="section-kicker">05</span><h2 id="components-title"><span data-language-content="zh">任务卡、计分与棋盘</span><span data-language-content="en" hidden>Missions, Scoring & Board</span></h2></div><span class="section-note"><span data-language-content="zh">任务 / 计分 / 棋盘</span><span data-language-content="en" hidden>GAME COMPONENTS</span></span></div>
+      <article class="board">
+        <figure class="board-image"><img data-language-content="en" hidden loading="lazy" decoding="async" src="assets/images/phantasm/05-components.png" alt="任务卡、计分标记、判定币与游戏棋盘组件展示。"><div class="cn-board cn-components-board" data-language-content="zh">
+          <div class="cn-board-heading"><p class="cn-board-overline">05 / 游戏组件</p><h3>围绕公共牌阵构建任务</h3><p>玩家通过任务卡设定目标，再操作中央生物卡争取完成条件。</p></div>
+          <div class="cn-components-layout"><div class="cn-component-list">
+            <div><b>40</b><span>任务卡</span><small>21 张双槽任务（1 分）<br>19 张三槽任务（2 分）</small></div>
+            <div><b>12</b><span>生物卡</span><small>6 种生物，每种 2 张</small></div>
+            <div><b>16</b><span>道具卡</span><small>4 种操作，每种 4 张</small></div>
+            <div><b>04</b><span>角色卡</span><small>四位探险者，各有技能</small></div>
+            <div><b>01</b><span>判定币</span><small>决定先后手与随机效果</small></div>
+            <div><b>04</b><span>计分标记</span><small>记录双方累计得分</small></div>
+          </div><div class="cn-board-diagram"><div class="cn-board-label">中央牌阵 / 4 个生物卡位</div><div class="cn-creature-slots"><span>01</span><span>02</span><span>03</span><span>04</span></div><div class="cn-player-zones"><div><b>玩家 A</b><span>角色卡 · 任务卡 · 道具手牌</span></div><div><b>玩家 B</b><span>角色卡 · 任务卡 · 道具手牌</span></div></div><div class="cn-board-lanes"><span>计分区</span><span>弃牌区</span></div><img class="cn-board-art" loading="lazy" decoding="async" src="assets/images/phantasm/cn-inserts/board-layout.png" alt="项目原图中的完整棋盘与卡牌布局"></div></div>
+          <div class="cn-mission-gallery"><p class="cn-mission-caption">全套任务卡 · 共 40 张</p><img loading="lazy" decoding="async" src="assets/images/phantasm/cn-inserts/mission-cards.png" alt="项目原图中的全部40张任务卡，包含双槽与三槽任务"></div>
+          <div class="cn-token-gallery"><figure><figcaption>判定币 · 正反面</figcaption><img loading="lazy" decoding="async" src="assets/images/phantasm/cn-inserts/judgement-coins.png" alt="判定币正反面图示"></figure><figure><figcaption>计分标记 · 四种</figcaption><img loading="lazy" decoding="async" src="assets/images/phantasm/cn-inserts/score-markers.png" alt="四种计分标记图示"></figure></div>
+          <div class="cn-mission-note"><strong>任务计分</strong><span>按任务卡要求组合生物卡位置与朝向；完成后可结算并获得对应分数。</span></div>
+        </div><figcaption><span data-language-content="zh">图板 05 · 任务卡、计分与棋盘</span><span data-language-content="en" hidden>BOARD 05 · GAME COMPONENTS</span></figcaption></figure>
+        
+      </article>
+    </section>
+
+    <section class="section" id="example" aria-labelledby="example-title">
+      <div class="section-head"><div class="section-title"><span class="section-kicker">06</span><h2 id="example-title"><span data-language-content="zh">对局流程示例</span><span data-language-content="en" hidden>A Turn-by-Turn Example</span></h2></div><span class="section-note"><span data-language-content="zh">七步对局流程</span><span data-language-content="en" hidden>GAMEPLAY EXAMPLE</span></span></div>
+      <article class="board">
+        <figure class="board-image"><img data-language-content="en" hidden loading="lazy" decoding="async" src="assets/images/phantasm/06-gameplay-example.png" alt="以七个步骤展示玩家抽牌、使用道具卡、触发生物能力并结算任务的过程。"><div class="cn-board cn-example-board" data-language-content="zh">
+          <div class="cn-board-heading"><p class="cn-board-overline">06 / 对局示例</p><h3>一轮行动如何改变牌阵</h3><p>以下流程以两名玩家的实际牌局记录为例，展示抽牌、翻转、能力触发与任务结算如何衔接。</p></div>
+          <div class="cn-example-table"><span class="cn-table-label">初始阵列 / 双方视角</span><div class="cn-table-rows"><div><span>玩家一</span><b>3<small>逆置</small></b><b>6<small>逆置</small></b><b>4<small>正置</small></b><b>2<small>逆置</small></b></div><div><span>玩家二</span><b>2<small>正置</small></b><b>4<small>逆置</small></b><b>6<small>正置</small></b><b>3<small>正置</small></b></div></div><p>中央 1–4 号位的卡牌朝向会影响任务条件与能力效果。</p></div>
+          <ol class="cn-step-grid">
+            <li><b>01</b><div><h4>抽取任务</h4><p>玩家一抽取任务卡。初始阵列按两名玩家各自的座位视角呈现。</p></div><img class="cn-step-image" loading="lazy" decoding="async" src="assets/images/phantasm/cn-inserts/gameplay-step-01.png" alt="对局步骤 1：初始牌阵"></li>
+            <li><b>02</b><div><h4>旋转与翻面</h4><p>玩家二旋转第三位，触发 6 号生物的翻面能力；随后翻转第四位，使 3 号卡变为正置的 5 号卡，再用角色技能各抽一张任务卡与道具卡。</p></div><img class="cn-step-image" loading="lazy" decoding="async" src="assets/images/phantasm/cn-inserts/gameplay-step-02.png" alt="对局步骤 2：旋转、翻面与抽牌后的牌阵"></li>
+            <li><b>03</b><div><h4>完成并结算任务</h4><p>玩家一再抽取任务卡。玩家二旋转第二位并完成任务，获得 1 分；第二、第三位生物卡洗回牌库后补充。</p></div><img class="cn-step-image" loading="lazy" decoding="async" src="assets/images/phantasm/cn-inserts/gameplay-step-03.png" alt="对局步骤 3：触发能力并结算任务后的牌阵"></li>
+            <li><b>04</b><div><h4>更新中央阵列</h4><p>新生物卡补入空位，桌面局势改变，双方据此判断下一步操作。</p></div><img class="cn-step-image" loading="lazy" decoding="async" src="assets/images/phantasm/cn-inserts/gameplay-step-04.png" alt="对局步骤 4：补充生物卡后的牌阵"></li>
+            <li><b>05</b><div><h4>继续改变朝向</h4><p>玩家一横向翻转第四位，得到逆置的 4 号卡；玩家二抽取任务卡。</p></div><img class="cn-step-image" loading="lazy" decoding="async" src="assets/images/phantasm/cn-inserts/gameplay-step-05.png" alt="对局步骤 5：改变第四位朝向后的牌阵"></li>
+            <li><b>06</b><div><h4>补牌并翻转第一位</h4><p>玩家一抽取道具卡，玩家二抽取任务卡；之后玩家一再抽一张道具卡，玩家二翻转第一位，得到正置的 2 号卡。</p></div><img class="cn-step-image" loading="lazy" decoding="async" src="assets/images/phantasm/cn-inserts/gameplay-step-06.png" alt="对局步骤 6：抽取道具卡并翻转第一位后的牌阵"></li>
+            <li><b>07</b><div><h4>交换位置并结束回合</h4><p>玩家一纵向翻转第四位，发动 2 号卡的交换效果，调换第一与第四位，完成任务并结束回合。</p></div><img class="cn-step-image" loading="lazy" decoding="async" src="assets/images/phantasm/cn-inserts/gameplay-step-07.png" alt="对局步骤 7：交换第一与第四位并结束回合"></li>
+          </ol>
+          <div class="cn-example-summary"><span>行动链</span><strong>抽牌 → 改变阵列 → 触发生物能力 → 任务结算</strong></div>
+        </div><figcaption><span data-language-content="zh">图板 06 · 对局流程示例</span><span data-language-content="en" hidden>BOARD 06 · GAMEPLAY EXAMPLE</span></figcaption></figure>
+        
+      </article>
+    </section>
+    <footer class="page-footer"><span><span data-language-content="zh">林蓁 / 游戏设计 06 · 幻景</span><span data-language-content="en" hidden>LIN ZHEN / GAME DESIGN 06 · PHANTASM</span></span><a href="index.html#game-design"><span data-language-content="zh">返回全部游戏设计项目 ↑</span><span data-language-content="en" hidden>Back to All Game Design Projects ↑</span></a></footer>
+  </main>
+  <dialog class="image-viewer" id="image-viewer" aria-label="图片放大预览" data-label-zh="图片放大预览" data-label-en="Image preview">
+    <button class="image-viewer-close" type="button" aria-label="关闭图片预览" data-label-zh="关闭图片预览" data-label-en="Close image preview">×</button>
+    <img alt="">
+  </dialog>
+  <script>
+    (() => {
+      const buttons = document.querySelectorAll("[data-language-button]");
+      const content = document.querySelectorAll("[data-language-content]");
+      const getInitialLanguage = () => {
+        const requested = new URLSearchParams(window.location.search).get("lang");
+        if (requested === "zh" || requested === "en") return requested;
+        try { return localStorage.getItem("portfolio-language") === "en" ? "en" : "zh"; } catch (_) { return "zh"; }
+      };
+      const setLanguage = (language) => {
+        try { localStorage.setItem("portfolio-language", language); } catch (_) {}
+        try { const current = new URL(window.location.href); current.searchParams.set("lang", language); history.replaceState(null, "", current.href); } catch (_) {}
+        try {
+          document.querySelectorAll("a[href]").forEach((anchor) => {
+            const href = anchor.getAttribute("href");
+            if (!href || href.startsWith("#")) return;
+            const destination = new URL(href, window.location.href);
+            if (destination.protocol === window.location.protocol && destination.pathname.toLowerCase().endsWith(".html")) { destination.searchParams.set("lang", language); anchor.href = destination.href; }
+          });
+        } catch (_) {}
+        document.documentElement.lang = language === "zh" ? "zh-CN" : "en";
+        content.forEach((element) => { element.hidden = element.dataset.languageContent !== language; });
+        document.querySelectorAll('iframe[data-title-en]').forEach((frame) => { frame.title = language === 'zh' ? frame.dataset.titleZh : frame.dataset.titleEn; });
+        buttons.forEach((button) => button.setAttribute("aria-pressed", String(button.dataset.languageButton === language)));
+        document.querySelectorAll("[data-label-zh][data-label-en]").forEach((element) => {
+          element.setAttribute("aria-label", element.dataset[language === "zh" ? "labelZh" : "labelEn"]);
+        });
+        document.querySelectorAll("main img.zoomable").forEach((image) => {
+          image.title = language === "zh" ? "点击放大" : "Click to enlarge";
+          image.setAttribute("aria-label", (image.alt || (language === "zh" ? "项目图片" : "Project image")) + (language === "zh" ? "，点击放大" : ", click to enlarge"));
+        });
+        document.title = language === "zh" ? "林蓁｜Phantasm 幻景" : "Lin Zhen | Phantasm";
+        const description = document.querySelector('meta[name="description"]');
+        if (description) description.content = language === "zh" ? "Phantasm《幻景》卡牌策略桌游作品集：世界观、游戏规则、角色、生物卡与对局示例。" : "Phantasm tabletop card strategy portfolio: world, rules, characters, creature cards and gameplay.";
+      };
+      buttons.forEach((button) => button.addEventListener("click", () => setLanguage(button.dataset.languageButton)));
+      setLanguage(getInitialLanguage());
+    })();
+  </script>
+  <script>
+    (() => {
+      const viewer = document.getElementById("image-viewer");
+      const enlarged = viewer.querySelector("img");
+      const close = viewer.querySelector("button");
+      const body = document.body;
+      let savedScrollY = 0;
+      let savedBodyStyle = null;
+      const openViewer = (image) => {
+        savedScrollY = window.scrollY;
+        savedBodyStyle = {position:body.style.position,top:body.style.top,left:body.style.left,right:body.style.right,width:body.style.width,overflow:body.style.overflow};
+        body.style.position = "fixed"; body.style.top = "-" + savedScrollY + "px"; body.style.left = "0"; body.style.right = "0"; body.style.width = "100%"; body.style.overflow = "hidden";
+        enlarged.src = image.currentSrc || image.src; enlarged.alt = image.alt || "项目图片"; viewer.showModal();
+      };
+      const unlockPage = () => { if (!savedBodyStyle) return; Object.assign(body.style,savedBodyStyle); savedBodyStyle = null; window.scrollTo(0,savedScrollY); };
+      document.querySelectorAll("main img").forEach((image) => {
+        image.classList.add("zoomable"); image.tabIndex = 0; image.setAttribute("role","button"); image.setAttribute("aria-label", (image.alt || (document.documentElement.lang === "zh-CN" ? "项目图片" : "Project image")) + (document.documentElement.lang === "zh-CN" ? "，点击放大" : ", click to enlarge")); image.title = document.documentElement.lang === "zh-CN" ? "点击放大" : "Click to enlarge";
+        image.title = document.documentElement.lang === "zh-CN" ? "点击放大" : "Click to enlarge";
+  image.addEventListener("click",(event) => { event.preventDefault(); event.stopPropagation(); openViewer(image); });
+        image.addEventListener("keydown",(event) => { if(event.key === "Enter" || event.key === " "){event.preventDefault();openViewer(image);} });
+      });
+      close.addEventListener("click",() => viewer.close()); viewer.addEventListener("close",unlockPage);
+      viewer.addEventListener("click",(event) => { if(event.target === viewer || event.target === enlarged) viewer.close(); });
+    })();
+  </script>
+  <script>
+    (() => {
+      const toc = document.getElementById("page-toc");
+      if (!toc) return;
+      const mobile = window.matchMedia("(max-width:699px)");
+      const sync = () => { toc.open = !mobile.matches; };
+      sync();
+      mobile.addEventListener("change", sync);
+      toc.querySelector("nav").addEventListener("click", (event) => {
+        if (event.target.closest("a")) toc.open = !mobile.matches;
+      });
+    })();
+  </script>
+</body>
+</html>

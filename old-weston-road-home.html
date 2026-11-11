@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10191b">
+  <meta name="description" content="Old Weston Road Home · Resource Centre 社区资源中心合作项目，聚焦被动式建筑、LEED 与 WELL 可持续策略。">
+  <title>林蓁｜Old Weston Road Home · Resource Centre</title>
+  <style>
+    :root{--paper:#10191b;--paper-light:#1a2828;--ink:#e8e2d2;--muted:#a4aa9d;--line:#364746;--line-dark:#586961;--accent:#c0a46a;--green:#93a991;--serif:"Noto Serif SC","Songti SC",Georgia,serif;--sans:"Noto Sans SC","Microsoft YaHei",Arial,sans-serif;--mono:"DM Mono","SFMono-Regular",Consolas,monospace}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:88px}body{margin:0;background:radial-gradient(ellipse at 14% 0%,rgba(72,101,89,.23),transparent 36%),radial-gradient(ellipse at 92% 20%,rgba(122,102,62,.11),transparent 32%),var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.35;background-image:radial-gradient(circle 1px at 7% 16%,rgba(220,205,168,.7) 0 1px,transparent 1.5px),radial-gradient(circle 1px at 31% 27%,rgba(220,205,168,.5) 0 1px,transparent 1.5px),radial-gradient(circle 1px at 68% 52%,rgba(220,205,168,.5) 0 1px,transparent 1.5px),radial-gradient(ellipse at 22% 37%,rgba(76,116,101,.12),transparent 38%)}body>*{position:relative;z-index:1}a{color:inherit;text-decoration:none}.shell{width:min(1120px,calc(100% - 88px));margin:0 auto}
+    .topbar{height:74px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line-dark)}.wordmark{display:flex;align-items:center;gap:13px;font:10px var(--mono);letter-spacing:.14em}.mark{width:29px;height:29px;border:1px solid var(--accent);border-radius:50%;color:var(--accent);display:grid;place-items:center;font:13px var(--serif);letter-spacing:0}.cn{font:12px var(--sans);letter-spacing:.08em}.divider{height:17px;width:1px;background:var(--line-dark)}.back-link{font-size:12px;color:var(--muted)}.back-link:hover,.page-footer a:hover{color:var(--accent)}
+    main{padding-bottom:70px}.breadcrumb{padding-top:22px;color:var(--accent);font:9px var(--mono);letter-spacing:.1em}.breadcrumb span{margin:0 8px;color:var(--line-dark)}.hero{display:grid;grid-template-columns:.82fr 1.18fr;gap:34px;align-items:center;padding:25px 0 32px;border-bottom:1px solid var(--line-dark)}.eyebrow,.section-kicker,.board-index{color:var(--accent);font:10px var(--mono);letter-spacing:.12em;text-transform:uppercase}.collab-tag{display:inline-flex;margin-top:13px;padding:5px 8px;border:1px solid var(--line-dark);color:var(--accent);font:9px var(--mono);letter-spacing:.08em}.hero h1{margin:16px 0 0;font:500 clamp(34px,4.2vw,58px)/1.08 var(--serif);letter-spacing:-.055em}.hero h1 span{display:block;margin-top:9px;color:var(--muted);font:500 17px/1.45 var(--sans);letter-spacing:.04em}.intro{max-width:460px;margin:16px 0 0;color:#c4c3b5;font-size:12px;line-height:1.85}.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px 18px;margin:22px 0 0;padding-top:13px;border-top:1px solid var(--line)}.fact{display:grid;gap:6px}.fact dt{color:var(--muted);font:9px var(--mono);letter-spacing:.1em}.fact dd{margin:0;font-size:10px;line-height:1.65}.fact:last-child{grid-column:1/-1}
+    .cover{position:relative;margin:0;overflow:hidden;border:1px solid var(--line-dark);background:#e6ece5}.cover img{position:relative;z-index:0;display:block;width:100%;aspect-ratio:1.65/1;object-fit:cover;cursor:zoom-in}.cover::after{content:"";position:absolute;z-index:1;inset:45% 0 0;background:linear-gradient(0deg,rgba(7,14,13,.84),rgba(7,14,13,0))}.cover-title{position:absolute;z-index:2;left:27px;bottom:16px;display:grid;gap:6px;text-shadow:0 2px 14px #0008}.cover-title .small{color:#e4dcc9;font:9px var(--mono);letter-spacing:.2em}.cover-title strong{font:500 clamp(25px,4vw,44px)/1.1 var(--serif);letter-spacing:.06em}.cover-title em{color:#d9d0bc;font:italic 12px var(--serif);letter-spacing:.16em}.cover-mark{position:absolute;z-index:2;top:19px;right:20px;color:#f1ede1;font:9px var(--mono);letter-spacing:.16em;text-shadow:0 1px 8px #0009}
+    .intro-strip{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:14px 0;border-bottom:1px solid var(--line);color:var(--muted);font:9px var(--mono);letter-spacing:.09em}.contents{display:flex;gap:15px;flex-wrap:wrap}.contents a:hover{color:var(--accent)}.section{padding-top:36px;scroll-margin-top:84px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:18px;margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid var(--line)}.section-title{display:flex;align-items:baseline;gap:13px}.section-title h2{margin:0;font:500 clamp(21px,2.7vw,29px)/1.15 var(--serif);letter-spacing:-.035em}.section-note{color:var(--muted);font:9px var(--mono);letter-spacing:.09em}.group-copy{max-width:900px;margin:0 0 15px;padding:12px 15px;border-left:2px solid var(--green);background:rgba(26,40,40,.62);color:#d2d4c8;font-size:13px;line-height:1.9}.group-copy strong{color:#eee8d8;font-weight:600}.board-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.board{margin:0;padding:9px;border:1px solid var(--line);background:rgba(26,40,40,.78);min-width:0}.board figure{margin:0}.board img{display:block;width:100%;height:auto;background:#edf0ea;cursor:zoom-in}.board figcaption{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;padding:9px 4px 3px}.board-index{color:#a8b394;font-size:9px}.board-title{font:500 12px/1.5 var(--serif);color:#e5e1d5}.board-en{margin-left:auto;color:#a9b5a4;font:8px var(--mono);letter-spacing:.05em}.board-translation{margin-top:10px;padding:12px 10px 13px;border-top:1px solid var(--line);background:rgba(9,16,17,.28)}.board-translation h3{margin:0 0 7px;color:#d9d7c9;font:500 13px/1.5 var(--serif)}.board-translation p{margin:0;color:#c4c9be;font-size:12px;line-height:1.85}.poster-board{grid-column:1/-1}.poster-board img{width:100%;max-height:none}.poster-board .board-translation{padding:16px 17px 18px}.poster-board .board-translation p{font-size:13px;line-height:1.9}.project-footer{display:flex;justify-content:space-between;gap:16px;margin-top:36px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font:9px var(--mono);letter-spacing:.08em}
+    .image-viewer{position:fixed;z-index:1000;inset:0;width:min(96vw,1500px);height:min(94vh,1100px);max-width:none;max-height:none;margin:auto;padding:38px 14px 14px;border:1px solid var(--line-dark);background:rgba(8,14,14,.97);color:var(--ink)}.image-viewer[open]{display:grid;place-items:center}.image-viewer::backdrop{background:rgba(0,0,0,.86);backdrop-filter:blur(4px)}.image-viewer img{display:block;width:100%;height:100%;object-fit:contain;cursor:zoom-out}.image-viewer-close{position:absolute;right:9px;top:7px;width:29px;height:29px;border:1px solid var(--line-dark);border-radius:50%;background:var(--paper-light);color:var(--ink);font:20px/1 var(--sans);cursor:pointer}.image-viewer-close:hover{border-color:var(--accent);color:var(--accent)}
+    .side-toc{position:fixed;top:50%;right:16px;z-index:25;width:164px;transform:translateY(-50%);padding:10px;border:1px solid var(--line-dark);background:rgba(16,25,27,.96);box-shadow:0 10px 32px #0007;backdrop-filter:blur(12px);color:var(--muted);font:10px var(--mono);letter-spacing:.04em}.side-toc[hidden]{display:none!important}.side-toc summary{display:flex;align-items:center;justify-content:space-between;gap:8px;cursor:pointer;list-style:none;padding:4px 2px 10px;border-bottom:1px solid var(--line);color:var(--accent);letter-spacing:.12em}.side-toc summary::-webkit-details-marker{display:none}.side-toc summary::after{content:"−";color:var(--muted);font-size:14px}.side-toc:not([open]) summary::after{content:"+"}.side-toc .contents{display:grid;gap:0;padding-top:5px}.side-toc .contents a{display:block;padding:8px 4px;border-bottom:1px solid rgba(88,105,97,.38);line-height:1.45;transition:color .2s,background .2s}.side-toc .contents a:hover{color:var(--accent);background:rgba(192,164,106,.08)}.side-toc .contents .to-top{margin-top:5px;border:0;color:var(--accent)}
+    @media(min-width:1200px) and (max-width:1600px){.shell{width:min(1120px,calc(100% - 260px));margin-left:auto;margin-right:220px}}@media(min-width:700px) and (max-width:1199px){.shell{width:calc(100% - 180px);margin-left:30px;margin-right:150px}.side-toc{right:12px;width:128px;padding:8px}.side-toc summary{font-size:9px}.side-toc .contents a{padding:7px 2px;font-size:9px}}
+    @media(max-width:850px){.shell{width:min(100% - 48px,760px)}.hero{grid-template-columns:1fr;gap:22px}.cover img{max-height:none}.side-toc{display:none}}@media(max-width:560px){.shell{width:calc(100% - 32px)}.topbar{height:64px}.wordmark{gap:9px;font-size:8px}.cn{font-size:10px}.back-link{font-size:11px}.breadcrumb{padding-top:17px}.hero{padding:20px 0 25px}.hero h1{font-size:38px}.hero h1 span{font-size:15px}.cover-title{left:18px;bottom:16px}.cover-title strong{font-size:28px}.facts{gap:14px}.intro-strip{align-items:flex-start;flex-direction:column;gap:9px}.contents{gap:11px}.section{padding-top:28px}.section-head{align-items:start;flex-direction:column;gap:8px}.board-grid{grid-template-columns:1fr;gap:12px}.board-en{margin-left:0}.group-copy,.board-translation p{font-size:12px}.board-translation{padding:12px 9px}.project-footer{flex-direction:column}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <header class="shell topbar" id="top">
+    <a class="wordmark" href="index.html" aria-label="返回作品集首页"><span class="mark">林</span><span>PORTFOLIO</span><span class="divider"></span><span class="cn">室内设计</span></a>
+    <a class="back-link" href="index.html#interior-title">返回全部项目 ↑</a>
+  </header>
+  <main class="shell">
+    <div class="breadcrumb">室内设计 <span>/</span> 社区资源中心 <span>/</span> 2023</div>
+    <section class="hero" aria-labelledby="project-title">
+      <div>
+        <span class="eyebrow">INTERIOR DESIGN / COMMUNITY RESOURCE CENTRE</span>
+        <span class="collab-tag">合作项目 · COLLABORATION</span>
+        <h1 id="project-title">Old Weston Road Home<span>Resource Centre<br>社区资源中心</span></h1>
+        <p class="intro">项目位于多伦多 Old Weston Road，面向无家可归者提供学习、交流与日常支持空间。设计以被动式建筑为基础，整合 LEED 与 WELL 策略，通过节能、自然环境连接和包容性空间规划，营造温暖、可持续的社区资源中心。</p>
+        <dl class="facts">
+          <div class="fact"><dt>项目类型</dt><dd>社区资源中心</dd></div>
+          <div class="fact"><dt>项目时间</dt><dd>2023</dd></div>
+          <div class="fact"><dt>项目地点</dt><dd>189 Old Weston Road · Toronto, ON</dd></div>
+          <div class="fact"><dt>项目形式</dt><dd>合作项目 · 2人</dd></div>
+          <div class="fact"><dt>设计工具</dt><dd>AutoCAD · SketchUp · Photoshop · Twinmotion</dd></div>
+        </dl>
+      </div>
+      <figure class="cover"><img src="assets/images/old-weston-road/lounge-cover.png" alt="社区资源中心 lounge area 渲染图，展示深蓝座椅、木地板、日光与共享休息空间。"><span class="cover-mark">COLLABORATIVE PROJECT / 2023</span><figcaption class="cover-title"><span class="small">OLD WESTON ROAD HOME / RESOURCE CENTRE</span><strong>社区共享空间</strong><em>A welcoming place to connect</em></figcaption></figure>
+    </section>
+    <div class="intro-strip"><span>项目内容 / 中文导览</span><nav class="contents" aria-label="项目内容目录"><a href="#poster-overview">项目概览海报</a><a href="#introduction">项目概念</a><a href="#sustainable">可持续策略</a><a href="#site-plan">场地与平面</a><a href="#building-design">建筑图纸</a><a href="#visualizations">空间效果</a></nav></div>
+
+    <section class="section" id="poster-overview">
+      <div class="section-head"><div class="section-title"><span class="section-kicker">OVERVIEW</span><h2>项目概览海报</h2></div><span class="section-note">PROJECT POSTER / CHINESE TRANSLATION</span></div>
+      <article class="board poster-board">
+        <figure><img src="assets/images/old-weston-road/poster.png" alt="Old Weston Road Home · Resource Centre 项目总览海报，包含场地使命、LEED 与 WELL 策略、材料、被动式设计、平面图及立面图。" loading="lazy" decoding="async"><figcaption><span class="board-index">POSTER / OVERVIEW</span><span class="board-title">项目定位、可持续设计与空间方案</span><span class="board-en">LOCATION / MISSION / DESIGN SUMMARY</span></figcaption></figure>
+        <div class="board-translation"><h3>海报内容中文导览</h3><p>项目位于多伦多 189 Old Weston Road，目标是打造一座被动式社区资源中心，为社区成员提供活动、休息、阅读、课堂与护理支持空间，并通过无障碍卫生间和淋浴设施提升使用便利性。方案倡导低碳与可回收材料，结合 LEED 与 WELL 目标，营造兼顾能源效率、健康、社会交往和环境可持续性的包容空间。海报还概览了绿色屋顶与太阳能板、季节性遮阳和采光策略、室内外饰面材料、功能平面及建筑立面；开放式平面旨在促进社区互动与协作。</p></div>
+      </article>
+    </section>
+
+    <section class="section" id="introduction">
+      <div class="section-head"><div class="section-title"><span class="section-kicker">01</span><h2>项目概念与服务使命</h2></div><span class="section-note">PROJECT INTRODUCTION</span></div>
+      <p class="group-copy">场地位于安大略省多伦多市 189 Old Weston Road。资源中心以<strong>可持续社区服务</strong>为目标，规划活动、休息、阅读、课堂与护理空间，为无家可归者提供相互连接的学习与支持环境。建筑采用被动式设计理念，兼顾冬季保温、夏季遮阳、无障碍通行以及与周边自然环境的联系。</p>
+      <div class="board-grid" id="group-introduction"></div>
+    </section>
+    <section class="section" id="sustainable">
+      <div class="section-head"><div class="section-title"><span class="section-kicker">02</span><h2>LEED、WELL 与材料策略</h2></div><span class="section-note">SUSTAINABILITY & WELL-BEING</span></div>
+      <p class="group-copy"><strong>能源与水资源：</strong>采用被动式建筑策略、南向采光、外遮阳、感应 LED、太阳能板、绿色屋顶、保温围护结构及雨水回收；低流量水龙头与淋浴设备减少用水。<br><strong>健康与室内环境：</strong>选用低 VOC、可再生或回收材料，保持室内空气流通，并通过窗景、户外空间和自然景观加强人与自然的连接。WELL 策略聚焦心理健康，设置阅读、课堂及定期教育活动。<br><strong>材料：</strong>图板列出稻壳石灰抹灰、竹地板、回收软木地板、竹墙板、高性能混凝土及半透明光伏玻璃等材料，兼顾耐久、低碳与节能需求。</p>
+      <div class="board-grid" id="group-sustainable"></div>
+    </section>
+    <section class="section" id="site-plan">
+      <div class="section-head"><div class="section-title"><span class="section-kicker">03</span><h2>场地分析与功能平面</h2></div><span class="section-note">SITE & FLOOR PLAN</span></div>
+      <p class="group-copy">场地总平面说明建筑、道路、步行与绿化的关系；夏季和冬季日照路径图分析太阳高度变化与建筑朝向。平面布置整合接待、活动、阅读、课堂、护理支持与共享休息区域，以清晰的功能组织支持多样的社区使用方式。</p>
+      <div class="board-grid" id="group-site"></div>
+    </section>
+    <section class="section" id="building-design">
+      <div class="section-head"><div class="section-title"><span class="section-kicker">04</span><h2>立面、剖面与被动式策略</h2></div><span class="section-note">ELEVATIONS & SECTIONS</span></div>
+      <p class="group-copy">南北立面与东西向剖面展示建筑体量、窗洞、屋顶绿化及室内外关系。夏季剖面说明遮阳与树荫如何减少直射热量；冬季剖面利用较低角度的阳光深入室内；横向通风剖面则呈现空气流动路径。</p>
+      <div class="board-grid" id="group-building"></div>
+    </section>
+    <section class="section" id="visualizations">
+      <div class="section-head"><div class="section-title"><span class="section-kicker">05</span><h2>空间效果图</h2></div><span class="section-note">SPATIAL VISUALIZATIONS</span></div>
+      <p class="group-copy">效果图以季节变化呈现图书馆的日光环境，并展示休息区与绿色屋顶。绿色屋顶结合太阳能板，回应建筑节能、雨水管理与户外环境品质等设计目标。</p>
+      <div class="board-grid" id="group-visualizations"></div>
+    </section>
+    <footer class="project-footer"><span>林蓁 / 室内设计 / OLD WESTON ROAD HOME</span><a href="index.html#interior-title">返回全部室内项目 ↑</a></footer>
+  </main>
+  <details class="side-toc" open><summary>项目目录</summary><nav class="contents" aria-label="项目目录"><a href="#poster-overview">项目概览海报</a><a href="#introduction">01　项目概念</a><a href="#sustainable">02　可持续策略</a><a href="#site-plan">03　场地与平面</a><a href="#building-design">04　建筑图纸</a><a href="#visualizations">05　空间效果</a><a class="to-top" href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false">回到顶端 ↑</a></nav></details>
+  <dialog class="image-viewer" aria-label="项目图片预览"><button class="image-viewer-close" type="button" aria-label="关闭图片预览">×</button><img alt=""></dialog>
+  <script>
+    (() => {
+      const boardGroups = [
+        {id:"group-introduction", items:[
+          ["01","项目背景与场地使命","INTRODUCTION","场地位置、自然环境、资源中心使命及设计目标。",`项目位于多伦多 189 Old Weston Road，周边拥有开放空间并接近自然环境。资源中心按被动式建筑理念规划，以提升能源效率，适应寒冷冬季与温暖夏季；空间包括活动区、休息区、阅读区、教室和护理站，并设置无障碍卫生间与淋浴设施。材料选择强调低碳与可回收，以保护环境并营造自然氛围。设计理念将宜居性、可持续性与社区归属感相结合，遵循 LEED 与 WELL 目标，致力于创造重视能源效率、健康与社会交往的包容空间。`],
+        ]},
+        {id:"group-sustainable", items:[
+          ["02","LEED 评价与场地交通","LEED STRATEGIES","LEED 绿色建筑评价、场地位置与交通策略。",`LEED 用于评估和认证建筑的绿色性能。本项目综合考虑场地、室内空气质量、节能、节水与可持续材料，力求在降低环境影响的同时，为无家可归者提供安全舒适的空间。场地周边有树木与灌木，可缓解热岛效应；公共交通站点位于 1 公里范围内，建筑西侧有主干道。项目鼓励低碳出行，设置自行车停放位、数量有限的汽车停车位及无障碍车位。`],
+          ["03","节水与能源策略","WATER & ENERGY","低流量器具、雨水利用、被动式设计和节能照明。",`卫生间采用低流量水龙头、淋浴喷头及节水洁具。屋顶雨水收集系统将收集的雨水用于冲厕和植物灌溉。建筑采用被动式节能策略，根据朝向设置不同窗户，以减少室内能量损失；南向设置较大窗户，并通过窗上挑檐控制夏季日照、维持室内温度，同时在冬季利用阳光供暖。室内照明采用可调 LED 灯和感应灯，无人时自动关闭以节约能源。`],
+          ["04","室内环境与生态保护","ENVIRONMENTAL QUALITY","低 VOC 材料、通风、栖息地保护、雨水利用与热岛缓解。",`室内使用竹材、稻壳材料和混凝土等可再生或低 VOC 材料，以减少资源浪费；涂料也符合低挥发性有机化合物标准，营造健康环境。室内禁止吸烟，通风系统用于引入新风并改善空气流动。场地采取低影响开发方式保护周边栖息地与自然生态；雨水用于灌溉和冲厕。绿色屋顶、反射性材料和树木遮荫共同缓解城市热岛效应。`],
+          ["05","室内饰面材料：稻壳石灰抹灰与竹地板","INTERIOR FINISHES","RiceHouse 稻壳石灰墙面材料与竹地板规格。",`室内墙面选用 RiceHouse Construction Materials 的 RH100 Primer Gypsum（产品编号 MC 1112301）。该天然抹灰材料以稻壳与遇水硬化石灰为主要成分，兼具隔热、隔音、调节室内湿度和透气性能，并适用于多种砌体构造；利用稻米加工剩余物也有助于减少废弃物。主地面采用 Pimtha Co., Ltd. 的 Random Knot Bamboo Flooring（型号 MA012、MA013，产品编号 MC 665202），由泰国竹材制成，具有防虫性能，聚氨酯涂层防水且阻燃，可用于室内外地面、墙板、台面、家具和天花。`],
+          ["06","活动区地面与墙面材料","ACTIVITY AREA FINISHES","回收软木地板与 FSC 认证竹墙板规格。",`活动区地面选用 Praxis Zandur 实心软木板（产品编号 MC 1320301），由 96% 高密度回收软木和 4% 合成粘结剂组成，具备防滑、脚感舒适、吸音和耐污性能；七层商用聚合物表面处理进一步提升耐久性，并具有天然抗菌特性。墙面采用 Smith & Fong Company 的 Linear™ Collection 竹墙板（产品编号 MC 005609），由 100% FSC 认证竹材制成，使用无尿素甲醛、低或零 VOC 胶黏剂；其可再生材料属性符合三项 LEED 认证要求。`],
+          ["07","WELL 策略：增强亲近自然","WELL / ENHANCED ACCESS TO NATURE","以自然视线、户外空间和景观支持心理健康。",`WELL 是关注建筑环境与身心健康的评价标准，本项目着重 Mind（心理）类别。增强亲近自然的策略要求至少 75% 的座位能够直接看到自然景观，并通过大窗、户外座位和周边绿化建立视觉与实际的自然联系。资源中心也充分利用附近自然环境，鼓励使用者走到户外、接触自然，以营造舒缓、恢复精力并有益心理健康的环境。`],
+          ["08","WELL 策略：心理健康教育","WELL / MENTAL HEALTH EDUCATION","图书馆、教室、辅导服务与定期心理健康课程。",`设计为长期使用者提供多渠道的心理健康教育。图书馆和教室支持心理咨询与相关知识学习，并定期举办讲座、工作坊或课程，主题包括个人心理健康与身心福祉管理、常见心理健康状况，以及识别心理困扰的迹象和症状。通过这些教育机会，使用者能够获得培养健康习惯、管理压力和建立有意义社会联系所需的知识与工具。`],
+          ["09","外墙材料：超高性能混凝土","EXTERIOR MATERIALS / TAKTL® SC+","TAKTL® SC+ 建筑超高性能混凝土板的环境与耐久性能。",`建筑围护结构选用 TAKTL® SC+ 建筑超高性能混凝土（AUHPC）板，以兼顾环境责任与使用者健康。板材具有自清洁性能，可减少化学清洁剂和维护需求；光催化反应有助于降低空气中的氮氧化物。材料表面的抗菌性能可抑制微生物生长。其高抗弯强度、良好的强重比、抗冻融、抗冲击及不燃特性延长使用寿命，减少频繁更换与材料浪费。`],
+          ["10","外墙材料：半透明光伏玻璃","EXTERIOR MATERIALS / WYSIPS® GLASS","建筑一体化光伏玻璃的发电、透光与智能功能。",`Wysips® 半透明建筑光伏玻璃可将立面转化为发电表面，把太阳能发电整合进建筑，减少对传统能源的依赖并降低能耗。根据设计不同，玻璃可透过 10% 至 70% 的可见光，在能源效率与自然采光之间取得平衡。光伏玻璃还可支持调光、照明控制、通风、安全警报和集成传感器等主动功能，提升使用体验并优化建筑运行。`],
+        ]},
+        {id:"group-site", items:[
+          ["11","场地总平面图","SITE PLAN","建筑、道路、绿地与周边场地关系总图。",`总平面图显示资源中心所在场地与周边道路、邻近建筑和开放绿地的关系。建筑布置在场地中央偏南位置，周边保留树木与绿化带；图面同时标示场地边界、北向、临近道路及季节性太阳路径，为建筑朝向、室外活动和景观遮荫提供依据。`],
+          ["12","场地分析：夏季太阳路径","SITE PLAN / SUMMER SUN TRACK","夏季太阳路径与建筑、树木及场地朝向关系。",`图中以夏季太阳路径展示太阳在场地上空的运行轨迹，并将路径与建筑和周边绿化对应。季节性日照分析帮助判断直射光进入室内的方向，以及屋顶、挑檐和树木对建筑的遮阳作用，为夏季空间降温和室外活动区布置提供参考。`],
+          ["13","场地分析：冬季太阳路径","SITE PLAN / WINTER SUN TRACK","冬季较低太阳高度角及建筑的方位关系。",`图示冬季太阳沿较低角度运行的路径，并标明南、北、东、西方位。将太阳轨迹与建筑体量和屋顶位置叠合，可理解冬季日照进入建筑的方向，并辅助协调采光、被动供暖与室外树木的遮挡关系。`],
+          ["14","功能平面图","FLOOR PLAN","活动、休息、护理、教育、图书馆及服务空间布局。",`平面图以开放式组织串联活动区与休息区，并设置接待、护理站、食物服务台、男女淋浴间、卫生间、员工储藏与办公室、安保办公室、打印区、教育室及图书馆/安静阅读空间。建筑外侧连接活动区域，并在场地中布置树木、无障碍停车位和自行车停放位，以支持多样的社区服务和日常使用。`],
+        ]},
+        {id:"group-building", items:[
+          ["15","南立面与北立面","ELEVATIONS / SOUTH & NORTH","南北立面标示绿色屋顶、天窗、遮阳、树木与室外活动空间。",`南立面标示通往楼梯间的斜屋顶天窗、绿色屋顶、夏季遮阳挑檐、树荫及自行车停车区。北立面呈现室外活动区与建筑开口的关系。图面通过屋顶绿化、挑檐和高大树木说明夏季遮阳与景观设计意图。`],
+          ["16","西立面与东立面","ELEVATIONS / WEST & EAST","东西立面展示屋顶花园、树木遮阳及窗洞调整。",`西立面呈现绿色屋顶、夏季遮阳挑檐、提供遮荫的高大树木、自行车停车区与室外活动空间。东立面显示屋顶露台与周边树木，并注明减少窗户面积，以避免过多直射阳光进入室内。`],
+          ["17","西向剖面：夏季日照与遮阳","WEST SECTION / SUMMER SUN","24 英寸挑檐、绿色屋顶和树木共同控制夏季热量。",`夏季剖面说明太阳直射带来的热量，以及建筑的遮阳方式。24 英寸挑檐为窗户遮阳，绿色屋顶帮助调节屋面热环境，建筑旁的绿树进一步提供防护和阴影，以减少过强日照进入室内。`],
+          ["18","西向剖面：冬季日照","WEST SECTION / WINTER SUN","利用冬季低角度阳光为建筑提供热量。",`冬季太阳高度较低，阳光可深入建筑并为室内提供直接热量。剖面同时标示 24 英寸窗上挑檐、绿色屋顶和周边绿树，呈现遮阳构件与季节性日照之间的关系，并保持建筑与户外景观的连接。`],
+          ["19","西向剖面：横向通风","WEST SECTION / CROSS VENTILATION","剖面显示建筑内横向空气流动路径。",`剖面以蓝色箭头标示空气穿过建筑的流动方向，展示自然横向通风的设计意图。图中同时标出 24 英寸窗上挑檐、绿色屋顶及提供防护与遮荫的绿树，说明通风、太阳控制与景观措施如何共同改善室内环境。`],
+        ]},
+        {id:"group-visualizations", items:[
+          ["20","夏季图书馆效果图","LIBRARY IN SUMMER","夏季绿植遮阳下的图书馆效果与日光环境。",`夏季，植物枝叶作为自然遮阳系统形成斑驳树影，柔化强烈日光。绿植既提升环境观感，也能减少直射阳光深入室内，营造宜人的户外氛围，并为建筑挡去炎热日照。挑檐与植物共同拦截阳光，将其引离窗户。`],
+          ["21","冬季图书馆效果图","LIBRARY IN WINTER","冬季阳光深入室内，营造柔和光线与温暖氛围。",`冬季太阳高度较低，无遮挡的阳光能够进入室内深处，照亮其他季节可能处于阴影中的角落和表面。柔和日光提升空间亮度，也有助于改善整体热舒适度，营造温暖宜人的氛围。`],
+          ["22","社区休息区效果图","LOUNGE AREA","支持聚集、交谈、放松和社区活动的共享休息空间。",`休息区为社区成员提供聚集场所，促进交流、互动与分享。空间支持人们坐下休息、放松身心、交换想法并建立联系，也可承载多种社区活动。`],
+          ["23","绿色屋顶效果图","GREEN ROOF","绿色屋顶与太阳能板共同提升环境与能源表现。",`绿色屋顶与太阳能板结合形成双重效益：绿色屋顶通过降低室内温度提升建筑能效，并改善周边环境；太阳能板则利用日照直接发电，推动建筑能源自给。`],
+        ]}
+      ];
+      for (const group of boardGroups) {
+        const target = document.getElementById(group.id);
+        for (const [index,title,english,alt,translation] of group.items) {
+          const article = document.createElement("article");
+          article.className = "board";
+          const figure = document.createElement("figure");
+          const image = document.createElement("img");
+          image.loading = "lazy";
+          image.decoding = "async";
+          image.src = `assets/images/old-weston-road/board-${index}.png`;
+          image.alt = alt;
+          const caption = document.createElement("figcaption");
+          const pageNumber = String(Number(index) + 2).padStart(2,"0");
+          caption.innerHTML = `<span class="board-index">PDF PAGE ${pageNumber}</span><span class="board-title">${title}</span><span class="board-en">${english}</span>`;
+          figure.append(image,caption);
+          const copy = document.createElement("div");
+          copy.className = "board-translation";
+          copy.innerHTML = `<p>${translation}</p>`;
+          article.append(figure,copy);
+          target.append(article);
+        }
+      }
+      const viewer = document.querySelector(".image-viewer");
+      const enlarged = viewer.querySelector("img");
+      const close = viewer.querySelector(".image-viewer-close");
+      const toc = document.querySelector(".side-toc");
+      const body = document.body;
+      let savedScrollY = 0;
+      let savedBodyStyle = null;
+      const lockPage = () => {
+        savedScrollY = window.scrollY;
+        savedBodyStyle = {position:body.style.position,top:body.style.top,left:body.style.left,right:body.style.right,width:body.style.width,overflow:body.style.overflow};
+        body.style.position = "fixed";
+        body.style.top = `-${savedScrollY}px`;
+        body.style.left = "0";
+        body.style.right = "0";
+        body.style.width = "100%";
+        body.style.overflow = "hidden";
+      };
+      const unlockPage = () => {
+        if (!savedBodyStyle) return;
+        Object.assign(body.style,savedBodyStyle);
+        savedBodyStyle = null;
+        window.scrollTo(0,savedScrollY);
+        toc.hidden = false;
+      };
+      const openViewer = (image) => {
+        toc.hidden = true;
+        lockPage();
+        enlarged.src = image.currentSrc || image.src;
+        enlarged.alt = image.alt || "项目图片";
+        viewer.showModal();
+      };
+      document.querySelectorAll("main img").forEach((image) => {
+        image.classList.add("zoomable");
+        image.tabIndex = 0;
+        image.setAttribute("role","button");
+        image.setAttribute("aria-label",`${image.alt || "项目图片"}，点击放大`);
+        image.title = "点击放大";
+        image.addEventListener("click",(event) => {event.preventDefault();event.stopPropagation();openViewer(image);});
+        image.addEventListener("keydown",(event) => {if(event.key === "Enter" || event.key === " "){event.preventDefault();openViewer(image);}});
+      });
+      close.addEventListener("click",() => viewer.close());
+      viewer.addEventListener("close",unlockPage);
+      viewer.addEventListener("click",(event) => {if(event.target === viewer || event.target === enlarged)viewer.close();});
+    })();
+  </script>
+</body>
+</html>

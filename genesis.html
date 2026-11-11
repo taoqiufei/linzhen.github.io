@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111a27">
+  <meta name="description" content="《创世纪元》未来奇幻世界观与角色美术设定：在异界入侵后的新纪元，内外城秩序、超能力者与变异生态交织成新的冲突。">
+  <title>林蓁｜Era of Genesis 创世纪元</title>
+  <style>
+    :root{--paper:#101722;--panel:#192330;--panel2:#202d3a;--ink:#eee9df;--muted:#aab4bd;--line:#394957;--accent:#52c1dd;--gold:#e6b65d;--serif:"Noto Serif SC","Songti SC",Georgia,serif;--sans:"Noto Sans SC","Microsoft YaHei",Arial,sans-serif;--mono:"DM Mono","SFMono-Regular",Consolas,monospace}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:78px}
+    body{margin:0;background:radial-gradient(ellipse at 9% 0%,rgba(28,105,150,.21),transparent 35%),radial-gradient(ellipse at 90% 25%,rgba(111,86,146,.14),transparent 36%),var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+    body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.18;background-image:radial-gradient(circle 1px at 11% 18%,rgba(82,193,221,.8) 0 1px,transparent 1.5px),radial-gradient(circle 1px at 78% 33%,rgba(230,182,93,.55) 0 1px,transparent 1.5px),radial-gradient(circle 1px at 42% 78%,rgba(170,180,189,.4) 0 1px,transparent 1.5px)}body>*{position:relative;z-index:1}a{color:inherit;text-decoration:none}
+    .shell{width:min(1180px,calc(100% - 48px));margin:0 auto}.topbar{height:68px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+    .wordmark{display:flex;align-items:center;gap:11px;font:10px var(--mono);letter-spacing:.14em;color:var(--muted)}.wordmark strong{color:var(--accent);font:600 14px var(--serif);letter-spacing:0}.back-link{font-size:11px;color:var(--muted)}.back-link:hover{color:var(--accent)}
+    main{padding-bottom:55px}.hero{display:grid;grid-template-columns:.9fr 1.1fr;gap:32px;align-items:center;padding:34px 0 30px;border-bottom:1px solid var(--line)}
+    .eyebrow,.section-kicker,.section-note,.caption,.small-label{color:var(--muted);font:9px var(--mono);letter-spacing:.12em;text-transform:uppercase}
+    h1{margin:13px 0 0;font:500 clamp(37px,5vw,58px)/1.1 var(--serif);letter-spacing:-.04em}h1 span{display:block;margin-top:9px;color:var(--accent);font:13px var(--mono);letter-spacing:.07em}
+    .hero-copy{max-width:650px;margin:17px 0 19px;color:#d4d7d8;font-size:14px;line-height:1.95}.facts{display:flex;gap:8px;flex-wrap:wrap}.fact{padding:7px 10px;border:1px solid var(--line);color:var(--muted);font-size:10px;background:rgba(255,255,255,.025)}.fact strong{color:#aee5f0;font-weight:500}
+    .cover{margin:0;border:1px solid var(--line);background:#090e16;overflow:hidden}.cover img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}.cover figcaption{padding:8px 10px;color:var(--muted);font:8px var(--mono);letter-spacing:.1em}
+    .intro-strip{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid var(--line)}.contents{display:flex;flex-wrap:wrap;gap:8px}.contents a{padding:6px 9px;border:1px solid var(--line);color:var(--muted);font-size:10px}.contents a:hover{border-color:var(--accent);color:#aee5f0}
+    .section{padding:32px 0 37px;border-bottom:1px solid var(--line)}.section-head{display:flex;justify-content:space-between;align-items:baseline;gap:18px;margin-bottom:14px}.section-title{display:flex;align-items:baseline;gap:13px}.section-kicker{color:var(--gold)}.section-head h2{margin:0;font:500 clamp(22px,3vw,29px)/1.2 var(--serif);letter-spacing:-.03em}.section-note{text-align:right}
+    .board{padding:10px;background:rgba(25,35,48,.9);border:1px solid var(--line);box-shadow:0 8px 26px rgba(0,0,0,.14)}.board-image{margin:0;background:#f5f3ef;border:1px solid #687985;overflow:hidden}.board-image img{display:block;width:100%;height:auto;cursor:zoom-in}.board-image figcaption{padding:8px 10px;background:#f5f3ef;color:#606c73;font:8px var(--mono);letter-spacing:.07em}
+    .translation{padding:20px 5px 6px}.translation-head{display:flex;align-items:baseline;gap:12px;margin-bottom:13px;padding-bottom:10px;border-bottom:1px solid var(--line)}.translation-head h3{margin:0;font:500 18px var(--serif)}.translation-head span{color:var(--muted);font:8px var(--mono);letter-spacing:.08em}
+    .lead{margin:0 0 12px;color:#d9f1f1;font:500 16px/1.8 var(--serif)}.copy{margin:0;color:#d3d6d7;font-size:12px;line-height:1.9}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:12px}.card{padding:13px 14px;border:1px solid rgba(82,193,221,.23);background:rgba(7,13,20,.34)}.card h4{margin:0 0 7px;color:#b6e6ef;font-size:12px}.card p,.card li{margin:0;color:#d2d7d9;font-size:11px;line-height:1.85}.card p+p{margin-top:8px}.card.wide{grid-column:1/-1}
+    .timeline{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin-top:12px}.event{padding:12px;border-top:2px solid var(--accent);background:var(--panel2)}.event b{display:block;color:var(--accent);font:500 12px var(--mono)}.event span{display:block;margin-top:6px;color:#d2d7d9;font-size:10px;line-height:1.65}
+    .tag-list{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}.tag{padding:5px 8px;border:1px solid var(--line);color:#c6d3d8;font-size:10px}
+    .page-footer{display:flex;justify-content:space-between;gap:16px;padding:20px 0 30px;color:var(--muted);font:9px var(--mono);letter-spacing:.08em}.page-footer a:hover{color:var(--accent)}
+    .image-viewer{position:fixed;z-index:1000;inset:0;width:min(96vw,1500px);height:min(94vh,1100px);max-width:none;max-height:none;margin:auto;padding:38px 14px 14px;border:1px solid var(--line);background:rgba(6,10,15,.97);color:var(--ink)}.image-viewer[open]{display:grid;place-items:center}.image-viewer::backdrop{background:rgba(0,0,0,.9);backdrop-filter:blur(4px)}.image-viewer img{display:block;width:100%;height:100%;object-fit:contain;cursor:zoom-out}.image-viewer-close{position:absolute;right:9px;top:7px;width:29px;height:29px;border:1px solid var(--line);border-radius:50%;background:var(--panel);color:var(--ink);font:20px/1 var(--sans);cursor:pointer}.image-viewer-close:hover{border-color:var(--accent);color:var(--accent)}
+    @media(max-width:820px){.shell{width:min(100% - 32px,760px)}.hero{grid-template-columns:1fr;gap:20px}.cover{max-width:760px}.timeline{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:560px){.topbar{height:60px}.hero{padding:24px 0}.intro-strip{align-items:flex-start;flex-direction:column}.section{padding:24px 0}.section-head{align-items:flex-start;flex-direction:column;gap:7px}.section-note{text-align:left}.grid{grid-template-columns:1fr}.card.wide{grid-column:auto}.timeline{grid-template-columns:1fr 1fr}.board{padding:7px}.translation{padding:15px 2px 3px}.page-footer{flex-direction:column}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
+    .side-toc{position:fixed;top:50%;right:16px;z-index:25;width:164px;transform:translateY(-50%);padding:10px;border:1px solid var(--line);background:rgba(16,25,27,.96);box-shadow:0 10px 32px #0007;backdrop-filter:blur(12px);color:var(--muted);font:10px var(--mono);letter-spacing:.04em}.side-toc[hidden]{display:none!important}.side-toc summary{display:flex;align-items:center;justify-content:space-between;gap:8px;cursor:pointer;list-style:none;padding:4px 2px 10px;border-bottom:1px solid var(--line);color:var(--accent);letter-spacing:.12em}.side-toc summary::-webkit-details-marker{display:none}.side-toc summary::after{content:"−";color:var(--muted);font-size:14px}.side-toc:not([open]) summary::after{content:"+"}.side-toc .contents{display:grid;gap:0;padding-top:5px}.side-toc .contents a{display:block;padding:8px 4px;border-bottom:1px solid rgba(88,105,97,.38);line-height:1.45;transition:color .2s,background .2s}.side-toc .contents a:hover{color:var(--accent);background:rgba(82,193,221,.08)}.side-toc .contents .to-top{margin-top:5px;border:0;color:var(--accent)}
+    @media(min-width:1200px) and (max-width:1600px){.shell{width:min(1240px,calc(100% - 260px));margin-left:auto;margin-right:220px}}
+    @media(min-width:700px) and (max-width:1199px){.shell{width:calc(100% - 180px);margin-left:30px;margin-right:150px}.side-toc{right:12px;width:128px;padding:8px}.side-toc summary{font-size:9px}.side-toc .contents a{padding:7px 2px;font-size:9px}}
+    @media(max-width:699px){.side-toc{top:auto;right:14px;bottom:16px;width:auto;transform:none;padding:0;border:0;background:transparent;box-shadow:none;backdrop-filter:none}.side-toc summary{width:48px;height:48px;justify-content:center;padding:0;border:1px solid var(--line);border-radius:50%;background:rgba(16,25,27,.97);box-shadow:0 5px 18px #0008;font:10px var(--sans);letter-spacing:0}.side-toc summary::after{display:none}.side-toc nav{position:absolute;right:0;bottom:60px;width:min(220px,calc(100vw - 32px));padding:8px;border:1px solid var(--line);background:rgba(16,25,27,.98);box-shadow:0 10px 28px #0008}.side-toc:not([open]) nav{display:none}.side-toc[open] nav{display:grid}}
+  </style>
+</head>
+<body id="top">
+  <header class="topbar shell"><a class="wordmark" href="index.html" aria-label="返回作品集首页"><strong>林蓁</strong><span>PORTFOLIO</span></a><a class="back-link" href="index.html#game-art">← 返回游戏世界观/角色设计</a></header>
+  <main class="shell">
+    <section class="hero" aria-labelledby="project-title">
+      <div><div class="eyebrow">02 / FUTURISTIC FANTASY · WORLD & CHARACTER DESIGN</div>
+        <h1 id="project-title">Era of Genesis<span>创世纪元 · 未来奇幻设定</span></h1>
+        <p class="hero-copy">异界入侵后，人类在废墟中建立新城，并逐渐分化为掌握权力的内圈与承担供给的外圈。超能力、城市秩序、变异生态与利益交易交织，构成《创世纪元》的未来奇幻世界。</p>
+        <div class="facts"><div class="fact"><strong>主题</strong>　新纪元 · 城市分层</div><div class="fact"><strong>角色</strong>　Nova · Severus · Oriana</div><div class="fact"><strong>方向</strong>　世界观 · 角色 · 环境</div></div>
+      </div>
+      <figure class="cover"><img src="assets/images/genesis-preview.png" alt="白发人物眺望云端未来城市的《创世纪元》项目预览图。"><figcaption>ERA OF GENESIS / FUTURISTIC FANTASY WORLD</figcaption></figure>
+    </section>
+    <details class="side-toc" id="page-toc" open>
+      <summary>项目目录</summary>
+      <nav class="contents" aria-label="项目目录"><a href="#origin">新纪元起源</a><a href="#timeline">年表与城市结构</a><a href="#nova">Nova</a><a href="#severus">Severus</a><a href="#oriana">Oriana</a><a href="#city">创世纪城</a><a href="#factory">制药工厂</a><a href="#canyon">峡谷生态</a><a href="#top" class="to-top">回到顶端 ↑</a></nav>
+    </details>
+    <section class="section" id="origin" aria-labelledby="origin-title">
+      <div class="section-head"><div class="section-title"><span class="section-kicker">01</span><h2 id="origin-title">新纪元的起点</h2></div><span class="section-note">ERA OF GENESIS</span></div>
+      <article class="board"><figure class="board-image"><img src="assets/images/genesis/genesis-board-1.png" alt="新纪元中的白发人物眺望创世纪城，画面呈现未来城市与项目标题。"><figcaption>BOARD 01 · PROJECT INTRODUCTION</figcaption></figure>
+        <div class="translation"><div class="translation-head"><h3>中文译文</h3><span>文明崩塌之后</span></div>
+          <p class="lead">上个世纪，文明濒临崩溃。为了生存，人们筑起屏障，进入一个新的时代。</p>
+          <p class="copy">一个世纪后，新城的内圈与外圈之间出现了鲜明分化，两个区域的人们各自追逐不同的欲望。为满足城内需求，一套地下运输网络逐渐形成……</p>
+        </div>
+      </article>
+    </section>
+    <section class="section" id="timeline" aria-labelledby="timeline-title">
+      <div class="section-head"><div class="section-title"><span class="section-kicker">02</span><h2 id="timeline-title">新纪元年表与城市结构</h2></div><span class="section-note">TIMELINE / WORLDVIEW</span></div>
+      <article class="board"><figure class="board-image"><img loading="lazy" decoding="async" src="assets/images/genesis/genesis-board-2.png" alt="空间裂隙出现、超能力觉醒、怪物入侵与创世纪城建立的年表，以及内圈、外圈和城外世界的结构图。"><figcaption>BOARD 02 · TIMELINE & CITY STRUCTURE</figcaption></figure>
+        <div class="translation"><div class="translation-head"><h3>中文译文</h3><span>从旧世界走向创世纪</span></div>
+          <div class="timeline">
+            <div class="event"><b>新纪元前 68 年</b><span>空间裂隙出现。</span></div>
+            <div class="event"><b>新纪元前 67 年</b><span>首次出现超自然力量觉醒。</span></div>
+            <div class="event"><b>新纪元前 20 年</b><span>怪物穿越空间裂隙入侵，留下废墟，人类人口锐减。</span></div>
+            <div class="event"><b>新纪元前 6 年</b><span>旧纪元走向终结。</span></div>
+            <div class="event"><b>新纪元元年</b><span>新城市开始建设。</span></div>
+            <div class="event"><b>新纪元第 80 年</b><span>内圈与外圈之间筑起隔墙。</span></div>
+          </div>
+          <div class="grid">
+            <section class="card"><h4>新城的诞生</h4><p>内战使旧世界文明岌岌可危，另一个位面的融合成为压垮文明的最后一击。怪物经由空间裂隙入侵，城市沦为废墟，人口急剧减少。为保留人类最后的火种，一部分人吸收裂隙逸散的能量，获得超自然力量。幸存者联合起来，依靠能力者与残存科技建起高墙和天空屏障，以抵御外部威胁。</p><p>这座名为“创世纪城”的新城在先驱者的努力下逐渐繁荣，熬过动荡岁月。城市建立之年被定为新纪元元年。</p></section>
+            <section class="card"><h4>一个世纪后的内外圈</h4><p>随着科技复兴，城市表面恢复了秩序，却形成了分层结构。内圈聚集精英与拥有强大能力的人，他们掌握权力与资源；外圈居民生活在旧时代遗留的建筑中，为城市提供基础物资。城墙之外则是城市废墟、野兽与变异植物。</p></section>
+          </div>
+          <div class="tag-list"><span class="tag">内圈：权力与资源中心</span><span class="tag">外圈：城市物资供给</span><span class="tag">城外：废墟 · 野兽 · 变异植物</span></div>
+        </div>
+      </article>
+    </section>
+    <section class="section" id="nova" aria-labelledby="nova-title">
+      <div class="section-head"><div class="section-title"><span class="section-kicker">03</span><h2 id="nova-title">Nova · 城市武装力量</h2></div><span class="section-note">CHARACTER DESIGN / NOVA</span></div>
+      <article class="board"><figure class="board-image"><img loading="lazy" decoding="async" src="assets/images/genesis/genesis-board-3.png" alt="Nova 的角色立绘、服装方案、剪影、武器草图与人物背景。"><figcaption>BOARD 03 · NOVA CHARACTER DESIGN</figcaption></figure>
+        <div class="translation"><div class="translation-head"><h3>中文译文</h3><span>机会主义者 · 城市武装成员</span></div>
+          <p class="lead">Nova 是城市武装力量的一员，负责守卫城市，拥有出色的个人战斗能力，也善于寻找机会。</p>
+          <p class="copy">一次巡逻中，她在峡谷里发现一种具有致幻和成瘾性的植物。Nova 认为，若将这种植物制成药物，卖给富裕的内圈居民，就能从中获利。然而内圈实行严格的药物管制，因此她决定在外圈发展一名心腹，秘密采集植物、制成药物并运入城内。</p>
+        </div>
+      </article>
+    </section>
+    <section class="section" id="severus" aria-labelledby="severus-title">
+      <div class="section-head"><div class="section-title"><span class="section-kicker">04</span><h2 id="severus-title">Severus · 外圈运输者</h2></div><span class="section-note">CHARACTER DESIGN / SEVERUS</span></div>
+      <article class="board"><figure class="board-image"><img loading="lazy" decoding="async" src="assets/images/genesis/genesis-board-4.png" alt="Severus 的角色立绘、服装配色、机械义肢与攀爬钩设计。"><figcaption>BOARD 04 · SEVERUS CHARACTER DESIGN</figcaption></figure>
+        <div class="translation"><div class="translation-head"><h3>中文译文</h3><span>机械义肢与攀爬装备</span></div>
+          <div class="grid">
+            <section class="card"><h4>人物背景</h4><p>新纪元里，人们崇敬超自然力量。外圈的大多数人梦想觉醒能力、进入内圈。能力的出现具有随机性；在内外圈之间往返的货运司机 Severus 不愿把希望寄托于不确定的觉醒。他接受了 Nova 的高额报酬，决定冒险行事，招募外圈居民参与致幻药物的生产。</p></section>
+            <section class="card"><h4>机械手臂</h4><p>Severus 早年遭遇事故，失去了右臂，于是为自己配备机械手臂。义肢上端连接残肢，主要由人体能量驱动。它外观低调，让他能在城内隐蔽行动。城市法规禁止非官方人员配备高致命性武器部件，因此这条手臂最初只用于替代普通手臂的功能。</p><p>后来 Severus 积累财富并升级义肢，加入攀爬钩，使其能快速、稳固地附着在险峻岩壁上，便于在城外采集植物。</p></section>
+          </div>
+        </div>
+      </article>
+    </section>
+    <section class="section" id="oriana" aria-labelledby="oriana-title">
+      <div class="section-head"><div class="section-title"><span class="section-kicker">05</span><h2 id="oriana-title">Oriana · 城外族群与冰角兽</h2></div><span class="section-note">CHARACTER & CREATURE DESIGN</span></div>
+      <article class="board"><figure class="board-image"><img loading="lazy" decoding="async" src="assets/images/genesis/genesis-board-5.png" alt="Oriana 的角色与坐骑设计，包括不同配色的冰角兽、飞行形态和外观剪影。"><figcaption>BOARD 05 · ORIANA & ICEHORN</figcaption></figure>
+        <div class="translation"><div class="translation-head"><h3>中文译文</h3><span>自然共生 · 边界冲突</span></div>
+          <div class="grid">
+            <section class="card"><h4>Oriana 与城外族群</h4><p>新纪元初期，有一部分人无法进入城市。他们中的一些人觉醒了力量，在城墙之外寻找生路。经过数代发展，他们与野兽建立共生关系、融入自然；他们用喜爱的植物制成颜料驯养野兽，并以野兽为坐骑。</p><p>这群人希望摧毁旧世界建筑的残骸，让自然重新生长。Oriana 是其中一员。由于祖辈冲突及兽群文化的影响，他们与城内居民彼此视为敌人。Severus 为采集珍贵植物进入其领地时，Oriana 出面阻止。</p></section>
+            <section class="card"><h4>冰角兽 · Oriana 的坐骑</h4><p>一种飞行野兽栖息在险峻峡谷，通常在高耸岩壁上筑巢。它们在溪流与海洋中捕猎，以敏捷迅疾著称，既能翱翔天空，也擅长游泳。</p><p>冰角兽是 Oriana 的坐骑，翅膀上绘有类似眼睛的图腾，与 Oriana 身上的纹身相呼应。人与坐骑和谐共生，共同抵御入侵的野兽与外来者。</p></section>
+          </div>
+        </div>
+      </article>
+    </section>
+    <section class="section" id="city" aria-labelledby="city-title">
+      <div class="section-head"><div class="section-title"><span class="section-kicker">06</span><h2 id="city-title">创世纪城 · 内圈环境</h2></div><span class="section-note">ENVIRONMENT DESIGN / INNER CIRCLE</span></div>
+      <article class="board"><figure class="board-image"><img loading="lazy" decoding="async" src="assets/images/genesis/genesis-board-6.png" alt="创世纪城内圈的未来街区概念图、建筑草图、色彩方案与环境设定。"><figcaption>BOARD 06 · INNER CIRCLE ENVIRONMENT</figcaption></figure>
+        <div class="translation"><div class="translation-head"><h3>中文译文</h3><span>科技中心 · 秩序表象</span></div>
+          <p class="copy">新城内圈居住着精英与拥有强大能力的人。中央矗立着一座白色高塔，作为科技与能源研究中心，为天空屏障提供能量。商街的行人遵循既定秩序，高塔则成为城市天际线上的醒目标志；夜晚，塔上的灯光几乎照亮整个内圈。</p>
+          <p class="copy" style="margin-top:9px">尽管内圈是城市核心，街道却并不热闹。居民遵守一套行为规范，维持井然有序的外在表象。</p>
+        </div>
+      </article>
+    </section>
+    <section class="section" id="factory" aria-labelledby="factory-title">
+      <div class="section-head"><div class="section-title"><span class="section-kicker">07</span><h2 id="factory-title">外圈 · 秘密制药工厂</h2></div><span class="section-note">ENVIRONMENT DESIGN / OUTER CIRCLE</span></div>
+      <article class="board"><figure class="board-image"><img loading="lazy" decoding="async" src="assets/images/genesis/genesis-board-7.png" alt="外圈废弃工厂改造为隐秘的制药基地，展示场景草图、色彩过程与工厂内部。"><figcaption>BOARD 07 · SECRET FACTORY</figcaption></figure>
+        <div class="translation"><div class="translation-head"><h3>中文译文</h3><span>违禁药物的生产与走私</span></div>
+          <p class="copy">Severus 和团队在外圈一座久已废弃的工厂建立基地。这座破败的工厂被巧妙改造成隐蔽而高效的制药设施；团队利用各类零件组装出大型制药机器。峡谷中发光的奇异植物与其他物质混合，经加工、包装后成为违禁药物，在富裕人群中流行。</p>
+          <p class="copy" style="margin-top:9px">药物被藏在 Severus 运送的农产品中，走私进入内圈，进一步扰乱城内外原有的秩序。</p>
+        </div>
+      </article>
+    </section>
+    <section class="section" id="canyon" aria-labelledby="canyon-title">
+      <div class="section-head"><div class="section-title"><span class="section-kicker">08</span><h2 id="canyon-title">峡谷生态 · 发光植物</h2></div><span class="section-note">ENVIRONMENT DESIGN / CANYON</span></div>
+      <article class="board"><figure class="board-image"><img loading="lazy" decoding="async" src="assets/images/genesis/genesis-board-8.png" alt="色彩斑斓的峡谷、发光绿河、稀有植物与冰角兽构成的城外生态环境。"><figcaption>BOARD 08 · CANYON ECOSYSTEM</figcaption></figure>
+        <div class="translation"><div class="translation-head"><h3>中文译文</h3><span>异界能量改写荒野</span></div>
+          <p class="copy">来自另一位面的能量席卷大地后，新的矿物与植物逐渐出现。峡谷中缤纷的岩石因含有微量元素而呈现不同色彩。微生物聚集的河流泛着绿色荧光，蜿蜒流向远方；往昔战争留下的伤痕也在河水冲刷下逐渐难以辨认。</p>
+          <p class="copy" style="margin-top:9px">一种稀有的生物发光植物生长在峭壁边缘。Oriana 所属的族群用它制作夜间会发出多彩光芒的仪式用品。她骑着坐骑巡守这片土地，保护这些珍稀植物免遭破坏。</p>
+        </div>
+      </article>
+    </section>
+    <footer class="page-footer"><span>林蓁 / 游戏世界观与角色设计 02 · ERA OF GENESIS</span><a href="index.html#game-art">返回全部游戏世界观/角色设计项目 ↑</a></footer>
+  </main>
+  <dialog class="image-viewer" id="image-viewer" aria-label="图片放大预览"><button class="image-viewer-close" type="button" aria-label="关闭图片预览">×</button><img alt=""></dialog>
+  <script>
+(() => {
+  const viewer = document.getElementById("image-viewer");
+  const enlarged = viewer.querySelector("img");
+  const close = viewer.querySelector("button");
+  const body = document.body;
+  const toc = document.getElementById("page-toc");
+  const mobileToc = window.matchMedia("(max-width: 699px)");
+  let savedScrollY = 0;
+  let savedBodyStyle = null;
+  const syncTocToViewport = () => { toc.open = !mobileToc.matches; };
+  syncTocToViewport();
+  mobileToc.addEventListener("change", syncTocToViewport);
+  toc.querySelector("nav").addEventListener("click", (event) => {
+    if (mobileToc.matches && event.target.closest("a")) toc.open = false;
+  });
+  const openViewer = (image) => {
+    toc.hidden = true;
+    savedScrollY = window.scrollY;
+    savedBodyStyle = { position: body.style.position, top: body.style.top, left: body.style.left, right: body.style.right, width: body.style.width, overflow: body.style.overflow };
+    body.style.position = "fixed";
+    body.style.top = `-${savedScrollY}px`;
+    body.style.left = "0";
+    body.style.right = "0";
+    body.style.width = "100%";
+    body.style.overflow = "hidden";
+    enlarged.src = image.currentSrc || image.src;
+    enlarged.alt = image.alt || "项目图片";
+    viewer.showModal();
+  };
+  const unlockPage = () => {
+    if (!savedBodyStyle) return;
+    Object.assign(body.style, savedBodyStyle);
+    savedBodyStyle = null;
+    window.scrollTo(0, savedScrollY);
+    toc.hidden = false;
+  };
+  document.querySelectorAll("main img").forEach((image) => {
+    image.tabIndex = 0;
+    image.setAttribute("role", "button");
+    image.setAttribute("aria-label", `${image.alt || "项目图片"}，点击放大`);
+    image.title = "点击放大";
+    image.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      openViewer(image);
+    });
+    image.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        openViewer(image);
+      }
+    });
+  });
+  close.addEventListener("click", () => viewer.close());
+  viewer.addEventListener("close", unlockPage);
+  viewer.addEventListener("click", (event) => {
+    if (event.target === viewer || event.target === enlarged) viewer.close();
+  });
+})();
+</script>
+</body>
+</html>

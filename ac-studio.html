@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10191b">
+  <meta name="description" content="AC Studio 企业空间设计合作项目，呈现办公空间规划、室内效果、墙体构造与天花节点。">
+  <title>林蓁｜AC Studio 企业空间设计</title>
+  <style>
+    :root{--paper:#10191b;--paper-light:#1a2828;--ink:#e8e2d2;--muted:#a4aa9d;--line:#364746;--line-dark:#586961;--accent:#c0a46a;--green:#8b9a7d;--serif:"Noto Serif SC","Songti SC",Georgia,serif;--sans:"Noto Sans SC","Microsoft YaHei",Arial,sans-serif;--mono:"DM Mono","SFMono-Regular",Consolas,monospace}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:88px}body{margin:0;background:radial-gradient(ellipse at 14% 0%,rgba(72,101,89,.23),transparent 36%),radial-gradient(ellipse at 92% 20%,rgba(122,102,62,.11),transparent 32%),var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.35;background-image:radial-gradient(circle 1px at 7% 16%,rgba(220,205,168,.7) 0 1px,transparent 1.5px),radial-gradient(circle 1px at 31% 27%,rgba(220,205,168,.5) 0 1px,transparent 1.5px),radial-gradient(circle 1px at 68% 52%,rgba(220,205,168,.5) 0 1px,transparent 1.5px),radial-gradient(ellipse at 22% 37%,rgba(76,116,101,.12),transparent 38%)}body>*{position:relative;z-index:1}a{color:inherit;text-decoration:none}.shell{width:min(1120px,calc(100% - 88px));margin:0 auto}
+    .topbar{height:74px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line-dark)}.wordmark{display:flex;align-items:center;gap:13px;font:10px var(--mono);letter-spacing:.14em}.mark{width:29px;height:29px;border:1px solid var(--accent);border-radius:50%;color:var(--accent);display:grid;place-items:center;font:13px var(--serif);letter-spacing:0}.cn{font:12px var(--sans);letter-spacing:.08em}.divider{height:17px;width:1px;background:var(--line-dark)}.back-link{font-size:12px;color:var(--muted)}.back-link:hover,.project-footer a:hover,.doc-links a:hover{color:var(--accent)}
+    main{padding-bottom:70px}.breadcrumb{padding-top:22px;color:var(--accent);font:9px var(--mono);letter-spacing:.1em}.breadcrumb span{margin:0 8px;color:var(--line-dark)}.hero{display:grid;grid-template-columns:.8fr 1.2fr;gap:38px;align-items:center;padding:25px 0 34px;border-bottom:1px solid var(--line-dark)}.eyebrow,.section-kicker,.sheet-index{color:var(--accent);font:10px var(--mono);letter-spacing:.12em;text-transform:uppercase}.hero h1{margin:17px 0 0;font:500 clamp(46px,6vw,76px)/.98 var(--serif);letter-spacing:-.07em}.hero h1 span{display:block;margin-top:13px;color:var(--muted);font:500 19px/1.4 var(--sans);letter-spacing:.05em}.intro{max-width:440px;margin:20px 0 0;color:#c4c3b5;font-size:13px;line-height:1.9}.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px 22px;margin:26px 0 0;padding-top:14px;border-top:1px solid var(--line)}.fact{display:grid;gap:6px}.fact dt{color:var(--muted);font:9px var(--mono);letter-spacing:.1em}.fact dd{margin:0;font-size:11px;line-height:1.65}.fact:last-child{grid-column:1/-1}
+    .cover{position:relative;min-height:300px;aspect-ratio:1.66/1;margin:0;overflow:hidden;border:1px solid var(--line-dark);background:#394339}.cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.cover::after{content:"";position:absolute;inset:35% 0 0;background:linear-gradient(0deg,rgba(7,14,13,.82),rgba(7,14,13,0))}.cover-title{position:absolute;z-index:1;left:27px;bottom:24px;display:grid;gap:6px;text-shadow:0 2px 14px #0008}.cover-title .small{color:#e4dcc9;font:9px var(--mono);letter-spacing:.2em}.cover-title strong{font:500 clamp(25px,4vw,44px)/1.1 var(--serif);letter-spacing:.06em}.cover-title em{color:#d9d0bc;font:italic 12px var(--serif);letter-spacing:.16em}.cover-mark{position:absolute;z-index:1;top:19px;right:20px;color:#f1ede1;font:9px var(--mono);letter-spacing:.16em;text-shadow:0 1px 8px #0009}
+    .intro-strip{position:sticky;top:0;z-index:30;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:15px 12px;border-bottom:1px solid var(--line);background:rgba(16,25,27,.96);backdrop-filter:blur(12px)}.intro-strip>span{color:var(--muted);font:9px var(--mono);letter-spacing:.08em;white-space:nowrap}.contents{display:flex;flex-wrap:wrap;gap:7px}.contents a{padding:6px 9px;border:1px solid var(--line);color:#c9cabc;font-size:10px}.contents a:hover{border-color:var(--accent);color:var(--accent)}
+    .section{padding-top:48px;scroll-margin-top:88px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:18px;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--line-dark)}.section-title{display:flex;align-items:baseline;gap:14px}.section-title h2{margin:0;font:500 clamp(24px,3vw,34px)/1.2 var(--serif)}.section-note{color:var(--muted);font:9px var(--mono);letter-spacing:.1em}.section-intro{max-width:850px;margin:0 0 18px;color:#c4c3b5;font-size:12px;line-height:1.85}.sheet{margin:0 0 22px;padding:12px;border:1px solid var(--line);background:rgba(26,40,40,.78)}.wall-sheet-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.wall-sheet-grid .sheet{margin:0}.sheet figure{margin:0;background:#f3f3f0;border:1px solid #66736c;overflow:hidden}.sheet figure img{display:block;width:100%;height:auto;object-fit:contain}.sheet figure img.zoomable{cursor:zoom-in}.sheet figcaption{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:10px 6px 2px;color:#d2d4c8}.sheet-index{white-space:nowrap}.sheet-title{font:500 14px/1.5 var(--serif)}.sheet-name{margin-left:auto;color:#a9b5a4;font:9px var(--mono);letter-spacing:.06em;text-align:right}.translation{padding:18px 12px 7px}.translation h3{margin:0 0 8px;color:#eee8d8;font:500 clamp(18px,2vw,22px)/1.3 var(--serif)}.translation p{margin:0;color:#d2d4c8;font-size:12px;line-height:1.85}.doc-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.doc-links a{display:inline-flex;align-items:center;gap:7px;padding:8px 11px;border:1px solid var(--line-dark);color:#d7d2c2;font-size:10px}.doc-links a::after{content:"↗";color:var(--accent)}.project-footer{display:flex;justify-content:space-between;gap:16px;margin-top:34px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font:9px var(--mono);letter-spacing:.08em}.project-footer a{color:var(--muted)}
+    .image-viewer{position:fixed;z-index:1000;inset:0;width:min(96vw,1500px);height:min(94vh,1100px);max-width:none;max-height:none;margin:auto;padding:38px 14px 14px;border:1px solid var(--line-dark);background:rgba(8,14,14,.97);color:var(--ink)}.image-viewer[open]{display:grid;place-items:center}.image-viewer::backdrop{background:rgba(0,0,0,.86);backdrop-filter:blur(4px)}.image-viewer img{display:block;width:100%;height:100%;object-fit:contain;cursor:zoom-out}.image-viewer-close{position:absolute;right:9px;top:7px;width:29px;height:29px;border:1px solid var(--line-dark);border-radius:50%;background:var(--paper-light);color:var(--ink);font:20px/1 var(--sans);cursor:pointer}.image-viewer-close:hover{border-color:var(--accent);color:var(--accent)}
+    @media(max-width:820px){.shell{width:min(100% - 40px,680px)}.hero{grid-template-columns:1fr;gap:24px}.hero>div{order:1}.cover{order:0;min-height:260px}.intro-strip{align-items:flex-start;flex-direction:column;gap:10px}.section-head{align-items:flex-start;flex-direction:column;gap:8px}.sheet{padding:8px}.translation{padding:15px 7px 8px}.project-footer{flex-direction:column}}
+    @media(max-width:560px){.shell{width:calc(100% - 30px)}.topbar{height:64px}.wordmark{gap:8px;font-size:9px}.hero{padding-top:18px}.hero h1{font-size:48px}.hero h1 span{font-size:16px}.cover{min-height:205px}.cover-title{left:18px;bottom:17px}.cover-title strong{font-size:28px}.facts{gap:15px}.intro-strip{padding:11px 8px}.contents{gap:5px}.contents a{font-size:9px;padding:6px 7px}.wall-sheet-grid{grid-template-columns:1fr}.section{padding-top:32px}.section-title{gap:9px}.section-title h2{font-size:25px}.sheet figcaption{flex-wrap:wrap;gap:7px}.sheet-name{margin-left:0;text-align:left}.translation p{font-size:11px}.doc-links{flex-direction:column;align-items:flex-start}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
+    .side-toc{position:fixed;top:50%;right:16px;z-index:25;width:164px;transform:translateY(-50%);padding:10px;border:1px solid var(--line-dark);background:rgba(16,25,27,.96);box-shadow:0 10px 32px #0007;backdrop-filter:blur(12px);color:var(--muted);font:10px var(--mono);letter-spacing:.04em}.side-toc[hidden]{display:none!important}.side-toc summary{display:flex;align-items:center;justify-content:space-between;gap:8px;cursor:pointer;list-style:none;padding:4px 2px 10px;border-bottom:1px solid var(--line);color:var(--accent);letter-spacing:.12em}.side-toc summary::-webkit-details-marker{display:none}.side-toc summary::after{content:"−";color:var(--muted);font-size:14px}.side-toc:not([open]) summary::after{content:"+"}.side-toc .contents{display:grid;gap:0;padding-top:5px}.side-toc .contents a{display:block;padding:8px 4px;border-bottom:1px solid rgba(88,105,97,.38);line-height:1.45;transition:color .2s,background .2s}.side-toc .contents a:hover{color:var(--accent);background:rgba(192,164,106,.08)}.side-toc .contents .to-top{margin-top:5px;border:0;color:var(--accent)}
+    @media(min-width:1200px) and (max-width:1600px){.shell{width:min(1240px,calc(100% - 260px));margin-left:auto;margin-right:220px}}
+    @media(min-width:700px) and (max-width:1199px){.shell{width:calc(100% - 180px);margin-left:30px;margin-right:150px}.side-toc{right:12px;width:128px;padding:8px}.side-toc summary{font-size:9px}.side-toc .contents a{padding:7px 2px;font-size:9px}}
+    @media(max-width:699px){.side-toc{top:auto;right:14px;bottom:16px;width:auto;transform:none;padding:0;border:0;background:transparent;box-shadow:none;backdrop-filter:none}.side-toc summary{width:48px;height:48px;justify-content:center;padding:0;border:1px solid var(--line-dark);border-radius:50%;background:rgba(16,25,27,.97);box-shadow:0 5px 18px #0008;font:10px var(--sans);letter-spacing:0}.side-toc summary::after{display:none}.side-toc nav{position:absolute;right:0;bottom:60px;width:min(220px,calc(100vw - 32px));padding:8px;border:1px solid var(--line-dark);background:rgba(16,25,27,.98);box-shadow:0 10px 28px #0008}.side-toc:not([open]) nav{display:none}.side-toc[open] nav{display:grid}}
+  </style>
+</head>
+<body>
+  <header class="shell topbar" id="top">
+    <a class="wordmark" href="index.html" aria-label="返回作品集首页"><span class="mark">林</span><span>PORTFOLIO</span><span class="divider"></span><span class="cn">室内设计</span></a>
+    <a class="back-link" href="index.html#interior-title">返回全部项目 ↑</a>
+  </header>
+  <main class="shell">
+    <div class="breadcrumb">室内设计 <span>/</span> 企业空间 <span>/</span> 2023</div>
+    <section class="hero" aria-labelledby="project-title">
+      <div>
+        <span class="eyebrow">INTERIOR DESIGN / CORPORATE</span>
+        <h1 id="project-title">AC Studio<span>企业空间设计 · Corporate Interior</span></h1>
+        <p class="intro">以舒适、自然的工作环境为目标，规划办公、会议、展示与休憩空间。平面布局将安静专注区与交流活动区适度分开，并通过绿植、木饰面和柔和灯光建立连贯的空间氛围。</p>
+        <dl class="facts">
+          <div class="fact"><dt>项目类型</dt><dd>企业办公空间 · 合作项目 · 2人</dd></div>
+          <div class="fact"><dt>项目时间</dt><dd>2023</dd></div>
+          <div class="fact"><dt>设计工具</dt><dd>AutoCAD · SketchUp · Photoshop · Twinmotion</dd></div>
+          <div class="fact"><dt>参与内容</dt><dd>品牌标识与材料选择、平面与立面绘制、空间建模及效果表现</dd></div>
+        </dl>
+      </div>
+      <figure class="cover">
+        <img src="assets/images/ac-studio/cover.jpg" alt="AC Studio 接待区效果图，包含弧形前台、绿植背景墙及悬挂绿植的木格栅天花。">
+        <span class="cover-mark">CORPORATE INTERIOR / 2023</span>
+        <figcaption class="cover-title"><span class="small">AC STUDIO / COLLABORATIVE PROJECT</span><strong>自然相融的工作空间</strong><em>A calm, connected workplace</em></figcaption>
+      </figure>
+    </section>
+    <details class="side-toc" id="page-toc" open>
+      <summary>项目目录</summary>
+      <nav class="contents" aria-label="项目目录"><a href="#presentation">设计方案</a><a href="#walls">墙体详图</a><a href="#ceilings">天花详图</a><a href="#top" class="to-top">回到顶端 ↑</a></nav>
+    </details>
+
+    <section class="section" id="presentation">
+      <div class="section-head"><div class="section-title"><span class="section-kicker">01—04</span><h2>设计方案与空间表现</h2></div><span class="section-note">CONCEPT / PLANS / VISUALIZATION</span></div>
+      <p class="section-intro">从总体平面与设计概念出发，结合地面与饰面选材、天花方案、空间立面和室内效果图，展示企业办公环境的功能组织与视觉表达。点击图板可放大查看。</p>
+
+      <article class="sheet">
+        <figure><img class="zoomable" loading="lazy" decoding="async" src="assets/images/ac-studio/studio-1.png" alt="AC Studio 企业办公空间概念与整体平面图，包含办公、会议、展示及公共活动区域。"><figcaption><span class="sheet-index">01 / CORPORATE DESIGN</span><span class="sheet-title">设计概念与整体平面</span><span class="sheet-name">CONCEPT &amp; FLOOR PLAN</span></figcaption></figure>
+        <div class="translation"><h3>功能清晰、自然舒适的办公环境</h3><p>设计以舒适且具有自然感的工作环境为目标，通过平面组织区分安静办公与较活跃的交流区域。图板呈现整体功能布局，并记录品牌标识、材料选择、平面与立面绘制、空间建模及渲染等项目内容。</p></div>
+      </article>
+
+      <article class="sheet">
+        <figure><img class="zoomable" loading="lazy" decoding="async" src="assets/images/ac-studio/studio-2.png" alt="AC Studio 渲染平面、天花反射平面、材料样板以及接待区、午餐室和公共休息区效果图。"><figcaption><span class="sheet-index">02 / RENDERED FLOOR PLAN</span><span class="sheet-title">渲染平面、材料与室内视图</span><span class="sheet-name">PLANS &amp; INTERIOR VIEWS</span></figcaption></figure>
+        <div class="translation"><h3>办公与共享空间的整体呈现</h3><p>渲染平面对应不同办公与共享功能区域；天花反射平面呈现灯具和天花布置。接待区以弧形服务台和绿植背景墙形成入口识别，午餐室与休息区则通过木质格栅、自然采光和灵活座位支持日常交流与短暂休憩。</p></div>
+      </article>
+
+      <article class="sheet">
+        <figure><img class="zoomable" loading="lazy" decoding="async" src="assets/images/ac-studio/studio-3.png" alt="AC Studio 室内立面与空间效果图，展示接待区、办公空间和沿窗座位等区域。"><figcaption><span class="sheet-index">03 / ELEVATIONS &amp; VISUALS</span><span class="sheet-title">室内立面与空间视图</span><span class="sheet-name">INTERIOR ELEVATIONS</span></figcaption></figure>
+        <div class="translation"><h3>立面细节与空间层次</h3><p>立面图记录墙面、开口、隔断与收纳的组合关系，并与效果视图相互对应。开放办公、接待与休憩区域通过家具布置和饰面变化建立识别，同时维持整体空间语言的一致性。</p></div>
+      </article>
+
+      <article class="sheet">
+        <figure><img class="zoomable" loading="lazy" decoding="async" src="assets/images/ac-studio/studio-4.png" alt="AC Studio 材料与饰面样板、方案过程图及多处室内效果图。"><figcaption><span class="sheet-index">04 / SAMPLE BOARD</span><span class="sheet-title">材料样板与设计过程</span><span class="sheet-name">MATERIALS &amp; PROCESS</span></figcaption></figure>
+        <div class="translation"><h3>饰面选择与设计推演</h3><p>样板整合地面、墙面与天花饰面，并配合过程图与空间视图展示方案发展。木质纹理、沉稳中性色与局部色彩共同支持舒适、专业且具有亲和力的办公氛围。</p></div>
+      </article>
+      <div class="doc-links"><a href="assets/documents/ac-studio/ac-studio.pdf" target="_blank" rel="noopener">打开原始项目设计 PDF</a><a href="assets/documents/ac-studio/ac-studio.pdf" download>下载项目设计 PDF</a></div>
+    </section>
+
+    <section class="section" id="walls">
+      <div class="section-head"><div class="section-title"><span class="section-kicker">05—09</span><h2>墙体构造详图</h2></div><span class="section-note">WALL TYPES / ASSEMBLIES / DETAILS</span></div>
+      <p class="section-intro">墙体资料涵盖隔声、耐火与管线空间等构造类型，并附墙体图例和节点推演。图纸页内的英文标注保留在原图中，以下为对应的中文内容概览。</p>
+
+      <div class="wall-sheet-grid">
+      <article class="sheet"><figure><img class="zoomable" loading="lazy" decoding="async" src="assets/images/ac-studio/wall-1.png" alt="隔声墙体剖面构造详图，标注隔墙层次与 STC 35–40 声学性能。"><figcaption><span class="sheet-index">WALL / 01</span><span class="sheet-title">隔声墙体构造</span><span class="sheet-name">ACOUSTIC PARTITION</span></figcaption></figure><div class="translation"><h3>隔声隔墙 · STC 35–40</h3><p>墙身剖面展示隔声隔墙的材料层次与连接方式，设计目标为 STC 35–40 的声学性能，适用于需要控制声音传播的办公空间分隔。</p></div></article>
+      <article class="sheet"><figure><img class="zoomable" loading="lazy" decoding="async" src="assets/images/ac-studio/wall-2.png" alt="一小时耐火墙体剖面及构造说明。"><figcaption><span class="sheet-index">WALL / 02</span><span class="sheet-title">耐火墙体构造</span><span class="sheet-name">1-HOUR FIRE-RATED WALL</span></figcaption></figure><div class="translation"><h3>一小时耐火隔墙</h3><p>节点图呈现一小时耐火墙体的构造层次与边缘处理，强调墙体在楼板、顶面及相邻构件处的连续连接关系。</p></div></article>
+      <article class="sheet"><figure><img class="zoomable" loading="lazy" decoding="async" src="assets/images/ac-studio/wall-3.png" alt="管线井周边墙体节点，包含给排水管线和防潮构造说明。"><figcaption><span class="sheet-index">WALL / 03</span><span class="sheet-title">管线井与防潮墙体</span><span class="sheet-name">PLUMBING CHASE</span></figcaption></figure><div class="translation"><h3>管线空间墙体节点</h3><p>图纸针对给排水管线集中的墙体区域，说明管线空间、墙体收口与防潮处理的关系，为设备布置和后续检修预留构造条件。</p></div></article>
+      <article class="sheet"><figure><img class="zoomable" loading="lazy" decoding="async" src="assets/images/ac-studio/wall-4.png" alt="AC Studio 墙体类型图例，区分隔声墙、防火墙和六英寸管线墙。"><figcaption><span class="sheet-index">WALL / 04</span><span class="sheet-title">墙体类型图例</span><span class="sheet-name">WALL TYPE LEGEND</span></figcaption></figure><div class="translation"><h3>墙体类型索引</h3><p>图例归纳三类墙体：A 类隔声墙、B 类一小时耐火墙，以及 C 类六英寸管线墙，便于在平面图中识别对应构造。</p></div></article>
+      <article class="sheet"><figure><img class="zoomable" loading="lazy" decoding="async" src="assets/images/ac-studio/wall-5.png" alt="墙体设计过程手绘图，展示隔墙、管线井和天花收口等节点推演。"><figcaption><span class="sheet-index">WALL / 05</span><span class="sheet-title">墙体节点设计过程</span><span class="sheet-name">DETAIL DEVELOPMENT</span></figcaption></figure><div class="translation"><h3>节点草图与构造推演</h3><p>手绘过程围绕隔墙分层、管线井、转角与天花收口展开，记录从空间协调到细部连接的构造思考。</p></div></article>
+      </div>
+      <div class="doc-links"><a href="assets/documents/ac-studio/ac-wall-sections.pdf" target="_blank" rel="noopener">打开原始墙体详图 PDF</a><a href="assets/documents/ac-studio/ac-wall-sections.pdf" download>下载墙体详图 PDF</a></div>
+    </section>
+
+    <section class="section" id="ceilings">
+      <div class="section-head"><div class="section-title"><span class="section-kicker">10—14</span><h2>天花构造详图</h2></div><span class="section-note">REFLECTED CEILING / LIGHTING DETAILS</span></div>
+      <p class="section-intro">天花资料从反射天花平面和图例出发，进一步呈现悬挂石膏板天花、灯槽与跌级天花节点，并附设计过程草图。</p>
+
+      <article class="sheet"><figure><img class="zoomable" loading="lazy" decoding="async" src="assets/images/ac-studio/ceiling-1.png" alt="天花反射平面图及图例，标注灯具、灯槽、石膏板天花、矿棉板天花与跌级天花。"><figcaption><span class="sheet-index">CEILING / 01</span><span class="sheet-title">天花反射平面与图例</span><span class="sheet-name">REFLECTED CEILING PLAN</span></figcaption></figure><div class="translation"><h3>天花分区与灯具布局</h3><p>反射天花平面协调天花类型与照明位置。图例标示灯槽天花、悬挂石膏板天花、矿棉板天花及跌级天花等区域，并配合灯具符号说明各空间的天花布置。</p></div></article>
+      <article class="sheet"><figure><img class="zoomable" loading="lazy" decoding="async" src="assets/images/ac-studio/ceiling-2.png" alt="悬挂式石膏板天花剖面节点及吊挂构件细节。"><figcaption><span class="sheet-index">CEILING / 02</span><span class="sheet-title">悬挂式石膏板天花</span><span class="sheet-name">SUSPENDED GYPSUM CEILING</span></figcaption></figure><div class="translation"><h3>悬挂式石膏板天花节点</h3><p>剖面展示石膏板天花、金属龙骨及吊挂系统与上方结构的连接方式，标注天花层次及必要的安装空间。</p></div></article>
+      <article class="sheet"><figure><img class="zoomable" loading="lazy" decoding="async" src="assets/images/ac-studio/ceiling-3.png" alt="跌级天花节点与线性灯具嵌入细节。"><figcaption><span class="sheet-index">CEILING / 03</span><span class="sheet-title">跌级天花与线性照明</span><span class="sheet-name">BULKHEAD &amp; LIGHTING</span></figcaption></figure><div class="translation"><h3>跌级天花收边与照明整合</h3><p>节点说明跌级天花的高度变化、骨架与面层收边，并展示线性照明在天花转折处的布置关系。</p></div></article>
+      <article class="sheet"><figure><img class="zoomable" loading="lazy" decoding="async" src="assets/images/ac-studio/ceiling-4.png" alt="灯槽天花剖面，展示间接照明、吊顶骨架与面层连接。"><figcaption><span class="sheet-index">CEILING / 04</span><span class="sheet-title">灯槽天花节点</span><span class="sheet-name">COVE LIGHTING DETAIL</span></figcaption></figure><div class="translation"><h3>灯槽与间接照明细节</h3><p>剖面呈现灯槽凹口、光源位置、天花骨架和面层之间的构造关系，使隐藏光源与天花转角保持协调。</p></div></article>
+      <article class="sheet"><figure><img class="zoomable" loading="lazy" decoding="async" src="assets/images/ac-studio/ceiling-5.png" alt="天花设计过程草图，记录反射天花、吊顶层次和灯槽节点推演。"><figcaption><span class="sheet-index">CEILING / 05</span><span class="sheet-title">天花设计过程草图</span><span class="sheet-name">CEILING DEVELOPMENT</span></figcaption></figure><div class="translation"><h3>天花分区与节点推演</h3><p>草图记录反射天花布局、吊顶层次和灯槽节点的设计过程，串联整体照明规划与局部构造表达。</p></div></article>
+    </section>
+    <footer class="project-footer"><span>林蓁 / 室内设计 / AC STUDIO / 2023</span><a href="index.html#interior-title">返回全部室内项目 ↑</a></footer>
+  </main>
+  <dialog class="image-viewer" aria-label="项目图板预览"><button class="image-viewer-close" type="button" aria-label="关闭图片预览">×</button><img alt=""></dialog>
+  <script>
+    (() => {
+      const viewer = document.querySelector(".image-viewer");
+      const enlarged = viewer.querySelector("img");
+      const close = viewer.querySelector(".image-viewer-close");
+      const body = document.body;
+      const toc = document.getElementById("page-toc");
+      const mobileToc = window.matchMedia("(max-width: 699px)");
+      let savedScrollY = 0;
+      let savedBodyStyle = null;
+      const syncTocToViewport = () => { toc.open = !mobileToc.matches; };
+      syncTocToViewport();
+      mobileToc.addEventListener("change", syncTocToViewport);
+      toc.querySelector("nav").addEventListener("click", (event) => {
+        if (mobileToc.matches && event.target.closest("a")) toc.open = false;
+      });
+      const lockPage = () => {
+        savedScrollY = window.scrollY;
+        savedBodyStyle = { position: body.style.position, top: body.style.top, left: body.style.left, right: body.style.right, width: body.style.width, overflow: body.style.overflow };
+        body.style.position = "fixed";
+        body.style.top = `-${savedScrollY}px`;
+        body.style.left = "0";
+        body.style.right = "0";
+        body.style.width = "100%";
+        body.style.overflow = "hidden";
+      };
+      const unlockPage = () => {
+        if (!savedBodyStyle) return;
+        Object.assign(body.style, savedBodyStyle);
+        savedBodyStyle = null;
+        window.scrollTo(0, savedScrollY);
+        toc.hidden = false;
+      };
+      const openViewer = (image) => {
+        toc.hidden = true;
+        lockPage();
+        enlarged.src = image.currentSrc || image.src;
+        enlarged.alt = image.alt || "项目图片";
+        viewer.showModal();
+      };
+      document.querySelectorAll("main img").forEach((image) => {
+        image.classList.add("zoomable");
+        image.tabIndex = 0;
+        image.setAttribute("role", "button");
+        image.setAttribute("aria-label", `${image.alt || "项目图片"}，点击放大`);
+        image.title = "点击放大";
+        image.addEventListener("click", (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+          openViewer(image);
+        });
+        image.addEventListener("keydown", (event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            openViewer(image);
+          }
+        });
+      });
+      close.addEventListener("click", () => viewer.close());
+      viewer.addEventListener("close", unlockPage);
+      viewer.addEventListener("click", (event) => {
+        if (event.target === viewer || event.target === enlarged) viewer.close();
+      });
+    })();
+  </script>
+</body>
+</html>

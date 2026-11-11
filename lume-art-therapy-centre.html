@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10191b">
+  <meta name="description" content="Lume 艺术疗愈中心室内设计项目：空间概念、平面规划、绿色疗愈空间与材料设计。">
+  <title>林蓁｜Lume 艺术疗愈中心</title>
+  <style>
+    :root{--paper:#10191b;--paper-light:#1a2828;--ink:#e8e2d2;--muted:#a4aa9d;--line:#364746;--line-dark:#586961;--accent:#c0a46a;--green:#8b9a7d;--serif:"Noto Serif SC","Songti SC",Georgia,serif;--sans:"Noto Sans SC","Microsoft YaHei",Arial,sans-serif;--mono:"DM Mono","SFMono-Regular",Consolas,monospace}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:88px}body{margin:0;background:radial-gradient(ellipse at 14% 0%,rgba(72,101,89,.23),transparent 36%),radial-gradient(ellipse at 92% 20%,rgba(122,102,62,.11),transparent 32%),var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.35;background-image:radial-gradient(circle 1px at 7% 16%,rgba(220,205,168,.7) 0 1px,transparent 1.5px),radial-gradient(circle 1px at 31% 27%,rgba(220,205,168,.5) 0 1px,transparent 1.5px),radial-gradient(circle 1px at 68% 52%,rgba(220,205,168,.5) 0 1px,transparent 1.5px),radial-gradient(ellipse at 22% 37%,rgba(76,116,101,.12),transparent 38%)}body>*{position:relative;z-index:1}a{color:inherit;text-decoration:none}.shell{width:min(1240px,calc(100% - 88px));margin:0 auto}
+    .topbar{height:74px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line-dark)}.wordmark{display:flex;align-items:center;gap:13px;font:10px var(--mono);letter-spacing:.14em}.mark{width:29px;height:29px;border:1px solid var(--accent);border-radius:50%;color:var(--accent);display:grid;place-items:center;font:13px var(--serif);letter-spacing:0}.cn{font:12px var(--sans);letter-spacing:.08em}.divider{height:17px;width:1px;background:var(--line-dark)}.back-link{font-size:12px;color:var(--muted)}.back-link:hover,.page-footer a:hover{color:var(--accent)}
+    main{padding-bottom:70px}.breadcrumb{padding-top:22px;color:var(--accent);font:9px var(--mono);letter-spacing:.1em}.breadcrumb span{margin:0 8px;color:var(--line-dark)}.hero{display:grid;grid-template-columns:.8fr 1.2fr;gap:38px;align-items:center;padding:25px 0 34px;border-bottom:1px solid var(--line-dark)}.eyebrow,.section-kicker,.board-index{color:var(--accent);font:10px var(--mono);letter-spacing:.12em;text-transform:uppercase}.hero h1{margin:17px 0 0;font:500 clamp(46px,6vw,76px)/.98 var(--serif);letter-spacing:-.07em}.hero h1 span{display:block;margin-top:13px;color:var(--muted);font:500 19px/1.4 var(--sans);letter-spacing:.05em}.intro{max-width:420px;margin:20px 0 0;color:#c4c3b5;font-size:13px;line-height:1.9}.facts{display:flex;gap:26px;flex-wrap:wrap;margin:26px 0 0;padding-top:14px;border-top:1px solid var(--line)}.fact{display:grid;gap:6px}.fact dt{color:var(--muted);font:9px var(--mono);letter-spacing:.1em}.fact dd{margin:0;font-size:11px}
+    .cover{position:relative;min-height:340px;aspect-ratio:1.66/1;overflow:hidden;border:1px solid var(--line-dark);background:#394339}.cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.cover::after{content:"";position:absolute;inset:35% 0 0;background:linear-gradient(0deg,rgba(7,14,13,.84),rgba(7,14,13,0))}.cover-title{position:absolute;z-index:1;left:27px;bottom:24px;display:grid;gap:6px;text-shadow:0 2px 14px #0008}.cover-title .small{color:#e4dcc9;font:9px var(--mono);letter-spacing:.2em}.cover-title strong{font:500 clamp(25px,4vw,44px)/1.1 var(--serif);letter-spacing:.06em}.cover-title em{color:#d9d0bc;font:italic 12px var(--serif);letter-spacing:.16em}.cover-mark{position:absolute;z-index:1;top:19px;right:20px;color:#f1ede1;font:9px var(--mono);letter-spacing:.16em;text-shadow:0 1px 8px #0009}
+    .intro-strip{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:14px 0;border-bottom:1px solid var(--line);color:var(--muted);font:9px var(--mono);letter-spacing:.09em}.contents{display:flex;gap:18px;flex-wrap:wrap}.contents a:hover{color:var(--accent)}.section{padding-top:34px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:18px;margin-bottom:15px;padding-bottom:12px;border-bottom:1px solid var(--line)}.section-head.subsection-head{margin-top:26px}.section-head.subsection-head h2{font-size:clamp(20px,2.5vw,26px)}.section-title{display:flex;align-items:baseline;gap:14px}.section-title h2{margin:0;font:500 clamp(22px,3vw,30px)/1.12 var(--serif);letter-spacing:-.04em}.section-note{color:var(--muted);font:9px var(--mono);letter-spacing:.09em}
+    .board{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;align-items:stretch;margin:0 0 16px;padding:12px;border:1px solid var(--line);background:rgba(26,40,40,.78)}.board:nth-of-type(even){grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.board:nth-of-type(even) .board-image{order:2}.board-image{margin:0;min-width:0;display:grid;place-items:center;background:#e9e9e5;border:1px solid #66736c;overflow:hidden}.board-image img{display:block;width:100%;height:auto;max-height:690px;object-fit:contain}.translation{padding:15px 16px;display:flex;flex-direction:column;justify-content:center}.translation .board-index{margin-bottom:10px;color:#a8b394}.translation h3{margin:0 0 12px;color:#eee8d8;font:500 clamp(20px,2.4vw,28px)/1.25 var(--serif)}.translation .en-title{display:block;margin-top:6px;color:#a9b5a4;font:10px/1.5 var(--mono);letter-spacing:.04em}.translation p{margin:0 0 10px;color:#d2d4c8;font-size:14px;line-height:1.85}.translation p:last-child{margin-bottom:0}.translation ul{margin:0;padding:0;list-style:none;display:grid;gap:9px}.translation li{color:#d2d4c8;font-size:13px;line-height:1.75}.translation li strong{color:#f0e9d9;font-weight:600}.translation .subhead{margin:12px 0 7px;color:var(--accent);font-size:11px;font-weight:600}.translation .fine{color:var(--muted);font-size:10px;line-height:1.7}.pill-list{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}.pill-list span{border:1px solid var(--line-dark);padding:4px 7px;color:#d4cfbf;font-size:10px;line-height:1.45}.project-footer{display:flex;justify-content:space-between;gap:16px;margin-top:34px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font:9px var(--mono);letter-spacing:.08em}
+    main img.zoomable{cursor:zoom-in}
+    .image-viewer{position:fixed;z-index:1000;inset:0;width:min(96vw,1500px);height:min(94vh,1100px);max-width:none;max-height:none;margin:auto;padding:38px 14px 14px;border:1px solid var(--line-dark);background:rgba(8,14,14,.97);color:var(--ink)}
+    .image-viewer[open]{display:grid;place-items:center}
+    .image-viewer::backdrop{background:rgba(0,0,0,.86);backdrop-filter:blur(4px)}
+    .image-viewer img{display:block;width:100%;height:100%;object-fit:contain;cursor:zoom-out}
+    .image-viewer-close{position:absolute;right:9px;top:7px;width:29px;height:29px;border:1px solid var(--line-dark);border-radius:50%;background:var(--paper-light);color:var(--ink);font:20px/1 var(--sans);cursor:pointer}
+    .image-viewer-close:hover{border-color:var(--accent);color:var(--accent)}
+    .drawing-intro{margin:-3px 0 14px;color:#c4c3b5;font-size:12px;line-height:1.7}.drawing-sheet{margin:0 0 16px;padding:12px;border:1px solid var(--line);background:rgba(26,40,40,.78)}.drawing-sheet figure{margin:0;background:#e9e9e5;border:1px solid #66736c;overflow:hidden}.drawing-sheet img{display:block;width:100%;height:auto;max-height:none;object-fit:contain}.drawing-sheet figcaption{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:10px 6px 2px;color:#d2d4c8}.drawing-sheet .sheet-index{color:#a8b394;font:10px var(--mono);letter-spacing:.1em}.drawing-sheet .sheet-title{font:500 14px/1.5 var(--serif)}.drawing-sheet .sheet-name{margin-left:auto;color:#a9b5a4;font:9px var(--mono);letter-spacing:.06em}
+    @media(max-width:850px){.shell{width:min(100% - 48px,760px)}.hero{grid-template-columns:1fr;gap:24px}.cover{min-height:280px}.board,.board:nth-of-type(even){grid-template-columns:1fr}.board:nth-of-type(even) .board-image{order:0}.board-image img{max-height:none}.translation{padding:15px 8px 9px}}
+    @media(max-width:560px){.shell{width:calc(100% - 32px)}.topbar{height:64px}.wordmark{gap:9px;font-size:8px}.cn{font-size:10px}.back-link{font-size:11px}.breadcrumb{padding-top:17px}.hero{padding:20px 0 25px}.hero h1{font-size:52px}.hero h1 span{font-size:16px}.cover{min-height:205px}.cover-title{left:18px;bottom:17px}.cover-title strong{font-size:28px}.facts{gap:18px}.intro-strip{align-items:flex-start;flex-direction:column;gap:9px}.contents{gap:12px}.section{padding-top:28px}.section-head{align-items:start;flex-direction:column;gap:8px}.board{margin-bottom:11px;padding:8px}.translation h3{font-size:22px}.translation p{font-size:12px}.translation li{font-size:11px}.project-footer{flex-direction:column}.main{padding-bottom:52px}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
+    .side-toc{position:fixed;top:50%;right:16px;z-index:25;width:164px;transform:translateY(-50%);padding:10px;border:1px solid var(--line-dark);background:rgba(16,25,27,.96);box-shadow:0 10px 32px #0007;backdrop-filter:blur(12px);color:var(--muted);font:10px var(--mono);letter-spacing:.04em}.side-toc[hidden]{display:none!important}.side-toc summary{display:flex;align-items:center;justify-content:space-between;gap:8px;cursor:pointer;list-style:none;padding:4px 2px 10px;border-bottom:1px solid var(--line);color:var(--accent);letter-spacing:.12em}.side-toc summary::-webkit-details-marker{display:none}.side-toc summary::after{content:"−";color:var(--muted);font-size:14px}.side-toc:not([open]) summary::after{content:"+"}.side-toc .contents{display:grid;gap:0;padding-top:5px}.side-toc .contents a{display:block;padding:8px 4px;border-bottom:1px solid rgba(88,105,97,.38);line-height:1.45;transition:color .2s,background .2s}.side-toc .contents a:hover{color:var(--accent);background:rgba(192,164,106,.08)}.side-toc .contents .to-top{margin-top:5px;border:0;color:var(--accent)}
+    @media(min-width:1200px) and (max-width:1600px){.shell{width:min(1240px,calc(100% - 260px));margin-left:auto;margin-right:220px}}
+    @media(min-width:700px) and (max-width:1199px){.shell{width:calc(100% - 180px);margin-left:30px;margin-right:150px}.side-toc{right:12px;width:128px;padding:8px}.side-toc summary{font-size:9px}.side-toc .contents a{padding:7px 2px;font-size:9px}}
+    @media(max-width:699px){.shell{width:calc(100% - 32px);margin-left:auto;margin-right:auto}.side-toc{top:auto;right:14px;bottom:16px;width:auto;transform:none;padding:0;border:0;background:transparent;box-shadow:none;backdrop-filter:none}.side-toc summary{width:48px;height:48px;justify-content:center;padding:0;border:1px solid var(--line-dark);border-radius:50%;background:rgba(16,25,27,.97);box-shadow:0 5px 18px #0008;font:10px var(--sans);letter-spacing:0}.side-toc summary::after{display:none}.side-toc nav{position:absolute;right:0;bottom:60px;width:min(220px,calc(100vw - 32px));padding:8px;border:1px solid var(--line-dark);background:rgba(16,25,27,.98);box-shadow:0 10px 28px #0008}.side-toc:not([open]) nav{display:none}.side-toc[open] nav{display:grid}}
+  </style>
+</head>
+<body id="top">
+  <header class="topbar shell">
+    <a class="wordmark" href="index.html" aria-label="返回林蓁作品集首页"><span class="mark">林</span><span class="cn">林蓁</span><span class="divider"></span><span>PORTFOLIO</span></a>
+    <a class="back-link" href="index.html#interior">← 返回室内设计</a>
+  </header>
+  <main class="shell">
+    <div class="breadcrumb">室内设计<span>/</span>01</div>
+    <section class="hero" aria-labelledby="project-title">
+      <div>
+        <div class="eyebrow">01 / INTERIOR DESIGN</div>
+        <h1 id="project-title">Lume<span>艺术疗愈中心 · Art Therapy Centre</span></h1>
+        <p class="intro">Lume 艺术疗愈中心以“节律”为设计核心，将静心反思与社群交流组织为连贯的空间体验。项目位于加拿大安大略省密西沙加市的 Small Arms Inspection Building（SAIB），室内面积约 15,000 平方英尺。设计利用原有天窗引入自然光，以中央绿色空间组织动线，并通过私密、半私密及开放区域，支持个体疗愈、团体活动与社区艺术项目。</p>
+        <dl class="facts"><div class="fact"><dt>项目类型</dt><dd>艺术疗愈中心</dd></div><div class="fact"><dt>设计主题</dt><dd>绿色空间 · 自然疗愈</dd></div><div class="fact"><dt>项目地点</dt><dd>加拿大安大略省密西沙加</dd></div><div class="fact"><dt>项目时间</dt><dd>2025</dd></div><div class="fact"><dt>设计工具</dt><dd>AutoCAD · SketchUp · Photoshop · Twinmotion</dd></div></dl>
+      </div>
+      <figure class="cover" aria-label="Lume 艺术疗愈中心室内效果图">
+        <img src="assets/images/lume/cover.png" alt="明亮的疗愈中心室内：环形灯具、大片玻璃窗、绿植与休憩座椅。">
+        <div class="cover-mark">LUME / SPACE FOR HEALING</div>
+        <figcaption class="cover-title"><span class="small">LUME ART THERAPY CENTRE</span><strong>艺术疗愈中心</strong><em>ART THERAPY CENTRE</em></figcaption>
+      </figure>
+    </section>
+    <details class="side-toc" id="page-toc" open>
+      <summary>页面目录</summary>
+      <nav class="contents" aria-label="页面目录"><a href="#story">项目缘起</a><a href="#senior-research">长者调研</a><a href="#planning">空间规划</a><a href="#green-space">绿色空间</a><a href="#social-corner">休息厅与社交角</a><a href="#overview-board">项目总览</a><a href="#technical-drawings">技术图纸</a><a href="#top" class="to-top">回到顶端 ↑</a></nav>
+    </details>
+
+    <section class="section" id="story" aria-labelledby="story-title">
+      <div class="section-head"><div class="section-title"><span class="section-kicker">01</span><h2 id="story-title">项目缘起与概念</h2></div><span class="section-note">CONTEXT / CONCEPT</span></div>
+      <article class="board" id="senior-research">
+        <figure class="board-image"><img src="assets/images/lume/18-senior-art-therapy-research.png" alt="长者艺术疗愈空间设计调研信息图，涵盖调研目的、方法、44 份问卷结果及空间设计建议。"></figure>
+        <div class="translation"><span class="board-index">补充调研 · 2024.12</span><h3>长者艺术疗愈空间设计调研<span class="en-title">ART THERAPY ROOM DESIGN FOR SENIORS</span></h3>
+          <p class="subhead">研究目的与方法</p><p>为促进长者参与并支持心理健康，提出艺术疗愈室的室内设计建议；同时了解长者对艺术疗愈的认知与接受程度。研究对象为 65 岁及以上人群，通过问卷收集空间布局、色彩、材料、技术设施及活动频率偏好，共获得 <strong>44 份答卷</strong>。</p>
+          <p class="subhead">主要调研结果</p><ul><li><strong>参与意愿：</strong>超过 70% 的受访者愿意尝试艺术疗愈；活动频率以每月一次（34.1%）及每月数次（29.5%）为主。</li><li><strong>空间与色彩：</strong>开放或半开放布局更受欢迎；低饱和中性色空间占 63.6%，暖色调占 15.9%。绿植被认为有助放松。</li><li><strong>家具与活动：</strong>61.4% 偏好 2–4 人的小组活动；圆桌或椭圆桌较受欢迎，咖啡区及身心健康支持设施也获得认可。</li><li><strong>材料倾向：</strong>木纹地面（31 票）和地毯（20 票）较受青睐；天花绿植与漫射照明、天然木材及柔软织物也受到偏好。</li></ul>
+          <p class="subhead">设计建议</p><p>保持视线开敞，并以灵活布局兼顾 2–4 人小组活动与个人舒适度；采用低饱和中性色、绿植、天然材料和柔和触感，同时预留适度技术设施的整合空间。</p>
+        </div>
+      </article>
+      <article class="board">
+        <figure class="board-image"><img src="assets/images/lume/01-why-art-therapy.png" alt="原始英文信息图：艺术疗愈的全球影响、服务内容与相关数据。"></figure>
+        <div class="translation"><span class="board-index">中文译文 01</span><h3>为什么选择艺术疗愈？<span class="en-title">WHY ART THERAPY? / WHAT WE OFFER</span></h3>
+          <p><strong>全球影响</strong></p><ul><li>全球已有 <strong>6.5 亿人以上</strong>从艺术疗愈中受益。（McMath，2023）</li><li>焦虑、抑郁与压力症状减少 <strong>73%</strong>。（Lindner，2023）</li><li><strong>81%</strong> 的受访者表示整体心理健康有所改善。（McMath，2023）</li></ul>
+          <p class="subhead">中心提供的服务</p><ul><li><strong>个体艺术疗愈：</strong>通过艺术专注个人疗愈、情绪探索与自我觉察。</li><li><strong>团体艺术疗愈：</strong>以共同参与促进同伴联结、团体反思与彼此支持。</li><li><strong>冥想：</strong>引导式冥想帮助理清思绪，深化身心联结。</li><li><strong>社区艺术活动与展览：</strong>提供展示艺术、见证个人成长并建立归属感的机会。</li></ul>
+          <p class="fine">Lume 艺术疗愈中心旨在营造放松的环境，帮助人们远离快节奏生活带来的焦虑，找到内心的平静。</p></div>
+      </article>
+      <article class="board">
+        <figure class="board-image"><img src="assets/images/lume/02-location.png" alt="原始英文选址信息图，含场址地图、建筑外观与室内照片。"></figure>
+        <div class="translation"><span class="board-index">中文译文 02</span><h3>项目选址<span class="en-title">WHERE IS IT? / LOCATION</span></h3>
+          <ul><li><strong>地址：</strong>加拿大安大略省密西沙加市 Lakeshore Road East 1352 号，邮编 L5E 1E9；Small Arms Inspection Building（SAIB，小型武器检验大楼）。</li><li><strong>建筑面积：</strong>15,000 平方英尺。</li></ul>
+          <p class="subhead">选址缘由</p><ul><li>安大略省约每四人中就有一人正在寻求心理健康支持；Peel 地区的等待时间位居全省最长之列。（Thakur，2022）</li><li>与安大略省其他地区相比，该地区拥有的精神科资源仅占 <strong>7%</strong>。</li></ul>
+        </div>
+      </article>
+      <article class="board">
+        <figure class="board-image"><img src="assets/images/lume/03-concept-statement.png" alt="原始英文概念陈述与手绘平面分区图。"></figure>
+        <div class="translation"><span class="board-index">中文译文 03</span><h3>概念陈述<span class="en-title">CONCEPT STATEMENT</span></h3>
+          <p>艺术疗愈中心将强调<strong>有机形态</strong>与<strong>流动线条</strong>，营造富有节律的感受。植物点缀空间，自然材料增强私密性；整体布局优先考虑灵活性与无障碍通行。</p>
+          <p class="subhead">图中空间名称</p><div class="pill-list"><span>展览区</span><span>储藏室</span><span>办公室</span><span>静物素描区</span><span>私人房间</span><span>绿色空间</span><span>团体疗愈室</span><span>休息厅</span><span>社交中心</span><span>咖啡厅</span><span>主 / 次动线</span><span>私密 / 半私密区</span></div></div>
+      </article>
+    </section>
+
+    <section class="section" id="planning" aria-labelledby="planning-title">
+      <div class="section-head"><div class="section-title"><span class="section-kicker">02</span><h2 id="planning-title">空间规划</h2></div><span class="section-note">SPATIAL ORGANIZATION</span></div>
+      <article class="board">
+        <figure class="board-image"><img src="assets/images/lume/04-spatial-organization.png" alt="原始英文空间组织分析图，以色块展示开放、半私密、员工及私密空间。"></figure>
+        <div class="translation"><span class="board-index">中文译文 04</span><h3>空间组织<span class="en-title">SPATIAL ORGANIZATION</span></h3>
+          <p><strong>节律：</strong>循环排列的区域形成视觉流动感，鼓励人们移动与交往。</p><p>访客可以根据自身需要，在<strong>安静区域</strong>与<strong>社交区域</strong>之间选择。</p>
+          <p class="subhead">分区图例</p><div class="pill-list"><span>开放空间</span><span>半私密空间</span><span>员工区与卫生间</span><span>私密空间</span></div>
+          <p class="fine">图中主要空间：团体疗愈室、多功能室、展览区、绿色空间、准备区、冥想室、心理咨询室、咖啡厅、休息厅与社交角。</p></div>
+      </article>
+      <article class="board">
+        <figure class="board-image"><img src="assets/images/lume/05-floor-plan.png" alt="Lume 艺术疗愈中心黑白平面图，右侧标注主入口。"></figure>
+        <div class="translation"><span class="board-index">中文译文 05</span><h3>平面图<span class="en-title">FLOOR PLAN</span></h3>
+          <p><strong>主入口</strong>位于建筑右侧。平面规划中，中央绿色空间与周边疗愈、冥想、咨询、休憩及社交功能相连。</p>
+          <p class="subhead">主要房间</p><div class="pill-list"><span>团体疗愈室</span><span>多功能室</span><span>展览区</span><span>私人房间</span><span>冥想室</span><span>心理咨询室</span><span>艺术用品室</span><span>办公室</span><span>咖啡厅</span><span>休息厅</span><span>社交角</span><span>无障碍卫生间</span></div></div>
+      </article>
+      <article class="board">
+        <figure class="board-image"><img src="assets/images/lume/06-zoning.png" alt="平面图上以红色标出绿色空间，以蓝色标出休息厅与社交角。"></figure>
+        <div class="translation"><span class="board-index">中文译文 06</span><h3>核心区域划分<span class="en-title">GREEN SPACE / LOUNGE &amp; SOCIAL CORNER</span></h3>
+          <p>红色区域为<strong>绿色空间</strong>，蓝色区域为<strong>休息厅与社交角</strong>。两处空间分别支持安静休憩与轻松交流，并与中心的其他功能区连通。</p></div>
+      </article>
+    </section>
+
+    <section class="section" id="green-space" aria-labelledby="green-title">
+      <div class="section-head"><div class="section-title"><span class="section-kicker">03</span><h2 id="green-title">绿色疗愈空间</h2></div><span class="section-note">GREEN SPACE</span></div>
+      <article class="board">
+        <figure class="board-image"><img src="assets/images/lume/07-green-space-overview.png" alt="绿色空间总览分析页：平面图和中央绿色空间局部图。"></figure>
+        <div class="translation"><span class="board-index">中文译文 07</span><h3>绿色空间<span class="en-title">GREEN SPACE</span></h3><p>一个让人仿佛步入自然的宁静空间。</p></div>
+      </article>
+      <article class="board">
+        <figure class="board-image"><img src="assets/images/lume/08-idea-development.png" alt="绿色空间概念发展页，包含自然纹理、木格栅与曲线空间的草图和效果图。"></figure>
+        <div class="translation"><span class="board-index">中文译文 08</span><h3>概念发展<span class="en-title">IDEA DEVELOPMENT</span></h3>
+          <ul><li><strong>自然纹理与绿植：</strong>帮助人们回归自然、减轻压力。</li><li><strong>重复的木格栅围合：</strong>呼应空间节律，并带来被庇护的感受。</li><li><strong>柔和的曲线形态：</strong>营造包容与流动感；圆形通常令人感到更亲切、安全。</li></ul></div>
+      </article>
+      <article class="board">
+        <figure class="board-image"><img src="assets/images/lume/09-enrichment.png" alt="绿色空间效果图与平面草图，标出水景、花池和调整式座椅。"></figure>
+        <div class="translation"><span class="board-index">中文译文 09</span><h3>空间丰富性<span class="en-title">ENRICHMENT</span></h3>
+          <ul><li><strong>A · 水景：</strong>带来触觉与声音体验。</li><li><strong>B · 花池：</strong>融入植物，同时提供私密感。</li><li><strong>C · 可调整座椅：</strong>提供更多社交方式。</li></ul></div>
+      </article>
+      <article class="board">
+        <figure class="board-image"><img src="assets/images/lume/10-lighting-moss.png" alt="天花与绿色空间照明图，标出隐藏式灯槽、天窗和保留苔藓。"></figure>
+        <div class="translation"><span class="board-index">中文译文 10</span><h3>照明与天花设计<span class="en-title">LIGHTING &amp; CEILING DESIGN</span></h3>
+          <ul><li><strong>石膏板天花：</strong>结合嵌入式 LED 灯槽。</li><li><strong>ByNature 保留苔藓：</strong>100% 真苔藓，无需维护；使用寿命超过 8 年；以对环境安全的方式采集，不移除野生植物，对环境影响较低。</li><li><strong>天窗：</strong>将自然光引入空间。</li></ul></div>
+      </article>
+      <article class="board">
+        <figure class="board-image"><img src="assets/images/lume/11-lighting-fixtures.png" alt="绿色空间灯具布置图，说明筒灯、灯带与植物造型吊灯。"></figure>
+        <div class="translation"><span class="board-index">中文译文 11</span><h3>灯具设计<span class="en-title">LIGHTING &amp; CEILING DESIGN</span></h3>
+          <ul><li><strong>LED 筒灯：</strong>提供基础照明。</li><li><strong>LED 灯带：</strong>提供柔和的间接照明。</li><li><strong>植物造型绳球吊灯：</strong>采用可回收吸音毡与柔和漫射 LED；灯具寿命 50,000 小时，经久耐用；不含挥发性有机化合物，100% 可回收，材料来源兼顾环境责任。</li></ul></div>
+      </article>
+      <article class="board">
+        <figure class="board-image"><img src="assets/images/lume/12-elevation.png" alt="绿色空间立面图，展示木格栅、绿植与座椅。"></figure>
+        <div class="translation"><span class="board-index">中文译文 12</span><h3>绿色空间立面<span class="en-title">GREEN SPACE / ELEVATION</span></h3><p>立面呈现绿植、木格栅围合、灯具与休息座位的组合关系，并以人物轮廓辅助展示空间尺度。</p></div>
+      </article>
+      <article class="board">
+        <figure class="board-image"><img src="assets/images/lume/13-human-centered-design.png" alt="以绿色空间效果图为背景的人本设计说明，标注天窗、声学构件、水景、绿植、咖啡桌和地毯。"></figure>
+        <div class="translation"><span class="board-index">中文译文 13</span><h3>以人为本的设计<span class="en-title">HUMAN-CENTERED DESIGN</span></h3>
+          <ul><li><strong>自动天窗遮阳：</strong>调节自然光。</li><li><strong>声景吸音片：</strong>通过吸收、扩散声波来降低噪声。</li><li><strong>流动水景：</strong>提升室内湿度，并带来自然声响。</li><li><strong>活体植物：</strong>吸收污染物，改善空气质量。</li><li><strong>可调节咖啡桌：</strong>让空间使用更加灵活。</li><li><strong>地毯砖：</strong>吸收声音，提升声学舒适度。</li></ul></div>
+      </article>
+      <article class="board">
+        <figure class="board-image"><img src="assets/images/lume/14-interior-view-01.png" alt="绿色空间室内效果图：植物墙、木格栅、环形座椅与自然光。"></figure>
+        <div class="translation"><span class="board-index">中文译文 14</span><h3>绿色空间效果图<span class="en-title">GREEN SPACE</span></h3><p>环绕绿植的座席区与木格栅形成柔和的空间层次，中央坐席面向共享绿植，供访客休息与交谈。</p></div>
+      </article>
+      <article class="board">
+        <figure class="board-image"><img src="assets/images/lume/15-interior-view-02.png" alt="绿色空间室内效果图：环形天花、绿植立柱、苔藓墙与水景。"></figure>
+        <div class="translation"><span class="board-index">中文译文 15</span><h3>绿色空间效果图<span class="en-title">GREEN SPACE</span></h3><p>环形灯光与垂直绿植相互呼应，木格栅、石材与水景共同构成自然感的疗愈环境。</p></div>
+      </article>
+      <article class="board">
+        <figure class="board-image"><img src="assets/images/lume/16-interior-view-03.png" alt="绿色空间室内效果图：由木格栅围合的中央绿植休憩区。"></figure>
+        <div class="translation"><span class="board-index">中文译文 16</span><h3>绿色空间效果图<span class="en-title">GREEN SPACE</span></h3><p>从入口望向中央绿植休憩区，曲线天花、格栅隔断与环形座椅将动线自然引向空间中心。</p></div>
+      </article>
+      <div class="section-head subsection-head" id="green-materials"><div class="section-title"><span class="section-kicker">03-A</span><h2 id="materials-title">绿色空间材料与细节</h2></div><span class="section-note">GREEN SPACE / SPECIFICATIONS</span></div>
+      <article class="board">
+        <figure class="board-image"><img src="assets/images/lume/17-specifications.png" alt="绿色空间材料规格页：人造绿墙、吸音片、木格栅与木纹瓷砖。"></figure>
+        <div class="translation"><span class="board-index">中文译文 17</span><h3>材料规格<span class="en-title">SPECIFICATIONS</span></h3>
+          <ul><li><strong>绿景苔藓与人造绿墙：</strong>尺寸与形状可定制；无需担心虫害，无需日常养护、培育设备或灌溉系统。选材注重回收利用与降低碳排放，并有助于减少噪声、压力与空气中的粉尘。</li><li><strong>Armstrong SoundScapes 吸音片墙：</strong>玻璃纤维材质；吸声系数最高达 NRC 0.85；色彩为黄杨木色；再生材料含量最高 53%；采用低排放材料，不含有害物质。</li><li><strong>9Wood 木格栅：</strong>哑光表面，自然木色；原材料负责任采购，并提供健康产品声明。刨花板部件含 82.67% 消费前回收材料及 4.38% 消费后回收材料。</li><li><strong>Brick City Tile 拼花瓷砖：</strong>中性浅木色，哑光表面；耐污且易清洁；符合 LEED 标准，兼顾环保与耐久性。</li></ul>
+        </div>
+      </article>
+    </section>
+    <section class="section" id="social-corner" aria-labelledby="social-title">
+      <div class="section-head"><div class="section-title"><span class="section-kicker">04</span><h2 id="social-title">休息厅与社交角</h2></div><span class="section-note">LOUNGE &amp; SOCIAL CORNER</span></div>
+      <article class="board">
+        <figure class="board-image"><img loading="lazy" decoding="async" src="assets/images/lume/social/01-lounge-social-plan.png" alt="休息厅与社交角的平面定位和局部放大图。"></figure>
+        <div class="translation"><span class="board-index">中文译文 18</span><h3>休息厅与社交角<span class="en-title">LOUNGE &amp; SOCIAL CORNER</span></h3><p class="fine">平面图中，休息厅与社交角位于空间一侧，以不同尺度的座位和桌面支持独处、交谈及小型聚会。</p></div>
+      </article>
+      <article class="board">
+        <figure class="board-image"><img loading="lazy" decoding="async" src="assets/images/lume/social/02-lounge-enrichment.png" alt="休息厅效果图和丰富性设计说明，标出木格栅、地毯砖和多人座椅。"></figure>
+        <div class="translation"><span class="board-index">中文译文 19</span><h3>休息厅设计要点<span class="en-title">ENRICHMENT</span></h3>
+          <ul><li><strong>A · 高度变化的木格栅：</strong>呈现节律性的设计概念，同时提供私密感。</li><li><strong>B · 地毯砖：</strong>划分区域并降低噪声。</li><li><strong>C · 多人长椅：</strong>鼓励人们彼此交流。</li></ul><p class="fine">手绘标注还包括木格栅、咖啡桌、种植池与无障碍座椅。</p></div>
+      </article>
+      <article class="board">
+        <figure class="board-image"><img loading="lazy" decoding="async" src="assets/images/lume/social/03-lounge-ceiling-plan.png" alt="休息厅天花与吸音悬吊灯具平面图。"></figure>
+        <div class="translation"><span class="board-index">中文译文 20</span><h3>吸音悬吊灯具与天花<span class="en-title">CIRCUS™ ACOUSTIC SUSPENSION</span></h3>
+          <p><strong>Circus™ 吸音悬吊灯具：</strong>铝制结构、乳白色 PMMA 扩散罩、蜂窝聚碳酸酯吸音板；外覆可拆洗的 100% 聚酯 3D 面料。</p><ul><li><strong>结构表面：</strong>哑光白。</li><li><strong>吸音织物颜色：</strong>米色 61128。</li></ul>
+          <p class="subhead">天花构件</p><div class="pill-list"><span>弧形木条天花</span><span>石膏板</span><span>弯曲木格栅</span><span>开放式天花</span></div></div>
+      </article>
+      <article class="board">
+        <figure class="board-image"><img loading="lazy" decoding="async" src="assets/images/lume/social/04-lounge-lighting-plan.png" alt="休息厅吊灯与灯具位置图，附 Zaneen 环形吊灯产品说明。"></figure>
+        <div class="translation"><span class="board-index">中文译文 21</span><h3>灯具规格<span class="en-title">LIGHTING &amp; CEILING DESIGN</span></h3>
+          <p><strong>Zaneen Glorious 吊灯：</strong>铝制灯体、LED 光源、拉丝不锈钢饰面，使用寿命约 50,000 小时。</p><p><strong>图中灯具：</strong>LED 吊灯；漫射光吊灯。</p></div>
+      </article>
+      <article class="board">
+        <figure class="board-image"><img loading="lazy" decoding="async" src="assets/images/lume/social/05-lounge-elevation.png" alt="社交角两面立面图，展现连续窗格、绿植、长椅与木色饰面。"></figure>
+        <div class="translation"><span class="board-index">中文译文 22</span><h3>社交角立面<span class="en-title">ELEVATION</span></h3><p>两幅立面图展示社交角的窗边座椅、绿植、桌面与连续窗格；平面小图标示对应区域。</p></div>
+      </article>
+      <article class="board">
+        <figure class="board-image"><img loading="lazy" decoding="async" src="assets/images/lume/social/06-lounge-human-centered.png" alt="社交角人本设计说明，介绍绿植、声学灯具、调光窗膜与木梁等做法。"></figure>
+        <div class="translation"><span class="board-index">中文译文 23</span><h3>以人为本的设计<span class="en-title">HUMAN-CENTERED DESIGN</span></h3>
+          <ul><li><strong>Armstrong ACGI 梁：</strong>平直侧边与水平弧形；红橡木径切纹；采用较高比例的再生及负责任采购材料；使用低 VOC 胶黏剂与环保涂层；原材料通过 FSC 认证。</li><li><strong>绿植：</strong>改善空气质量、减轻压力并提升身心状态。</li><li><strong>一体式声学照明装置：</strong>将吸音板与均匀照明结合。</li><li><strong>自动调光窗膜：</strong>根据自然光强度调节，并帮助控制室内温度。</li></ul>
+          <p class="fine">图中标注 A–F 对应：绿植、绿色隔断、座椅、声学照明、木梁系统、自动调光窗膜。</p></div>
+      </article>
+      <article class="board">
+        <figure class="board-image"><img loading="lazy" decoding="async" src="assets/images/lume/social/07-social-corner-view-01.png" alt="社交角室内效果图：大窗边布置弧形长椅、圆桌与环形灯具。"></figure>
+        <div class="translation"><span class="board-index">空间效果 24</span><h3>社交角效果图<span class="en-title">SOCIAL CORNER</span></h3><p>弧形座椅沿窗边延展，独立圆桌与大型共享桌形成不同的交流尺度；环形灯具与垂坠绿植呼应。</p></div>
+      </article>
+      <article class="board">
+        <figure class="board-image"><img loading="lazy" decoding="async" src="assets/images/lume/social/08-social-corner-view-02.png" alt="社交角室内效果图：从木格栅侧观看绿植围合的休息空间。"></figure>
+        <div class="translation"><span class="board-index">空间效果 25</span><h3>社交角效果图<span class="en-title">SOCIAL CORNER</span></h3><p>木格栅、绿色墙面与窗边座席构成柔和的围合感，中央动线保持开敞。</p></div>
+      </article>
+      <article class="board">
+        <figure class="board-image"><img loading="lazy" decoding="async" src="assets/images/lume/social/09-social-corner-view-03.png" alt="社交角整体室内效果图：环形照明下的共享桌、窗边座位与植物。"></figure>
+        <div class="translation"><span class="board-index">空间效果 26</span><h3>社交角效果图<span class="en-title">SOCIAL CORNER</span></h3><p>整体视角呈现窗边交谈区、绿植、共享桌与不同形式的座位组合。</p></div>
+      </article>
+      <div class="section-head subsection-head" id="social-materials"><div class="section-title"><span class="section-kicker">04-A</span><h2 id="social-materials-title">社交角材料与饰面</h2></div><span class="section-note">SOCIAL CORNER / SPECIFICATIONS</span></div>
+      <article class="board">
+        <figure class="board-image"><img loading="lazy" decoding="async" src="assets/images/lume/social/10-social-corner-specifications.png" alt="社交角材料规格页：长椅面料、瓷质砖与地毯砖的产品及性能说明。"></figure>
+        <div class="translation"><span class="board-index">中文译文 28 · 04-A</span><h3>材料规格<span class="en-title">SOCIAL CORNER / SPECIFICATIONS</span></h3>
+          <ul><li><strong>Architex Stage Bill 长椅面料：</strong>100% 聚酯纤维，颜色 Wicked；耐磨度达 200,000 次双重摩擦测试（重度商用等级），耐光性为 120 小时；可使用水性或酒精类产品清洁，不含 PFAS、PVC 及其他有害物质。</li><li><strong>MSI Chevron Mosaic 瓷质砖：</strong>浅灰色、哑光表面；通过 GREENGUARD Gold 低排放认证，可支持 LEED 认证目标。</li><li><strong>Shaw Contract Hexagon Taskworx 地毯砖：</strong>100% 原液染色聚酰胺 6（Aquafil），提供多种颜色；获 Indoor Air Comfort GOLD 与 Cradle to Cradle 认证，并设有回收计划，产品生命周期末端可回收。</li></ul>
+        </div>
+      </article>
+    </section>
+
+    <section class="section" id="overview-board" aria-labelledby="overview-title">
+      <div class="section-head"><div class="section-title"><span class="section-kicker">05</span><h2 id="overview-title">项目总览</h2></div><span class="section-note">LUME ART THERAPY CENTRE</span></div>
+      <article class="board">
+        <figure class="board-image"><img loading="lazy" decoding="async" src="assets/images/lume/social/11-lume-board-enhanced.png" alt="增强清晰度后的 Lume 艺术疗愈中心项目总览板，展示概念说明、平面图、立面与空间效果图。"></figure>
+        <div class="translation"><span class="board-index">中文译文 28</span><h3>艺术疗愈中心设计总览<span class="en-title">LUME ART THERAPY / CONCEPT</span></h3>
+          <p><strong>让艺术与内心的宁静相遇。</strong></p>
+          <p>Lume 艺术疗愈中心以支持心理健康为目标，将艺术参与、自然元素与社区联结融入室内环境。自然材料、绿植与自然光共同营造平静氛围；私密空间与开放社交区域并置，支持独处疗愈、团体活动及社区交流。</p>
+          <p>整体布局兼顾无障碍通行与使用弹性，并通过低排放材料、声学控制及自然采光策略，落实健康、包容与可持续设计原则，呼应 WELL 建筑标准。</p>
+        </div>
+      </article>
+    </section>
+    <section class="section" id="technical-drawings" aria-labelledby="technical-drawings-title">
+      <div class="section-head"><div class="section-title"><span class="section-kicker">06</span><h2 id="technical-drawings-title">技术图纸</h2></div><span class="section-note">DETAILING DRAWING SET</span></div>
+      <p class="drawing-intro">完整收录 ID-00 至 ID-15 共 16 张图纸，依原始编号顺序排列，涵盖场地参考、隔墙、天花、电力与通信、饰面、家具设备、室内立面、墙体构造、门五金及节点详图。</p>
+      <article class="drawing-sheet"><figure><img loading="lazy" decoding="async" src="assets/images/lume/technical-drawings/sheet-01.png" alt="ID-00 封面图纸：项目信息、场地与图纸目录。"><figcaption><span class="sheet-index">ID-00</span><span class="sheet-title">封面与图纸索引</span><span class="sheet-name">COVER SHEET</span></figcaption></figure></article>
+      <article class="drawing-sheet"><figure><img loading="lazy" decoding="async" src="assets/images/lume/technical-drawings/sheet-02.png" alt="ID-01 场地参考平面图。"><figcaption><span class="sheet-index">ID-01</span><span class="sheet-title">场地参考平面图</span><span class="sheet-name">CONTEXT REFERENCE PLAN</span></figcaption></figure></article>
+      <article class="drawing-sheet"><figure><img loading="lazy" decoding="async" src="assets/images/lume/technical-drawings/sheet-03.png" alt="ID-02 隔墙平面图 A。"><figcaption><span class="sheet-index">ID-02</span><span class="sheet-title">隔墙平面图 A</span><span class="sheet-name">PROPOSED PARTITION PLAN (A)</span></figcaption></figure></article>
+      <article class="drawing-sheet"><figure><img loading="lazy" decoding="async" src="assets/images/lume/technical-drawings/sheet-04.png" alt="ID-03 隔墙平面图 B。"><figcaption><span class="sheet-index">ID-03</span><span class="sheet-title">隔墙平面图 B</span><span class="sheet-name">PROPOSED PARTITION PLAN (B)</span></figcaption></figure></article>
+      <article class="drawing-sheet"><figure><img loading="lazy" decoding="async" src="assets/images/lume/technical-drawings/sheet-05.png" alt="ID-04 反射天花平面图 A。"><figcaption><span class="sheet-index">ID-04</span><span class="sheet-title">反射天花平面图 A</span><span class="sheet-name">REFLECTED CEILING PLAN (A)</span></figcaption></figure></article>
+      <article class="drawing-sheet"><figure><img loading="lazy" decoding="async" src="assets/images/lume/technical-drawings/sheet-06.png" alt="ID-05 反射天花平面图 B。"><figcaption><span class="sheet-index">ID-05</span><span class="sheet-title">反射天花平面图 B</span><span class="sheet-name">REFLECTED CEILING PLAN (B)</span></figcaption></figure></article>
+      <article class="drawing-sheet"><figure><img loading="lazy" decoding="async" src="assets/images/lume/technical-drawings/sheet-07.png" alt="ID-06 电力与通信布置图 A。"><figcaption><span class="sheet-index">ID-06</span><span class="sheet-title">电力与通信布置图 A</span><span class="sheet-name">POWER &amp; COMMUNICATIONS PLAN (A)</span></figcaption></figure></article>
+      <article class="drawing-sheet"><figure><img loading="lazy" decoding="async" src="assets/images/lume/technical-drawings/sheet-08.png" alt="ID-07 电力与通信布置图 B。"><figcaption><span class="sheet-index">ID-07</span><span class="sheet-title">电力与通信布置图 B</span><span class="sheet-name">POWER &amp; COMMUNICATIONS PLAN (B)</span></figcaption></figure></article>
+      <article class="drawing-sheet"><figure><img loading="lazy" decoding="async" src="assets/images/lume/technical-drawings/sheet-09.png" alt="ID-08 饰面平面图 A。"><figcaption><span class="sheet-index">ID-08</span><span class="sheet-title">饰面平面图 A</span><span class="sheet-name">FINISH PLAN (A)</span></figcaption></figure></article>
+      <article class="drawing-sheet"><figure><img loading="lazy" decoding="async" src="assets/images/lume/technical-drawings/sheet-10.png" alt="ID-09 饰面平面图 B。"><figcaption><span class="sheet-index">ID-09</span><span class="sheet-title">饰面平面图 B</span><span class="sheet-name">FINISH PLAN (B)</span></figcaption></figure></article>
+      <article class="drawing-sheet"><figure><img loading="lazy" decoding="async" src="assets/images/lume/technical-drawings/sheet-11.png" alt="ID-10 家具、固定装置与设备平面图 A。"><figcaption><span class="sheet-index">ID-10</span><span class="sheet-title">家具、固定装置与设备平面图 A</span><span class="sheet-name">FURNITURE, FIXTURE &amp; EQUIPMENT PLAN (A)</span></figcaption></figure></article>
+      <article class="drawing-sheet"><figure><img loading="lazy" decoding="async" src="assets/images/lume/technical-drawings/sheet-12.png" alt="ID-11 家具、固定装置与设备平面图 B。"><figcaption><span class="sheet-index">ID-11</span><span class="sheet-title">家具、固定装置与设备平面图 B</span><span class="sheet-name">FURNITURE, FIXTURE &amp; EQUIPMENT PLAN (B)</span></figcaption></figure></article>
+      <article class="drawing-sheet"><figure><img loading="lazy" decoding="async" src="assets/images/lume/technical-drawings/sheet-13.png" alt="ID-12 室内立面图。"><figcaption><span class="sheet-index">ID-12</span><span class="sheet-title">室内立面图</span><span class="sheet-name">INTERIOR ELEVATIONS</span></figcaption></figure></article>
+      <article class="drawing-sheet"><figure><img loading="lazy" decoding="async" src="assets/images/lume/technical-drawings/sheet-14.png" alt="ID-13 墙体构造剖面图。"><figcaption><span class="sheet-index">ID-13</span><span class="sheet-title">墙体构造剖面</span><span class="sheet-name">WALL SECTIONS</span></figcaption></figure></article>
+      <article class="drawing-sheet"><figure><img loading="lazy" decoding="async" src="assets/images/lume/technical-drawings/sheet-15.png" alt="ID-14 门型与五金表。"><figcaption><span class="sheet-index">ID-14</span><span class="sheet-title">门型与五金表</span><span class="sheet-name">DOOR TYPES &amp; HARDWARE SCHEDULE</span></figcaption></figure></article>
+      <article class="drawing-sheet"><figure><img loading="lazy" decoding="async" src="assets/images/lume/technical-drawings/sheet-16.png" alt="ID-15 室内节点详图。"><figcaption><span class="sheet-index">ID-15</span><span class="sheet-title">室内节点详图</span><span class="sheet-name">INTERIOR DETAILS</span></figcaption></figure></article>
+    </section>
+    <footer class="project-footer"><span>林蓁 / 室内设计 01 · LUME</span><a href="index.html#interior">返回全部室内项目 ↑</a></footer>
+  </main>
+  <dialog class="image-viewer" id="image-viewer" aria-label="图片放大预览">
+    <button class="image-viewer-close" type="button" aria-label="关闭图片预览">×</button>
+    <img alt="">
+  </dialog>
+  <script>
+    (() => {
+      const viewer = document.getElementById("image-viewer");
+      const enlarged = viewer.querySelector("img");
+      const close = viewer.querySelector("button");
+      const body = document.body;
+      const toc = document.getElementById("page-toc");
+      const mobileToc = window.matchMedia("(max-width: 699px)");
+      let savedScrollY = 0;
+      let savedBodyStyle = null;
+      const syncTocToViewport = () => { toc.open = !mobileToc.matches; };
+      syncTocToViewport();
+      mobileToc.addEventListener("change", syncTocToViewport);
+      toc.querySelector("nav").addEventListener("click", (event) => {
+        if (mobileToc.matches && event.target.closest("a")) toc.open = false;
+      });
+      const lockPage = () => {
+        savedScrollY = window.scrollY;
+        savedBodyStyle = {
+          position: body.style.position,
+          top: body.style.top,
+          left: body.style.left,
+          right: body.style.right,
+          width: body.style.width,
+          overflow: body.style.overflow
+        };
+        body.style.position = "fixed";
+        body.style.top = `-${savedScrollY}px`;
+        body.style.left = "0";
+        body.style.right = "0";
+        body.style.width = "100%";
+        body.style.overflow = "hidden";
+      };
+      const unlockPage = () => {
+        if (!savedBodyStyle) return;
+        Object.assign(body.style, savedBodyStyle);
+        savedBodyStyle = null;
+        window.scrollTo(0, savedScrollY);
+        toc.hidden = false;
+      };
+      const openViewer = (image) => {
+        toc.hidden = true;
+        lockPage();
+        enlarged.src = image.currentSrc || image.src;
+        enlarged.alt = image.alt || "项目图片";
+        viewer.showModal();
+      };
+      document.querySelectorAll("main img").forEach((image) => {
+        image.classList.add("zoomable");
+        image.tabIndex = 0;
+        image.setAttribute("role", "button");
+        image.setAttribute("aria-label", `${image.alt || "项目图片"}，点击放大`);
+        image.title = "点击放大";
+        image.addEventListener("click", (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+          openViewer(image);
+        });
+        image.addEventListener("keydown", (event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            openViewer(image);
+          }
+        });
+      });
+      close.addEventListener("click", () => viewer.close());
+      viewer.addEventListener("close", unlockPage);
+      viewer.addEventListener("click", (event) => {
+        if (event.target === viewer || event.target === enlarged) viewer.close();
+      });
+    })();
+  </script>
+</body>
+</html>
