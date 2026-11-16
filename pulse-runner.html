@@ -27,14 +27,57 @@
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
     .hero-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 16px;margin:18px 0 0;padding-top:13px;border-top:1px solid var(--line)}.hero-facts div{display:grid;gap:5px}.hero-facts dt{color:var(--muted);font:9px var(--mono);letter-spacing:.08em}.hero-facts dd{margin:0;color:#d6e8ef;font-size:11px;line-height:1.5}
     .video-frame{aspect-ratio:16/9;overflow:hidden;border:1px solid #3b4b68;background:#070a11}.video-embed{display:block;width:100%;height:100%;border:0;background:#070a11}.video-meta a{color:var(--muted);font-size:9px;text-decoration:none}.video-meta a:hover{color:var(--cyan)}
+      /* topbar-signature */
+    .topbar { position:relative; }
+    .topbar::after { content:none; }
+      /* portfolio-motion-v1 */
+    @keyframes portfolio-arrive { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes signature-breathe { 0%,100% { text-shadow:0 0 5px rgba(192,164,106,.48),0 0 11px rgba(192,164,106,.18); } 50% { text-shadow:0 0 9px rgba(192,164,106,.78),0 0 18px rgba(192,164,106,.32); } }
+    body > .topbar { animation:portfolio-arrive .58s cubic-bezier(.2,.7,.2,1) both; }
+    .hero { animation:portfolio-arrive .7s .08s cubic-bezier(.2,.7,.2,1) both; }
+    .topbar::after,.feature-copy::after,.project-meta::after,.interior-copy::after { animation:signature-breathe 4.6s ease-in-out infinite; }
+    html.motion-ready .motion-reveal { opacity:0; transform:translateY(15px); transition:opacity .62s ease var(--motion-delay,0ms),transform .62s cubic-bezier(.2,.7,.2,1) var(--motion-delay,0ms); }
+    html.motion-ready .motion-reveal.is-visible { opacity:1; transform:translateY(0); }
+    @media(prefers-reduced-motion:reduce) { body > .topbar,.hero,.topbar::after,.feature-copy::after,.project-meta::after,.interior-copy::after { animation:none!important; } html.motion-ready .motion-reveal,html.motion-ready .motion-reveal.is-visible { opacity:1!important; transform:none!important; transition:none!important; } }
   </style>
+<style id="next-work-navigation">
+  .next-work-row { display:flex; justify-content:flex-end; margin:9px auto 0; }
+  .next-work-link { display:inline-flex; align-items:center; min-height:30px; padding:7px 11px; border:1px solid rgba(192,164,106,.52); color:#d8bf83; background:rgba(16,25,27,.36); font:9px/1.3 "DM Mono","Noto Sans SC","Microsoft YaHei",sans-serif; letter-spacing:.04em; text-decoration:none; transition:color .2s,border-color .2s,background .2s,box-shadow .2s,transform .2s; }
+  .next-work-link:hover { border-color:#ead198; color:#f6e1aa; background:rgba(192,164,106,.1); box-shadow:0 0 14px rgba(192,164,106,.17); transform:translateX(2px); }
+  .next-work-link:focus-visible { outline:2px solid #c0a46a; outline-offset:3px; }
+  .next-work-top { margin-left:auto; }
+  .prev-work-link { margin-right:auto; }
+  .next-work-bottom { margin-left:auto; }
+  .page-footer,.project-footer,.footer { flex-wrap:wrap; align-items:center; }
+  @media(max-width:560px) { .next-work-row { margin-top:6px; } .next-work-link { min-height:28px; padding:6px 8px; font-size:8px; } }
+  @media(prefers-reduced-motion:reduce) { .next-work-link { transition:none; } }
+</style>
+  <style id="cover-signature-style">
+  .cover { position:relative; }
+  .cover-signature { position:absolute; z-index:40; top:12px; right:14px; color:#c0a46a; font:500 13px/1 "Segoe Script","Brush Script MT","Lucida Handwriting",cursive; letter-spacing:.07em; text-shadow:0 0 6px rgba(192,164,106,.62),0 0 14px rgba(192,164,106,.24); pointer-events:none; animation:signature-breathe 4.6s ease-in-out infinite; }
+  .hero { position:relative; }
+  .hero-signature { top:14px; right:0; }
+  @media(max-width:600px) { .cover-signature { top:10px; right:11px; font-size:12px; } .hero-signature { right:0; } }
+  @media(prefers-reduced-motion:reduce) { .cover-signature { animation:none; } }
+</style>
+    <script id="portfolio-shell-entry">
+    (() => {
+      if (window.top !== window.self) return;
+      const page = window.location.pathname.split('/').pop();
+      const shell = new URL('index.html', window.location.href);
+      shell.searchParams.set('page', page + window.location.search);
+      shell.hash = window.location.hash;
+      window.location.replace(shell.href);
+    })();
+  </script>
 </head>
 <body id="top">
   <header class="topbar shell">
-    <a class="wordmark" href="index.html#game-design"><strong>林蓁</strong><span>PORTFOLIO</span></a>
+    <a class="wordmark" href="portfolio-home.html#game-design"><strong>林蓁</strong><span>PORTFOLIO</span></a>
     <div class="lang-switch" role="group" aria-label="选择页面语言"><button type="button" data-language-button="zh" aria-pressed="true">中文</button><button type="button" data-language-button="en" aria-pressed="false">English</button></div>
-    <a class="back-link" href="index.html#game-design"><span data-language-content="zh">← 返回游戏设计</span><span data-language-content="en" hidden>← Back to Game Design</span></a>
+    <a class="back-link" href="portfolio-home.html#game-design"><span data-language-content="zh">← 返回游戏设计</span><span data-language-content="en" hidden>← Back to Game Design</span></a>
   </header>
+  <div class="shell next-work-row"><a class="next-work-link prev-work-link" href="durian.html"><span data-language-content="zh">← 上一个作品：家猫德里安</span><span data-language-content="en" hidden>← Previous project: Durian: The House Cat</span></a></div>
   <details class="side-toc" id="page-toc" open>
     <summary><span class="toc-title"><span data-language-content="zh">项目目录</span><span data-language-content="en" hidden>CONTENTS</span></span><span class="toc-mobile-label"><span data-language-content="zh">目录</span><span data-language-content="en" hidden>MENU</span></span></summary>
     <nav aria-label="项目目录" data-aria-zh="项目目录" data-aria-en="Project contents">
@@ -56,7 +99,7 @@
         <div class="hero-tags"><span class="tag"><span data-language-content="zh">2D 横向跑酷</span><span data-language-content="en" hidden>2D SIDE-SCROLLING</span></span><span class="tag"><span data-language-content="zh">程序化关卡</span><span data-language-content="en" hidden>PROCEDURAL LEVELS</span></span><span class="tag">PC · MOBILE</span></div>
         <dl class="hero-facts"><div><dt><span data-language-content="zh">项目年份</span><span data-language-content="en" hidden>PROJECT YEAR</span></dt><dd>2025</dd></div><div><dt><span data-language-content="zh">制作工具</span><span data-language-content="en" hidden>TOOLS</span></dt><dd>Unreal Engine</dd></div></dl>
       </div>
-      <figure class="cover"><img src="assets/images/pulse-runner-preview.png" alt="霓虹未来城市赛道与 Pulse Runner 标题封面。"><figcaption>PULSE RUNNER / ENDLESS ESCAPE</figcaption></figure>
+      <figure class="cover"><span class="cover-signature" aria-hidden="true">linzhen</span><img src="assets/optimized/images/pulse-runner-preview.png-2400.webp" alt="霓虹未来城市赛道与 Pulse Runner 标题封面。" srcset="assets/optimized/images/pulse-runner-preview.png-480.webp 480w, assets/optimized/images/pulse-runner-preview.png-960.webp 960w, assets/optimized/images/pulse-runner-preview.png-1200.webp 1200w, assets/optimized/images/pulse-runner-preview.png-1600.webp 1600w, assets/optimized/images/pulse-runner-preview.png-2400.webp 1736w" sizes="(max-width:699px) 100vw, 50vw" data-original-src="assets/images/pulse-runner-preview.png" width="1736" height="906" loading="eager" decoding="async" fetchpriority="high"><figcaption>PULSE RUNNER / ENDLESS ESCAPE</figcaption></figure>
     </section>
     <div class="intro-strip"><span><span data-language-content="zh">项目内容</span><span data-language-content="en" hidden>PROJECT CONTENTS</span></span><nav class="contents" aria-label="项目目录" data-aria-zh="项目目录" data-aria-en="Project contents"><a href="#videos"><span data-language-content="zh">视频</span><span data-language-content="en" hidden>Video</span></a><a href="#overview"><span data-language-content="zh">概览</span><span data-language-content="en" hidden>Overview</span></a><a href="#generation"><span data-language-content="zh">关卡生成</span><span data-language-content="en" hidden>Generation</span></a><a href="#recycling"><span data-language-content="zh">对象复用</span><span data-language-content="en" hidden>Object Reuse</span></a><a href="#controls"><span data-language-content="zh">跨平台</span><span data-language-content="en" hidden>Platform Controls</span></a><a href="#persistence"><span data-language-content="zh">存档与成绩</span><span data-language-content="en" hidden>Persistence</span></a></nav></div>
 
@@ -97,11 +140,32 @@
       <div class="architecture"><div class="arch-item"><b>CLASS HIERARCHY</b><p><span data-language-content="zh">父类定义共用行为，子类切换金币分值与道具效果。</span><span data-language-content="en" hidden>Shared parent behavior; child classes vary coin values and pickup effects.</span></p></div><div class="arch-item"><b>COMPOSITE</b><p><span data-language-content="zh">平台负责带动尖刺球与收集物。</span><span data-language-content="en" hidden>Platforms carry their spiked balls and pickups.</span></p></div><div class="arch-item"><b>PROTOTYPE UI</b><p><span data-language-content="zh">主菜单、暂停和结束界面复用按钮模板。</span><span data-language-content="en" hidden>One button template is reused across menu, pause and game-over screens.</span></p></div><div class="arch-item"><b>LOAD GATE</b><p><span data-language-content="zh">随机流初始化完成后才允许生成对象。</span><span data-language-content="en" hidden>Object generation waits until the random stream is ready.</span></p></div></div>
     </section>
 
-    <footer class="footer"><span><span data-language-content="zh">LIN ZHEN / 游戏设计 · PULSE RUNNER</span><span data-language-content="en" hidden>LIN ZHEN / GAME DESIGN · PULSE RUNNER</span></span><span><span data-language-content="zh">设计重点：程序化生成 · 跨平台 · 数据持久化</span><span data-language-content="en" hidden>PROCEDURAL GENERATION · CROSS-PLATFORM · PERSISTENCE</span></span><a href="index.html#game-design"><span data-language-content="zh">返回全部项目 ↑</span><span data-language-content="en" hidden>Back to all projects ↑</span></a></footer>
+    <footer class="footer"><a class="next-work-link prev-work-link" href="durian.html"><span data-language-content="zh">← 上一个作品：家猫德里安</span><span data-language-content="en" hidden>← Previous project: Durian: The House Cat</span></a><span><span data-language-content="zh">LIN ZHEN / 游戏设计 · PULSE RUNNER</span><span data-language-content="en" hidden>LIN ZHEN / GAME DESIGN · PULSE RUNNER</span></span><span><span data-language-content="zh">设计重点：程序化生成 · 跨平台 · 数据持久化</span><span data-language-content="en" hidden>PROCEDURAL GENERATION · CROSS-PLATFORM · PERSISTENCE</span></span><a href="portfolio-home.html#game-design"><span data-language-content="zh">返回全部项目 ↑</span><span data-language-content="en" hidden>Back to all projects ↑</span></a></footer>
   </main>
   <script>
     (()=>{const toc=document.getElementById('page-toc'),buttons=document.querySelectorAll('[data-language-button]'),content=document.querySelectorAll('[data-language-content]');const initial=()=>{const q=new URLSearchParams(location.search).get('lang');if(q==='en'||q==='zh')return q;try{return localStorage.getItem('portfolio-language')==='en'?'en':'zh'}catch(_){return'zh'}};const setLanguage=lang=>{try{localStorage.setItem('portfolio-language',lang)}catch(_){}const u=new URL(location.href);u.searchParams.set('lang',lang);history.replaceState(null,'',u.href);document.documentElement.lang=lang==='zh'?'zh-CN':'en';document.documentElement.dataset.pageLanguage=lang;content.forEach(el=>el.hidden=el.dataset.languageContent!==lang);buttons.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.languageButton===lang)));document.title=lang==='zh'?'林蓁｜脉冲疾行 Pulse Runner':'Lin Zhen | Pulse Runner';document.querySelector('meta[name="description"]').content=lang==='zh'?'脉冲疾行｜以程序化关卡、对象复用和跨平台操作构建的 2D 横向跑酷游戏。':'Pulse Runner | A 2D side-scrolling runner built around procedural levels, object reuse and platform-aware controls.';document.querySelectorAll('[data-aria-zh]').forEach(el=>el.setAttribute('aria-label',lang==='zh'?el.dataset.ariaZh:el.dataset.ariaEn))};buttons.forEach(b=>b.addEventListener('click',()=>setLanguage(b.dataset.languageButton)));setLanguage(initial());const mobile=matchMedia('(max-width:699px)'),sync=()=>{toc.open=!mobile.matches};sync();mobile.addEventListener('change',sync);toc.querySelector('nav').addEventListener('click',e=>{if(e.target.closest('a'))toc.open=!mobile.matches})})();
     document.querySelectorAll('iframe[data-title-en]').forEach(frame=>{const update=()=>{const lang=document.documentElement.dataset.pageLanguage||'zh';frame.title=lang==='zh'?frame.dataset.titleZh:frame.dataset.titleEn};document.querySelectorAll('[data-language-button]').forEach(button=>button.addEventListener('click',update));update()});
+  </script>
+  <script>
+  (() => {
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (!('IntersectionObserver' in window)) return;
+    const targets = [...new Set(document.querySelectorAll('main > section:not(.hero), main > article, .project-footer, .page-footer, body > footer'))];
+    if (!targets.length) return;
+    document.documentElement.classList.add('motion-ready');
+    const observer = new IntersectionObserver(entries => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    }, { threshold:0.08, rootMargin:'0px 0px -7% 0px' });
+    targets.forEach((target,index) => {
+      target.classList.add('motion-reveal');
+      target.style.setProperty('--motion-delay', `${(index % 4) * 55}ms`);
+      observer.observe(target);
+    });
+  })();
   </script>
 </body>
 </html>

@@ -1,0 +1,5 @@
+Track: Moonless Drift
+Source: User-provided MP3; source metadata lists artist poeticgigue208.
+Edit: Four repetitions joined with 2.5-second crossfades.
+Output: AAC audio in M4A container, approximately 3 minutes 52 seconds.
+The source MP3 was left unchanged. No external service was used.

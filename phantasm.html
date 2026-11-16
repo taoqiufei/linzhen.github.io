@@ -43,14 +43,57 @@
     .cn-mission-gallery{margin:14px 0 0;padding:12px;border:1px solid #3c4b45;background:#111a18}.cn-mission-caption{margin:0 0 9px;color:#d9bb82;font-size:11px}.cn-mission-gallery img{display:block;width:100%;height:auto;border:0;background:#050708}.cn-token-gallery{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}.cn-token-gallery figure{margin:0;padding:12px;border:1px solid #3c4b45;background:#111a18}.cn-token-gallery figcaption{margin:0 0 8px;color:#d9bb82;font-size:11px}.cn-token-gallery img{display:block;width:100%;height:150px;object-fit:contain;background:#050708}
     @media(max-width:560px){.cn-character-card>img{height:auto;min-height:0;aspect-ratio:350/537;object-fit:contain;align-self:start}.cn-component-list{grid-template-columns:1fr}.cn-creature-grid article{grid-template-columns:105px minmax(0,1fr)}.cn-token-gallery{grid-template-columns:1fr}.cn-item-actions>div{min-height:175px}}
       .side-toc{position:fixed;top:50%;right:16px;z-index:50;width:164px;max-height:80vh;transform:translateY(-50%);padding:10px;border:1px solid var(--line);background:rgba(12,17,16,.97);box-shadow:0 10px 32px #0008;backdrop-filter:blur(12px);color:var(--muted);font:10px var(--mono);letter-spacing:.04em}.side-toc summary{display:flex;align-items:center;justify-content:space-between;gap:8px;cursor:pointer;list-style:none;padding:4px 2px 10px;border-bottom:1px solid var(--line);color:var(--accent);letter-spacing:.12em}.side-toc summary::-webkit-details-marker{display:none}.side-toc summary:after{content:"−";font-size:14px}.side-toc:not([open]) summary:after{content:"+"}.side-toc nav{display:grid;gap:0;padding-top:5px;max-height:calc(80vh - 44px);overflow-y:auto}.side-toc nav a{display:block;padding:8px 4px;border-bottom:1px solid rgba(88,105,97,.38);line-height:1.45;text-decoration:none}.side-toc nav a:hover{color:var(--accent);background:rgba(192,164,106,.08)}.side-toc nav .to-top{margin-top:5px;border:0;color:var(--accent)}.toc-mobile-label{display:none}@media(min-width:700px) and (max-width:1199px){.side-toc{right:12px;width:132px;padding:8px}.side-toc nav a{padding:7px 2px;font-size:9px}}@media(max-width:699px){.side-toc{top:auto;right:14px;bottom:16px;width:auto;max-height:none;transform:none;padding:0;border:0;background:transparent;box-shadow:none;backdrop-filter:none}.side-toc summary{width:48px;height:48px;justify-content:center;padding:0;border:1px solid var(--line);border-radius:50%;background:rgba(12,17,16,.97);box-shadow:0 5px 18px #0008;font:10px var(--sans);letter-spacing:0}.side-toc summary:after{display:none}.side-toc .toc-title{display:none}.side-toc .toc-mobile-label{display:inline}.side-toc nav{position:absolute;right:0;bottom:60px;width:min(235px,calc(100vw - 32px));max-height:70vh;padding:8px;border:1px solid var(--line);background:rgba(12,17,16,.98);box-shadow:0 10px 28px #0008}.side-toc:not([open]) nav{display:none}}
+      /* topbar-signature */
+    .topbar { position:relative; }
+    .topbar::after { content:none; }
+      /* portfolio-motion-v1 */
+    @keyframes portfolio-arrive { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes signature-breathe { 0%,100% { text-shadow:0 0 5px rgba(192,164,106,.48),0 0 11px rgba(192,164,106,.18); } 50% { text-shadow:0 0 9px rgba(192,164,106,.78),0 0 18px rgba(192,164,106,.32); } }
+    body > .topbar { animation:portfolio-arrive .58s cubic-bezier(.2,.7,.2,1) both; }
+    .hero { animation:portfolio-arrive .7s .08s cubic-bezier(.2,.7,.2,1) both; }
+    .topbar::after,.feature-copy::after,.project-meta::after,.interior-copy::after { animation:signature-breathe 4.6s ease-in-out infinite; }
+    html.motion-ready .motion-reveal { opacity:0; transform:translateY(15px); transition:opacity .62s ease var(--motion-delay,0ms),transform .62s cubic-bezier(.2,.7,.2,1) var(--motion-delay,0ms); }
+    html.motion-ready .motion-reveal.is-visible { opacity:1; transform:translateY(0); }
+    @media(prefers-reduced-motion:reduce) { body > .topbar,.hero,.topbar::after,.feature-copy::after,.project-meta::after,.interior-copy::after { animation:none!important; } html.motion-ready .motion-reveal,html.motion-ready .motion-reveal.is-visible { opacity:1!important; transform:none!important; transition:none!important; } }
   </style>
+<style id="next-work-navigation">
+  .next-work-row { display:flex; justify-content:flex-end; margin:9px auto 0; }
+  .next-work-link { display:inline-flex; align-items:center; min-height:30px; padding:7px 11px; border:1px solid rgba(192,164,106,.52); color:#d8bf83; background:rgba(16,25,27,.36); font:9px/1.3 "DM Mono","Noto Sans SC","Microsoft YaHei",sans-serif; letter-spacing:.04em; text-decoration:none; transition:color .2s,border-color .2s,background .2s,box-shadow .2s,transform .2s; }
+  .next-work-link:hover { border-color:#ead198; color:#f6e1aa; background:rgba(192,164,106,.1); box-shadow:0 0 14px rgba(192,164,106,.17); transform:translateX(2px); }
+  .next-work-link:focus-visible { outline:2px solid #c0a46a; outline-offset:3px; }
+  .next-work-bottom { margin-left:auto; }
+  .next-work-top { margin-left:auto; }
+  .prev-work-link { margin-right:auto; }
+  .page-footer,.project-footer,.footer { flex-wrap:wrap; align-items:center; }
+  @media(max-width:560px) { .next-work-row { margin-top:6px; } .next-work-link { min-height:28px; padding:6px 8px; font-size:8px; } }
+  @media(prefers-reduced-motion:reduce) { .next-work-link { transition:none; } }
+</style>
+  <style id="cover-signature-style">
+  .cover { position:relative; }
+  .cover-signature { position:absolute; z-index:40; top:12px; right:14px; color:#c0a46a; font:500 13px/1 "Segoe Script","Brush Script MT","Lucida Handwriting",cursive; letter-spacing:.07em; text-shadow:0 0 6px rgba(192,164,106,.62),0 0 14px rgba(192,164,106,.24); pointer-events:none; animation:signature-breathe 4.6s ease-in-out infinite; }
+  .hero { position:relative; }
+  .hero-signature { top:14px; right:0; }
+  @media(max-width:600px) { .cover-signature { top:10px; right:11px; font-size:12px; } .hero-signature { right:0; } }
+  @media(prefers-reduced-motion:reduce) { .cover-signature { animation:none; } }
+</style>
+    <script id="portfolio-shell-entry">
+    (() => {
+      if (window.top !== window.self) return;
+      const page = window.location.pathname.split('/').pop();
+      const shell = new URL('index.html', window.location.href);
+      shell.searchParams.set('page', page + window.location.search);
+      shell.hash = window.location.hash;
+      window.location.replace(shell.href);
+    })();
+  </script>
 </head>
 <body id="top">
   <header class="topbar shell">
-    <a class="wordmark" href="index.html" aria-label="返回作品集首页"><span class="mark">林</span><span class="cn">林蓁</span><span class="divider"></span><span>PORTFOLIO</span></a>
+    <a class="wordmark" href="portfolio-home.html" aria-label="返回作品集首页"><span class="mark">林</span><span class="cn">林蓁</span><span class="divider"></span><span>PORTFOLIO</span></a>
     <div class="lang-switch" role="group" aria-label="选择页面语言" data-label-zh="选择页面语言" data-label-en="Choose language"><button type="button" data-language-button="zh" aria-pressed="true">中文</button><button type="button" data-language-button="en" aria-pressed="false">English</button></div>
-    <a class="back-link" href="index.html#game-design"><span data-language-content="zh">← 返回游戏设计</span><span data-language-content="en" hidden>← Back to Game Design</span></a>
+    <a class="back-link" href="portfolio-home.html#game-design"><span data-language-content="zh">← 返回游戏设计</span><span data-language-content="en" hidden>← Back to Game Design</span></a>
   </header>
+  <div class="shell next-work-row"><a class="next-work-link prev-work-link" href="rene.html"><span data-language-content="zh">← 上一个作品：瑞尼</span><span data-language-content="en" hidden>← Previous project: Rene</span></a><a class="next-work-link next-work-top" href="marble-commander.html"><span data-language-content="zh">下一个作品：弹珠指挥官 →</span><span data-language-content="en" hidden>Next project: Marble Commander →</span></a></div>
     <details class="side-toc" id="page-toc" open>
     <summary><span class="toc-title"><span data-language-content="zh">项目目录</span><span data-language-content="en" hidden>CONTENTS</span></span><span class="toc-mobile-label"><span data-language-content="zh">目录</span><span data-language-content="en" hidden>MENU</span></span></summary>
     <nav aria-label="项目目录" data-label-zh="项目目录" data-label-en="Project contents">
@@ -73,7 +116,7 @@
         <p class="lead"><span data-language-content="zh">《幻景》是一款奇幻主题的卡牌策略桌游。玩家操控公共区域中的生物卡，组合完成任务并争夺积分；角色技能与道具卡提供多种策略选择。</span><span data-language-content="en" hidden>Phantasm is a fantasy card strategy game. Players manipulate creatures in a shared play area, combine them to complete missions and score points, while character skills and item cards open up different strategies.</span></p>
         <dl class="facts"><div class="fact"><dt><span data-language-content="zh">游戏类型</span><span data-language-content="en" hidden>TYPE</span></dt><dd><span data-language-content="zh">桌面卡牌策略</span><span data-language-content="en" hidden>Tabletop card strategy</span></dd></div><div class="fact"><dt><span data-language-content="zh">核心机制</span><span data-language-content="en" hidden>CORE MECHANICS</span></dt><dd><span data-language-content="zh">卡牌操作 · 任务竞逐</span><span data-language-content="en" hidden>Card manipulation · Mission race</span></dd></div><div class="fact"><dt><span data-language-content="zh">胜利条件</span><span data-language-content="en" hidden>WIN CONDITION</span></dt><dd><span data-language-content="zh">率先获得 5 分</span><span data-language-content="en" hidden>First to score 5 points</span></dd></div><div class="fact"><dt><span data-language-content="zh">创作年份</span><span data-language-content="en" hidden>PROJECT YEAR</span></dt><dd>2024</dd></div><div class="fact"><dt><span data-language-content="zh">制作工具</span><span data-language-content="en" hidden>TOOLS</span></dt><dd>Procreate · Photoshop</dd></div></dl>
       </div>
-      <figure class="cover"><img src="assets/images/phantasm-preview.png" alt="幻景桌游棋盘与奇幻生物卡牌效果图。"><figcaption><span data-language-content="zh">幻景 / 卡牌策略桌游</span><span data-language-content="en" hidden>PHANTASM / CARD STRATEGY GAME</span></figcaption></figure>
+      <figure class="cover"><span class="cover-signature" aria-hidden="true">linzhen</span><img src="assets/optimized/images/phantasm-preview.png-2400.webp" alt="幻景桌游棋盘与奇幻生物卡牌效果图。" srcset="assets/optimized/images/phantasm-preview.png-480.webp 480w, assets/optimized/images/phantasm-preview.png-960.webp 960w, assets/optimized/images/phantasm-preview.png-1200.webp 1200w, assets/optimized/images/phantasm-preview.png-1600.webp 1600w, assets/optimized/images/phantasm-preview.png-2400.webp 1659w" sizes="(max-width:699px) 100vw, 50vw" data-original-src="assets/images/phantasm-preview.png" width="1659" height="948" loading="eager" decoding="async" fetchpriority="high"><figcaption><span data-language-content="zh">幻景 / 卡牌策略桌游</span><span data-language-content="en" hidden>PHANTASM / CARD STRATEGY GAME</span></figcaption></figure>
     </section>
     <div class="intro-strip"><span><span data-language-content="zh">项目图板</span><span data-language-content="en" hidden>PROJECT BOARDS</span></span><nav class="contents" aria-label="项目目录" data-label-zh="项目目录" data-label-en="Project contents"><a href="#videos"><span data-language-content="zh">视频</span><span data-language-content="en" hidden>Video</span></a><a href="#concept"><span data-language-content="zh">世界观</span><span data-language-content="en" hidden>World</span></a><a href="#rules"><span data-language-content="zh">游戏规则</span><span data-language-content="en" hidden>Rules</span></a><a href="#characters"><span data-language-content="zh">角色卡</span><span data-language-content="en" hidden>Characters</span></a><a href="#cards"><span data-language-content="zh">物品与生物卡</span><span data-language-content="en" hidden>Items & Creatures</span></a><a href="#components"><span data-language-content="zh">任务与组件</span><span data-language-content="en" hidden>Components</span></a><a href="#example"><span data-language-content="zh">对局示例</span><span data-language-content="en" hidden>Example</span></a></nav></div>
     <section class="video-section" id="videos" aria-labelledby="videos-title">
@@ -85,7 +128,7 @@
     <section class="section" id="concept" aria-labelledby="concept-title">
       <div class="section-head"><div class="section-title"><span class="section-kicker">01</span><h2 id="concept-title"><span data-language-content="zh">世界观与核心玩法</span><span data-language-content="en" hidden>World & Core Mechanics</span></h2></div><span class="section-note"><span data-language-content="zh">故事背景 / 核心玩法</span><span data-language-content="en" hidden>CONCEPT / OVERVIEW</span></span></div>
       <article class="board">
-        <figure class="board-image"><img data-language-content="en" hidden loading="lazy" decoding="async" src="assets/images/phantasm/01-concept.png" alt="Phantasm 概念板：奇幻卡牌与游戏背景介绍。"><div class="cn-board cn-concept-board" data-language-content="zh">
+        <figure class="board-image"><img data-language-content="en" hidden loading="lazy" decoding="async" src="assets/optimized/images/phantasm/01-concept.png-2400.webp" alt="Phantasm 概念板：奇幻卡牌与游戏背景介绍。" srcset="assets/optimized/images/phantasm/01-concept.png-1200.webp 1200w, assets/optimized/images/phantasm/01-concept.png-2400.webp 2400w" sizes="(max-width:699px) 100vw, 75vw" data-original-src="assets/images/phantasm/01-concept.png" width="2500" height="1080"><div class="cn-board cn-concept-board" data-language-content="zh">
           <div class="cn-concept-copy">
             <p class="cn-board-overline">幻景 / 世界观</p>
             <h3>古老圣所的秘药传说</h3>
@@ -94,7 +137,7 @@
             <div class="cn-feature-line"><span>核心玩法</span><strong>交换卡牌 · 调整位置 · 触发生物能力</strong></div>
             <div class="cn-feature-line"><span>胜利目标</span><strong>完成任务并率先取得 5 分</strong></div>
           </div>
-          <figure class="cn-concept-cover"><img src="assets/images/phantasm-preview.png" alt="幻景桌游封面：奇幻生物卡牌、计分标记与棋盘。" loading="lazy" decoding="async"></figure>
+          <figure class="cn-concept-cover"><img src="assets/optimized/images/phantasm-preview.png-2400.webp" alt="幻景桌游封面：奇幻生物卡牌、计分标记与棋盘。" loading="lazy" decoding="async" srcset="assets/optimized/images/phantasm-preview.png-480.webp 480w, assets/optimized/images/phantasm-preview.png-960.webp 960w, assets/optimized/images/phantasm-preview.png-1200.webp 1200w, assets/optimized/images/phantasm-preview.png-1600.webp 1600w, assets/optimized/images/phantasm-preview.png-2400.webp 1659w" sizes="(max-width:699px) 100vw, 50vw" data-original-src="assets/images/phantasm-preview.png" width="1659" height="948"></figure>
         </div><figcaption><span data-language-content="zh">图板 01 · 世界观与核心玩法</span><span data-language-content="en" hidden>BOARD 01 · CONCEPT</span></figcaption></figure>
         
       </article>
@@ -103,7 +146,7 @@
     <section class="section" id="rules" aria-labelledby="rules-title">
       <div class="section-head"><div class="section-title"><span class="section-kicker">02</span><h2 id="rules-title"><span data-language-content="zh">游戏准备与回合规则</span><span data-language-content="en" hidden>Setup & Turn Structure</span></h2></div><span class="section-note"><span data-language-content="zh">游戏准备 / 回合流程</span><span data-language-content="en" hidden>GAME SETUP / GAMEPLAY</span></span></div>
       <article class="board">
-        <figure class="board-image"><img data-language-content="en" hidden loading="lazy" decoding="async" src="assets/images/phantasm/02-rules.png" alt="Phantasm 游戏准备与玩法规则说明板。"><div class="cn-board cn-rules-board" data-language-content="zh">
+        <figure class="board-image"><img data-language-content="en" hidden loading="lazy" decoding="async" src="assets/optimized/images/phantasm/02-rules.png-2400.webp" alt="Phantasm 游戏准备与玩法规则说明板。" srcset="assets/optimized/images/phantasm/02-rules.png-1200.webp 1200w, assets/optimized/images/phantasm/02-rules.png-2400.webp 2400w" sizes="(max-width:699px) 100vw, 75vw" data-original-src="assets/images/phantasm/02-rules.png" width="2500" height="1080"><div class="cn-board cn-rules-board" data-language-content="zh">
           <div class="cn-board-heading"><p class="cn-board-overline">02 / 游戏规则</p><h3>从开局布置到任务得分</h3><p>两名玩家轮流改变中央生物卡阵列，寻找完成任务的机会。</p></div>
           <div class="cn-rules-columns">
             <div class="cn-rules-primary">
@@ -135,13 +178,13 @@
     <section class="section" id="characters" aria-labelledby="characters-title">
       <div class="section-head"><div class="section-title"><span class="section-kicker">03</span><h2 id="characters-title"><span data-language-content="zh">探险者与角色能力</span><span data-language-content="en" hidden>Explorers & Character Skills</span></h2></div><span class="section-note"><span data-language-content="zh">角色设定 / 专属能力</span><span data-language-content="en" hidden>CHARACTER CARDS</span></span></div>
       <article class="board">
-        <figure class="board-image"><img data-language-content="en" hidden loading="lazy" decoding="async" src="assets/images/phantasm/03-characters.png" alt="四位探险者角色卡及其专属能力和背景故事。"><div class="cn-board cn-characters-board" data-language-content="zh">
+        <figure class="board-image"><img data-language-content="en" hidden loading="lazy" decoding="async" src="assets/optimized/images/phantasm/03-characters.png-2400.webp" alt="四位探险者角色卡及其专属能力和背景故事。" srcset="assets/optimized/images/phantasm/03-characters.png-1200.webp 1200w, assets/optimized/images/phantasm/03-characters.png-2400.webp 2400w" sizes="(max-width:699px) 100vw, 75vw" data-original-src="assets/images/phantasm/03-characters.png" width="2500" height="1080"><div class="cn-board cn-characters-board" data-language-content="zh">
           <div class="cn-board-heading"><p class="cn-board-overline">03 / 探险者</p><h3>四位角色，各有独特能力</h3><p>角色背景与技能共同影响玩家在公共牌阵中的选择。</p></div>
           <div class="cn-character-grid">
-            <article class="cn-character-card"><img src="assets/images/phantasm/cn-inserts/card-character-01.png" alt="剑士完整角色卡面"><div><span>01 / 角色</span><h4>剑士</h4><p>龙族与人类的后裔，在森林村庄长大。为守护故乡，他踏上寻找秘药的旅程。</p><strong>技能：洗回一张生物卡，获得 1 分。</strong></div></article>
-            <article class="cn-character-card"><img src="assets/images/phantasm/cn-inserts/card-character-02.png" alt="法师完整角色卡面"><div><span>02 / 角色</span><h4>法师</h4><p>来自精灵预言者家族，出生时便被预言将为族群带来希望。他以魔法穿越时空边界。</p><strong>技能：旋转 1–4 号位中的 2 或 3 张生物卡。</strong></div></article>
-            <article class="cn-character-card"><img src="assets/images/phantasm/cn-inserts/card-character-03.png" alt="驭兽师完整角色卡面"><div><span>03 / 角色</span><h4>驭兽师</h4><p>来自海族，长期探索海域、追寻神秘生物，最终独自进入古老圣所。</p><strong>技能：发动一张朝向自己的生物卡能力。</strong></div></article>
-            <article class="cn-character-card"><img src="assets/images/phantasm/cn-inserts/card-character-04.png" alt="发明家完整角色卡面"><div><span>04 / 角色</span><h4>发明家</h4><p>来自繁华都城，因发明不被认可而进入奇幻领域，想以实力赢得传说中的宝藏。</p><strong>技能：抽取 1 张任务卡与 1 张道具卡。</strong></div></article>
+            <article class="cn-character-card"><img src="assets/optimized/images/phantasm/cn-inserts/card-character-01.png-2400.webp" alt="剑士完整角色卡面" sizes="(max-width:699px) 100vw, 75vw" data-original-src="assets/images/phantasm/cn-inserts/card-character-01.png" width="348" height="537" loading="lazy" decoding="async"><div><span>01 / 角色</span><h4>剑士</h4><p>龙族与人类的后裔，在森林村庄长大。为守护故乡，他踏上寻找秘药的旅程。</p><strong>技能：洗回一张生物卡，获得 1 分。</strong></div></article>
+            <article class="cn-character-card"><img src="assets/optimized/images/phantasm/cn-inserts/card-character-02.png-2400.webp" alt="法师完整角色卡面" sizes="(max-width:699px) 100vw, 75vw" data-original-src="assets/images/phantasm/cn-inserts/card-character-02.png" width="349" height="537" loading="lazy" decoding="async"><div><span>02 / 角色</span><h4>法师</h4><p>来自精灵预言者家族，出生时便被预言将为族群带来希望。他以魔法穿越时空边界。</p><strong>技能：旋转 1–4 号位中的 2 或 3 张生物卡。</strong></div></article>
+            <article class="cn-character-card"><img src="assets/optimized/images/phantasm/cn-inserts/card-character-03.png-2400.webp" alt="驭兽师完整角色卡面" sizes="(max-width:699px) 100vw, 75vw" data-original-src="assets/images/phantasm/cn-inserts/card-character-03.png" width="348" height="537" loading="lazy" decoding="async"><div><span>03 / 角色</span><h4>驭兽师</h4><p>来自海族，长期探索海域、追寻神秘生物，最终独自进入古老圣所。</p><strong>技能：发动一张朝向自己的生物卡能力。</strong></div></article>
+            <article class="cn-character-card"><img src="assets/optimized/images/phantasm/cn-inserts/card-character-04.png-2400.webp" alt="发明家完整角色卡面" sizes="(max-width:699px) 100vw, 75vw" data-original-src="assets/images/phantasm/cn-inserts/card-character-04.png" width="350" height="537" loading="lazy" decoding="async"><div><span>04 / 角色</span><h4>发明家</h4><p>来自繁华都城，因发明不被认可而进入奇幻领域，想以实力赢得传说中的宝藏。</p><strong>技能：抽取 1 张任务卡与 1 张道具卡。</strong></div></article>
           </div>
         </div><figcaption><span data-language-content="zh">图板 03 · 探险者与角色能力</span><span data-language-content="en" hidden>BOARD 03 · CHARACTER CARDS</span></figcaption></figure>
         
@@ -151,19 +194,19 @@
     <section class="section" id="cards" aria-labelledby="cards-title">
       <div class="section-head"><div class="section-title"><span class="section-kicker">04</span><h2 id="cards-title"><span data-language-content="zh">道具卡与生物卡</span><span data-language-content="en" hidden>Items & Creature Cards</span></h2></div><span class="section-note"><span data-language-content="zh">卡牌效果 / 生物图鉴</span><span data-language-content="en" hidden>ITEMS / CREATURES</span></span></div>
       <article class="board">
-        <figure class="board-image"><img data-language-content="en" hidden loading="lazy" decoding="async" src="assets/images/phantasm/04-cards.png" alt="道具卡操作说明、生物卡规则与六种生物介绍。"><div class="cn-board cn-cards-board" data-language-content="zh">
+        <figure class="board-image"><img data-language-content="en" hidden loading="lazy" decoding="async" src="assets/optimized/images/phantasm/04-cards.png-2400.webp" alt="道具卡操作说明、生物卡规则与六种生物介绍。" srcset="assets/optimized/images/phantasm/04-cards.png-1200.webp 1200w, assets/optimized/images/phantasm/04-cards.png-2400.webp 2400w" sizes="(max-width:699px) 100vw, 75vw" data-original-src="assets/images/phantasm/04-cards.png" width="2500" height="1080"><div class="cn-board cn-cards-board" data-language-content="zh">
           <div class="cn-board-heading"><p class="cn-board-overline">04 / 卡牌系统</p><h3>道具改变阵列，生物带来变数</h3><p>两类卡牌共同构成操作空间与任务策略。</p></div>
-          <section class="cn-item-system"><div class="cn-item-intro"><h4>道具卡 · 每种 4 张</h4><p>用于改变公共区域中生物卡的位置、朝向与正反面，也能触发面向玩家的生物能力。</p><div class="cn-item-visuals"><div class="cn-item-back-wrap"><span>卡背</span><img class="cn-item-back" loading="lazy" decoding="async" src="assets/images/phantasm/cn-inserts/item-card-back.png" alt="道具卡背面图示"></div></div></div><div class="cn-item-actions">
-            <div><span>01</span><strong>交换</strong><small>横向交换两张卡的位置</small><img class="cn-item-action-card" loading="lazy" decoding="async" src="assets/images/phantasm/cn-inserts/item-action-swap-trim.png" alt="交换道具卡卡面"></div><div><span>02</span><strong>翻面</strong><small>横向或纵向翻转卡牌</small><img class="cn-item-action-card" loading="lazy" decoding="async" src="assets/images/phantasm/cn-inserts/item-action-flip-trim.png" alt="翻面道具卡卡面"></div><div><span>03</span><strong>旋转</strong><small>触发面向自己的生物能力</small><img class="cn-item-action-card" loading="lazy" decoding="async" src="assets/images/phantasm/cn-inserts/item-action-rotate-trim.png" alt="旋转道具卡卡面"></div><div><span>04</span><strong>判定</strong><small>掷币后按奇偶选择 1/3 或 2/4 号位</small><img class="cn-item-action-card" loading="lazy" decoding="async" src="assets/images/phantasm/cn-inserts/item-action-judgement-trim.png" alt="判定道具卡卡面"></div>
+          <section class="cn-item-system"><div class="cn-item-intro"><h4>道具卡 · 每种 4 张</h4><p>用于改变公共区域中生物卡的位置、朝向与正反面，也能触发面向玩家的生物能力。</p><div class="cn-item-visuals"><div class="cn-item-back-wrap"><span>卡背</span><img class="cn-item-back" loading="lazy" decoding="async" src="assets/optimized/images/phantasm/cn-inserts/item-card-back.png-2400.webp" alt="道具卡背面图示" sizes="(max-width:699px) 100vw, 75vw" data-original-src="assets/images/phantasm/cn-inserts/item-card-back.png" width="177" height="236"></div></div></div><div class="cn-item-actions">
+            <div><span>01</span><strong>交换</strong><small>横向交换两张卡的位置</small><img class="cn-item-action-card" loading="lazy" decoding="async" src="assets/optimized/images/phantasm/cn-inserts/item-action-swap-trim.png-2400.webp" alt="交换道具卡卡面" sizes="(max-width:699px) 100vw, 75vw" data-original-src="assets/images/phantasm/cn-inserts/item-action-swap-trim.png" width="171" height="228"></div><div><span>02</span><strong>翻面</strong><small>横向或纵向翻转卡牌</small><img class="cn-item-action-card" loading="lazy" decoding="async" src="assets/optimized/images/phantasm/cn-inserts/item-action-flip-trim.png-2400.webp" alt="翻面道具卡卡面" sizes="(max-width:699px) 100vw, 75vw" data-original-src="assets/images/phantasm/cn-inserts/item-action-flip-trim.png" width="171" height="228"></div><div><span>03</span><strong>旋转</strong><small>触发面向自己的生物能力</small><img class="cn-item-action-card" loading="lazy" decoding="async" src="assets/optimized/images/phantasm/cn-inserts/item-action-rotate-trim.png-2400.webp" alt="旋转道具卡卡面" sizes="(max-width:699px) 100vw, 75vw" data-original-src="assets/images/phantasm/cn-inserts/item-action-rotate-trim.png" width="171" height="228"></div><div><span>04</span><strong>判定</strong><small>掷币后按奇偶选择 1/3 或 2/4 号位</small><img class="cn-item-action-card" loading="lazy" decoding="async" src="assets/optimized/images/phantasm/cn-inserts/item-action-judgement-trim.png-2400.webp" alt="判定道具卡卡面" sizes="(max-width:699px) 100vw, 75vw" data-original-src="assets/images/phantasm/cn-inserts/item-action-judgement-trim.png" width="171" height="228"></div>
           </div></section>
           <div class="cn-creature-heading"><h4>六种生物 · 每种 2 张</h4><p>每种生物都有正置与逆置效果，方向会改变能力。</p></div>
           <div class="cn-creature-grid">
-            <article><img src="assets/images/phantasm/cn-inserts/card-creature-trim-01.png" alt="幻粉蝶完整生物卡面"><div><span>01 / 旋转与交换</span><h5>幻粉蝶</h5><p>翅粉会使敌人迷失方向，再以毒液发起攻击。</p></div></article>
-            <article><img src="assets/images/phantasm/cn-inserts/card-creature-trim-02.png" alt="幻鸟完整生物卡面"><div><span>02 / 翻面与触发</span><h5>幻鸟</h5><p>模仿并操纵折射光，改变自身或其他生物的外观，引敌入陷阱。</p></div></article>
-            <article><img src="assets/images/phantasm/cn-inserts/card-creature-trim-03.png" alt="巨型真菌完整生物卡面"><div><span>03 / 触发与旋转</span><h5>巨型真菌</h5><p>以气味吸引生物，使猎物迷失方向，再用菌丝缠住并吸取养分。</p></div></article>
-            <article><img src="assets/images/phantasm/cn-inserts/card-creature-trim-04.png" alt="掠食蜥完整生物卡面"><div><span>04 / 交换与弃置</span><h5>掠食蜥</h5><p>迅捷的捕食者令其他生物避而远之，被捕获的猎物会被迅速吞噬。</p></div></article>
-            <article><img src="assets/images/phantasm/cn-inserts/card-creature-trim-05.png" alt="拟态生物完整生物卡面"><div><span>05 / 翻面与抽牌</span><h5>拟态生物</h5><p>能包裹并消化万物，吞食其他生物后可获得其能力，体内偶尔还留有道具。</p></div></article>
-            <article><img src="assets/images/phantasm/cn-inserts/card-creature-trim-06.png" alt="夜光植物完整生物卡面"><div><span>06 / 抽牌与旋转</span><h5>夜光植物</h5><p>会发光的藤蔓能缠住敌人或包裹物体，储藏腔里可能藏有补给与珍贵物品。</p></div></article>
+            <article><img src="assets/optimized/images/phantasm/cn-inserts/card-creature-trim-01.png-2400.webp" alt="幻粉蝶完整生物卡面" sizes="(max-width:699px) 100vw, 75vw" data-original-src="assets/images/phantasm/cn-inserts/card-creature-trim-01.png" width="204" height="320" loading="lazy" decoding="async"><div><span>01 / 旋转与交换</span><h5>幻粉蝶</h5><p>翅粉会使敌人迷失方向，再以毒液发起攻击。</p></div></article>
+            <article><img src="assets/optimized/images/phantasm/cn-inserts/card-creature-trim-02.png-2400.webp" alt="幻鸟完整生物卡面" sizes="(max-width:699px) 100vw, 75vw" data-original-src="assets/images/phantasm/cn-inserts/card-creature-trim-02.png" width="198" height="311" loading="lazy" decoding="async"><div><span>02 / 翻面与触发</span><h5>幻鸟</h5><p>模仿并操纵折射光，改变自身或其他生物的外观，引敌入陷阱。</p></div></article>
+            <article><img src="assets/optimized/images/phantasm/cn-inserts/card-creature-trim-03.png-2400.webp" alt="巨型真菌完整生物卡面" sizes="(max-width:699px) 100vw, 75vw" data-original-src="assets/images/phantasm/cn-inserts/card-creature-trim-03.png" width="204" height="320" loading="lazy" decoding="async"><div><span>03 / 触发与旋转</span><h5>巨型真菌</h5><p>以气味吸引生物，使猎物迷失方向，再用菌丝缠住并吸取养分。</p></div></article>
+            <article><img src="assets/optimized/images/phantasm/cn-inserts/card-creature-trim-04.png-2400.webp" alt="掠食蜥完整生物卡面" sizes="(max-width:699px) 100vw, 75vw" data-original-src="assets/images/phantasm/cn-inserts/card-creature-trim-04.png" width="196" height="310" loading="lazy" decoding="async"><div><span>04 / 交换与弃置</span><h5>掠食蜥</h5><p>迅捷的捕食者令其他生物避而远之，被捕获的猎物会被迅速吞噬。</p></div></article>
+            <article><img src="assets/optimized/images/phantasm/cn-inserts/card-creature-trim-05.png-2400.webp" alt="拟态生物完整生物卡面" sizes="(max-width:699px) 100vw, 75vw" data-original-src="assets/images/phantasm/cn-inserts/card-creature-trim-05.png" width="197" height="310" loading="lazy" decoding="async"><div><span>05 / 翻面与抽牌</span><h5>拟态生物</h5><p>能包裹并消化万物，吞食其他生物后可获得其能力，体内偶尔还留有道具。</p></div></article>
+            <article><img src="assets/optimized/images/phantasm/cn-inserts/card-creature-trim-06.png-2400.webp" alt="夜光植物完整生物卡面" sizes="(max-width:699px) 100vw, 75vw" data-original-src="assets/images/phantasm/cn-inserts/card-creature-trim-06.png" width="207" height="320" loading="lazy" decoding="async"><div><span>06 / 抽牌与旋转</span><h5>夜光植物</h5><p>会发光的藤蔓能缠住敌人或包裹物体，储藏腔里可能藏有补给与珍贵物品。</p></div></article>
           </div>
         </div><figcaption><span data-language-content="zh">图板 04 · 道具卡与生物卡</span><span data-language-content="en" hidden>BOARD 04 · ITEM CARDS & CREATURE CARDS</span></figcaption></figure>
         
@@ -173,7 +216,7 @@
     <section class="section" id="components" aria-labelledby="components-title">
       <div class="section-head"><div class="section-title"><span class="section-kicker">05</span><h2 id="components-title"><span data-language-content="zh">任务卡、计分与棋盘</span><span data-language-content="en" hidden>Missions, Scoring & Board</span></h2></div><span class="section-note"><span data-language-content="zh">任务 / 计分 / 棋盘</span><span data-language-content="en" hidden>GAME COMPONENTS</span></span></div>
       <article class="board">
-        <figure class="board-image"><img data-language-content="en" hidden loading="lazy" decoding="async" src="assets/images/phantasm/05-components.png" alt="任务卡、计分标记、判定币与游戏棋盘组件展示。"><div class="cn-board cn-components-board" data-language-content="zh">
+        <figure class="board-image"><img data-language-content="en" hidden loading="lazy" decoding="async" src="assets/optimized/images/phantasm/05-components.png-2400.webp" alt="任务卡、计分标记、判定币与游戏棋盘组件展示。" srcset="assets/optimized/images/phantasm/05-components.png-1200.webp 1200w, assets/optimized/images/phantasm/05-components.png-2400.webp 2400w" sizes="(max-width:699px) 100vw, 75vw" data-original-src="assets/images/phantasm/05-components.png" width="2500" height="1080"><div class="cn-board cn-components-board" data-language-content="zh">
           <div class="cn-board-heading"><p class="cn-board-overline">05 / 游戏组件</p><h3>围绕公共牌阵构建任务</h3><p>玩家通过任务卡设定目标，再操作中央生物卡争取完成条件。</p></div>
           <div class="cn-components-layout"><div class="cn-component-list">
             <div><b>40</b><span>任务卡</span><small>21 张双槽任务（1 分）<br>19 张三槽任务（2 分）</small></div>
@@ -182,9 +225,9 @@
             <div><b>04</b><span>角色卡</span><small>四位探险者，各有技能</small></div>
             <div><b>01</b><span>判定币</span><small>决定先后手与随机效果</small></div>
             <div><b>04</b><span>计分标记</span><small>记录双方累计得分</small></div>
-          </div><div class="cn-board-diagram"><div class="cn-board-label">中央牌阵 / 4 个生物卡位</div><div class="cn-creature-slots"><span>01</span><span>02</span><span>03</span><span>04</span></div><div class="cn-player-zones"><div><b>玩家 A</b><span>角色卡 · 任务卡 · 道具手牌</span></div><div><b>玩家 B</b><span>角色卡 · 任务卡 · 道具手牌</span></div></div><div class="cn-board-lanes"><span>计分区</span><span>弃牌区</span></div><img class="cn-board-art" loading="lazy" decoding="async" src="assets/images/phantasm/cn-inserts/board-layout.png" alt="项目原图中的完整棋盘与卡牌布局"></div></div>
-          <div class="cn-mission-gallery"><p class="cn-mission-caption">全套任务卡 · 共 40 张</p><img loading="lazy" decoding="async" src="assets/images/phantasm/cn-inserts/mission-cards.png" alt="项目原图中的全部40张任务卡，包含双槽与三槽任务"></div>
-          <div class="cn-token-gallery"><figure><figcaption>判定币 · 正反面</figcaption><img loading="lazy" decoding="async" src="assets/images/phantasm/cn-inserts/judgement-coins.png" alt="判定币正反面图示"></figure><figure><figcaption>计分标记 · 四种</figcaption><img loading="lazy" decoding="async" src="assets/images/phantasm/cn-inserts/score-markers.png" alt="四种计分标记图示"></figure></div>
+          </div><div class="cn-board-diagram"><div class="cn-board-label">中央牌阵 / 4 个生物卡位</div><div class="cn-creature-slots"><span>01</span><span>02</span><span>03</span><span>04</span></div><div class="cn-player-zones"><div><b>玩家 A</b><span>角色卡 · 任务卡 · 道具手牌</span></div><div><b>玩家 B</b><span>角色卡 · 任务卡 · 道具手牌</span></div></div><div class="cn-board-lanes"><span>计分区</span><span>弃牌区</span></div><img class="cn-board-art" loading="lazy" decoding="async" src="assets/optimized/images/phantasm/cn-inserts/board-layout.png-2400.webp" alt="项目原图中的完整棋盘与卡牌布局" sizes="(max-width:699px) 100vw, 75vw" data-original-src="assets/images/phantasm/cn-inserts/board-layout.png" width="930" height="650"></div></div>
+          <div class="cn-mission-gallery"><p class="cn-mission-caption">全套任务卡 · 共 40 张</p><img loading="lazy" decoding="async" src="assets/optimized/images/phantasm/cn-inserts/mission-cards.png-2400.webp" alt="项目原图中的全部40张任务卡，包含双槽与三槽任务" sizes="(max-width:699px) 100vw, 75vw" data-original-src="assets/images/phantasm/cn-inserts/mission-cards.png" width="1088" height="896"></div>
+          <div class="cn-token-gallery"><figure><figcaption>判定币 · 正反面</figcaption><img loading="lazy" decoding="async" src="assets/optimized/images/phantasm/cn-inserts/judgement-coins.png-2400.webp" alt="判定币正反面图示" sizes="(max-width:699px) 100vw, 75vw" data-original-src="assets/images/phantasm/cn-inserts/judgement-coins.png" width="265" height="132"></figure><figure><figcaption>计分标记 · 四种</figcaption><img loading="lazy" decoding="async" src="assets/optimized/images/phantasm/cn-inserts/score-markers.png-2400.webp" alt="四种计分标记图示" sizes="(max-width:699px) 100vw, 75vw" data-original-src="assets/images/phantasm/cn-inserts/score-markers.png" width="390" height="326"></figure></div>
           <div class="cn-mission-note"><strong>任务计分</strong><span>按任务卡要求组合生物卡位置与朝向；完成后可结算并获得对应分数。</span></div>
         </div><figcaption><span data-language-content="zh">图板 05 · 任务卡、计分与棋盘</span><span data-language-content="en" hidden>BOARD 05 · GAME COMPONENTS</span></figcaption></figure>
         
@@ -194,24 +237,24 @@
     <section class="section" id="example" aria-labelledby="example-title">
       <div class="section-head"><div class="section-title"><span class="section-kicker">06</span><h2 id="example-title"><span data-language-content="zh">对局流程示例</span><span data-language-content="en" hidden>A Turn-by-Turn Example</span></h2></div><span class="section-note"><span data-language-content="zh">七步对局流程</span><span data-language-content="en" hidden>GAMEPLAY EXAMPLE</span></span></div>
       <article class="board">
-        <figure class="board-image"><img data-language-content="en" hidden loading="lazy" decoding="async" src="assets/images/phantasm/06-gameplay-example.png" alt="以七个步骤展示玩家抽牌、使用道具卡、触发生物能力并结算任务的过程。"><div class="cn-board cn-example-board" data-language-content="zh">
+        <figure class="board-image"><img data-language-content="en" hidden loading="lazy" decoding="async" src="assets/optimized/images/phantasm/06-gameplay-example.png-2400.webp" alt="以七个步骤展示玩家抽牌、使用道具卡、触发生物能力并结算任务的过程。" srcset="assets/optimized/images/phantasm/06-gameplay-example.png-1200.webp 1200w, assets/optimized/images/phantasm/06-gameplay-example.png-2400.webp 2400w" sizes="(max-width:699px) 100vw, 75vw" data-original-src="assets/images/phantasm/06-gameplay-example.png" width="2500" height="1080"><div class="cn-board cn-example-board" data-language-content="zh">
           <div class="cn-board-heading"><p class="cn-board-overline">06 / 对局示例</p><h3>一轮行动如何改变牌阵</h3><p>以下流程以两名玩家的实际牌局记录为例，展示抽牌、翻转、能力触发与任务结算如何衔接。</p></div>
           <div class="cn-example-table"><span class="cn-table-label">初始阵列 / 双方视角</span><div class="cn-table-rows"><div><span>玩家一</span><b>3<small>逆置</small></b><b>6<small>逆置</small></b><b>4<small>正置</small></b><b>2<small>逆置</small></b></div><div><span>玩家二</span><b>2<small>正置</small></b><b>4<small>逆置</small></b><b>6<small>正置</small></b><b>3<small>正置</small></b></div></div><p>中央 1–4 号位的卡牌朝向会影响任务条件与能力效果。</p></div>
           <ol class="cn-step-grid">
-            <li><b>01</b><div><h4>抽取任务</h4><p>玩家一抽取任务卡。初始阵列按两名玩家各自的座位视角呈现。</p></div><img class="cn-step-image" loading="lazy" decoding="async" src="assets/images/phantasm/cn-inserts/gameplay-step-01.png" alt="对局步骤 1：初始牌阵"></li>
-            <li><b>02</b><div><h4>旋转与翻面</h4><p>玩家二旋转第三位，触发 6 号生物的翻面能力；随后翻转第四位，使 3 号卡变为正置的 5 号卡，再用角色技能各抽一张任务卡与道具卡。</p></div><img class="cn-step-image" loading="lazy" decoding="async" src="assets/images/phantasm/cn-inserts/gameplay-step-02.png" alt="对局步骤 2：旋转、翻面与抽牌后的牌阵"></li>
-            <li><b>03</b><div><h4>完成并结算任务</h4><p>玩家一再抽取任务卡。玩家二旋转第二位并完成任务，获得 1 分；第二、第三位生物卡洗回牌库后补充。</p></div><img class="cn-step-image" loading="lazy" decoding="async" src="assets/images/phantasm/cn-inserts/gameplay-step-03.png" alt="对局步骤 3：触发能力并结算任务后的牌阵"></li>
-            <li><b>04</b><div><h4>更新中央阵列</h4><p>新生物卡补入空位，桌面局势改变，双方据此判断下一步操作。</p></div><img class="cn-step-image" loading="lazy" decoding="async" src="assets/images/phantasm/cn-inserts/gameplay-step-04.png" alt="对局步骤 4：补充生物卡后的牌阵"></li>
-            <li><b>05</b><div><h4>继续改变朝向</h4><p>玩家一横向翻转第四位，得到逆置的 4 号卡；玩家二抽取任务卡。</p></div><img class="cn-step-image" loading="lazy" decoding="async" src="assets/images/phantasm/cn-inserts/gameplay-step-05.png" alt="对局步骤 5：改变第四位朝向后的牌阵"></li>
-            <li><b>06</b><div><h4>补牌并翻转第一位</h4><p>玩家一抽取道具卡，玩家二抽取任务卡；之后玩家一再抽一张道具卡，玩家二翻转第一位，得到正置的 2 号卡。</p></div><img class="cn-step-image" loading="lazy" decoding="async" src="assets/images/phantasm/cn-inserts/gameplay-step-06.png" alt="对局步骤 6：抽取道具卡并翻转第一位后的牌阵"></li>
-            <li><b>07</b><div><h4>交换位置并结束回合</h4><p>玩家一纵向翻转第四位，发动 2 号卡的交换效果，调换第一与第四位，完成任务并结束回合。</p></div><img class="cn-step-image" loading="lazy" decoding="async" src="assets/images/phantasm/cn-inserts/gameplay-step-07.png" alt="对局步骤 7：交换第一与第四位并结束回合"></li>
+            <li><b>01</b><div><h4>抽取任务</h4><p>玩家一抽取任务卡。初始阵列按两名玩家各自的座位视角呈现。</p></div><img class="cn-step-image" loading="lazy" decoding="async" src="assets/optimized/images/phantasm/cn-inserts/gameplay-step-01.png-2400.webp" alt="对局步骤 1：初始牌阵" sizes="(max-width:699px) 100vw, 75vw" data-original-src="assets/images/phantasm/cn-inserts/gameplay-step-01.png" width="520" height="309"></li>
+            <li><b>02</b><div><h4>旋转与翻面</h4><p>玩家二旋转第三位，触发 6 号生物的翻面能力；随后翻转第四位，使 3 号卡变为正置的 5 号卡，再用角色技能各抽一张任务卡与道具卡。</p></div><img class="cn-step-image" loading="lazy" decoding="async" src="assets/optimized/images/phantasm/cn-inserts/gameplay-step-02.png-2400.webp" alt="对局步骤 2：旋转、翻面与抽牌后的牌阵" sizes="(max-width:699px) 100vw, 75vw" data-original-src="assets/images/phantasm/cn-inserts/gameplay-step-02.png" width="538" height="309"></li>
+            <li><b>03</b><div><h4>完成并结算任务</h4><p>玩家一再抽取任务卡。玩家二旋转第二位并完成任务，获得 1 分；第二、第三位生物卡洗回牌库后补充。</p></div><img class="cn-step-image" loading="lazy" decoding="async" src="assets/optimized/images/phantasm/cn-inserts/gameplay-step-03.png-2400.webp" alt="对局步骤 3：触发能力并结算任务后的牌阵" sizes="(max-width:699px) 100vw, 75vw" data-original-src="assets/images/phantasm/cn-inserts/gameplay-step-03.png" width="487" height="309"></li>
+            <li><b>04</b><div><h4>更新中央阵列</h4><p>新生物卡补入空位，桌面局势改变，双方据此判断下一步操作。</p></div><img class="cn-step-image" loading="lazy" decoding="async" src="assets/optimized/images/phantasm/cn-inserts/gameplay-step-04.png-2400.webp" alt="对局步骤 4：补充生物卡后的牌阵" sizes="(max-width:699px) 100vw, 75vw" data-original-src="assets/images/phantasm/cn-inserts/gameplay-step-04.png" width="458" height="309"></li>
+            <li><b>05</b><div><h4>继续改变朝向</h4><p>玩家一横向翻转第四位，得到逆置的 4 号卡；玩家二抽取任务卡。</p></div><img class="cn-step-image" loading="lazy" decoding="async" src="assets/optimized/images/phantasm/cn-inserts/gameplay-step-05.png-2400.webp" alt="对局步骤 5：改变第四位朝向后的牌阵" sizes="(max-width:699px) 100vw, 75vw" data-original-src="assets/images/phantasm/cn-inserts/gameplay-step-05.png" width="510" height="309"></li>
+            <li><b>06</b><div><h4>补牌并翻转第一位</h4><p>玩家一抽取道具卡，玩家二抽取任务卡；之后玩家一再抽一张道具卡，玩家二翻转第一位，得到正置的 2 号卡。</p></div><img class="cn-step-image" loading="lazy" decoding="async" src="assets/optimized/images/phantasm/cn-inserts/gameplay-step-06.png-2400.webp" alt="对局步骤 6：抽取道具卡并翻转第一位后的牌阵" sizes="(max-width:699px) 100vw, 75vw" data-original-src="assets/images/phantasm/cn-inserts/gameplay-step-06.png" width="508" height="310"></li>
+            <li><b>07</b><div><h4>交换位置并结束回合</h4><p>玩家一纵向翻转第四位，发动 2 号卡的交换效果，调换第一与第四位，完成任务并结束回合。</p></div><img class="cn-step-image" loading="lazy" decoding="async" src="assets/optimized/images/phantasm/cn-inserts/gameplay-step-07.png-2400.webp" alt="对局步骤 7：交换第一与第四位并结束回合" sizes="(max-width:699px) 100vw, 75vw" data-original-src="assets/images/phantasm/cn-inserts/gameplay-step-07.png" width="488" height="309"></li>
           </ol>
           <div class="cn-example-summary"><span>行动链</span><strong>抽牌 → 改变阵列 → 触发生物能力 → 任务结算</strong></div>
         </div><figcaption><span data-language-content="zh">图板 06 · 对局流程示例</span><span data-language-content="en" hidden>BOARD 06 · GAMEPLAY EXAMPLE</span></figcaption></figure>
         
       </article>
     </section>
-    <footer class="page-footer"><span><span data-language-content="zh">林蓁 / 游戏设计 06 · 幻景</span><span data-language-content="en" hidden>LIN ZHEN / GAME DESIGN 06 · PHANTASM</span></span><a href="index.html#game-design"><span data-language-content="zh">返回全部游戏设计项目 ↑</span><span data-language-content="en" hidden>Back to All Game Design Projects ↑</span></a></footer>
+    <footer class="page-footer"><a class="next-work-link prev-work-link" href="rene.html"><span data-language-content="zh">← 上一个作品：瑞尼</span><span data-language-content="en" hidden>← Previous project: Rene</span></a><span><span data-language-content="zh">林蓁 / 游戏设计 06 · 幻景</span><span data-language-content="en" hidden>LIN ZHEN / GAME DESIGN 06 · PHANTASM</span></span><a href="portfolio-home.html#game-design"><span data-language-content="zh">返回全部游戏设计项目 ↑</span><span data-language-content="en" hidden>Back to All Game Design Projects ↑</span></a><a class="next-work-link next-work-bottom" href="marble-commander.html"><span data-language-content="zh">下一个作品：弹珠指挥官 →</span><span data-language-content="en" hidden>Next project: Marble Commander →</span></a></footer>
   </main>
   <dialog class="image-viewer" id="image-viewer" aria-label="图片放大预览" data-label-zh="图片放大预览" data-label-en="Image preview">
     <button class="image-viewer-close" type="button" aria-label="关闭图片预览" data-label-zh="关闭图片预览" data-label-en="Close image preview">×</button>
@@ -268,7 +311,7 @@
         savedScrollY = window.scrollY;
         savedBodyStyle = {position:body.style.position,top:body.style.top,left:body.style.left,right:body.style.right,width:body.style.width,overflow:body.style.overflow};
         body.style.position = "fixed"; body.style.top = "-" + savedScrollY + "px"; body.style.left = "0"; body.style.right = "0"; body.style.width = "100%"; body.style.overflow = "hidden";
-        enlarged.src = image.currentSrc || image.src; enlarged.alt = image.alt || "项目图片"; viewer.showModal();
+        enlarged.src = image.dataset.originalSrc||image.currentSrc||image.src; enlarged.alt = image.alt || "项目图片"; viewer.showModal();
       };
       const unlockPage = () => { if (!savedBodyStyle) return; Object.assign(body.style,savedBodyStyle); savedBodyStyle = null; window.scrollTo(0,savedScrollY); };
       document.querySelectorAll("main img").forEach((image) => {
@@ -293,6 +336,27 @@
         if (event.target.closest("a")) toc.open = !mobile.matches;
       });
     })();
+  </script>
+  <script>
+  (() => {
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (!('IntersectionObserver' in window)) return;
+    const targets = [...new Set(document.querySelectorAll('main > section:not(.hero), main > article, .project-footer, .page-footer, body > footer'))];
+    if (!targets.length) return;
+    document.documentElement.classList.add('motion-ready');
+    const observer = new IntersectionObserver(entries => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    }, { threshold:0.08, rootMargin:'0px 0px -7% 0px' });
+    targets.forEach((target,index) => {
+      target.classList.add('motion-reveal');
+      target.style.setProperty('--motion-delay', `${(index % 4) * 55}ms`);
+      observer.observe(target);
+    });
+  })();
   </script>
 </body>
 </html>

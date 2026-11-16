@@ -18,13 +18,56 @@
     @media(min-width:1200px) and (max-width:1600px){.shell{width:min(1120px,calc(100% - 260px));margin-left:auto;margin-right:220px}}@media(min-width:700px) and (max-width:1199px){.shell{width:calc(100% - 180px);margin-left:30px;margin-right:150px}.side-toc{right:12px;width:128px;padding:8px}.side-toc summary{font-size:9px}.side-toc .contents a{padding:7px 2px;font-size:9px}}
     @media(max-width:850px){.shell{width:min(100% - 48px,760px)}.hero{grid-template-columns:1fr;gap:22px}.cover img{max-height:none}.side-toc{display:none}}@media(max-width:560px){.shell{width:calc(100% - 32px)}.topbar{height:64px}.wordmark{gap:9px;font-size:8px}.cn{font-size:10px}.back-link{font-size:11px}.breadcrumb{padding-top:17px}.hero{padding:20px 0 25px}.hero h1{font-size:38px}.hero h1 span{font-size:15px}.cover-title{left:18px;bottom:16px}.cover-title strong{font-size:28px}.facts{gap:14px}.intro-strip{align-items:flex-start;flex-direction:column;gap:9px}.contents{gap:11px}.section{padding-top:28px}.section-head{align-items:start;flex-direction:column;gap:8px}.board-grid{grid-template-columns:1fr;gap:12px}.board-en{margin-left:0}.group-copy,.board-translation p{font-size:12px}.board-translation{padding:12px 9px}.project-footer{flex-direction:column}}
     @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
+      /* topbar-signature */
+    .topbar { position:relative; }
+    .topbar::after { content:none; }
+      /* portfolio-motion-v1 */
+    @keyframes portfolio-arrive { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes signature-breathe { 0%,100% { text-shadow:0 0 5px rgba(192,164,106,.48),0 0 11px rgba(192,164,106,.18); } 50% { text-shadow:0 0 9px rgba(192,164,106,.78),0 0 18px rgba(192,164,106,.32); } }
+    body > .topbar { animation:portfolio-arrive .58s cubic-bezier(.2,.7,.2,1) both; }
+    .hero { animation:portfolio-arrive .7s .08s cubic-bezier(.2,.7,.2,1) both; }
+    .topbar::after,.feature-copy::after,.project-meta::after,.interior-copy::after { animation:signature-breathe 4.6s ease-in-out infinite; }
+    html.motion-ready .motion-reveal { opacity:0; transform:translateY(15px); transition:opacity .62s ease var(--motion-delay,0ms),transform .62s cubic-bezier(.2,.7,.2,1) var(--motion-delay,0ms); }
+    html.motion-ready .motion-reveal.is-visible { opacity:1; transform:translateY(0); }
+    @media(prefers-reduced-motion:reduce) { body > .topbar,.hero,.topbar::after,.feature-copy::after,.project-meta::after,.interior-copy::after { animation:none!important; } html.motion-ready .motion-reveal,html.motion-ready .motion-reveal.is-visible { opacity:1!important; transform:none!important; transition:none!important; } }
   </style>
+<style id="next-work-navigation">
+  .next-work-row { display:flex; justify-content:flex-end; margin:9px auto 0; }
+  .next-work-link { display:inline-flex; align-items:center; min-height:30px; padding:7px 11px; border:1px solid rgba(192,164,106,.52); color:#d8bf83; background:rgba(16,25,27,.36); font:9px/1.3 "DM Mono","Noto Sans SC","Microsoft YaHei",sans-serif; letter-spacing:.04em; text-decoration:none; transition:color .2s,border-color .2s,background .2s,box-shadow .2s,transform .2s; }
+  .next-work-link:hover { border-color:#ead198; color:#f6e1aa; background:rgba(192,164,106,.1); box-shadow:0 0 14px rgba(192,164,106,.17); transform:translateX(2px); }
+  .next-work-link:focus-visible { outline:2px solid #c0a46a; outline-offset:3px; }
+  .next-work-bottom { margin-left:auto; }
+  .next-work-top { margin-left:auto; }
+  .prev-work-link { margin-right:auto; }
+  .page-footer,.project-footer,.footer { flex-wrap:wrap; align-items:center; }
+  @media(max-width:560px) { .next-work-row { margin-top:6px; } .next-work-link { min-height:28px; padding:6px 8px; font-size:8px; } }
+  @media(prefers-reduced-motion:reduce) { .next-work-link { transition:none; } }
+</style>
+  <style id="cover-signature-style">
+  .cover { position:relative; }
+  .cover-signature { position:absolute; z-index:40; top:12px; right:14px; color:#c0a46a; font:500 13px/1 "Segoe Script","Brush Script MT","Lucida Handwriting",cursive; letter-spacing:.07em; text-shadow:0 0 6px rgba(192,164,106,.62),0 0 14px rgba(192,164,106,.24); pointer-events:none; animation:signature-breathe 4.6s ease-in-out infinite; }
+  .hero { position:relative; }
+  .hero-signature { top:14px; right:0; }
+  @media(max-width:600px) { .cover-signature { top:10px; right:11px; font-size:12px; } .hero-signature { right:0; } }
+  @media(prefers-reduced-motion:reduce) { .cover-signature { animation:none; } }
+</style>
+    <script id="portfolio-shell-entry">
+    (() => {
+      if (window.top !== window.self) return;
+      const page = window.location.pathname.split('/').pop();
+      const shell = new URL('index.html', window.location.href);
+      shell.searchParams.set('page', page + window.location.search);
+      shell.hash = window.location.hash;
+      window.location.replace(shell.href);
+    })();
+  </script>
 </head>
 <body>
   <header class="shell topbar" id="top">
-    <a class="wordmark" href="index.html" aria-label="返回作品集首页"><span class="mark">林</span><span>PORTFOLIO</span><span class="divider"></span><span class="cn">室内设计</span></a>
-    <a class="back-link" href="index.html#interior-title">返回全部项目 ↑</a>
+    <a class="wordmark" href="portfolio-home.html" aria-label="返回作品集首页"><span class="mark">林</span><span>PORTFOLIO</span><span class="divider"></span><span class="cn">室内设计</span></a>
+    <a class="back-link" href="portfolio-home.html#interior-title">返回全部项目 ↑</a>
   </header>
+  <div class="shell next-work-row"><a class="next-work-link prev-work-link" href="ac-studio.html"><span data-language-content="zh">← 上一个作品：AC Studio</span><span data-language-content="en" hidden>← Previous project: AC Studio</span></a><a class="next-work-link next-work-top" href="marc-jacobs.html"><span data-language-content="zh">下一个作品：Marc Jacobs →</span><span data-language-content="en" hidden>Next project: Marc Jacobs →</span></a></div>
   <main class="shell">
     <div class="breadcrumb">室内设计 <span>/</span> 社区资源中心 <span>/</span> 2023</div>
     <section class="hero" aria-labelledby="project-title">
@@ -41,14 +84,14 @@
           <div class="fact"><dt>设计工具</dt><dd>AutoCAD · SketchUp · Photoshop · Twinmotion</dd></div>
         </dl>
       </div>
-      <figure class="cover"><img src="assets/images/old-weston-road/lounge-cover.png" alt="社区资源中心 lounge area 渲染图，展示深蓝座椅、木地板、日光与共享休息空间。"><span class="cover-mark">COLLABORATIVE PROJECT / 2023</span><figcaption class="cover-title"><span class="small">OLD WESTON ROAD HOME / RESOURCE CENTRE</span><strong>社区共享空间</strong><em>A welcoming place to connect</em></figcaption></figure>
+      <figure class="cover"><span class="cover-signature" aria-hidden="true">linzhen</span><img src="assets/optimized/images/old-weston-road/lounge-cover.png-2400.webp" alt="社区资源中心 lounge area 渲染图，展示深蓝座椅、木地板、日光与共享休息空间。" srcset="assets/optimized/images/old-weston-road/lounge-cover.png-480.webp 480w, assets/optimized/images/old-weston-road/lounge-cover.png-960.webp 960w, assets/optimized/images/old-weston-road/lounge-cover.png-1200.webp 1200w, assets/optimized/images/old-weston-road/lounge-cover.png-1600.webp 1600w, assets/optimized/images/old-weston-road/lounge-cover.png-2400.webp 1672w" sizes="(max-width:699px) 100vw, 50vw" data-original-src="assets/images/old-weston-road/lounge-cover.png" width="1672" height="941" loading="eager" decoding="async" fetchpriority="high"><span class="cover-mark">COLLABORATIVE PROJECT / 2023</span><figcaption class="cover-title"><span class="small">OLD WESTON ROAD HOME / RESOURCE CENTRE</span><strong>社区共享空间</strong><em>A welcoming place to connect</em></figcaption></figure>
     </section>
     <div class="intro-strip"><span>项目内容 / 中文导览</span><nav class="contents" aria-label="项目内容目录"><a href="#poster-overview">项目概览海报</a><a href="#introduction">项目概念</a><a href="#sustainable">可持续策略</a><a href="#site-plan">场地与平面</a><a href="#building-design">建筑图纸</a><a href="#visualizations">空间效果</a></nav></div>
 
     <section class="section" id="poster-overview">
       <div class="section-head"><div class="section-title"><span class="section-kicker">OVERVIEW</span><h2>项目概览海报</h2></div><span class="section-note">PROJECT POSTER / CHINESE TRANSLATION</span></div>
       <article class="board poster-board">
-        <figure><img src="assets/images/old-weston-road/poster.png" alt="Old Weston Road Home · Resource Centre 项目总览海报，包含场地使命、LEED 与 WELL 策略、材料、被动式设计、平面图及立面图。" loading="lazy" decoding="async"><figcaption><span class="board-index">POSTER / OVERVIEW</span><span class="board-title">项目定位、可持续设计与空间方案</span><span class="board-en">LOCATION / MISSION / DESIGN SUMMARY</span></figcaption></figure>
+        <figure><img src="assets/optimized/images/old-weston-road/poster.png-2400.webp" alt="Old Weston Road Home · Resource Centre 项目总览海报，包含场地使命、LEED 与 WELL 策略、材料、被动式设计、平面图及立面图。" loading="lazy" decoding="async" srcset="assets/optimized/images/old-weston-road/poster.png-1200.webp 1200w, assets/optimized/images/old-weston-road/poster.png-2400.webp 2245w" sizes="(max-width:699px) 100vw, 75vw" data-original-src="assets/images/old-weston-road/poster.png" width="2245" height="1587"><figcaption><span class="board-index">POSTER / OVERVIEW</span><span class="board-title">项目定位、可持续设计与空间方案</span><span class="board-en">LOCATION / MISSION / DESIGN SUMMARY</span></figcaption></figure>
         <div class="board-translation"><h3>海报内容中文导览</h3><p>项目位于多伦多 189 Old Weston Road，目标是打造一座被动式社区资源中心，为社区成员提供活动、休息、阅读、课堂与护理支持空间，并通过无障碍卫生间和淋浴设施提升使用便利性。方案倡导低碳与可回收材料，结合 LEED 与 WELL 目标，营造兼顾能源效率、健康、社会交往和环境可持续性的包容空间。海报还概览了绿色屋顶与太阳能板、季节性遮阳和采光策略、室内外饰面材料、功能平面及建筑立面；开放式平面旨在促进社区互动与协作。</p></div>
       </article>
     </section>
@@ -78,7 +121,7 @@
       <p class="group-copy">效果图以季节变化呈现图书馆的日光环境，并展示休息区与绿色屋顶。绿色屋顶结合太阳能板，回应建筑节能、雨水管理与户外环境品质等设计目标。</p>
       <div class="board-grid" id="group-visualizations"></div>
     </section>
-    <footer class="project-footer"><span>林蓁 / 室内设计 / OLD WESTON ROAD HOME</span><a href="index.html#interior-title">返回全部室内项目 ↑</a></footer>
+    <footer class="project-footer"><a class="next-work-link prev-work-link" href="ac-studio.html"><span data-language-content="zh">← 上一个作品：AC Studio</span><span data-language-content="en" hidden>← Previous project: AC Studio</span></a><span>林蓁 / 室内设计 / OLD WESTON ROAD HOME</span><a href="portfolio-home.html#interior-title">返回全部室内项目 ↑</a><a class="next-work-link next-work-bottom" href="marc-jacobs.html"><span data-language-content="zh">下一个作品：Marc Jacobs →</span><span data-language-content="en" hidden>Next project: Marc Jacobs →</span></a></footer>
   </main>
   <details class="side-toc" open><summary>项目目录</summary><nav class="contents" aria-label="项目目录"><a href="#poster-overview">项目概览海报</a><a href="#introduction">01　项目概念</a><a href="#sustainable">02　可持续策略</a><a href="#site-plan">03　场地与平面</a><a href="#building-design">04　建筑图纸</a><a href="#visualizations">05　空间效果</a><a class="to-top" href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false">回到顶端 ↑</a></nav></details>
   <dialog class="image-viewer" aria-label="项目图片预览"><button class="image-viewer-close" type="button" aria-label="关闭图片预览">×</button><img alt=""></dialog>
@@ -128,7 +171,9 @@
           const image = document.createElement("img");
           image.loading = "lazy";
           image.decoding = "async";
-          image.src = `assets/images/old-weston-road/board-${index}.png`;
+          image.dataset.originalSrc = `assets/images/old-weston-road/board-${index}.png`;
+          image.src = `assets/optimized/images/old-weston-road/board-${index}.png-2400.webp`;
+          image.sizes = "(max-width:699px) 100vw, 75vw";
           image.alt = alt;
           const caption = document.createElement("figcaption");
           const pageNumber = String(Number(index) + 2).padStart(2,"0");
@@ -168,7 +213,7 @@
       const openViewer = (image) => {
         toc.hidden = true;
         lockPage();
-        enlarged.src = image.currentSrc || image.src;
+        enlarged.src = image.dataset.originalSrc||image.currentSrc||image.src;
         enlarged.alt = image.alt || "项目图片";
         viewer.showModal();
       };
@@ -185,6 +230,27 @@
       viewer.addEventListener("close",unlockPage);
       viewer.addEventListener("click",(event) => {if(event.target === viewer || event.target === enlarged)viewer.close();});
     })();
+  </script>
+  <script>
+  (() => {
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (!('IntersectionObserver' in window)) return;
+    const targets = [...new Set(document.querySelectorAll('main > section:not(.hero), main > article, .project-footer, .page-footer, body > footer'))];
+    if (!targets.length) return;
+    document.documentElement.classList.add('motion-ready');
+    const observer = new IntersectionObserver(entries => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    }, { threshold:0.08, rootMargin:'0px 0px -7% 0px' });
+    targets.forEach((target,index) => {
+      target.classList.add('motion-reveal');
+      target.style.setProperty('--motion-delay', `${(index % 4) * 55}ms`);
+      observer.observe(target);
+    });
+  })();
   </script>
 </body>
 </html>

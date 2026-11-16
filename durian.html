@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#e8d1a0">
+  <meta name="theme-color" content="#10191b">
   <meta name="description" content="《家猫德里安》像素游戏设计：一只年迈的家猫离家探索、寻找珍爱之物，并在旅途中重新感受与家人的羁绊。">
   <title>林蓁｜家猫德里安 Durian</title>
   <style>
@@ -44,17 +44,84 @@
     @media(max-width:720px){.shell{width:min(100% - 24px,600px)}.hero{grid-template-columns:1fr;padding-top:36px}.hero-aside{display:none}.nav{gap:12px;font-size:10px}.section{padding:28px 0 34px}h2{font-size:21px}.section-note{font-size:8px}.info-grid,.steps{grid-template-columns:1fr}.info-card.wide{grid-column:auto}.item-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.board{padding:8px}.translation{padding:17px 3px 5px}.lead{font-size:17px}.page-footer{font-size:9px}}
     @media(max-width:430px){.nav{gap:8px}.wordmark{gap:6px;font-size:9px}.section-head{align-items:flex-start}.section-note{max-width:92px;text-align:right;line-height:1.5}.item-grid{grid-template-columns:1fr}}
       .side-toc{position:fixed;top:50%;right:16px;z-index:50;width:164px;max-height:80vh;transform:translateY(-50%);padding:10px;border:1px solid var(--line);background:rgba(246,239,226,.97);box-shadow:0 10px 32px #0008;backdrop-filter:blur(12px);color:var(--ink);font:10px var(--mono);letter-spacing:.04em}.side-toc summary{display:flex;align-items:center;justify-content:space-between;gap:8px;cursor:pointer;list-style:none;padding:4px 2px 10px;border-bottom:1px solid var(--line);color:var(--accent);letter-spacing:.12em}.side-toc summary::-webkit-details-marker{display:none}.side-toc summary:after{content:"−";font-size:14px}.side-toc:not([open]) summary:after{content:"+"}.side-toc nav{display:grid;gap:0;padding-top:5px;max-height:calc(80vh - 44px);overflow-y:auto}.side-toc nav a{display:block;padding:8px 4px;border-bottom:1px solid rgba(88,105,97,.38);line-height:1.45;text-decoration:none}.side-toc nav a:hover{color:var(--accent);background:rgba(102,142,125,.09)}.side-toc nav .to-top{margin-top:5px;border:0;color:var(--accent)}.toc-mobile-label{display:none}@media(min-width:700px) and (max-width:1199px){.side-toc{right:12px;width:132px;padding:8px}.side-toc nav a{padding:7px 2px;font-size:9px}}@media(max-width:699px){.side-toc{top:auto;right:14px;bottom:16px;width:auto;max-height:none;transform:none;padding:0;border:0;background:transparent;box-shadow:none;backdrop-filter:none}.side-toc summary{width:48px;height:48px;justify-content:center;padding:0;border:1px solid var(--line);border-radius:50%;background:rgba(246,239,226,.97);box-shadow:0 5px 18px #0008;font:10px var(--sans);letter-spacing:0}.side-toc summary:after{display:none}.side-toc .toc-title{display:none}.side-toc .toc-mobile-label{display:inline}.side-toc nav{position:absolute;right:0;bottom:60px;width:min(235px,calc(100vw - 32px));max-height:70vh;padding:8px;border:1px solid var(--line);background:rgba(246,239,226,.99);box-shadow:0 10px 28px #0008}.side-toc:not([open]) nav{display:none}}
+      /* topbar-signature */
+    .topbar { position:relative; }
+    .topbar::after { content:none; }
+      /* portfolio-motion-v1 */
+    @keyframes portfolio-arrive { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes signature-breathe { 0%,100% { text-shadow:0 0 5px rgba(192,164,106,.48),0 0 11px rgba(192,164,106,.18); } 50% { text-shadow:0 0 9px rgba(192,164,106,.78),0 0 18px rgba(192,164,106,.32); } }
+    body > .topbar { animation:portfolio-arrive .58s cubic-bezier(.2,.7,.2,1) both; }
+    .hero { animation:portfolio-arrive .7s .08s cubic-bezier(.2,.7,.2,1) both; }
+    .topbar::after,.feature-copy::after,.project-meta::after,.interior-copy::after { animation:signature-breathe 4.6s ease-in-out infinite; }
+    html.motion-ready .motion-reveal { opacity:0; transform:translateY(15px); transition:opacity .62s ease var(--motion-delay,0ms),transform .62s cubic-bezier(.2,.7,.2,1) var(--motion-delay,0ms); }
+    html.motion-ready .motion-reveal.is-visible { opacity:1; transform:translateY(0); }
+    @media(prefers-reduced-motion:reduce) { body > .topbar,.hero,.topbar::after,.feature-copy::after,.project-meta::after,.interior-copy::after { animation:none!important; } html.motion-ready .motion-reveal,html.motion-ready .motion-reveal.is-visible { opacity:1!important; transform:none!important; transition:none!important; } }
   </style>
+<style id="next-work-navigation">
+  .next-work-row { display:flex; justify-content:flex-end; margin:9px auto 0; }
+  .next-work-link { display:inline-flex; align-items:center; min-height:30px; padding:7px 11px; border:1px solid rgba(192,164,106,.52); color:#d8bf83; background:rgba(16,25,27,.36); font:9px/1.3 "DM Mono","Noto Sans SC","Microsoft YaHei",sans-serif; letter-spacing:.04em; text-decoration:none; transition:color .2s,border-color .2s,background .2s,box-shadow .2s,transform .2s; }
+  .next-work-link:hover { border-color:#ead198; color:#f6e1aa; background:rgba(192,164,106,.1); box-shadow:0 0 14px rgba(192,164,106,.17); transform:translateX(2px); }
+  .next-work-link:focus-visible { outline:2px solid #c0a46a; outline-offset:3px; }
+  .next-work-bottom { margin-left:auto; }
+  .next-work-top { margin-left:auto; }
+  .prev-work-link { margin-right:auto; }
+  .page-footer,.project-footer,.footer { flex-wrap:wrap; align-items:center; }
+  @media(max-width:560px) { .next-work-row { margin-top:6px; } .next-work-link { min-height:28px; padding:6px 8px; font-size:8px; } }
+  @media(prefers-reduced-motion:reduce) { .next-work-link { transition:none; } }
+</style>
+  <style id="cover-signature-style">
+  .cover { position:relative; }
+  .cover-signature { position:absolute; z-index:40; top:12px; right:14px; color:#c0a46a; font:500 13px/1 "Segoe Script","Brush Script MT","Lucida Handwriting",cursive; letter-spacing:.07em; text-shadow:0 0 6px rgba(192,164,106,.62),0 0 14px rgba(192,164,106,.24); pointer-events:none; animation:signature-breathe 4.6s ease-in-out infinite; }
+  .hero { position:relative; grid-template-columns:minmax(0,1.15fr) minmax(260px,.85fr); align-items:start; }
+  .hero-aside.hero-cover { display:block; width:100%; aspect-ratio:1.7 / 1; padding:0; border:1px solid var(--line); text-align:left; overflow:hidden; background:var(--panel); }
+  .hero-cover img { display:block; width:100%; height:100%; object-fit:cover; image-rendering:pixelated; }
+  @media(max-width:720px) { .hero { grid-template-columns:1fr; } .hero-aside.hero-cover { display:block; width:100%; max-width:560px; justify-self:start; } }
+  @media(max-width:600px) { .cover-signature { top:10px; right:11px; font-size:12px; } }
+  @media(prefers-reduced-motion:reduce) { .cover-signature { animation:none; } }
+</style>
+  <style id="durian-dark-theme">
+    :root { --paper:#10191b; --panel:#1a2828; --ink:#e8e2d2; --muted:#a4aa9d; --line:#364746; --sage:#a4bead; --sage-light:#21312e; --rose:#c9898a; --gold:#c0a46a; }
+    body { color:var(--ink); background-color:var(--paper); background-image:radial-gradient(ellipse at 12% 10%,rgba(102,142,125,.13),transparent 29rem),radial-gradient(ellipse at 94% 31%,rgba(199,126,130,.08),transparent 27rem),linear-gradient(rgba(200,205,185,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(200,205,185,.025) 1px,transparent 1px),linear-gradient(180deg,#121d1f 0%,#10191b 56%,#0d1516 100%); }
+    .wordmark,.nav,.eyebrow,.section-kicker,.caption,.section-note,.page-footer,.hero-meta span,.hero-aside,.translation-head span { color:var(--muted); }
+    .wordmark strong,.nav a:hover,h1 span,.video-meta strong { color:var(--sage); }
+    .hero p,.copy,.info-card p,.item span,.step p,.branch p { color:#c4c9c0; }
+    .hero-meta span { background:rgba(26,40,40,.88); }
+    .hero-meta strong { color:#c4d5c8; }
+    .section-title .section-kicker,.step-num,.item strong,.info-card h4,.branch h4 { color:var(--gold); }
+    .board { background:rgba(26,40,40,.9); box-shadow:0 8px 28px rgba(0,0,0,.18); }
+    .board-image img { border-color:rgba(192,164,106,.2); }
+    .lead,.translation-head h3 { color:#e4dfd0; }
+    .info-card { background:rgba(42,61,55,.72); border:1px solid rgba(128,157,139,.28); }
+    .item,.step { background:rgba(20,31,31,.92); border-color:var(--line); }
+    .branch { background:rgba(110,64,63,.22); border-left-color:var(--rose); }
+    .video-meta strong { color:var(--gold); }
+    .side-toc { color:var(--muted); background:rgba(13,21,20,.97); border-color:var(--line); }
+    .side-toc summary { color:var(--gold); border-color:var(--line); }
+    .side-toc nav a { border-color:rgba(88,105,97,.5); }
+    .side-toc nav a:hover,.side-toc nav .to-top { color:var(--gold); }
+    .side-toc nav a:hover { background:rgba(192,164,106,.08); }
+    @media(max-width:699px) { .side-toc { background:transparent; } .side-toc summary { background:rgba(13,21,20,.97); } .side-toc nav { background:rgba(13,21,20,.99); } }
+  </style>
+    <script id="portfolio-shell-entry">
+    (() => {
+      if (window.top !== window.self) return;
+      const page = window.location.pathname.split('/').pop();
+      const shell = new URL('index.html', window.location.href);
+      shell.searchParams.set('page', page + window.location.search);
+      shell.hash = window.location.hash;
+      window.location.replace(shell.href);
+    })();
+  </script>
 </head>
 <body>
   <header class="shell topbar">
-    <a class="wordmark" href="index.html#game-design" aria-label="返回游戏设计项目"><strong>林蓁</strong><span>PORTFOLIO</span></a>
+    <a class="wordmark" href="portfolio-home.html#game-design" aria-label="返回游戏设计项目"><strong>林蓁</strong><span>PORTFOLIO</span></a>
     <nav class="nav" aria-label="项目导航"><a href="#overview">项目概述</a><a href="#videos">视频</a><a href="#characters">角色与道具</a><a href="#process">流程与结局</a></nav>
   </header>
+  <div class="shell next-work-row"><a class="next-work-link prev-work-link" href="marble-commander.html"><span data-language-content="zh">← 上一个作品：弹珠指挥官</span><span data-language-content="en" hidden>← Previous project: Marble Commander</span></a><a class="next-work-link next-work-top" href="pulse-runner.html"><span data-language-content="zh">下一个作品：脉冲疾行 →</span><span data-language-content="en" hidden>Next project: Pulse Runner →</span></a></div>
     <details class="side-toc" id="page-toc" open>
     <summary><span class="toc-title">项目目录</span><span class="toc-mobile-label">目录</span></summary>
     <nav aria-label="项目目录">
-      <a href="#overview">项目概述</a>
       <a href="#videos">项目视频</a>
       <a href="#story">01　故事引言</a>
       <a href="#concept">02　游戏概念与剧情</a>
@@ -66,11 +133,11 @@
     </nav>
   </details>
   <main class="shell">
-    <section class="hero" id="overview">
+  <section class="hero" id="overview">
       <div><div class="eyebrow">GAME DESIGN · PIXEL ART</div>
         <h1>家猫德里安<span>DURIAN: THE HOUSE CAT</span></h1>
         <p>一只年迈的家猫，在充满回忆的温馨住宅中展开探索。趁家人忙于日常生活，德里安寻找离家的方法、解开沿途谜题，并在旅程中重新体会与家人的深厚羁绊。</p><div class="hero-meta"><span>创作年份<strong>2024</strong></span><span>制作工具<strong>RPG Maker MZ · Photoshop · Procreate</strong></span></div>
-      </div><div class="hero-aside">第三人称横向卷轴<br>探索与解谜<br>轻松 · 温暖 · 怀旧</div>
+      </div><div class="hero-aside hero-cover cover"><img src="assets/optimized/images/durian-preview.png-2400.webp" alt="家猫德里安像素风封面：德里安站在家门口，标题为 Durian。" draggable="false" srcset="assets/optimized/images/durian-preview.png-480.webp 480w, assets/optimized/images/durian-preview.png-960.webp 960w, assets/optimized/images/durian-preview.png-1200.webp 1200w, assets/optimized/images/durian-preview.png-1600.webp 1470w" sizes="(max-width:699px) 100vw, 50vw" data-original-src="assets/images/durian-preview.png" width="1470" height="1070" loading="eager" decoding="async" fetchpriority="high"><span class="cover-signature" aria-hidden="true">linzhen</span></div>
     </section>
     <section class="video-section" id="videos" aria-labelledby="videos-title">
       <div class="video-head"><h2 id="videos-title">游戏视频</h2><span class="section-note">BILIBILI · GAMEPLAY</span></div>
@@ -81,7 +148,7 @@
     </section>
     <section class="section" id="story" aria-labelledby="cover-title">
       <div class="section-head"><div class="section-title"><span class="section-kicker">01</span><h2 id="cover-title">故事引言</h2></div><span class="section-note">STORY INTRODUCTION</span></div>
-      <article class="board"><figure class="board-image"><img src="assets/images/durian/01-cover.jpg" alt="项目封面：德里安站在家门前，旁边是玫瑰、石阶与像素风标题。"><figcaption class="caption">BOARD 01 · COVER</figcaption></figure>
+      <article class="board"><figure class="board-image"><img src="assets/optimized/images/durian/01-cover.jpg-2400.webp" alt="项目封面：德里安站在家门前，旁边是玫瑰、石阶与像素风标题。" srcset="assets/optimized/images/durian/01-cover.jpg-1200.webp 1200w, assets/optimized/images/durian/01-cover.jpg-2400.webp 2400w" sizes="(max-width:699px) 100vw, 75vw" data-original-src="assets/images/durian/01-cover.jpg" width="2500" height="1080" loading="lazy" decoding="async"><figcaption class="caption">BOARD 01 · COVER</figcaption></figure>
         <div class="translation"><div class="translation-head"><h3>中文译文</h3><span>一个关于离家与归来的故事</span></div>
           <p class="lead">踏入一只年迈家猫的生活，在充满回忆的温馨家中展开旅程。</p><p class="copy">当家人忙于日常生活，德里安开始探索周遭、解开谜题，并为与这个称作“家”的地方静静告别做好准备。</p>
         </div>
@@ -89,7 +156,7 @@
     </section>
     <section class="section" id="concept" aria-labelledby="concept-title">
       <div class="section-head"><div class="section-title"><span class="section-kicker">02</span><h2 id="concept-title">游戏概念与剧情</h2></div><span class="section-note">GAME OVERVIEW</span></div>
-      <article class="board"><figure class="board-image"><img loading="lazy" decoding="async" src="assets/images/durian/02-overview.jpg" alt="游戏概述版面，介绍玩法主题、场景、目标、主线剧情与创作灵感。"><figcaption class="caption">BOARD 02 · GAME OVERVIEW</figcaption></figure>
+      <article class="board"><figure class="board-image"><img loading="lazy" decoding="async" src="assets/optimized/images/durian/02-overview.jpg-2400.webp" alt="游戏概述版面，介绍玩法主题、场景、目标、主线剧情与创作灵感。" srcset="assets/optimized/images/durian/02-overview.jpg-1200.webp 1200w, assets/optimized/images/durian/02-overview.jpg-2400.webp 2400w" sizes="(max-width:699px) 100vw, 75vw" data-original-src="assets/images/durian/02-overview.jpg" width="2500" height="1080"><figcaption class="caption">BOARD 02 · GAME OVERVIEW</figcaption></figure>
         <div class="translation"><div class="translation-head"><h3>中文译文</h3><span>RPG MAKER MZ · PHOTOSHOP · PROCREATE</span></div>
           <div class="info-grid">
             <section class="info-card"><h4>游戏主题</h4><p>第三人称横向卷轴探索与解谜，以轻松温暖的氛围展开。</p></section>
@@ -103,7 +170,7 @@
     </section>
     <section class="section" id="characters" aria-labelledby="characters-title">
       <div class="section-head"><div class="section-title"><span class="section-kicker">03</span><h2 id="characters-title">角色设计与道具</h2></div><span class="section-note">CHARACTERS & ITEMS</span></div>
-      <article class="board"><figure class="board-image"><img loading="lazy" decoding="async" src="assets/images/durian/03-characters-items.jpg" alt="德里安与布丁的像素角色设定，以及生日气球、椅子、玩具箱、猫床、食碗等游戏道具。"><figcaption class="caption">BOARD 03 · CHARACTER DESIGN & ITEMS</figcaption></figure>
+      <article class="board"><figure class="board-image"><img loading="lazy" decoding="async" src="assets/optimized/images/durian/03-characters-items.jpg-2400.webp" alt="德里安与布丁的像素角色设定，以及生日气球、椅子、玩具箱、猫床、食碗等游戏道具。" srcset="assets/optimized/images/durian/03-characters-items.jpg-1200.webp 1200w, assets/optimized/images/durian/03-characters-items.jpg-2400.webp 2400w" sizes="(max-width:699px) 100vw, 75vw" data-original-src="assets/images/durian/03-characters-items.jpg" width="2500" height="1080"><figcaption class="caption">BOARD 03 · CHARACTER DESIGN & ITEMS</figcaption></figure>
         <div class="translation"><div class="translation-head"><h3>中文译文</h3><span>两只猫与家的日常物件</span></div>
           <div class="info-grid">
             <section class="info-card"><h4>德里安 · Durian</h4><p>一只灰色短毛猫。随着年岁增长，体力与跳跃能力逐渐衰退，无法到达高处，也搬不动重物。作为一只终生生活在家中的猫，他渐渐觉得自己成了家人的负担。在十三岁生日这天，他决定首次离家，走向户外，寻找一处隐蔽安静的地方，平静度过最后时光。</p></section>
@@ -126,7 +193,7 @@
     </section>
     <section class="section" id="house" aria-labelledby="house-title">
       <div class="section-head"><div class="section-title"><span class="section-kicker">04</span><h2 id="house-title">住宅空间设计</h2></div><span class="section-note">HOUSE LAYOUT</span></div>
-      <article class="board"><figure class="board-image"><img loading="lazy" decoding="async" src="assets/images/durian/04-house-layout.jpg" alt="住宅一层、父母卧室、女孩卧室与二层走廊的像素场景和空间说明。"><figcaption class="caption">BOARD 04 · HOUSE LAYOUT</figcaption></figure>
+      <article class="board"><figure class="board-image"><img loading="lazy" decoding="async" src="assets/optimized/images/durian/04-house-layout.jpg-2400.webp" alt="住宅一层、父母卧室、女孩卧室与二层走廊的像素场景和空间说明。" srcset="assets/optimized/images/durian/04-house-layout.jpg-1200.webp 1200w, assets/optimized/images/durian/04-house-layout.jpg-2400.webp 2400w" sizes="(max-width:699px) 100vw, 75vw" data-original-src="assets/images/durian/04-house-layout.jpg" width="2500" height="1080"><figcaption class="caption">BOARD 04 · HOUSE LAYOUT</figcaption></figure>
         <div class="translation"><div class="translation-head"><h3>中文译文</h3><span>双层住宅中的探索路线</span></div>
           <div class="info-grid">
             <section class="info-card"><h4>一层</h4><p>设有楼梯、客厅、开放式厨房与餐厅。生日主题装饰营造出清新、舒适的家庭氛围。</p></section>
@@ -139,7 +206,7 @@
     </section>
     <section class="section" id="clearance" aria-labelledby="clearance-title">
       <div class="section-head"><div class="section-title"><span class="section-kicker">05</span><h2 id="clearance-title">通关流程</h2></div><span class="section-note">GAME CLEARANCE PROCESS</span></div>
-      <article class="board"><figure class="board-image"><img loading="lazy" decoding="async" src="assets/images/durian/05-clearance-process.jpg" alt="以游戏截图和箭头呈现德里安寻找玩具与钥匙、尝试打开前门并返回家的解谜流程。"><figcaption class="caption">BOARD 05 · GAME CLEARANCE PROCESS</figcaption></figure>
+      <article class="board"><figure class="board-image"><img loading="lazy" decoding="async" src="assets/optimized/images/durian/05-clearance-process.jpg-2400.webp" alt="以游戏截图和箭头呈现德里安寻找玩具与钥匙、尝试打开前门并返回家的解谜流程。" srcset="assets/optimized/images/durian/05-clearance-process.jpg-1200.webp 1200w, assets/optimized/images/durian/05-clearance-process.jpg-2400.webp 2400w" sizes="(max-width:699px) 100vw, 75vw" data-original-src="assets/images/durian/05-clearance-process.jpg" width="2500" height="1080"><figcaption class="caption">BOARD 05 · GAME CLEARANCE PROCESS</figcaption></figure>
         <div class="translation"><div class="translation-head"><h3>中文译文</h3><span>从前门出发，再循着线索探索房间</span></div>
           <div class="steps">
             <div class="step"><span class="step-num">01</span><p>来到前门。德里安够不到门把手，注意到附近有一把可移动椅子。</p></div>
@@ -176,7 +243,7 @@
     </section>
     <section class="section" id="process" aria-labelledby="process-title">
       <div class="section-head"><div class="section-title"><span class="section-kicker">06</span><h2 id="process-title">制作流程与结局设计</h2></div><span class="section-note">PROCESS & ENDINGS</span></div>
-      <article class="board"><figure class="board-image"><img loading="lazy" decoding="async" src="assets/images/durian/06-production-endings.jpg" alt="展示RPG Maker MZ地图与事件编辑界面、住宅线稿，以及四种门前结局画面。"><figcaption class="caption">BOARD 06 · PROCESS & ENDINGS</figcaption></figure>
+      <article class="board"><figure class="board-image"><img loading="lazy" decoding="async" src="assets/optimized/images/durian/06-production-endings.jpg-2400.webp" alt="展示RPG Maker MZ地图与事件编辑界面、住宅线稿，以及四种门前结局画面。" srcset="assets/optimized/images/durian/06-production-endings.jpg-1200.webp 1200w, assets/optimized/images/durian/06-production-endings.jpg-2400.webp 2400w" sizes="(max-width:699px) 100vw, 75vw" data-original-src="assets/images/durian/06-production-endings.jpg" width="2500" height="1080"><figcaption class="caption">BOARD 06 · PROCESS & ENDINGS</figcaption></figure>
         <div class="translation"><div class="translation-head"><h3>中文译文</h3><span>从场景搭建到结局呈现</span></div>
           <div class="info-grid">
             <section class="info-card"><h4>制作流程</h4><p>项目使用 RPG Maker MZ、Photoshop 与 Procreate 创作。这里展示地图与事件编辑、住宅平面与立面线稿，以及结局画面。</p></section>
@@ -185,12 +252,12 @@
         </div>
       </article>
     </section>
-    <footer class="page-footer"><span>林蓁 / 游戏设计 08 · DURIAN</span><a href="index.html#game-design">返回全部游戏设计项目 ↑</a></footer>
+    <footer class="page-footer"><a class="next-work-link prev-work-link" href="marble-commander.html"><span data-language-content="zh">← 上一个作品：弹珠指挥官</span><span data-language-content="en" hidden>← Previous project: Marble Commander</span></a><span>林蓁 / 游戏设计 08 · DURIAN</span><a href="portfolio-home.html#game-design">返回全部游戏设计项目 ↑</a><a class="next-work-link next-work-bottom" href="pulse-runner.html"><span data-language-content="zh">下一个作品：脉冲疾行 →</span><span data-language-content="en" hidden>Next project: Pulse Runner →</span></a></footer>
   </main>
   <dialog class="image-viewer" id="image-viewer" aria-label="图片放大预览"><button class="image-viewer-close" type="button" aria-label="关闭图片预览">×</button><img alt=""></dialog>
   <script>
     (()=>{const viewer=document.getElementById("image-viewer"),enlarged=viewer.querySelector("img"),close=viewer.querySelector("button"),body=document.body;let savedScrollY=0,savedBodyStyle=null;
-      const openViewer=image=>{savedScrollY=window.scrollY;savedBodyStyle={position:body.style.position,top:body.style.top,left:body.style.left,right:body.style.right,width:body.style.width,overflow:body.style.overflow};body.style.position="fixed";body.style.top="-"+savedScrollY+"px";body.style.left="0";body.style.right="0";body.style.width="100%";body.style.overflow="hidden";enlarged.src=image.currentSrc||image.src;enlarged.alt=image.alt||"项目图片";viewer.showModal()};
+      const openViewer=image=>{savedScrollY=window.scrollY;savedBodyStyle={position:body.style.position,top:body.style.top,left:body.style.left,right:body.style.right,width:body.style.width,overflow:body.style.overflow};body.style.position="fixed";body.style.top="-"+savedScrollY+"px";body.style.left="0";body.style.right="0";body.style.width="100%";body.style.overflow="hidden";enlarged.src=image.dataset.originalSrc||image.currentSrc||image.src;enlarged.alt=image.alt||"项目图片";viewer.showModal()};
       const unlockPage=()=>{if(!savedBodyStyle)return;Object.assign(body.style,savedBodyStyle);savedBodyStyle=null;window.scrollTo(0,savedScrollY)};
       document.querySelectorAll("main img").forEach(image=>{image.tabIndex=0;image.setAttribute("role","button");image.setAttribute("aria-label",(image.alt||"项目图片")+"，点击放大");image.title="点击放大";image.addEventListener("click",event=>{event.preventDefault();event.stopPropagation();openViewer(image)});image.addEventListener("keydown",event=>{if(event.key==="Enter"||event.key===" "){event.preventDefault();openViewer(image)}})});
       close.addEventListener("click",()=>viewer.close());viewer.addEventListener("close",unlockPage);viewer.addEventListener("click",event=>{if(event.target===viewer||event.target===enlarged)viewer.close()})
@@ -208,6 +275,27 @@
         if (event.target.closest("a")) toc.open = !mobile.matches;
       });
     })();
+  </script>
+  <script>
+  (() => {
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (!('IntersectionObserver' in window)) return;
+    const targets = [...new Set(document.querySelectorAll('main > section:not(.hero), main > article, .project-footer, .page-footer, body > footer'))];
+    if (!targets.length) return;
+    document.documentElement.classList.add('motion-ready');
+    const observer = new IntersectionObserver(entries => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    }, { threshold:0.08, rootMargin:'0px 0px -7% 0px' });
+    targets.forEach((target,index) => {
+      target.classList.add('motion-reveal');
+      target.style.setProperty('--motion-delay', `${(index % 4) * 55}ms`);
+      observer.observe(target);
+    });
+  })();
   </script>
 </body>
 </html>

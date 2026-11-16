@@ -22,13 +22,56 @@
     @media(min-width:1200px) and (max-width:1600px){.shell{width:min(1240px,calc(100% - 260px));margin-left:auto;margin-right:220px}}
     @media(min-width:700px) and (max-width:1199px){.shell{width:calc(100% - 180px);margin-left:30px;margin-right:150px}.side-toc{right:12px;width:128px;padding:8px}.side-toc summary{font-size:9px}.side-toc .contents a{padding:7px 2px;font-size:9px}}
     @media(max-width:699px){.side-toc{top:auto;right:14px;bottom:16px;width:auto;transform:none;padding:0;border:0;background:transparent;box-shadow:none;backdrop-filter:none}.side-toc summary{width:48px;height:48px;justify-content:center;padding:0;border:1px solid var(--line-dark);border-radius:50%;background:rgba(16,25,27,.97);box-shadow:0 5px 18px #0008;font:10px var(--sans);letter-spacing:0}.side-toc summary::after{display:none}.side-toc nav{position:absolute;right:0;bottom:60px;width:min(220px,calc(100vw - 32px));padding:8px;border:1px solid var(--line-dark);background:rgba(16,25,27,.98);box-shadow:0 10px 28px #0008}.side-toc:not([open]) nav{display:none}.side-toc[open] nav{display:grid}}
+      /* topbar-signature */
+    .topbar { position:relative; }
+    .topbar::after { content:none; }
+      /* portfolio-motion-v1 */
+    @keyframes portfolio-arrive { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes signature-breathe { 0%,100% { text-shadow:0 0 5px rgba(192,164,106,.48),0 0 11px rgba(192,164,106,.18); } 50% { text-shadow:0 0 9px rgba(192,164,106,.78),0 0 18px rgba(192,164,106,.32); } }
+    body > .topbar { animation:portfolio-arrive .58s cubic-bezier(.2,.7,.2,1) both; }
+    .hero { animation:portfolio-arrive .7s .08s cubic-bezier(.2,.7,.2,1) both; }
+    .topbar::after,.feature-copy::after,.project-meta::after,.interior-copy::after { animation:signature-breathe 4.6s ease-in-out infinite; }
+    html.motion-ready .motion-reveal { opacity:0; transform:translateY(15px); transition:opacity .62s ease var(--motion-delay,0ms),transform .62s cubic-bezier(.2,.7,.2,1) var(--motion-delay,0ms); }
+    html.motion-ready .motion-reveal.is-visible { opacity:1; transform:translateY(0); }
+    @media(prefers-reduced-motion:reduce) { body > .topbar,.hero,.topbar::after,.feature-copy::after,.project-meta::after,.interior-copy::after { animation:none!important; } html.motion-ready .motion-reveal,html.motion-ready .motion-reveal.is-visible { opacity:1!important; transform:none!important; transition:none!important; } }
   </style>
+<style id="next-work-navigation">
+  .next-work-row { display:flex; justify-content:flex-end; margin:9px auto 0; }
+  .next-work-link { display:inline-flex; align-items:center; min-height:30px; padding:7px 11px; border:1px solid rgba(192,164,106,.52); color:#d8bf83; background:rgba(16,25,27,.36); font:9px/1.3 "DM Mono","Noto Sans SC","Microsoft YaHei",sans-serif; letter-spacing:.04em; text-decoration:none; transition:color .2s,border-color .2s,background .2s,box-shadow .2s,transform .2s; }
+  .next-work-link:hover { border-color:#ead198; color:#f6e1aa; background:rgba(192,164,106,.1); box-shadow:0 0 14px rgba(192,164,106,.17); transform:translateX(2px); }
+  .next-work-link:focus-visible { outline:2px solid #c0a46a; outline-offset:3px; }
+  .next-work-bottom { margin-left:auto; }
+  .next-work-top { margin-left:auto; }
+  .prev-work-link { margin-right:auto; }
+  .page-footer,.project-footer,.footer { flex-wrap:wrap; align-items:center; }
+  @media(max-width:560px) { .next-work-row { margin-top:6px; } .next-work-link { min-height:28px; padding:6px 8px; font-size:8px; } }
+  @media(prefers-reduced-motion:reduce) { .next-work-link { transition:none; } }
+</style>
+  <style id="cover-signature-style">
+  .cover { position:relative; }
+  .cover-signature { position:absolute; z-index:40; top:12px; right:14px; color:#c0a46a; font:500 13px/1 "Segoe Script","Brush Script MT","Lucida Handwriting",cursive; letter-spacing:.07em; text-shadow:0 0 6px rgba(192,164,106,.62),0 0 14px rgba(192,164,106,.24); pointer-events:none; animation:signature-breathe 4.6s ease-in-out infinite; }
+  .hero { position:relative; }
+  .hero-signature { top:14px; right:0; }
+  @media(max-width:600px) { .cover-signature { top:10px; right:11px; font-size:12px; } .hero-signature { right:0; } }
+  @media(prefers-reduced-motion:reduce) { .cover-signature { animation:none; } }
+</style>
+    <script id="portfolio-shell-entry">
+    (() => {
+      if (window.top !== window.self) return;
+      const page = window.location.pathname.split('/').pop();
+      const shell = new URL('index.html', window.location.href);
+      shell.searchParams.set('page', page + window.location.search);
+      shell.hash = window.location.hash;
+      window.location.replace(shell.href);
+    })();
+  </script>
 </head>
 <body>
   <header class="shell topbar" id="top">
-    <a class="wordmark" href="index.html" aria-label="返回作品集首页"><span class="mark">林</span><span>PORTFOLIO</span><span class="divider"></span><span class="cn">室内设计</span></a>
-    <a class="back-link" href="index.html#interior-title">返回全部项目 ↑</a>
+    <a class="wordmark" href="portfolio-home.html" aria-label="返回作品集首页"><span class="mark">林</span><span>PORTFOLIO</span><span class="divider"></span><span class="cn">室内设计</span></a>
+    <a class="back-link" href="portfolio-home.html#interior-title">返回全部项目 ↑</a>
   </header>
+  <div class="shell next-work-row"><a class="next-work-link prev-work-link" href="lume-art-therapy-centre.html"><span data-language-content="zh">← 上一个作品：Lume 艺术疗愈中心</span><span data-language-content="en" hidden>← Previous project: Lume Art Therapy Centre</span></a><a class="next-work-link next-work-top" href="evergreen-house.html"><span data-language-content="zh">下一个作品：Evergreen House →</span><span data-language-content="en" hidden>Next project: Evergreen House →</span></a></div>
   <main class="shell">
     <div class="breadcrumb">室内设计 <span>/</span> 餐厅设计 <span>/</span> 2023</div>
     <section class="hero" aria-labelledby="project-title">
@@ -43,8 +86,8 @@
           <div class="fact"><dt>设计内容</dt><dd>概念与材料研究、动线规划、第一层平面与天花设计、立面及效果表现</dd></div>
         </dl>
       </div>
-      <figure class="cover">
-        <img src="assets/images/water-restaurant/cover.jpg" alt="Amphitrite 水主题餐厅内部渲染图，波浪形天花覆盖冰川感座席，搭配蓝白色曲线和深蓝桌椅。">
+      <figure class="cover"><span class="cover-signature" aria-hidden="true">linzhen</span>
+        <img src="assets/optimized/images/water-restaurant/cover.jpg-2400.webp" alt="Amphitrite 水主题餐厅内部渲染图，波浪形天花覆盖冰川感座席，搭配蓝白色曲线和深蓝桌椅。" srcset="assets/optimized/images/water-restaurant/cover.jpg-480.webp 480w, assets/optimized/images/water-restaurant/cover.jpg-960.webp 960w, assets/optimized/images/water-restaurant/cover.jpg-1200.webp 1200w, assets/optimized/images/water-restaurant/cover.jpg-1600.webp 1600w, assets/optimized/images/water-restaurant/cover.jpg-2400.webp 2184w" sizes="(max-width:699px) 100vw, 50vw" data-original-src="assets/images/water-restaurant/cover.jpg" width="2184" height="1228" loading="eager" decoding="async" fetchpriority="high">
         <span class="cover-mark">RESTAURANT DESIGN / 2023</span>
         <figcaption class="cover-title"><span class="small">AMPHITRITE / WATER-INSPIRED</span><strong>水之形态 · 餐厅空间</strong><em>Dining within a flowing landscape</em></figcaption>
       </figure>
@@ -59,52 +102,52 @@
       <p class="section-intro">图板依照原始项目资料顺序呈现，涵盖概念与材料、空间动线、首层平面、天花、室内效果及剖面立面。点击图板可放大查看。</p>
 
       <article class="sheet" id="concept">
-        <figure><img class="zoomable" loading="lazy" decoding="async" src="assets/images/water-restaurant/page-1.png" alt="水主题餐厅概念和材料板，包含冰山、波浪、鱼群与漩涡等水景灵感，以及照明、墙面、地面和家具材料参考。"><figcaption><span class="sheet-index">01 / CONCEPT &amp; MATERIALS</span><span class="sheet-title">水景灵感、色彩与材料</span><span class="sheet-name">DESIGN INSPIRATION</span></figcaption></figure>
+        <figure><img class="zoomable" loading="lazy" decoding="async" src="assets/optimized/images/water-restaurant/page-1.png-2400.webp" alt="水主题餐厅概念和材料板，包含冰山、波浪、鱼群与漩涡等水景灵感，以及照明、墙面、地面和家具材料参考。" srcset="assets/optimized/images/water-restaurant/page-1.png-1200.webp 1200w, assets/optimized/images/water-restaurant/page-1.png-2400.webp 2400w" sizes="(max-width:699px) 100vw, 75vw" data-original-src="assets/images/water-restaurant/page-1.png" width="2600" height="1463"><figcaption><span class="sheet-index">01 / CONCEPT &amp; MATERIALS</span><span class="sheet-title">水景灵感、色彩与材料</span><span class="sheet-name">DESIGN INSPIRATION</span></figcaption></figure>
         <div class="translation"><h3>以海洋形态建立空间语言</h3><p>概念灵感来自冰山、海浪、鱼群、漩涡与水面纹理。蓝色与冰白色构成主调，辅以深色和暖金细节；材料参考覆盖用餐区吊灯、墙面饰材、收银与陈列区域、咖啡桌及地面纹理，为空间的波浪形态与水感表面建立统一基调。</p></div>
       </article>
 
       <article class="sheet" id="circulation">
-        <figure><img class="zoomable" loading="lazy" decoding="async" src="assets/images/water-restaurant/page-2.png" alt="餐厅动线分析图，以冰山和波浪为灵感，展示两种在流线型座席之间组织的顾客路径。"><figcaption><span class="sheet-index">02 / CIRCULATION</span><span class="sheet-title">顾客动线与空间意象</span><span class="sheet-name">CIRCULATION STUDY</span></figcaption></figure>
+        <figure><img class="zoomable" loading="lazy" decoding="async" src="assets/optimized/images/water-restaurant/page-2.png-2400.webp" alt="餐厅动线分析图，以冰山和波浪为灵感，展示两种在流线型座席之间组织的顾客路径。" srcset="assets/optimized/images/water-restaurant/page-2.png-480.webp 480w, assets/optimized/images/water-restaurant/page-2.png-960.webp 960w, assets/optimized/images/water-restaurant/page-2.png-1200.webp 1200w, assets/optimized/images/water-restaurant/page-2.png-1600.webp 1600w, assets/optimized/images/water-restaurant/page-2.png-2400.webp 2400w" sizes="(max-width:699px) 100vw, 50vw" data-original-src="assets/images/water-restaurant/page-2.png" width="2600" height="1463"><figcaption><span class="sheet-index">02 / CIRCULATION</span><span class="sheet-title">顾客动线与空间意象</span><span class="sheet-name">CIRCULATION STUDY</span></figcaption></figure>
         <div class="translation"><h3>沿曲线展开的用餐路径</h3><p>动线分析以冰山与波浪作为空间参照，通过橙色路径标出主要行走路线。座席与通道顺应连续曲线布置，使顾客在入口、就餐区域和上下层联系之间形成清晰、连贯的移动体验。</p></div>
       </article>
 
       <article class="sheet" id="rendered-plan">
-        <figure><img class="zoomable" loading="lazy" decoding="async" src="assets/images/water-restaurant/page-3.png" alt="餐厅首层渲染平面图，以蓝白波浪状地面和冰山造型座席划分就餐区，并标出酒吧、衣帽区、楼梯和员工空间。"><figcaption><span class="sheet-index">03 / RENDERED FIRST FLOOR PLAN</span><span class="sheet-title">首层渲染平面</span><span class="sheet-name">SPATIAL ZONING</span></figcaption></figure>
+        <figure><img class="zoomable" loading="lazy" decoding="async" src="assets/optimized/images/water-restaurant/page-3.png-2400.webp" alt="餐厅首层渲染平面图，以蓝白波浪状地面和冰山造型座席划分就餐区，并标出酒吧、衣帽区、楼梯和员工空间。" srcset="assets/optimized/images/water-restaurant/page-3.png-1200.webp 1200w, assets/optimized/images/water-restaurant/page-3.png-2400.webp 2400w" sizes="(max-width:699px) 100vw, 75vw" data-original-src="assets/images/water-restaurant/page-3.png" width="2600" height="1463"><figcaption><span class="sheet-index">03 / RENDERED FIRST FLOOR PLAN</span><span class="sheet-title">首层渲染平面</span><span class="sheet-name">SPATIAL ZONING</span></figcaption></figure>
         <div class="translation"><h3>就餐区与服务空间分区</h3><p>首层以蓝色波纹地面和浅色冰山形座席构成主要就餐区域。酒吧、衣帽间、员工卫生间、经理办公室、备餐与储藏空间沿边界布置；楼梯、电梯和坡道连接不同区域，形成顾客与服务功能并置的空间结构。</p></div>
       </article>
 
       <article class="sheet" id="floor-plan">
-        <figure><img class="zoomable" loading="lazy" decoding="async" src="assets/images/water-restaurant/page-4.png" alt="餐厅首层建筑平面图，标示座位组合、吧台、服务空间、楼梯、电梯、衣帽区和坡道。"><figcaption><span class="sheet-index">04 / FIRST FLOOR PLAN</span><span class="sheet-title">首层家具与功能平面</span><span class="sheet-name">FLOOR PLAN</span></figcaption></figure>
+        <figure><img class="zoomable" loading="lazy" decoding="async" src="assets/optimized/images/water-restaurant/page-4.png-2400.webp" alt="餐厅首层建筑平面图，标示座位组合、吧台、服务空间、楼梯、电梯、衣帽区和坡道。" srcset="assets/optimized/images/water-restaurant/page-4.png-1200.webp 1200w, assets/optimized/images/water-restaurant/page-4.png-2400.webp 2400w" sizes="(max-width:699px) 100vw, 75vw" data-original-src="assets/images/water-restaurant/page-4.png" width="2600" height="1463"><figcaption><span class="sheet-index">04 / FIRST FLOOR PLAN</span><span class="sheet-title">首层家具与功能平面</span><span class="sheet-name">FLOOR PLAN</span></figcaption></figure>
         <div class="translation"><h3>家具布置与功能关系</h3><p>平面图呈现首层座席、吧台、厨房与储藏等员工空间、经理办公室、卫生间、衣帽区、楼梯、电梯及坡道。流线型卡座围绕不同尺度的桌位展开，主要通道穿过用餐区域并连接出入口和垂直交通空间。</p></div>
       </article>
 
       <article class="sheet" id="dining">
-        <figure><img class="zoomable" loading="lazy" decoding="async" src="assets/images/water-restaurant/page-5.png" alt="Amphitrite 首层餐区效果图，展示白色曲线卡座、蓝色水纹地面、环形天花造型和吊灯。"><figcaption><span class="sheet-index">05 / FIRST FLOOR DINING AREA</span><span class="sheet-title">首层餐区效果图 · 视角一</span><span class="sheet-name">DINING SPACE</span></figcaption></figure>
+        <figure><img class="zoomable" loading="lazy" decoding="async" src="assets/optimized/images/water-restaurant/page-5.png-2400.webp" alt="Amphitrite 首层餐区效果图，展示白色曲线卡座、蓝色水纹地面、环形天花造型和吊灯。" srcset="assets/optimized/images/water-restaurant/page-5.png-480.webp 480w, assets/optimized/images/water-restaurant/page-5.png-960.webp 960w, assets/optimized/images/water-restaurant/page-5.png-1200.webp 1200w, assets/optimized/images/water-restaurant/page-5.png-1600.webp 1600w, assets/optimized/images/water-restaurant/page-5.png-2400.webp 2400w" sizes="(max-width:699px) 100vw, 50vw" data-original-src="assets/images/water-restaurant/page-5.png" width="2600" height="1463"><figcaption><span class="sheet-index">05 / FIRST FLOOR DINING AREA</span><span class="sheet-title">首层餐区效果图 · 视角一</span><span class="sheet-name">DINING SPACE</span></figcaption></figure>
         <div class="translation"><h3>围绕冰山意象的座席空间</h3><p>白色环绕式座席与圆形桌面形成层叠的冰山轮廓，地面以蓝色水纹连接不同座位。天花使用圆形灯槽、悬挂灯具与深浅交错的曲线造型，强化由水面与冰层延展而来的空间感。</p></div>
       </article>
 
       <article class="sheet" id="ceiling">
-        <figure><img class="zoomable" loading="lazy" decoding="async" src="assets/images/water-restaurant/page-6.png" alt="餐厅首层天花反射平面及图例，标注嵌入式灯、灯带、投影灯、冰山造型吊灯及天花饰面类型。"><figcaption><span class="sheet-index">06 / REFLECTED CEILING PLAN</span><span class="sheet-title">首层天花反射平面与图例</span><span class="sheet-name">RCP &amp; CEILING LEGEND</span></figcaption></figure>
+        <figure><img class="zoomable" loading="lazy" decoding="async" src="assets/optimized/images/water-restaurant/page-6.png-2400.webp" alt="餐厅首层天花反射平面及图例，标注嵌入式灯、灯带、投影灯、冰山造型吊灯及天花饰面类型。" srcset="assets/optimized/images/water-restaurant/page-6.png-1200.webp 1200w, assets/optimized/images/water-restaurant/page-6.png-2400.webp 2400w" sizes="(max-width:699px) 100vw, 75vw" data-original-src="assets/images/water-restaurant/page-6.png" width="2600" height="1463"><figcaption><span class="sheet-index">06 / REFLECTED CEILING PLAN</span><span class="sheet-title">首层天花反射平面与图例</span><span class="sheet-name">RCP &amp; CEILING LEGEND</span></figcaption></figure>
         <div class="translation"><h3>照明与天花材料协调</h3><p>天花平面标注嵌入式灯、荧光灯、LED 灯带、投影灯及不同造型的吊灯。图例同时区分吸音天花板、玻璃、石膏板、波浪纹天花与波浪形金属天花，便于对应各空间区域的照明和饰面设计。</p></div>
       </article>
 
       <article class="sheet" id="dining-view">
-        <figure><img class="zoomable" loading="lazy" decoding="async" src="assets/images/water-restaurant/page-7.png" alt="Amphitrite 首层餐区室内透视图，呈现波浪形天花、环绕座席、临窗桌椅和蓝白色地面。"><figcaption><span class="sheet-index">07 / FIRST FLOOR DINING AREA</span><span class="sheet-title">首层餐区效果图 · 视角二</span><span class="sheet-name">DINING SPACE</span></figcaption></figure>
+        <figure><img class="zoomable" loading="lazy" decoding="async" src="assets/optimized/images/water-restaurant/page-7.png-2400.webp" alt="Amphitrite 首层餐区室内透视图，呈现波浪形天花、环绕座席、临窗桌椅和蓝白色地面。" srcset="assets/optimized/images/water-restaurant/page-7.png-1200.webp 1200w, assets/optimized/images/water-restaurant/page-7.png-2400.webp 2400w" sizes="(max-width:699px) 100vw, 75vw" data-original-src="assets/images/water-restaurant/page-7.png" width="2600" height="1463"><figcaption><span class="sheet-index">07 / FIRST FLOOR DINING AREA</span><span class="sheet-title">首层餐区效果图 · 视角二</span><span class="sheet-name">DINING SPACE</span></figcaption></figure>
         <div class="translation"><h3>流线天花与临窗座席</h3><p>室内透视展示波浪形天花在空间中连续起伏，环绕式座席沿曲线排列，靠窗设置深蓝色桌椅。蓝白地面将不同的用餐区域连接起来，形成从宽阔共享座位到相对私密临窗桌位的层次变化。</p></div>
       </article>
 
       <article class="sheet" id="feature">
-        <figure><img class="zoomable" loading="lazy" decoding="async" src="assets/images/water-restaurant/page-8.png" alt="餐厅室内细节渲染图，突出波纹质感墙面、弧形石材构件、悬挂装饰与水滴状灯光。"><figcaption><span class="sheet-index">08 / INTERIOR FEATURE</span><span class="sheet-title">天花与墙面细节视图</span><span class="sheet-name">SPATIAL DETAIL</span></figcaption></figure>
+        <figure><img class="zoomable" loading="lazy" decoding="async" src="assets/optimized/images/water-restaurant/page-8.png-2400.webp" alt="餐厅室内细节渲染图，突出波纹质感墙面、弧形石材构件、悬挂装饰与水滴状灯光。" srcset="assets/optimized/images/water-restaurant/page-8.png-480.webp 480w, assets/optimized/images/water-restaurant/page-8.png-960.webp 960w, assets/optimized/images/water-restaurant/page-8.png-1200.webp 1200w, assets/optimized/images/water-restaurant/page-8.png-1600.webp 1600w, assets/optimized/images/water-restaurant/page-8.png-2400.webp 2400w" sizes="(max-width:699px) 100vw, 50vw" data-original-src="assets/images/water-restaurant/page-8.png" width="2600" height="1463"><figcaption><span class="sheet-index">08 / INTERIOR FEATURE</span><span class="sheet-title">天花与墙面细节视图</span><span class="sheet-name">SPATIAL DETAIL</span></figcaption></figure>
         <div class="translation"><h3>水波纹理与悬挂装置</h3><p>近景突出起伏的波纹墙面、弧形浅色构件和垂直悬挂装饰。蓝色天花与点状灯光形成背景层次，细部材质和光影共同延续水流与水滴的主题表达。</p></div>
       </article>
 
       <article class="sheet" id="sections">
-        <figure><img class="zoomable" loading="lazy" decoding="async" src="assets/images/water-restaurant/page-9.png" alt="餐厅纵向与横向剖面立面图，呈现两层空间中的就餐座席、弧形天花、墙面和楼层关系。"><figcaption><span class="sheet-index">09 / SECTIONS</span><span class="sheet-title">纵向与横向剖面立面</span><span class="sheet-name">LONGITUDINAL &amp; TRANSVERSE SECTIONS</span></figcaption></figure>
+        <figure><img class="zoomable" loading="lazy" decoding="async" src="assets/optimized/images/water-restaurant/page-9.png-2400.webp" alt="餐厅纵向与横向剖面立面图，呈现两层空间中的就餐座席、弧形天花、墙面和楼层关系。" srcset="assets/optimized/images/water-restaurant/page-9.png-1200.webp 1200w, assets/optimized/images/water-restaurant/page-9.png-2400.webp 2400w" sizes="(max-width:699px) 100vw, 75vw" data-original-src="assets/images/water-restaurant/page-9.png" width="2600" height="1463"><figcaption><span class="sheet-index">09 / SECTIONS</span><span class="sheet-title">纵向与横向剖面立面</span><span class="sheet-name">LONGITUDINAL &amp; TRANSVERSE SECTIONS</span></figcaption></figure>
         <div class="translation"><h3>两层空间的垂直关系</h3><p>纵向和横向剖面展示不同楼层的座席、天花、墙面与交通空间之间的关系。上下层的波浪形表面、蓝色区域和浅色构件相互呼应，并通过剖切定位图对应整体平面中的空间位置。</p></div>
       </article>
       <div class="doc-links"><a href="assets/documents/water-restaurant/water-restaurant.pdf" target="_blank" rel="noopener">打开原始项目 PDF</a><a href="assets/documents/water-restaurant/water-restaurant.pdf" download>下载原始项目 PDF</a></div>
     </section>
-    <footer class="project-footer"><span>林蓁 / 室内设计 / AMPHITRITE / 2023</span><a href="index.html#interior-title">返回全部室内项目 ↑</a></footer>
+    <footer class="project-footer"><a class="next-work-link prev-work-link" href="lume-art-therapy-centre.html"><span data-language-content="zh">← 上一个作品：Lume 艺术疗愈中心</span><span data-language-content="en" hidden>← Previous project: Lume Art Therapy Centre</span></a><span>林蓁 / 室内设计 / AMPHITRITE / 2023</span><a href="portfolio-home.html#interior-title">返回全部室内项目 ↑</a><a class="next-work-link next-work-bottom" href="evergreen-house.html"><span data-language-content="zh">下一个作品：Evergreen House →</span><span data-language-content="en" hidden>Next project: Evergreen House →</span></a></footer>
   </main>
   <dialog class="image-viewer" aria-label="项目图板预览"><button class="image-viewer-close" type="button" aria-label="关闭图片预览">×</button><img alt=""></dialog>
   <script>
@@ -143,7 +186,7 @@
       const openViewer = (image) => {
         toc.hidden = true;
         lockPage();
-        enlarged.src = image.currentSrc || image.src;
+        enlarged.src = image.dataset.originalSrc||image.currentSrc||image.src;
         enlarged.alt = image.alt || "项目图片";
         viewer.showModal();
       };
@@ -171,6 +214,27 @@
         if (event.target === viewer || event.target === enlarged) viewer.close();
       });
     })();
+  </script>
+  <script>
+  (() => {
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (!('IntersectionObserver' in window)) return;
+    const targets = [...new Set(document.querySelectorAll('main > section:not(.hero), main > article, .project-footer, .page-footer, body > footer'))];
+    if (!targets.length) return;
+    document.documentElement.classList.add('motion-ready');
+    const observer = new IntersectionObserver(entries => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    }, { threshold:0.08, rootMargin:'0px 0px -7% 0px' });
+    targets.forEach((target,index) => {
+      target.classList.add('motion-reveal');
+      target.style.setProperty('--motion-delay', `${(index % 4) * 55}ms`);
+      observer.observe(target);
+    });
+  })();
   </script>
 </body>
 </html>

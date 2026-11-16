@@ -21,13 +21,56 @@
     @media(max-width:850px){.shell{width:min(100% - 48px,760px)}.hero{grid-template-columns:1fr;gap:24px}.cover{min-height:280px}.side-toc{display:none}}@media(max-width:560px){.shell{width:calc(100% - 32px)}.topbar{height:64px}.wordmark{gap:9px;font-size:8px}.cn{font-size:10px}.back-link{font-size:11px}.breadcrumb{padding-top:17px}.hero{padding:20px 0 25px}.hero h1{font-size:52px}.hero h1 span{font-size:16px}.cover{min-height:205px}.cover-title{left:18px;bottom:17px}.cover-title strong{font-size:28px}.facts{gap:15px}.intro-strip{align-items:flex-start;flex-direction:column;gap:9px}.contents{gap:12px}.section{padding-top:28px}.section-head{align-items:start;flex-direction:column;gap:8px}.sheet{margin-bottom:14px;padding:8px}.sheet figcaption{flex-wrap:wrap;gap:7px}.sheet-name{margin-left:0}.translation{padding:15px 7px 8px}.translation p{font-size:12px}.translation li{font-size:11px}.project-footer{flex-direction:column}}
     @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
     @media(max-width:560px){.manual-overview-card{padding:17px}.manual-details>summary{align-items:flex-start;flex-direction:column;gap:8px;padding:13px 17px}.manual-content{padding:8px}.manual-content iframe{height:70vh;min-height:420px}.manual-links{align-items:flex-start;flex-direction:column}}
+      /* topbar-signature */
+    .topbar { position:relative; }
+    .topbar::after { content:none; }
+      /* portfolio-motion-v1 */
+    @keyframes portfolio-arrive { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes signature-breathe { 0%,100% { text-shadow:0 0 5px rgba(192,164,106,.48),0 0 11px rgba(192,164,106,.18); } 50% { text-shadow:0 0 9px rgba(192,164,106,.78),0 0 18px rgba(192,164,106,.32); } }
+    body > .topbar { animation:portfolio-arrive .58s cubic-bezier(.2,.7,.2,1) both; }
+    .hero { animation:portfolio-arrive .7s .08s cubic-bezier(.2,.7,.2,1) both; }
+    .topbar::after,.feature-copy::after,.project-meta::after,.interior-copy::after { animation:signature-breathe 4.6s ease-in-out infinite; }
+    html.motion-ready .motion-reveal { opacity:0; transform:translateY(15px); transition:opacity .62s ease var(--motion-delay,0ms),transform .62s cubic-bezier(.2,.7,.2,1) var(--motion-delay,0ms); }
+    html.motion-ready .motion-reveal.is-visible { opacity:1; transform:translateY(0); }
+    @media(prefers-reduced-motion:reduce) { body > .topbar,.hero,.topbar::after,.feature-copy::after,.project-meta::after,.interior-copy::after { animation:none!important; } html.motion-ready .motion-reveal,html.motion-ready .motion-reveal.is-visible { opacity:1!important; transform:none!important; transition:none!important; } }
   </style>
+<style id="next-work-navigation">
+  .next-work-row { display:flex; justify-content:flex-end; margin:9px auto 0; }
+  .next-work-link { display:inline-flex; align-items:center; min-height:30px; padding:7px 11px; border:1px solid rgba(192,164,106,.52); color:#d8bf83; background:rgba(16,25,27,.36); font:9px/1.3 "DM Mono","Noto Sans SC","Microsoft YaHei",sans-serif; letter-spacing:.04em; text-decoration:none; transition:color .2s,border-color .2s,background .2s,box-shadow .2s,transform .2s; }
+  .next-work-link:hover { border-color:#ead198; color:#f6e1aa; background:rgba(192,164,106,.1); box-shadow:0 0 14px rgba(192,164,106,.17); transform:translateX(2px); }
+  .next-work-link:focus-visible { outline:2px solid #c0a46a; outline-offset:3px; }
+  .next-work-bottom { margin-left:auto; }
+  .next-work-top { margin-left:auto; }
+  .prev-work-link { margin-right:auto; }
+  .page-footer,.project-footer,.footer { flex-wrap:wrap; align-items:center; }
+  @media(max-width:560px) { .next-work-row { margin-top:6px; } .next-work-link { min-height:28px; padding:6px 8px; font-size:8px; } }
+  @media(prefers-reduced-motion:reduce) { .next-work-link { transition:none; } }
+</style>
+  <style id="cover-signature-style">
+  .cover { position:relative; }
+  .cover-signature { position:absolute; z-index:40; top:12px; right:14px; color:#c0a46a; font:500 13px/1 "Segoe Script","Brush Script MT","Lucida Handwriting",cursive; letter-spacing:.07em; text-shadow:0 0 6px rgba(192,164,106,.62),0 0 14px rgba(192,164,106,.24); pointer-events:none; animation:signature-breathe 4.6s ease-in-out infinite; }
+  .hero { position:relative; }
+  .hero-signature { top:14px; right:0; }
+  @media(max-width:600px) { .cover-signature { top:10px; right:11px; font-size:12px; } .hero-signature { right:0; } }
+  @media(prefers-reduced-motion:reduce) { .cover-signature { animation:none; } }
+</style>
+    <script id="portfolio-shell-entry">
+    (() => {
+      if (window.top !== window.self) return;
+      const page = window.location.pathname.split('/').pop();
+      const shell = new URL('index.html', window.location.href);
+      shell.searchParams.set('page', page + window.location.search);
+      shell.hash = window.location.hash;
+      window.location.replace(shell.href);
+    })();
+  </script>
 </head>
 <body>
   <header class="shell topbar" id="top">
-    <a class="wordmark" href="index.html" aria-label="返回作品集首页"><span class="mark">林</span><span>PORTFOLIO</span><span class="divider"></span><span class="cn">室内设计</span></a>
-    <a class="back-link" href="index.html#interior-title">返回全部项目 ↑</a>
+    <a class="wordmark" href="portfolio-home.html" aria-label="返回作品集首页"><span class="mark">林</span><span>PORTFOLIO</span><span class="divider"></span><span class="cn">室内设计</span></a>
+    <a class="back-link" href="portfolio-home.html#interior-title">返回全部项目 ↑</a>
   </header>
+  <div class="shell next-work-row"><a class="next-work-link prev-work-link" href="amphitrite.html"><span data-language-content="zh">← 上一个作品：Amphitrite</span><span data-language-content="en" hidden>← Previous project: Amphitrite</span></a><a class="next-work-link next-work-top" href="ac-studio.html"><span data-language-content="zh">下一个作品：AC Studio →</span><span data-language-content="en" hidden>Next project: AC Studio →</span></a></div>
   <main class="shell">
     <div class="breadcrumb">室内设计 <span>/</span> 长期照护中心 <span>/</span> 2024</div>
     <section class="hero" aria-labelledby="project-title">
@@ -41,8 +84,8 @@
           <div class="fact"><dt>设计工具</dt><dd>AutoCAD · SketchUp · Photoshop · Twinmotion</dd></div>
         </dl>
       </div>
-      <figure class="cover">
-        <img src="assets/images/evergreen-house/indoor-garden-cover.png" alt="长者照护中心室内花园效果图，玻璃围护、顶部绿植、暖色吊灯与休憩座位围绕中央石材步道。">
+      <figure class="cover"><span class="cover-signature" aria-hidden="true">linzhen</span>
+        <img src="assets/optimized/images/evergreen-house/indoor-garden-cover.png-2400.webp" alt="长者照护中心室内花园效果图，玻璃围护、顶部绿植、暖色吊灯与休憩座位围绕中央石材步道。" srcset="assets/optimized/images/evergreen-house/indoor-garden-cover.png-480.webp 480w, assets/optimized/images/evergreen-house/indoor-garden-cover.png-960.webp 960w, assets/optimized/images/evergreen-house/indoor-garden-cover.png-1200.webp 1200w, assets/optimized/images/evergreen-house/indoor-garden-cover.png-1600.webp 1600w, assets/optimized/images/evergreen-house/indoor-garden-cover.png-2400.webp 1616w" sizes="(max-width:699px) 100vw, 50vw" data-original-src="assets/images/evergreen-house/indoor-garden-cover.png" width="1616" height="887" loading="eager" decoding="async" fetchpriority="high">
         <span class="cover-mark">07 / INDOOR GARDEN</span>
         <figcaption class="cover-title"><span class="small">EVERGREEN HOUSE / 2024</span><strong>室内花园</strong><em>Indoor Garden</em></figcaption>
       </figure>
@@ -54,42 +97,42 @@
       <p class="drawing-intro">项目资料按原始图板顺序呈现。点击图板可查看高清大图。</p>
 
       <article class="sheet" id="floor-plan">
-        <figure><img loading="lazy" decoding="async" src="assets/images/evergreen-house/board-1.png" alt="长期照护中心整体平面布置图，标示居住单元、护理、餐饮、活动、室内花园及辅助服务空间。"><figcaption><span class="sheet-index">01 / FLOOR PLAN</span><span class="sheet-title">整体平面布置图</span><span class="sheet-name">FLOOR PLAN</span></figcaption></figure>
+        <figure><img loading="lazy" decoding="async" src="assets/optimized/images/evergreen-house/board-1.png-2400.webp" alt="长期照护中心整体平面布置图，标示居住单元、护理、餐饮、活动、室内花园及辅助服务空间。" srcset="assets/optimized/images/evergreen-house/board-1.png-1200.webp 1200w, assets/optimized/images/evergreen-house/board-1.png-2400.webp 2400w" sizes="(max-width:699px) 100vw, 75vw" data-original-src="assets/images/evergreen-house/board-1.png" width="2400" height="1350"><figcaption><span class="sheet-index">01 / FLOOR PLAN</span><span class="sheet-title">整体平面布置图</span><span class="sheet-name">FLOOR PLAN</span></figcaption></figure>
         <div class="translation"><h3>功能规划与空间组织</h3><p>平面以多组长者居室和连续的公共走廊为基础，将护理与生活支持服务布置在居住区域周边。餐饮、阅读、活动、休息与冥想空间分布于各共享节点，室内花园串联日常活动区域，并为室内引入绿意。</p><p>整体包含接待与等候、护理站、居室、餐厅与厨房、营养中心、图书馆、多功能室、艺术与手工活动室、健身与理疗室、洗衣与储藏等配套功能。</p></div>
       </article>
 
       <article class="sheet" id="close-views">
-        <figure><img loading="lazy" decoding="async" src="assets/images/evergreen-house/board-2.png" alt="整体平面和局部放大图，重点标示护理站与休息区以及长者居室。"><figcaption><span class="sheet-index">02 / CLOSE VIEWS</span><span class="sheet-title">重点区域局部放大</span><span class="sheet-name">PLAN DETAILS</span></figcaption></figure>
+        <figure><img loading="lazy" decoding="async" src="assets/optimized/images/evergreen-house/board-2.png-2400.webp" alt="整体平面和局部放大图，重点标示护理站与休息区以及长者居室。" srcset="assets/optimized/images/evergreen-house/board-2.png-1200.webp 1200w, assets/optimized/images/evergreen-house/board-2.png-2400.webp 2400w" sizes="(max-width:699px) 100vw, 75vw" data-original-src="assets/images/evergreen-house/board-2.png" width="2400" height="1350"><figcaption><span class="sheet-index">02 / CLOSE VIEWS</span><span class="sheet-title">重点区域局部放大</span><span class="sheet-name">PLAN DETAILS</span></figcaption></figure>
         <div class="translation"><h3>护理站、休息区与长者居室</h3><p>局部图将护理站与休息区域、长者居室从整体平面中放大呈现，便于查看各区域的家具布置、相邻关系和通行路径。公共照护空间与私人居住空间在同一布局中相互衔接。</p></div>
       </article>
 
       <article class="sheet" id="rcp">
-        <figure><img loading="lazy" decoding="async" src="assets/images/evergreen-house/board-3.png" alt="天花反射平面图，呈现各功能空间的天花分区、灯具和绿植布置。"><figcaption><span class="sheet-index">03 / RCP</span><span class="sheet-title">天花反射平面图</span><span class="sheet-name">REFLECTED CEILING PLAN</span></figcaption></figure>
+        <figure><img loading="lazy" decoding="async" src="assets/optimized/images/evergreen-house/board-3.png-2400.webp" alt="天花反射平面图，呈现各功能空间的天花分区、灯具和绿植布置。" srcset="assets/optimized/images/evergreen-house/board-3.png-1200.webp 1200w, assets/optimized/images/evergreen-house/board-3.png-2400.webp 2400w" sizes="(max-width:699px) 100vw, 75vw" data-original-src="assets/images/evergreen-house/board-3.png" width="2400" height="1350"><figcaption><span class="sheet-index">03 / RCP</span><span class="sheet-title">天花反射平面图</span><span class="sheet-name">REFLECTED CEILING PLAN</span></figcaption></figure>
         <div class="translation"><h3>天花与照明布局</h3><p>天花反射平面对应各房间的功能分区，标示天花饰面、灯具和绿植元素的布置。居室、走廊、护理空间与共享活动区采用不同的天花表达，并在整体平面中协调照明与空间层次。</p></div>
       </article>
 
       <article class="sheet" id="sections">
-        <figure><img loading="lazy" decoding="async" src="assets/images/evergreen-house/board-4.png" alt="项目剖面与走廊立面图，展示多功能室、室内花园、餐厅、图书馆、休息区和冥想空间。"><figcaption><span class="sheet-index">04 / SECTION & ELEVATION</span><span class="sheet-title">剖面与走廊立面</span><span class="sheet-name">SPATIAL SECTIONS</span></figcaption></figure>
+        <figure><img loading="lazy" decoding="async" src="assets/optimized/images/evergreen-house/board-4.png-2400.webp" alt="项目剖面与走廊立面图，展示多功能室、室内花园、餐厅、图书馆、休息区和冥想空间。" srcset="assets/optimized/images/evergreen-house/board-4.png-1200.webp 1200w, assets/optimized/images/evergreen-house/board-4.png-2400.webp 2400w" sizes="(max-width:699px) 100vw, 75vw" data-original-src="assets/images/evergreen-house/board-4.png" width="2400" height="1350"><figcaption><span class="sheet-index">04 / SECTION & ELEVATION</span><span class="sheet-title">剖面与走廊立面</span><span class="sheet-name">SPATIAL SECTIONS</span></figcaption></figure>
         <div class="translation"><h3>空间关系与立面表达</h3><p>纵向剖面依次展示多功能室、办公室、等候区、室内花园、餐厅、洗手间、休息区及冥想空间；横向剖面连接长者居室、室内花园、图书馆与休息区。下方走廊立面进一步呈现连续的门洞、墙面与顶部绿植细节。</p></div>
       </article>
 
       <article class="sheet" id="materials">
-        <figure><img loading="lazy" decoding="async" src="assets/images/evergreen-house/board-5.png" alt="材料与饰面参考板，包含木质天花、绿植、石材、木纹、吊灯、地毯和软装色样。"><figcaption><span class="sheet-index">05 / MATERIALS & FINISHES</span><span class="sheet-title">材料与饰面参考</span><span class="sheet-name">MATERIAL PALETTE</span></figcaption></figure>
+        <figure><img loading="lazy" decoding="async" src="assets/optimized/images/evergreen-house/board-5.png-2400.webp" alt="材料与饰面参考板，包含木质天花、绿植、石材、木纹、吊灯、地毯和软装色样。" srcset="assets/optimized/images/evergreen-house/board-5.png-1200.webp 1200w, assets/optimized/images/evergreen-house/board-5.png-2400.webp 2400w" sizes="(max-width:699px) 100vw, 75vw" data-original-src="assets/images/evergreen-house/board-5.png" width="2400" height="1350"><figcaption><span class="sheet-index">05 / MATERIALS & FINISHES</span><span class="sheet-title">材料与饰面参考</span><span class="sheet-name">MATERIAL PALETTE</span></figcaption></figure>
         <div class="translation"><h3>自然质感与柔和色彩</h3><p>材料参考涵盖弧形木质天花、木纹饰面、绿植天花、矿物与石材地面、浅色天花板、编织吊灯及软装面料。色彩以木色、石材中性色与植被绿为主，并以低饱和的蓝绿色作为局部点缀，建立温暖、平和的空间基调。</p></div>
       </article>
 
       <article class="sheet" id="nursing-station">
-        <figure><img loading="lazy" decoding="async" src="assets/images/evergreen-house/board-6.png" alt="护理站室内效果图，设有环绕式服务台、电脑工作位、展示搁板与蓝绿色墙面。"><figcaption><span class="sheet-index">06 / NURSING STATION</span><span class="sheet-title">护理站</span><span class="sheet-name">NURSING STATION</span></figcaption></figure>
+        <figure><img loading="lazy" decoding="async" src="assets/optimized/images/evergreen-house/board-6.png-2400.webp" alt="护理站室内效果图，设有环绕式服务台、电脑工作位、展示搁板与蓝绿色墙面。" srcset="assets/optimized/images/evergreen-house/board-6.png-480.webp 480w, assets/optimized/images/evergreen-house/board-6.png-960.webp 960w, assets/optimized/images/evergreen-house/board-6.png-1200.webp 1200w, assets/optimized/images/evergreen-house/board-6.png-1600.webp 1600w, assets/optimized/images/evergreen-house/board-6.png-2400.webp 2400w" sizes="(max-width:699px) 100vw, 50vw" data-original-src="assets/images/evergreen-house/board-6.png" width="2400" height="1350"><figcaption><span class="sheet-index">06 / NURSING STATION</span><span class="sheet-title">护理站</span><span class="sheet-name">NURSING STATION</span></figcaption></figure>
         <div class="translation"><h3>护理站空间设计</h3><p>效果图展示环绕式服务台、多个工作位、电脑设备与墙面展示搁板。蓝绿色墙面和工作台与木色地面形成对比；右侧局部平面标出护理站及其与室内花园的相邻关系。</p></div>
       </article>
 
       <article class="sheet" id="indoor-garden">
-        <figure><img loading="lazy" decoding="async" src="assets/images/evergreen-house/board-7.png" alt="室内花园效果图，玻璃围护与顶部采光下布置绿植、吊灯、石材步道和休憩座位。"><figcaption><span class="sheet-index">07 / INDOOR GARDEN</span><span class="sheet-title">室内花园</span><span class="sheet-name">INDOOR GARDEN</span></figcaption></figure>
+        <figure><img loading="lazy" decoding="async" src="assets/optimized/images/evergreen-house/board-7.png-2400.webp" alt="室内花园效果图，玻璃围护与顶部采光下布置绿植、吊灯、石材步道和休憩座位。" srcset="assets/optimized/images/evergreen-house/board-7.png-480.webp 480w, assets/optimized/images/evergreen-house/board-7.png-960.webp 960w, assets/optimized/images/evergreen-house/board-7.png-1200.webp 1200w, assets/optimized/images/evergreen-house/board-7.png-1600.webp 1600w, assets/optimized/images/evergreen-house/board-7.png-2400.webp 2400w" sizes="(max-width:699px) 100vw, 50vw" data-original-src="assets/images/evergreen-house/board-7.png" width="2400" height="1350"><figcaption><span class="sheet-index">07 / INDOOR GARDEN</span><span class="sheet-title">室内花园</span><span class="sheet-name">INDOOR GARDEN</span></figcaption></figure>
         <div class="translation"><h3>引入自然光的共享花园</h3><p>玻璃围护与顶部采光构成通透的室内花园，悬垂绿植和暖色球形吊灯营造自然氛围。石材步道穿过绿化区域，并与桌椅和休憩座位相连，为日常停留、交谈与安静休息提供共享场所。右侧平面标示花园位置及视点方向。</p></div>
       </article>
 
       <article class="sheet" id="resident-room">
-        <figure><img loading="lazy" decoding="async" src="assets/images/evergreen-house/board-8.png" alt="长者居室效果图，包含护理床、床头柜、书桌、休闲椅、窗户和个人展示空间。"><figcaption><span class="sheet-index">08 / RESIDENT ROOM</span><span class="sheet-title">长者居室</span><span class="sheet-name">RESIDENT ROOM</span></figcaption></figure>
+        <figure><img loading="lazy" decoding="async" src="assets/optimized/images/evergreen-house/board-8.png-2400.webp" alt="长者居室效果图，包含护理床、床头柜、书桌、休闲椅、窗户和个人展示空间。" srcset="assets/optimized/images/evergreen-house/board-8.png-480.webp 480w, assets/optimized/images/evergreen-house/board-8.png-960.webp 960w, assets/optimized/images/evergreen-house/board-8.png-1200.webp 1200w, assets/optimized/images/evergreen-house/board-8.png-1600.webp 1600w, assets/optimized/images/evergreen-house/board-8.png-2400.webp 2400w" sizes="(max-width:699px) 100vw, 50vw" data-original-src="assets/images/evergreen-house/board-8.png" width="2400" height="1350"><figcaption><span class="sheet-index">08 / RESIDENT ROOM</span><span class="sheet-title">长者居室</span><span class="sheet-name">RESIDENT ROOM</span></figcaption></figure>
         <div class="translation"><h3>长者居室</h3><p>居室配置护理床、床头柜、书桌与休闲座椅，窗边自然光为日常起居提供明亮环境。蓝色墙面、木色收纳与个人照片展示为空间增添熟悉感；局部平面标示长者居室 14 的家具布置与功能关系。</p></div>
       </article>
     </section>
@@ -111,7 +154,7 @@
         </details>
       </div>
     </section>
-    <footer class="project-footer"><span>林蓁 / 室内设计 / EVERGREEN HOUSE</span><a href="index.html#interior-title">返回全部室内项目 ↑</a></footer>
+    <footer class="project-footer"><a class="next-work-link prev-work-link" href="amphitrite.html"><span data-language-content="zh">← 上一个作品：Amphitrite</span><span data-language-content="en" hidden>← Previous project: Amphitrite</span></a><span>林蓁 / 室内设计 / EVERGREEN HOUSE</span><a href="portfolio-home.html#interior-title">返回全部室内项目 ↑</a><a class="next-work-link next-work-bottom" href="ac-studio.html"><span data-language-content="zh">下一个作品：AC Studio →</span><span data-language-content="en" hidden>Next project: AC Studio →</span></a></footer>
   </main>
   <details class="side-toc" open>
     <summary>项目目录</summary>
@@ -149,7 +192,7 @@
       const openViewer = (image) => {
         toc.hidden = true;
         lockPage();
-        enlarged.src = image.currentSrc || image.src;
+        enlarged.src = image.dataset.originalSrc||image.currentSrc||image.src;
         enlarged.alt = image.alt || "项目图片";
         viewer.showModal();
       };
@@ -170,6 +213,27 @@
       viewer.addEventListener("click", (event) => { if (event.target === viewer || event.target === enlarged) viewer.close(); });
       document.addEventListener("keydown", (event) => { if (event.key === "Escape" && viewer.open) viewer.close(); });
     })();
+  </script>
+  <script>
+  (() => {
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (!('IntersectionObserver' in window)) return;
+    const targets = [...new Set(document.querySelectorAll('main > section:not(.hero), main > article, .project-footer, .page-footer, body > footer'))];
+    if (!targets.length) return;
+    document.documentElement.classList.add('motion-ready');
+    const observer = new IntersectionObserver(entries => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    }, { threshold:0.08, rootMargin:'0px 0px -7% 0px' });
+    targets.forEach((target,index) => {
+      target.classList.add('motion-reveal');
+      target.style.setProperty('--motion-delay', `${(index % 4) * 55}ms`);
+      observer.observe(target);
+    });
+  })();
   </script>
 </body>
 </html>
