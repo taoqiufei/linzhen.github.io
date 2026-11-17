@@ -65,6 +65,7 @@
       window.location.replace(shell.href);
     })();
   </script>
+  <link rel="stylesheet" href="assets/project-toc.css">
 </head>
 <body>
   <header class="shell topbar" id="top">
@@ -92,9 +93,9 @@
         <figcaption class="cover-title"><span class="small">AC STUDIO / COLLABORATIVE PROJECT</span><strong>自然相融的工作空间</strong><em>A calm, connected workplace</em></figcaption>
       </figure>
     </section>
-    <details class="side-toc" id="page-toc" open>
-      <summary>项目目录</summary>
-      <nav class="contents" aria-label="项目目录"><a href="#presentation">设计方案</a><a href="#walls">墙体详图</a><a href="#ceilings">天花详图</a><a href="#top" class="to-top">回到顶端 ↑</a></nav>
+    <details class="side-toc toc-numbered" id="page-toc" open>
+      <summary><span class="toc-label-desktop" data-language-content="zh">项目目录</span><span class="toc-label-desktop" data-language-content="en" hidden>Contents</span><span class="toc-label-mobile" data-language-content="zh">目录</span><span class="toc-label-mobile" data-language-content="en" hidden>Menu</span></summary>
+      <nav class="contents" aria-label="项目目录"><a href="#presentation"><span class="toc-number">01</span><span class="toc-label">设计方案</span></a><a href="#walls"><span class="toc-number">02</span><span class="toc-label">墙体详图</span></a><a href="#ceilings"><span class="toc-number">03</span><span class="toc-label">天花详图</span></a><a href="#top" class="to-top">回到顶端 ↑</a></nav>
     </details>
 
     <section class="section" id="presentation">
@@ -236,5 +237,6 @@
     });
   })();
   </script>
+  <script src="assets/project-toc.js"></script>
 </body>
 </html>

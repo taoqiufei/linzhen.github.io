@@ -64,6 +64,7 @@
       window.location.replace(shell.href);
     })();
   </script>
+  <link rel="stylesheet" href="assets/project-toc.css">
 </head>
 <body>
   <header class="shell topbar" id="top">
@@ -156,9 +157,9 @@
     </section>
     <footer class="project-footer"><a class="next-work-link prev-work-link" href="amphitrite.html"><span data-language-content="zh">← 上一个作品：Amphitrite</span><span data-language-content="en" hidden>← Previous project: Amphitrite</span></a><span>林蓁 / 室内设计 / EVERGREEN HOUSE</span><a href="portfolio-home.html#interior-title">返回全部室内项目 ↑</a><a class="next-work-link next-work-bottom" href="ac-studio.html"><span data-language-content="zh">下一个作品：AC Studio →</span><span data-language-content="en" hidden>Next project: AC Studio →</span></a></footer>
   </main>
-  <details class="side-toc" open>
-    <summary>项目目录</summary>
-    <nav class="contents" aria-label="项目目录"><a href="#floor-plan">01　整体平面</a><a href="#close-views">02　局部放大</a><a href="#rcp">03　天花平面</a><a href="#sections">04　剖面立面</a><a href="#materials">05　材料饰面</a><a href="#nursing-station">06　护理站</a><a href="#indoor-garden">07　室内花园</a><a href="#resident-room">08　长者居室</a><a href="#research-manual">研究手册</a><a class="to-top" href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false">回到顶端 ↑</a></nav>
+  <details class="side-toc toc-numbered" open>
+    <summary><span class="toc-label-desktop" data-language-content="zh">项目目录</span><span class="toc-label-desktop" data-language-content="en" hidden>Contents</span><span class="toc-label-mobile" data-language-content="zh">目录</span><span class="toc-label-mobile" data-language-content="en" hidden>Menu</span></summary>
+    <nav class="contents" aria-label="项目目录"><a href="#floor-plan"><span class="toc-number">01</span><span class="toc-label">整体平面</span></a><a href="#close-views"><span class="toc-number">02</span><span class="toc-label">局部放大</span></a><a href="#rcp"><span class="toc-number">03</span><span class="toc-label">天花平面</span></a><a href="#sections"><span class="toc-number">04</span><span class="toc-label">剖面立面</span></a><a href="#materials"><span class="toc-number">05</span><span class="toc-label">材料饰面</span></a><a href="#nursing-station"><span class="toc-number">06</span><span class="toc-label">护理站</span></a><a href="#indoor-garden"><span class="toc-number">07</span><span class="toc-label">室内花园</span></a><a href="#resident-room"><span class="toc-number">08</span><span class="toc-label">长者居室</span></a><a href="#research-manual"><span class="toc-number">09</span><span class="toc-label">研究手册</span></a><a class="to-top" href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false">回到顶端 ↑</a></nav>
   </details>
   <dialog class="image-viewer" aria-label="项目图片预览"><button class="image-viewer-close" type="button" aria-label="关闭图片预览">×</button><img alt=""></dialog>
   <script>
@@ -235,5 +236,6 @@
     });
   })();
   </script>
+  <script src="assets/project-toc.js"></script>
 </body>
 </html>
