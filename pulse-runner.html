@@ -70,12 +70,25 @@
       window.location.replace(shell.href);
     })();
   </script>
+<style id="platinum-wordmark-style">
+.wordmark-logo { position:relative; display:inline-flex; flex:0 0 42px; align-items:center; width:42px; height:40px; letter-spacing:0; }
+.wordmark-logo-image { display:block; width:35px; height:38px; object-fit:contain; filter:drop-shadow(0 0 5px rgba(238,236,228,.28)); }
+.wordmark-logo-latin { position:absolute; top:5px; left:31px; color:#f1efe8; font:500 7px/1 "Segoe Script","Brush Script MT","Lucida Handwriting",cursive; letter-spacing:.02em; white-space:nowrap; writing-mode:vertical-rl; text-orientation:sideways; text-shadow:0 0 5px rgba(238,236,228,.68),0 0 12px rgba(238,236,228,.28); pointer-events:none; }
+.cover-signature,.hero-signature,.topbar::after { color:#f1efe8 !important; text-shadow:0 0 6px rgba(238,236,228,.68),0 0 14px rgba(238,236,228,.28) !important; }
+@keyframes signature-breathe { 0%,100% { text-shadow:0 0 5px rgba(238,236,228,.42),0 0 11px rgba(238,236,228,.16); } 50% { text-shadow:0 0 9px rgba(238,236,228,.76),0 0 18px rgba(238,236,228,.3); } }
+@media(max-width:560px) { .wordmark-logo { flex-basis:36px; width:36px; height:36px; } .wordmark-logo-image { width:32px; height:35px; } .wordmark-logo-latin { left:28px; top:5px; font-size:6.5px; } }
+@media(prefers-reduced-motion:reduce) { .wordmark-logo-latin { text-shadow:0 0 4px rgba(238,236,228,.35); } }
+</style>
+  <link rel="stylesheet" href="assets/language-switcher.css">
+  <script src="assets/portfolio-route-sync.js" defer></script>
+<link rel="stylesheet" href="assets/project-title-language.css">
+<link rel="stylesheet" href="assets/project-hero-cover.css">
   <link rel="stylesheet" href="assets/project-toc.css">
 </head>
 <body id="top">
   <header class="topbar shell">
-    <a class="wordmark" href="portfolio-home.html#game-design"><strong>林蓁</strong><span>PORTFOLIO</span></a>
-    <div class="lang-switch" role="group" aria-label="选择页面语言"><button type="button" data-language-button="zh" aria-pressed="true">中文</button><button type="button" data-language-button="en" aria-pressed="false">English</button></div>
+    <a class="wordmark" href="portfolio-home.html#game-design"><span class="wordmark-logo"><img class="wordmark-logo-image" src="assets/branding/linzhen-signature.png" alt="林蓁"><span class="wordmark-logo-latin" aria-hidden="true">linzhen</span></span><span>PORTFOLIO</span></a>
+    <div class="language-switch" role="group" aria-label="选择页面语言"><button type="button" data-language-button="zh" aria-pressed="true">中文</button><button type="button" data-language-button="en" aria-pressed="false">English</button></div>
     <a class="back-link" href="portfolio-home.html#game-design"><span data-language-content="zh">← 返回游戏设计</span><span data-language-content="en" hidden>← Back to Game Design</span></a>
   </header>
   <div class="shell next-work-row"><a class="next-work-link prev-work-link" href="durian.html"><span data-language-content="zh">← 上一个作品：家猫德里安</span><span data-language-content="en" hidden>← Previous project: Durian: The House Cat</span></a></div>
@@ -95,7 +108,7 @@
     <section class="hero" aria-labelledby="project-title">
       <div>
         <div class="eyebrow"><span data-language-content="zh">游戏设计 · 横向跑酷 · PC / 移动端</span><span data-language-content="en" hidden>GAME DESIGN · SIDE-SCROLLING RUNNER · PC / MOBILE</span></div>
-        <h1 id="project-title">Pulse Runner</h1><p class="hero-translation"><span data-language-content="zh">脉冲疾行</span><span data-language-content="en" hidden>ENDLESS RUNNER</span></p>
+        <h1 id="project-title"><span class="project-title-zh">脉冲疾行</span><span class="project-title-en">Pulse Runner</span></h1><p class="hero-title-alt"><span class="project-title-en">PULSE RUNNER</span><span class="project-title-zh">脉冲疾行</span></p>
         <p class="hero-lead"><span data-language-content="zh">一台苏醒的机器人正逃离未来系统的控制与追捕。程序化生成的平台、敌人与拾取物让每次奔跑都不同；跳跃、滑行和冲刺则把瞬间反应转化为持续前进的节奏。</span><span data-language-content="en" hidden>An awakened robot escapes a futuristic system and its pursuit. Procedurally generated platforms, enemies and pickups make each run different, while jumping, sliding and dashing turn quick reactions into forward momentum.</span></p>
         <div class="hero-tags"><span class="tag"><span data-language-content="zh">2D 横向跑酷</span><span data-language-content="en" hidden>2D SIDE-SCROLLING</span></span><span class="tag"><span data-language-content="zh">程序化关卡</span><span data-language-content="en" hidden>PROCEDURAL LEVELS</span></span><span class="tag">PC · MOBILE</span></div>
         <dl class="hero-facts"><div><dt><span data-language-content="zh">项目年份</span><span data-language-content="en" hidden>PROJECT YEAR</span></dt><dd>2025</dd></div><div><dt><span data-language-content="zh">制作工具</span><span data-language-content="en" hidden>TOOLS</span></dt><dd>Unreal Engine</dd></div></dl>

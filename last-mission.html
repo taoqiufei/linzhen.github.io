@@ -66,11 +66,49 @@
       window.location.replace(shell.href);
     })();
   </script>
+<style id="platinum-wordmark-style">
+.wordmark-logo { position:relative; display:inline-flex; flex:0 0 42px; align-items:center; width:42px; height:40px; letter-spacing:0; }
+.wordmark-logo-image { display:block; width:35px; height:38px; object-fit:contain; filter:drop-shadow(0 0 5px rgba(238,236,228,.28)); }
+.wordmark-logo-latin { position:absolute; top:5px; left:31px; color:#f1efe8; font:500 7px/1 "Segoe Script","Brush Script MT","Lucida Handwriting",cursive; letter-spacing:.02em; white-space:nowrap; writing-mode:vertical-rl; text-orientation:sideways; text-shadow:0 0 5px rgba(238,236,228,.68),0 0 12px rgba(238,236,228,.28); pointer-events:none; }
+.cover-signature,.hero-signature,.topbar::after { color:#f1efe8 !important; text-shadow:0 0 6px rgba(238,236,228,.68),0 0 14px rgba(238,236,228,.28) !important; }
+@keyframes signature-breathe { 0%,100% { text-shadow:0 0 5px rgba(238,236,228,.42),0 0 11px rgba(238,236,228,.16); } 50% { text-shadow:0 0 9px rgba(238,236,228,.76),0 0 18px rgba(238,236,228,.3); } }
+@media(max-width:560px) { .wordmark-logo { flex-basis:36px; width:36px; height:36px; } .wordmark-logo-image { width:32px; height:35px; } .wordmark-logo-latin { left:28px; top:5px; font-size:6.5px; } }
+@media(prefers-reduced-motion:reduce) { .wordmark-logo-latin { text-shadow:0 0 4px rgba(238,236,228,.35); } }
+</style>
+<style id="compact-last-mission-media">
+/* Keep the project cover in its landscape proportions and at a measured size. */
+.hero > .cover { width:min(100%, 600px); justify-self:end; min-width:0; }
+.hero > .cover img { display:block; width:100%; height:auto !important; max-height:none; aspect-ratio:auto; object-fit:contain; }
+
+/* Reduce the visual footprint of the level boards while retaining legible detail. */
+.embedded-boards, .board-stack { gap:8px; }
+.integrated-board, .board-card { width:min(100%, 1000px); margin-inline:auto; }
+.integrated-board img, .board-card img { display:block; width:100%; height:auto !important; max-height:min(62vw, 560px); aspect-ratio:auto; object-fit:contain; }
+.section { padding-top:26px; padding-bottom:22px; }
+.section-head { margin-bottom:10px; padding-bottom:9px; }
+
+@media(max-width:900px) {
+  .hero > .cover { justify-self:center; }
+  .integrated-board, .board-card { width:min(100%, 900px); }
+  .integrated-board img, .board-card img { max-height:62vw; }
+}
+@media(max-width:699px) {
+  .hero > .cover { width:100%; }
+  .section { padding-top:22px; padding-bottom:18px; }
+  .embedded-boards, .board-stack { gap:7px; }
+  .integrated-board, .board-card { width:100%; }
+  .integrated-board img, .board-card img { max-height:none; }
+}
+</style>
+  <link rel="stylesheet" href="assets/language-switcher.css">
+  <script src="assets/portfolio-route-sync.js" defer></script>
+<link rel="stylesheet" href="assets/project-title-language.css">
+<link rel="stylesheet" href="assets/project-hero-cover.css">
   <link rel="stylesheet" href="assets/project-toc.css">
 </head>
 <body id="top">
   <header class="topbar shell">
-    <a class="wordmark" href="portfolio-home.html" aria-label="返回林蓁作品集首页" data-aria-zh="返回林蓁作品集首页" data-aria-en="Back to Lin Zhen's portfolio"><span class="mark">林</span><span class="cn">林蓁</span><span class="divider"></span><span>PORTFOLIO</span></a>
+    <a class="wordmark" href="portfolio-home.html" aria-label="返回林蓁作品集首页" data-aria-zh="返回林蓁作品集首页" data-aria-en="Back to Lin Zhen's portfolio"><span class="wordmark-logo"><img class="wordmark-logo-image" src="assets/branding/linzhen-signature.png" alt="林蓁"><span class="wordmark-logo-latin" aria-hidden="true">linzhen</span></span><span class="divider"></span><span>PORTFOLIO</span></a>
     <div class="language-switch" role="group" aria-label="选择页面语言" data-aria-zh="选择页面语言" data-aria-en="Select page language"><button type="button" data-language-button="zh" aria-pressed="true">中文</button><button type="button" data-language-button="en" aria-pressed="false">English</button></div>
     <a class="back-link" href="portfolio-home.html#game-design"><span data-language-content="zh">← 返回作品集</span><span data-language-content="en" hidden>← All Projects</span></a>
   </header>
@@ -80,8 +118,8 @@
     <section class="hero" aria-labelledby="project-title">
       <div>
         <div class="eyebrow"><span data-language-content="zh">03 / 合作游戏项目</span><span data-language-content="en" hidden>03 / TEAM GAME PROJECT</span></div>
-        <h1 id="project-title"><span data-language-content="zh">此行不归</span><span data-language-content="en" hidden>The Last Mission</span></h1>
-        <p class="hero-title-alt"><span data-language-content="zh" lang="en">THE LAST MISSION</span><span data-language-content="en" lang="zh-CN" hidden>此行不归</span></p>
+        <h1 id="project-title"><span class="project-title-zh">此行不归</span><span class="project-title-en">The Last Mission</span></h1>
+        <p class="hero-title-alt"><span class="project-title-en">THE LAST MISSION</span><span class="project-title-zh">此行不归</span></p>
         <p class="project-type"><span data-language-content="zh">第一人称射击 · 近未来军事叙事</span><span data-language-content="en" hidden>FIRST-PERSON SHOOTER · NEAR-FUTURE MILITARY NARRATIVE</span></p>
         <p class="project-note"><span data-language-content="zh">退役士兵罗森·埃德尔加德为佣兵效力，在一次秘密营救任务中再次遭遇旧日战友与过去的错误。任务穿过实验室、沙漠与武器工厂，逐步走向一场没有归途的追击。</span><span data-language-content="en" hidden>Retired soldier Rosen Edelgard now works as a mercenary. A covert rescue brings him face to face with former comrades and past mistakes. The mission moves through a laboratory, the desert and a weapons factory, building toward a pursuit with no way back.</span></p>
         <div class="keywords"><span class="keywords-label"><span data-language-content="zh">关键词</span><span data-language-content="en" hidden>KEYWORDS</span></span><span class="keyword"><span data-language-content="zh">第一人称射击</span><span data-language-content="en" hidden>FPS</span></span><span class="keyword"><span data-language-content="zh">关卡设计</span><span data-language-content="en" hidden>Level Design</span></span><span class="keyword"><span data-language-content="zh">玩家引导</span><span data-language-content="en" hidden>Player Guidance</span></span></div>

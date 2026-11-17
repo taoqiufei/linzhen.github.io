@@ -1,0 +1,29 @@
+/* Keep the selected language prominent and its counterpart as the subtitle. */
+#project-title > .project-title-zh,
+#project-title > .project-title-en,
+.hero-title-alt > .project-title-zh,
+.hero-title-alt > .project-title-en {
+  display: none !important;
+}
+#project-title > .project-title-zh,
+#project-title > .project-title-en {
+  margin: 0 !important;
+  color: inherit !important;
+  font: inherit !important;
+  letter-spacing: inherit !important;
+  text-transform: none !important;
+}
+html[lang="zh-CN"] #project-title > .project-title-zh,
+html[lang="en"] #project-title > .project-title-en {
+  display: block !important;
+}
+html[lang="zh-CN"] .hero-title-alt > .project-title-en,
+html[lang="en"] .hero-title-alt > .project-title-zh {
+  display: inline !important;
+}
+.hero-title-alt {
+  margin: 10px 0 0 !important;
+  color: var(--muted) !important;
+  font: 500 15px/1.45 var(--sans) !important;
+  letter-spacing: .04em !important;
+}

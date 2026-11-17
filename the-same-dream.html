@@ -87,6 +87,28 @@
     .board-image img { display:block; width:100%; height:auto; cursor:zoom-in; }
     .board-image figcaption { padding:8px 10px; color:var(--muted); background:var(--paper-light); font:9px var(--mono); letter-spacing:.08em; }
     .language-boards .board-image + .board-image { margin-top:18px; }
+    .prototype-rationale { display:grid; grid-template-columns:minmax(0,1.35fr) minmax(230px,.65fr); gap:20px; margin:0 0 16px; padding:20px; border:1px solid var(--line-dark); background:linear-gradient(115deg,rgba(192,164,106,.1),rgba(26,40,40,.7) 56%); }
+    .prototype-rationale h3 { margin:0 0 9px; color:var(--ink); font:500 clamp(17px,2.2vw,23px)/1.35 var(--serif); }
+    .prototype-rationale p { margin:0; color:#d4d6ce; font-size:11px; line-height:1.9; }
+    .prototype-rationale p + p { margin-top:8px; color:var(--muted); }
+    .prototype-principles { display:grid; align-content:center; gap:10px; padding-left:18px; border-left:1px solid var(--line); }
+    .prototype-principle { display:grid; gap:4px; }
+    .prototype-principle strong { color:var(--accent); font:9px var(--mono); letter-spacing:.1em; text-transform:uppercase; }
+    .prototype-principle span { color:var(--ink); font-size:10px; line-height:1.65; }
+    .prototype-layout { display:grid; grid-template-columns:minmax(300px,1fr) minmax(0,2fr); align-items:stretch; gap:18px; padding:14px; border:1px solid var(--line-dark); background:rgba(255,255,255,.018); }
+    .prototype-levels { display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); align-content:start; gap:12px; }
+    .prototype-card { min-width:0; margin:0; overflow:hidden; border:1px solid var(--line-dark); background:#121d1b; }
+    .prototype-card img { display:block; width:100%; height:170px; object-fit:contain; background:#f7f6ef; cursor:zoom-in; }
+    .prototype-framework { align-self:center; margin-left:20px; }
+    .prototype-framework img { height:auto; max-height:500px; aspect-ratio:auto; }
+    .prototype-framework figcaption { padding:11px 13px 13px; background:transparent; }
+    .prototype-levels > .prototype-card { grid-column:span 2; }
+    .prototype-levels > .prototype-card:nth-child(n+4) { grid-column:span 3; }
+    .prototype-caption { display:grid; gap:7px; }
+    .prototype-caption strong { color:var(--ink); font:500 15px/1.4 var(--serif); }
+    .prototype-caption span { color:var(--muted); font:10px/1.7 var(--sans); }
+    .prototype-caption .prototype-index { color:var(--accent); font:9px var(--mono); letter-spacing:.12em; }
+    .prototype-levels .prototype-card figcaption { min-height:74px; padding:9px 11px; }
     .translation { padding:12px 0 4px; }
     .translation-head { display:flex; align-items:baseline; gap:12px; margin-bottom:14px; }
     .translation-head h3 { margin:0; font:500 clamp(18px,2.3vw,25px)/1.3 var(--serif); }
@@ -133,6 +155,9 @@
       .shell { width:min(100% - 40px,680px); }
       .hero { grid-template-columns:1fr; gap:24px; }
       .cover { min-height:0; }
+      .prototype-layout { grid-template-columns:1fr; }
+      .prototype-framework { width:min(100%,320px); margin:0 auto; }
+      .prototype-card img { height:clamp(145px,20vw,170px); }
     }
     @media (max-width:560px) {
       .shell { width:calc(100% - 32px); }
@@ -141,6 +166,16 @@
       .wordmark .cn { font-size:10px; }
       .topbar { gap:7px; }
       .back-link { font-size:9px; white-space:nowrap; }
+      .prototype-rationale { grid-template-columns:1fr; gap:14px; padding:15px; }
+      .prototype-principles { grid-template-columns:repeat(2,minmax(0,1fr)); padding:12px 0 0; border-left:0; border-top:1px solid var(--line); }
+      .prototype-layout { grid-template-columns:1fr; gap:13px; padding:10px; }
+      .prototype-framework { width:min(100%,300px); margin:0 auto; }
+      .prototype-framework img { max-height:340px; }
+      .prototype-levels { grid-template-columns:repeat(2,minmax(0,1fr)); gap:9px; }
+      .prototype-levels > .prototype-card,.prototype-levels > .prototype-card:nth-child(n+4) { grid-column:span 1; }
+      .prototype-levels > .prototype-card:last-child { grid-column:1/-1; }
+      .prototype-card img { height:clamp(112px,34vw,170px); }
+      .prototype-levels .prototype-card figcaption { min-height:76px; padding:8px; }
       .language-switch { gap:3px; }
       .language-switch button { min-width:38px; padding:6px 7px; font-size:8px; }
       .language-switch-featured button { min-width:96px; padding:10px 14px; font-size:10px; }
@@ -215,12 +250,25 @@
       window.location.replace(shell.href);
     })();
   </script>
+<style id="platinum-wordmark-style">
+.wordmark-logo { position:relative; display:inline-flex; flex:0 0 42px; align-items:center; width:42px; height:40px; letter-spacing:0; }
+.wordmark-logo-image { display:block; width:35px; height:38px; object-fit:contain; filter:drop-shadow(0 0 5px rgba(238,236,228,.28)); }
+.wordmark-logo-latin { position:absolute; top:5px; left:31px; color:#f1efe8; font:500 7px/1 "Segoe Script","Brush Script MT","Lucida Handwriting",cursive; letter-spacing:.02em; white-space:nowrap; writing-mode:vertical-rl; text-orientation:sideways; text-shadow:0 0 5px rgba(238,236,228,.68),0 0 12px rgba(238,236,228,.28); pointer-events:none; }
+.cover-signature,.hero-signature,.topbar::after { color:#f1efe8 !important; text-shadow:0 0 6px rgba(238,236,228,.68),0 0 14px rgba(238,236,228,.28) !important; }
+@keyframes signature-breathe { 0%,100% { text-shadow:0 0 5px rgba(238,236,228,.42),0 0 11px rgba(238,236,228,.16); } 50% { text-shadow:0 0 9px rgba(238,236,228,.76),0 0 18px rgba(238,236,228,.3); } }
+@media(max-width:560px) { .wordmark-logo { flex-basis:36px; width:36px; height:36px; } .wordmark-logo-image { width:32px; height:35px; } .wordmark-logo-latin { left:28px; top:5px; font-size:6.5px; } }
+@media(prefers-reduced-motion:reduce) { .wordmark-logo-latin { text-shadow:0 0 4px rgba(238,236,228,.35); } }
+</style>
+  <link rel="stylesheet" href="assets/language-switcher.css">
+  <script src="assets/portfolio-route-sync.js" defer></script>
+<link rel="stylesheet" href="assets/project-title-language.css">
+<link rel="stylesheet" href="assets/project-hero-cover.css">
   <link rel="stylesheet" href="assets/project-toc.css">
 </head>
 <body id="top">
   <header class="topbar shell">
     <a class="wordmark" href="portfolio-home.html" aria-label="返回林蓁作品集首页" data-aria-zh="返回林蓁作品集首页" data-aria-en="Back to Lin Zhen's portfolio">
-      <span class="mark">林</span><span class="cn">林蓁</span><span class="divider"></span><span>PORTFOLIO</span>
+      <span class="wordmark-logo"><img class="wordmark-logo-image" src="assets/branding/linzhen-signature.png" alt="林蓁"><span class="wordmark-logo-latin" aria-hidden="true">linzhen</span></span><span class="divider"></span><span>PORTFOLIO</span>
     </a>
     <div class="language-switch" role="group" aria-label="选择页面语言" data-aria-zh="选择页面语言" data-aria-en="Select page language">
         <button type="button" data-language-button="zh" aria-pressed="true">中文</button>
@@ -234,8 +282,8 @@
     <section class="hero" aria-labelledby="project-title">
       <div class="hero-copy">
         <div class="eyebrow"><span data-language-content="zh">01 / 实验性游戏设计</span><span data-language-content="en" hidden>01 / EXPERIMENTAL GAME DESIGN</span></div>
-        <h1 id="project-title"><span data-language-content="zh">复梦</span><span data-language-content="en" hidden>The Same Dream</span></h1>
-        <p class="hero-title-alt"><span data-language-content="zh" lang="en">THE SAME DREAM</span><span data-language-content="en" lang="zh-CN" hidden>复梦</span></p>
+        <h1 id="project-title"><span class="project-title-zh">复梦</span><span class="project-title-en">The Same Dream</span></h1>
+        <p class="hero-title-alt"><span class="project-title-en">THE SAME DREAM</span><span class="project-title-zh">复梦</span></p>
         <p class="project-type"><span data-language-content="zh">第一人称平台跳跃迷宫 · 实验性项目</span><span data-language-content="en" hidden>FIRST-PERSON PLATFORMING MAZE · EXPERIMENTAL PROJECT</span></p>
         <p class="project-note"><span data-language-content="zh">以反复变化的梦境为背景，玩家通过第一人称平台跳跃探索迷宫。本实验研究不同玩家引导方式对导航速度和沉浸感的影响。</span><span data-language-content="en" hidden>A first-person platforming maze set in a recurring, shifting dream. This experimental project studies how different player-guidance methods affect navigation speed and immersion.</span></p>
         <div class="project-keywords" aria-label="项目关键词" data-aria-zh="项目关键词" data-aria-en="Project keywords">
@@ -250,7 +298,7 @@
         </dl>
       </div>
       <div class="cover"><span class="cover-signature" aria-hidden="true">linzhen</span>
-        <img class="cover-image zoomable" src="assets/optimized/images/the-same-dream-preview-1920x1080.png-2400.webp" alt="《复梦》游戏场景预览：昏暗房间中的金属货架、储物柜与碎裂地面，顶部透入一束暖光。" data-alt-en="Game scene from The Same Dream: a dim room with metal shelving, lockers, cracked ground and a warm shaft of light." draggable="false" srcset="assets/optimized/images/the-same-dream-preview-1920x1080.png-480.webp 480w, assets/optimized/images/the-same-dream-preview-1920x1080.png-960.webp 960w, assets/optimized/images/the-same-dream-preview-1920x1080.png-1200.webp 1200w, assets/optimized/images/the-same-dream-preview-1920x1080.png-1600.webp 1600w, assets/optimized/images/the-same-dream-preview-1920x1080.png-2400.webp 1920w" sizes="(max-width:699px) 100vw, 50vw" data-original-src="assets/images/the-same-dream-preview-1920x1080.png" width="1920" height="1080" loading="eager" decoding="async" fetchpriority="high">
+        <img class="cover-image zoomable" src="assets/optimized/images/the-same-dream-preview-1920x1080.png-2400.webp" alt="《复梦》游戏场景预览：昏暗房间中的金属货架、储物柜与碎裂地面，顶部透入一束暖光。" data-alt-zh="《复梦》游戏场景预览：昏暗房间中的金属货架、储物柜与碎裂地面，顶部透入一束暖光。" data-alt-en="Game scene from The Same Dream: a dim room with metal shelving, lockers, cracked ground and a warm shaft of light." draggable="false" srcset="assets/optimized/images/the-same-dream-preview-1920x1080.png-480.webp 480w, assets/optimized/images/the-same-dream-preview-1920x1080.png-960.webp 960w, assets/optimized/images/the-same-dream-preview-1920x1080.png-1200.webp 1200w, assets/optimized/images/the-same-dream-preview-1920x1080.png-1600.webp 1600w, assets/optimized/images/the-same-dream-preview-1920x1080.png-2400.webp 1920w" sizes="(max-width:699px) 100vw, 50vw" data-original-src="assets/images/the-same-dream-preview-1920x1080.png" width="1920" height="1080" loading="eager" decoding="async" fetchpriority="high">
       </div>
     </section>
 
@@ -300,6 +348,47 @@
 
     <section class="section" id="prototype" aria-label="原型迭代与关卡引导设计" data-aria-zh="原型迭代与关卡引导设计" data-aria-en="Prototype iteration and level guidance">
       <div class="section-head"><div class="section-title"><span class="section-kicker">03</span><h2 id="prototype-title"><span data-language-content="zh">原型迭代与关卡引导设计</span><span data-language-content="en" hidden>Prototype & Level Guidance</span></h2></div><span class="section-note"><span data-language-content="zh">关卡设计 / 实机画面</span><span data-language-content="en" hidden>LEVEL DESIGN / GAMEPLAY</span></span></div>
+      <div class="prototype-rationale">
+        <div>
+          <h3><span data-language-content="zh">共用迷宫框架，让重复中持续发生变化</span><span data-language-content="en" hidden>One maze framework, with variation across levels</span></h3>
+          <p data-language-content="zh">全部关卡基于同一套迷宫框架搭建，保持空间尺度与核心通行逻辑一致；再逐关调整路线、光线、平台、陷阱和角色行动。熟悉的结构反复出现，局部体验不断变化，呼应梦境主题。</p>
+          <p data-language-content="en" hidden>Every level is built from the same maze framework, keeping the spatial scale and core traversal logic consistent. Routes, lighting, platforms, hazards, and character movement then vary by level. A familiar structure returns while local experiences keep changing, echoing the theme of dreams.</p>
+          <p data-language-content="zh">稳定的基础框架有助于控制关卡规模与流程差异；变化的路线和机关也减少玩家单靠记忆通关的可能，降低逐关熟悉与学习效应对测试结果的干扰。</p>
+          <p data-language-content="en" hidden>The shared baseline helps control level scale and flow differences. Changes to routes and mechanics also make it harder to rely on memory alone, reducing the influence of growing familiarity and learning effects on playtest results.</p>
+        </div>
+        <div class="prototype-principles">
+          <div class="prototype-principle"><strong><span data-language-content="zh">保持一致</span><span data-language-content="en" hidden>Held constant</span></strong><span><span data-language-content="zh">迷宫框架 · 空间尺度 · 通行逻辑</span><span data-language-content="en" hidden>Maze framework · spatial scale · traversal logic</span></span></div>
+          <div class="prototype-principle"><strong><span data-language-content="zh">逐关变化</span><span data-language-content="en" hidden>Varied by level</span></strong><span><span data-language-content="zh">引导线索 · 路线 · 机关 · 行动节奏</span><span data-language-content="en" hidden>Guidance cues · routes · mechanics · pacing</span></span></div>
+        </div>
+      </div>
+      <div class="prototype-layout" aria-label="复梦关卡原型草图" data-aria-zh="复梦关卡原型草图" data-aria-en="The Same Dream level prototype sketches">
+        <figure class="prototype-card prototype-framework">
+          <img class="zoomable" src="assets/optimized/images/the-same-dream/prototype/framework-studies-900.jpg" srcset="assets/optimized/images/the-same-dream/prototype/framework-studies-900.jpg 900w, assets/optimized/images/the-same-dream/prototype/framework-studies-1600.jpg 1600w" sizes="(max-width:699px) 100vw, 34vw" alt="《复梦》迷宫原型框架迭代草图，对比多个关卡布局与光线、移动平台等元素。" data-alt-zh="《复梦》迷宫原型框架迭代草图，对比多个关卡布局与光线、移动平台等元素。" data-alt-en="Framework iteration sketches for The Same Dream, comparing maze layouts with lighting and moving platforms." data-original-src="assets/images/the-same-dream/prototype/framework-studies.jpg" width="3314" height="4664" loading="lazy" decoding="async">
+          <figcaption><span class="prototype-caption"><span class="prototype-index">ITERATION / 00</span><strong><span data-language-content="zh">共用框架的早期探索</span><span data-language-content="en" hidden>Early studies of the shared framework</span></strong><span><span data-language-content="zh">先确定可复用的迷宫结构，再探索光线与移动平台如何改变路线体验。</span><span data-language-content="en" hidden>First establish a reusable maze structure, then explore how lighting and moving platforms change the route experience.</span></span></span></figcaption>
+        </figure>
+        <div class="prototype-levels">
+        <figure class="prototype-card">
+          <img class="zoomable" src="assets/optimized/images/the-same-dream/prototype/level-01-tutorial-900.jpg" srcset="assets/optimized/images/the-same-dream/prototype/level-01-tutorial-900.jpg 900w, assets/optimized/images/the-same-dream/prototype/level-01-tutorial-1600.jpg 1600w" sizes="(max-width:699px) 50vw, 30vw" alt="《复梦》第 1 关草图，以移动墙和空白区域安排跑动与跳跃教程。" data-alt-zh="《复梦》第 1 关草图，以移动墙和空白区域安排跑动与跳跃教程。" data-alt-en="Level 1 sketch using moving walls and open spaces to stage running and jumping tutorials." data-original-src="assets/images/the-same-dream/prototype/level-01-tutorial.jpg" width="2360" height="1640" loading="lazy" decoding="async">
+          <figcaption><span class="prototype-caption"><span class="prototype-index">LEVEL / 01</span><strong><span data-language-content="zh">跑动与跳跃教程</span><span data-language-content="en" hidden>Running & jump tutorial</span></strong><span><span data-language-content="zh">在共用迷宫结构中建立基础操作认知。</span><span data-language-content="en" hidden>Introduce core movement within the shared maze structure.</span></span></span></figcaption>
+        </figure>
+        <figure class="prototype-card">
+          <img class="zoomable" src="assets/optimized/images/the-same-dream/prototype/level-02-variation-900.jpg" srcset="assets/optimized/images/the-same-dream/prototype/level-02-variation-900.jpg 900w, assets/optimized/images/the-same-dream/prototype/level-02-variation-1600.jpg 1600w" sizes="(max-width:699px) 50vw, 30vw" alt="《复梦》第 2 关草图，标出空白区域、移动平台、激光陷阱与移动墙。" data-alt-zh="《复梦》第 2 关草图，标出空白区域、移动平台、激光陷阱与移动墙。" data-alt-en="Level 2 sketch marking open spaces, moving platforms, laser traps, and moving walls." data-original-src="assets/images/the-same-dream/prototype/level-02-variation.jpg" width="2360" height="1640" loading="lazy" decoding="async">
+          <figcaption><span class="prototype-caption"><span class="prototype-index">LEVEL / 02</span><strong><span data-language-content="zh">路线与机关变奏</span><span data-language-content="en" hidden>Route and mechanic variation</span></strong><span><span data-language-content="zh">组合空白、平台与激光，改变穿越节奏。</span><span data-language-content="en" hidden>Combine open spaces, platforms, and lasers to shift traversal rhythm.</span></span></span></figcaption>
+        </figure>
+        <figure class="prototype-card">
+          <img class="zoomable" src="assets/optimized/images/the-same-dream/prototype/level-03-cues-900.jpg" srcset="assets/optimized/images/the-same-dream/prototype/level-03-cues-900.jpg 900w, assets/optimized/images/the-same-dream/prototype/level-03-cues-1600.jpg 1600w" sizes="(max-width:699px) 50vw, 30vw" alt="《复梦》第 3 关草图，以枪械陷阱、激光、移动墙和跑墙元素布置路线。" data-alt-zh="《复梦》第 3 关草图，以枪械陷阱、激光、移动墙和跑墙元素布置路线。" data-alt-en="Level 3 sketch arranging a route with gun traps, lasers, moving walls, and wall-running elements." data-original-src="assets/images/the-same-dream/prototype/level-03-cues.jpg" width="2360" height="1640" loading="lazy" decoding="async">
+          <figcaption><span class="prototype-caption"><span class="prototype-index">LEVEL / 03</span><strong><span data-language-content="zh">多类线索组合</span><span data-language-content="en" hidden>Combined guidance cues</span></strong><span><span data-language-content="zh">让多种机关共同塑造判断与行动选择。</span><span data-language-content="en" hidden>Use multiple mechanics to shape decisions and movement choices.</span></span></span></figcaption>
+        </figure>
+        <figure class="prototype-card">
+          <img class="zoomable" src="assets/optimized/images/the-same-dream/prototype/level-04-hazards-900.jpg" srcset="assets/optimized/images/the-same-dream/prototype/level-04-hazards-900.jpg 900w, assets/optimized/images/the-same-dream/prototype/level-04-hazards-1600.jpg 1600w" sizes="(max-width:699px) 50vw, 30vw" alt="《复梦》第 4 关草图，标注空白区域、墙跑、移动平台与移动墙。" data-alt-zh="《复梦》第 4 关草图，标注空白区域、墙跑、移动平台与移动墙。" data-alt-en="Level 4 sketch marking open spaces, wall runs, moving platforms, and moving walls." data-original-src="assets/images/the-same-dream/prototype/level-04-hazards.jpg" width="2360" height="1640" loading="lazy" decoding="async">
+          <figcaption><span class="prototype-caption"><span class="prototype-index">LEVEL / 04</span><strong><span data-language-content="zh">障碍配置与节奏</span><span data-language-content="en" hidden>Hazard layout and pacing</span></strong><span><span data-language-content="zh">调整障碍密度与平台位置，形成新的路线节拍。</span><span data-language-content="en" hidden>Adjust hazard density and platform placement to create a new route rhythm.</span></span></span></figcaption>
+        </figure>
+        <figure class="prototype-card">
+          <img class="zoomable" src="assets/optimized/images/the-same-dream/prototype/level-05-npc-route-900.jpg" srcset="assets/optimized/images/the-same-dream/prototype/level-05-npc-route-900.jpg 900w, assets/optimized/images/the-same-dream/prototype/level-05-npc-route-1600.jpg 1600w" sizes="(max-width:699px) 50vw, 30vw" alt="《复梦》第 5 关草图，标注 NPC 移动路线、临时平台、枪械陷阱与墙跑墙。" data-alt-zh="《复梦》第 5 关草图，标注 NPC 移动路线、临时平台、枪械陷阱与墙跑墙。" data-alt-en="Level 5 sketch marking an NPC route, temporary platforms, gun traps, and wall-running walls." data-original-src="assets/images/the-same-dream/prototype/level-05-npc-route.jpg" width="2360" height="1640" loading="lazy" decoding="async">
+          <figcaption><span class="prototype-caption"><span class="prototype-index">LEVEL / 05</span><strong><span data-language-content="zh">角色路线与临时平台</span><span data-language-content="en" hidden>Character routes & temporary platforms</span></strong><span><span data-language-content="zh">加入移动角色与短暂平台，带来更动态的观察和时机判断。</span><span data-language-content="en" hidden>Add moving characters and temporary platforms for more dynamic observation and timing.</span></span></span></figcaption>
+        </figure>
+        </div>
+      </div>
       <div class="language-boards" data-language-panel="zh"><figure class="board-image"><img class="zoomable" src="assets/optimized/images/the-same-dream/boards/03-zh-1920x1080.png-2400.webp" alt="《复梦》原型迭代与关卡引导图板，展示五个关卡选项及对应环境线索，包含第 4 关光线与声音。" draggable="false" srcset="assets/optimized/images/the-same-dream/boards/03-zh-1920x1080.png-1200.webp 1200w, assets/optimized/images/the-same-dream/boards/03-zh-1920x1080.png-2400.webp 1920w" sizes="(max-width:699px) 100vw, 75vw" data-original-src="assets/images/the-same-dream/boards/03-zh-1920x1080.png" width="1920" height="1080" loading="lazy" decoding="async"></figure></div>
       <div class="language-boards" data-language-panel="en" hidden><figure class="board-image"><img class="zoomable" src="assets/optimized/images/the-same-dream/boards/03-en-1920x1080.png-2400.webp" alt="The Same Dream prototype and level guidance board, showing all five level titles and cue types, including Level 4: Echoes in the Light." draggable="false" srcset="assets/optimized/images/the-same-dream/boards/03-en-1920x1080.png-1200.webp 1200w, assets/optimized/images/the-same-dream/boards/03-en-1920x1080.png-2400.webp 1920w" sizes="(max-width:699px) 100vw, 75vw" data-original-src="assets/images/the-same-dream/boards/03-en-1920x1080.png" width="1920" height="1080" loading="lazy" decoding="async"></figure></div>
     </section>
@@ -385,7 +474,7 @@
         document.querySelector('meta[name="description"]').content = language === "zh" ? "林蓁作品集：《复梦》实验性游戏设计研究，比较光线、色彩与声音引导对玩家导航与沉浸感的影响。" : "Lin Zhen's portfolio project: The Same Dream, an experimental game design study exploring how lighting, colour and sound cues affect wayfinding and immersion.";
         document.querySelectorAll("[data-aria-zh]").forEach((element) => element.setAttribute("aria-label", language === "zh" ? element.dataset.ariaZh : element.dataset.ariaEn));
         document.querySelectorAll("iframe[data-title-en]").forEach((frame) => { frame.title = language === "zh" ? frame.dataset.titleZh : frame.dataset.titleEn; });
-        document.querySelectorAll("img[data-alt-en]").forEach((image) => { image.alt = language === "zh" ? "《复梦》游戏场景预览：昏暗房间中的金属货架、储物柜与碎裂地面，顶部透入一束暖光。" : image.dataset.altEn; });
+        document.querySelectorAll("img[data-alt-en]").forEach((image) => { image.alt = language === "zh" ? (image.dataset.altZh || image.alt) : image.dataset.altEn; });
         document.querySelectorAll("main img.zoomable").forEach((image) => {
           image.title = language === "zh" ? "点击放大" : "Click to enlarge";
           image.setAttribute("aria-label", `${image.alt || (language === "zh" ? "项目图片" : "Project image")}${language === "zh" ? "，点击放大" : ", click to enlarge"}`);

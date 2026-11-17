@@ -75,12 +75,25 @@
       window.location.replace(shell.href);
     })();
   </script>
+<style id="platinum-wordmark-style">
+.wordmark-logo { position:relative; display:inline-flex; flex:0 0 42px; align-items:center; width:42px; height:40px; letter-spacing:0; }
+.wordmark-logo-image { display:block; width:35px; height:38px; object-fit:contain; filter:drop-shadow(0 0 5px rgba(238,236,228,.28)); }
+.wordmark-logo-latin { position:absolute; top:5px; left:31px; color:#f1efe8; font:500 7px/1 "Segoe Script","Brush Script MT","Lucida Handwriting",cursive; letter-spacing:.02em; white-space:nowrap; writing-mode:vertical-rl; text-orientation:sideways; text-shadow:0 0 5px rgba(238,236,228,.68),0 0 12px rgba(238,236,228,.28); pointer-events:none; }
+.cover-signature,.hero-signature,.topbar::after { color:#f1efe8 !important; text-shadow:0 0 6px rgba(238,236,228,.68),0 0 14px rgba(238,236,228,.28) !important; }
+@keyframes signature-breathe { 0%,100% { text-shadow:0 0 5px rgba(238,236,228,.42),0 0 11px rgba(238,236,228,.16); } 50% { text-shadow:0 0 9px rgba(238,236,228,.76),0 0 18px rgba(238,236,228,.3); } }
+@media(max-width:560px) { .wordmark-logo { flex-basis:36px; width:36px; height:36px; } .wordmark-logo-image { width:32px; height:35px; } .wordmark-logo-latin { left:28px; top:5px; font-size:6.5px; } }
+@media(prefers-reduced-motion:reduce) { .wordmark-logo-latin { text-shadow:0 0 4px rgba(238,236,228,.35); } }
+</style>
+  <link rel="stylesheet" href="assets/language-switcher.css">
+  <script src="assets/portfolio-route-sync.js" defer></script>
+<link rel="stylesheet" href="assets/project-title-language.css">
+<link rel="stylesheet" href="assets/project-hero-cover.css">
   <link rel="stylesheet" href="assets/project-toc.css">
 </head>
 <body id="top">
   <header class="topbar shell">
-    <a class="wordmark" href="portfolio-home.html" aria-label="返回作品集首页"><strong>林蓁</strong><span>PORTFOLIO</span></a>
-    <div class="lang-switch" role="group" aria-label="选择页面语言">
+    <a class="wordmark" href="portfolio-home.html" aria-label="返回作品集首页"><span class="wordmark-logo"><img class="wordmark-logo-image" src="assets/branding/linzhen-signature.png" alt="林蓁"><span class="wordmark-logo-latin" aria-hidden="true">linzhen</span></span><span>PORTFOLIO</span></a>
+    <div class="language-switch" role="group" aria-label="选择页面语言">
       <button type="button" data-language-button="zh" aria-pressed="true">中文</button>
       <button type="button" data-language-button="en" aria-pressed="false">English</button>
     </div>
@@ -106,7 +119,7 @@
     <section class="hero" aria-labelledby="project-title">
       <div>
         <div class="eyebrow"><span data-language-content="zh">05 / 跨领域游戏项目</span><span data-language-content="en" hidden>05 / CROSS-DISCIPLINARY GAME PROJECT</span></div>
-        <h1 id="project-title">Rene<span data-language-content="zh">瑞尼</span><span data-language-content="en" hidden>A Journey of Awakening</span></h1>
+        <h1 id="project-title"><span class="project-title-zh">瑞尼</span><span class="project-title-en">Rene</span></h1><p class="hero-title-alt"><span class="project-title-en">RENE · A JOURNEY OF AWAKENING</span><span class="project-title-zh">瑞尼 · 觉醒之旅</span></p>
         <p class="hero-copy"><span data-language-content="zh">一段关于独立思考与自我觉醒的探索旅程。玩家通过实体机关、卡牌与故事书破解层层谜题，在发现、觉醒与重生的过程中挣脱思维束缚，重新获得自由。</span><span data-language-content="en" hidden>A journey of independent thought and self-awakening. Players solve layered puzzles through a physical mechanism, cards and a storybook, moving from discovery to awakening and rebirth as they break free from constraints.</span></p>
         <div class="facts">
           <div class="fact"><strong><span data-language-content="zh">形式</span><span data-language-content="en" hidden>FORMAT</span></strong> <span data-language-content="zh">实体解谜 · 卡牌 · 故事书</span><span data-language-content="en" hidden>Physical puzzle · Cards · Storybook</span></div>

@@ -7,6 +7,13 @@
   <meta name="description" content="林蓁的创意作品集，收录游戏设计、游戏世界观与角色设计、室内设计项目。">
   <title>林蓁｜创意作品集</title>
   <style>
+    @font-face { font-family:"Noto Sans SC"; font-style:normal; font-weight:400; font-display:swap; src:url("assets/fonts/noto-sans-sc-400.ttf") format("truetype"); }
+    @font-face { font-family:"Noto Sans SC"; font-style:normal; font-weight:500; font-display:swap; src:url("assets/fonts/noto-sans-sc-500.ttf") format("truetype"); }
+    @font-face { font-family:"Noto Sans SC"; font-style:normal; font-weight:700; font-display:swap; src:url("assets/fonts/noto-sans-sc-700.ttf") format("truetype"); }
+    @font-face { font-family:"Noto Serif SC"; font-style:normal; font-weight:400; font-display:swap; src:url("assets/fonts/noto-serif-sc-400.ttf") format("truetype"); }
+    @font-face { font-family:"Noto Serif SC"; font-style:normal; font-weight:500; font-display:swap; src:url("assets/fonts/noto-serif-sc-500.ttf") format("truetype"); }
+    @font-face { font-family:"Noto Serif SC"; font-style:normal; font-weight:700; font-display:swap; src:url("assets/fonts/noto-serif-sc-700.ttf") format("truetype"); }
+    @font-face { font-family:"Portfolio Signature"; font-style:normal; font-weight:400; font-display:swap; src:url("assets/fonts/zhi-mang-xing-400.ttf") format("truetype"); }
     :root {
       --paper: #10191b;
       --paper-light: #1a2828;
@@ -21,19 +28,21 @@
     }
     * { box-sizing: border-box; }
     [hidden] { display:none!important; }
-    html { scroll-behavior: smooth; scroll-padding-top: 82px; }
+    html { scroll-behavior: smooth; scroll-padding-top: 82px; overflow-x:clip; }
     body { margin: 0; background:radial-gradient(ellipse at 15% 0%,rgba(72,101,89,.23),transparent 36%),radial-gradient(ellipse at 91% 23%,rgba(122,102,62,.11),transparent 32%),var(--paper); color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
-    body::before { content:""; position:fixed; inset:0; z-index:0; pointer-events:none; opacity:.48; background-image:radial-gradient(circle 1px at 7% 16%,rgba(220,205,168,.8) 0 1px,transparent 1.5px),radial-gradient(circle 1px at 19% 63%,rgba(220,205,168,.62) 0 1px,transparent 1.5px),radial-gradient(circle 1px at 31% 27%,rgba(220,205,168,.55) 0 1px,transparent 1.5px),radial-gradient(circle 1px at 43% 78%,rgba(220,205,168,.6) 0 1px,transparent 1.5px),radial-gradient(circle 1px at 56% 13%,rgba(220,205,168,.72) 0 1px,transparent 1.5px),radial-gradient(circle 1px at 68% 52%,rgba(220,205,168,.52) 0 1px,transparent 1.5px),radial-gradient(circle 1px at 79% 21%,rgba(220,205,168,.64) 0 1px,transparent 1.5px),radial-gradient(circle 1px at 91% 68%,rgba(220,205,168,.7) 0 1px,transparent 1.5px),radial-gradient(ellipse at 22% 37%,rgba(76,116,101,.14),transparent 38%),radial-gradient(ellipse at 78% 72%,rgba(80,75,116,.11),transparent 36%); }
-    body::after { content:""; position:fixed; inset:0; z-index:0; pointer-events:none; opacity:.22; background-image:radial-gradient(ellipse 48% 19% at 49% 43%,rgba(106,139,166,.09),transparent 76%),linear-gradient(132deg,transparent 20%,rgba(111,135,165,.025) 49%,transparent 73%),radial-gradient(circle 1.5px at 11% 31%,rgba(243,231,201,.9) 0 1px,transparent 2px),radial-gradient(circle 1px at 24% 72%,rgba(199,221,233,.9) 0 1px,transparent 1.8px),radial-gradient(circle 1.5px at 38% 17%,rgba(243,231,201,.9) 0 1px,transparent 2px),radial-gradient(circle 1px at 53% 63%,rgba(199,221,233,.85) 0 1px,transparent 1.8px),radial-gradient(circle 1.5px at 67% 28%,rgba(243,231,201,.9) 0 1px,transparent 2px),radial-gradient(circle 1px at 82% 57%,rgba(199,221,233,.9) 0 1px,transparent 1.8px),radial-gradient(circle 1.5px at 94% 16%,rgba(243,231,201,.9) 0 1px,transparent 2px); animation: galaxy-shimmer 8s ease-in-out infinite alternate; }
+    body::before { content:""; position:fixed; inset:0; z-index:0; pointer-events:none; opacity:.48; background-image:radial-gradient(circle 1px at 7% 16%,rgba(220,205,168,.8) 0 1px,transparent 1.5px),radial-gradient(circle 1px at 19% 63%,rgba(220,205,168,.62) 0 1px,transparent 1.5px),radial-gradient(circle 1px at 31% 27%,rgba(220,205,168,.55) 0 1px,transparent 1.5px),radial-gradient(circle 1px at 43% 78%,rgba(220,205,168,.6) 0 1px,transparent 1.5px),radial-gradient(circle 1px at 56% 13%,rgba(220,205,168,.72) 0 1px,transparent 1.5px),radial-gradient(circle 1px at 68% 52%,rgba(220,205,168,.52) 0 1px,transparent 1.5px),radial-gradient(circle 1px at 79% 21%,rgba(220,205,168,.64) 0 1px,transparent 1.5px),radial-gradient(circle 1px at 91% 68%,rgba(220,205,168,.7) 0 1px,transparent 1.5px),radial-gradient(circle 1px at 3% 47%,rgba(220,205,168,.62) 0 1px,transparent 1.5px),radial-gradient(circle 1px at 10% 86%,rgba(220,205,168,.56) 0 1px,transparent 1.5px),radial-gradient(circle 1px at 25% 49%,rgba(220,205,168,.5) 0 1px,transparent 1.5px),radial-gradient(circle 1px at 37% 8%,rgba(220,205,168,.62) 0 1px,transparent 1.5px),radial-gradient(circle 1px at 49% 91%,rgba(220,205,168,.6) 0 1px,transparent 1.5px),radial-gradient(circle 1px at 62% 34%,rgba(220,205,168,.54) 0 1px,transparent 1.5px),radial-gradient(circle 1px at 74% 6%,rgba(220,205,168,.64) 0 1px,transparent 1.5px),radial-gradient(circle 1px at 87% 39%,rgba(220,205,168,.58) 0 1px,transparent 1.5px),radial-gradient(circle 1px at 97% 87%,rgba(220,205,168,.66) 0 1px,transparent 1.5px),radial-gradient(ellipse at 22% 37%,rgba(76,116,101,.14),transparent 38%),radial-gradient(ellipse at 78% 72%,rgba(80,75,116,.11),transparent 36%); }
+    body::after { content:""; position:fixed; inset:0; z-index:0; pointer-events:none; opacity:.22; background-image:radial-gradient(ellipse 48% 19% at 49% 43%,rgba(106,139,166,.09),transparent 76%),linear-gradient(132deg,transparent 20%,rgba(111,135,165,.025) 49%,transparent 73%),radial-gradient(circle 1.5px at 11% 31%,rgba(243,231,201,.9) 0 1px,transparent 2px),radial-gradient(circle 1px at 24% 72%,rgba(199,221,233,.9) 0 1px,transparent 1.8px),radial-gradient(circle 1.5px at 38% 17%,rgba(243,231,201,.9) 0 1px,transparent 2px),radial-gradient(circle 1px at 53% 63%,rgba(199,221,233,.85) 0 1px,transparent 1.8px),radial-gradient(circle 1.5px at 67% 28%,rgba(243,231,201,.9) 0 1px,transparent 2px),radial-gradient(circle 1px at 82% 57%,rgba(199,221,233,.9) 0 1px,transparent 1.8px),radial-gradient(circle 1.5px at 94% 16%,rgba(243,231,201,.9) 0 1px,transparent 2px),radial-gradient(circle 1px at 14% 48%,rgba(199,221,233,.86) 0 1px,transparent 1.8px),radial-gradient(circle 1.5px at 29% 91%,rgba(243,231,201,.82) 0 1px,transparent 2px),radial-gradient(circle 1px at 44% 43%,rgba(199,221,233,.9) 0 1px,transparent 1.8px),radial-gradient(circle 1.5px at 60% 9%,rgba(243,231,201,.84) 0 1px,transparent 2px),radial-gradient(circle 1px at 74% 87%,rgba(199,221,233,.86) 0 1px,transparent 1.8px),radial-gradient(circle 1.5px at 89% 33%,rgba(243,231,201,.86) 0 1px,transparent 2px),radial-gradient(circle 1px at 97% 78%,rgba(199,221,233,.82) 0 1px,transparent 1.8px); animation: galaxy-shimmer 8s ease-in-out infinite alternate; }
     body > * { position:relative; z-index:1; }
     @keyframes galaxy-shimmer { from { opacity:.12; filter:brightness(.86); } to { opacity:.34; filter:brightness(1.24); } }
     a { color: inherit; text-decoration: none; }
     .shell { width: min(1240px, calc(100% - 88px)); margin: 0 auto; }
     .topbar { height: 74px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 24px; border-bottom: 1px solid var(--line-dark); }
     .wordmark { display: flex; align-items: center; gap: 13px; color: var(--ink); font: 10px var(--mono); letter-spacing: .14em; }
-    .wordmark .mark { width: 29px; height: 29px; border: 1px solid var(--accent); border-radius:50%; color:var(--accent); display: grid; place-items: center; font: 13px var(--serif); letter-spacing: 0; }
     .wordmark .divider { height: 17px; width: 1px; background: var(--line-dark); }
-    .wordmark .cn { font: 16px/1 "STXingkai","华文行楷","STKaiti","KaiTi","楷体",serif; letter-spacing: .14em; color:var(--accent); text-shadow:0 0 12px rgba(192,164,106,.16); transform:skewX(-6deg); }
+    .wordmark .cn { display:block; width:auto; height:35px; filter:drop-shadow(0 0 5px rgba(232,226,210,.24)); }
+    .wordmark-logo { position:relative; display:inline-flex; flex:0 0 42px; align-items:center; width:42px; height:40px; letter-spacing:0; }
+    .wordmark-logo-image { display:block; width:35px; height:38px; object-fit:contain; filter:drop-shadow(0 0 5px rgba(238,236,228,.28)); }
+    .wordmark-logo-latin { position:absolute; top:5px; left:31px; color:#f1efe8; font:500 7px/1 "Segoe Script","Brush Script MT","Lucida Handwriting",cursive; letter-spacing:.02em; white-space:nowrap; writing-mode:vertical-rl; text-orientation:sideways; text-shadow:0 0 5px rgba(238,236,228,.68),0 0 12px rgba(238,236,228,.28); pointer-events:none; }
     .nav { display: flex; gap: 31px; align-items: center; font-size: 12px; color: var(--muted); }
     .nav { justify-self: end; }
     .nav a { position: relative; padding: 8px 0; transition: color .2s; }
@@ -44,16 +53,18 @@
     .language-switch button { min-width:45px; padding:7px 9px; border:1px solid var(--line); background:transparent; color:var(--muted); font:9px var(--mono); letter-spacing:.04em; cursor:pointer; transition:color .2s,border-color .2s,background .2s; }
     .language-switch button:hover,.language-switch button[aria-pressed="true"] { border-color:var(--accent); color:var(--accent); background:rgba(192,164,106,.08); }
     .language-switch button:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
-    .hero { position:relative; min-height: 350px; padding: 69px 0 55px; display: grid; grid-template-columns: 1.12fr .88fr; align-items: end; gap: 42px; border-bottom: 1px solid var(--line-dark); overflow:hidden; }
-    .hero::after { content:""; position:absolute; width:260px; aspect-ratio:1; right:6%; top:28px; border:1px solid rgba(192,164,106,.19); border-radius:50%; box-shadow:0 0 0 25px rgba(192,164,106,.025),0 0 0 56px rgba(192,164,106,.018); pointer-events:none; }
-    .hero::before { content:""; position:absolute; z-index:0; width:4px; height:4px; right:25%; top:77px; border-radius:50%; background:var(--accent); opacity:.72; box-shadow:53px 42px 0 -1px var(--accent),-42px 127px 0 -1px var(--accent); pointer-events:none; }
+    .hero { position:relative; isolation:isolate; min-height: 350px; padding: 69px 0 55px; display: grid; grid-template-columns: 1.12fr .88fr; align-items: end; gap: 42px; border-bottom: 1px solid var(--line-dark); overflow:visible; }
+    #top { overflow:visible; }
+    .hero::after, .hero::before { content:none; }
     .hero > * { position:relative; z-index:1; }
     .eyebrow, .section-kicker, .project-index, .mini-label { font: 10px var(--mono); letter-spacing: .12em; color: var(--accent); text-transform: uppercase; }
-    .hero h1 { position:relative; isolation:isolate; display:inline-block; margin:17px 0 0; font:500 clamp(68px,9vw,122px)/.96 var(--serif); letter-spacing:.08em; color:#e9e0ca; background:linear-gradient(145deg,#f2ead9 5%,#d0c39f 52%,#a8b5a7 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; filter:drop-shadow(0 5px 16px rgba(0,0,0,.28)); }
-    .hero h1 .hero-name { display:inline-block; font-family:"STXingkai","华文行楷","STKaiti","KaiTi","楷体",serif; font-weight:400; letter-spacing:.16em; color:#ead4a5; -webkit-text-fill-color:#ead4a5; background:none; transform:skewX(-6deg) rotate(-1deg); transform-origin:left bottom; text-shadow:0 0 18px rgba(192,164,106,.2); }
-    .hero h1 .hero-pinyin { display:inline-block; margin-left:.32em; position:relative; top:-.16em; font:500 clamp(22px,3vw,37px)/1 "Segoe Script","Brush Script MT","Lucida Handwriting",cursive; letter-spacing:.035em; color:#d8c18a; background:none; -webkit-text-fill-color:#d8c18a; filter:drop-shadow(0 0 10px rgba(192,164,106,.22)); }
-    .hero h1::before { content:""; position:absolute; z-index:-1; inset:-28% -24% -16%; pointer-events:none; background:radial-gradient(ellipse at 50% 58%,rgba(192,164,106,.15),rgba(92,119,103,.08) 42%,transparent 72%); filter:blur(12px); }
-    .hero h1::after { content:""; position:absolute; left:5%; right:1%; bottom:-.2em; height:1px; pointer-events:none; background:linear-gradient(90deg,transparent,rgba(192,164,106,.7) 28%,rgba(168,181,167,.48) 72%,transparent); box-shadow:0 0 12px rgba(192,164,106,.16); }
+    .hero h1 { position:relative; isolation:isolate; display:inline-block; margin:17px 0 0; font:500 clamp(68px,9vw,122px)/.96 var(--serif); color:#e9e0ca; }
+    .hero h1 .hero-name { position:relative; isolation:isolate; display:inline-block; line-height:0; vertical-align:middle; transform:translateX(clamp(24px,5vw,60px)) scale(1.07,.92); transform-origin:left center; }
+    .hero h1 .hero-name::before { content:""; position:absolute; z-index:-1; inset:-20% -24% -18%; border-radius:50%; background:radial-gradient(ellipse at 52% 52%,rgba(232,226,210,.13),rgba(92,119,103,.055) 48%,transparent 76%); filter:blur(26px); pointer-events:none; }
+    .hero-logo-image { display:block; height:clamp(180px,18vw,220px); width:auto; max-width:min(44vw,220px); object-fit:contain; filter:drop-shadow(0 0 6px rgba(232,226,210,.3)); }
+    .hero-logo-latin { position:absolute; left:25.5%; top:57%; color:#f1efe8; font:500 clamp(10px,1vw,14px)/1 "Segoe Script","Brush Script MT","Lucida Handwriting",cursive; letter-spacing:.08em; white-space:nowrap; writing-mode:vertical-rl; text-orientation:sideways; text-shadow:0 0 6px rgba(238,236,228,.7),0 0 14px rgba(238,236,228,.3); pointer-events:none; }
+    .hero h1::before { content:none; }
+    .hero h1::after { content:none; }
     .hero-right { display: flex; justify-content: space-between; align-items: end; gap: 24px; padding-bottom: 7px; }
     .discipline-list { font-size: 14px; line-height: 2.05; letter-spacing: .015em; }
     .discipline-list > div > span:first-child { color: var(--muted); margin-right: 11px; font: 10px var(--mono); }
@@ -79,7 +90,7 @@
     .feature-copy p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.8; }
     .feature-bottom { border-top: 1px solid var(--line); padding-top: 15px; margin-top: 24px; color: var(--muted); font: 10px var(--mono); letter-spacing: .03em; }
     .featured-link { position:relative; overflow:hidden; isolation:isolate; color:inherit; text-decoration:none; transition:border-color .25s,box-shadow .25s,transform .25s; }
-    .feature-copy::after,.project-meta::after,.interior-copy::after { content:"linzhen"; position:absolute; z-index:2; top:13px; right:15px; color:var(--accent); font:500 13px/1 "Segoe Script","Brush Script MT","Lucida Handwriting",cursive; letter-spacing:.07em; text-shadow:0 0 6px rgba(192,164,106,.62),0 0 14px rgba(192,164,106,.24); pointer-events:none; }
+    .feature-copy::after,.project-meta::after,.interior-copy::after { content:"linzhen"; position:absolute; z-index:2; top:13px; right:15px; color:#f1efe8; font:500 13px/1 "Segoe Script","Brush Script MT","Lucida Handwriting",cursive; letter-spacing:.07em; text-shadow:0 0 6px rgba(238,236,228,.68),0 0 14px rgba(238,236,228,.28); pointer-events:none; }
     .featured-link:hover,.featured-link:focus-visible { border-color:var(--accent); box-shadow:0 0 0 1px rgba(192,164,106,.28),0 12px 34px rgba(0,0,0,.2); transform:translateY(-2px); }
     .featured-link::after { content:""; position:absolute; z-index:5; top:-1px; left:-32%; width:28%; height:2px; opacity:0; pointer-events:none; background:linear-gradient(90deg,transparent,var(--accent),#fff1c4,var(--accent),transparent); transition:left .9s cubic-bezier(.2,.7,.2,1),opacity .2s; }
     .featured-link:hover::after,.featured-link:focus-visible::after { left:100%; opacity:1; }
@@ -204,12 +215,13 @@
     .portfolio-motto { margin:30px 0 2px; text-align:center; color:#d8c697; font:500 clamp(19px,2.4vw,26px)/1.7 "KaiTi","楷体","STKaiti","BiauKai",serif; letter-spacing:.13em; text-shadow:0 0 18px rgba(192,164,106,.2); }
     .portfolio-motto::before { content:""; display:block; width:44px; height:1px; margin:0 auto 15px; background:linear-gradient(90deg,transparent,var(--accent),transparent); opacity:.78; }
     .portfolio-motto [data-language-content="en"] { font:italic 400 clamp(15px,1.8vw,19px)/1.7 Georgia,serif; letter-spacing:.07em; }
-    .portfolio-signature { width:max-content; margin:16px 2px 0 auto; color:var(--accent); font:500 15px/1 "Segoe Script","Brush Script MT","Lucida Handwriting",cursive; letter-spacing:.07em; text-shadow:0 0 6px rgba(192,164,106,.62),0 0 14px rgba(192,164,106,.24); animation:signature-breathe 4.6s ease-in-out infinite; }
+    .portfolio-signature { width:max-content; margin:16px 2px 0 auto; color:#f1efe8; font:500 15px/1 "Segoe Script","Brush Script MT","Lucida Handwriting",cursive; letter-spacing:.07em; text-shadow:0 0 6px rgba(238,236,228,.68),0 0 14px rgba(238,236,228,.28); animation:signature-breathe 4.6s ease-in-out infinite; }
     @media(max-width:560px) { .portfolio-signature { margin-top:14px; font-size:13px; } }
     @media(max-width:560px) { .portfolio-motto { margin-top:25px; letter-spacing:.08em; } .footer-meta { align-items:flex-start; } }
     @media(max-width:900px) {
       .shell { width:min(100% - 56px, 900px); }
       .project-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+      .project-card-wide .project-summary,.interior-card-wide .interior-summary { display:none; }
       .project-card-wide { grid-column:span 1; }
       a.project-card.project-card-wide { grid-template-columns:1fr; }
       .project-card-wide .project-visual { aspect-ratio:1.42 / 1; height:auto; min-height:0; }
@@ -231,9 +243,10 @@
       .language-switch button { min-width:38px; padding:6px 7px; font-size:8px; }
       .nav { gap:16px; font-size:10px; }
       .wordmark { gap:8px; font-size:9px; }
-      .wordmark .cn { font-size:10px; }
+      .wordmark .cn { font-size:14px; }
       .hero { min-height:0; padding:62px 0 35px; grid-template-columns:1fr; gap:27px; }
       .hero h1 { font-size:76px; }
+      .hero h1 .hero-name { transform:translateX(clamp(14px,5vw,30px)) scale(1.07,.92); }
       .hero-right { align-items:end; }
       .discipline-list { font-size:13px; }
       .hero-note { max-width:145px; }
@@ -252,8 +265,11 @@
       .project-meta p { font-size:9px; }
       .project-visual { aspect-ratio:1.15 / 1; }
       .project-card-wide .project-visual { aspect-ratio:1.15 / 1; }
-      .interior-grid,.artwork-grid { grid-template-columns:1fr; gap:11px; }
+      .interior-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:11px; }
+      .artwork-grid { grid-template-columns:1fr; gap:11px; }
       .interior-card.interior-card-wide { grid-column:span 1; }
+      .interior-copy,.interior-card-wide .interior-copy { padding:11px 10px 31px; }
+      .interior-copy h3 { font-size:15px; }
       .interior-preview { aspect-ratio:1.5 / 1; }
       .interior-card-wide .interior-preview { aspect-ratio:1.5 / 1; }
       .artwork-preview { min-height:235px; }
@@ -264,7 +280,8 @@
       .nav { gap:9px; font-size:8px; }
       .language-switch button { min-width:34px; padding:5px 5px; font-size:7px; }
       .nav a { white-space:nowrap; }
-      .wordmark .divider,.wordmark .cn { display:none; }
+      .wordmark .divider { display:none; }
+      .wordmark .cn:not(.logo-image) { display:none; }
       .hero h1 { font-size:66px; }
       .project-grid { grid-template-columns:1fr; }
       .project-card-wide { grid-column:span 1; }
@@ -283,7 +300,7 @@
     }
       /* portfolio-motion-v1 */
     @keyframes portfolio-arrive { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
-    @keyframes signature-breathe { 0%,100% { text-shadow:0 0 5px rgba(192,164,106,.48),0 0 11px rgba(192,164,106,.18); } 50% { text-shadow:0 0 9px rgba(192,164,106,.78),0 0 18px rgba(192,164,106,.32); } }
+    @keyframes signature-breathe { 0%,100% { text-shadow:0 0 5px rgba(238,236,228,.42),0 0 11px rgba(238,236,228,.16); } 50% { text-shadow:0 0 9px rgba(238,236,228,.76),0 0 18px rgba(238,236,228,.3); } }
     body > .topbar { animation:portfolio-arrive .58s cubic-bezier(.2,.7,.2,1) both; }
     .hero { animation:portfolio-arrive .7s .08s cubic-bezier(.2,.7,.2,1) both; }
     .topbar::after,.feature-copy::after,.project-meta::after,.interior-copy::after { animation:signature-breathe 4.6s ease-in-out infinite; }
@@ -301,11 +318,53 @@
       window.location.replace(shell.href);
     })();
   </script>
+  <link rel="stylesheet" href="assets/language-switcher.css">
+  <style id="lightweight-star-twinkle">
+    /* Existing gradient star layers twinkle with compositor-friendly opacity only. */
+    body::before { animation: starfield-twinkle-a 3.6s ease-in-out infinite; }
+    body::after { animation: starfield-twinkle-b 4.8s ease-in-out -1.4s infinite; filter: none; }
+    @keyframes starfield-twinkle-a {
+      0%, 100% { opacity: .38; }
+      43% { opacity: .54; }
+      72% { opacity: .43; }
+    }
+    @keyframes starfield-twinkle-b {
+      0%, 100% { opacity: .13; }
+      36% { opacity: .3; }
+      68% { opacity: .17; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      body::before, body::after { animation: none !important; }
+    }
+  </style>
+  <style id="hero-planetary-orbits">
+    .hero-planetarium { position:absolute; z-index:0!important; right:10%; top:36px; width:260px; height:260px; pointer-events:none; }
+    .hero-planetarium .sun { position:absolute; inset:0; border:1px solid rgba(192,164,106,.62); border-radius:50%; background:radial-gradient(circle at 50% 50%,rgba(192,164,106,.075),rgba(192,164,106,.025) 55%,transparent 78%); box-shadow:0 0 17px rgba(192,164,106,.16),inset 0 0 24px rgba(192,164,106,.06); }
+    .hero-planetarium .orbit { position:absolute; left:50%; top:50%; border:1px solid rgba(192,164,106,.18); border-radius:50%; transform:translate(-50%,-50%) rotate(var(--orbit-tilt)); animation:planetary-revolution var(--orbit-speed) linear infinite; }
+    .hero-planetarium .planet { position:absolute; left:50%; top:-8px; display:block; width:16px; height:16px; transform:translateX(-50%); border:1px solid rgba(192,164,106,.76); border-radius:50%; background:rgba(16,25,27,.92); box-shadow:0 0 9px rgba(192,164,106,.38); }
+    .hero-planetarium .orbit-one { width:350px; height:320px; --orbit-tilt:-13deg; --orbit-speed:52s; animation-delay:-5s; }
+    .hero-planetarium .orbit-two { width:470px; height:400px; --orbit-tilt:17deg; --orbit-speed:82s; animation-delay:-18s; border-color:rgba(159,184,177,.18); }
+    .hero-planetarium .orbit-two .planet { top:-10px; width:20px; height:20px; border-color:rgba(159,184,177,.78); box-shadow:0 0 9px rgba(159,184,177,.38); }
+    .hero-planetarium .orbit-three { width:630px; height:500px; --orbit-tilt:-5deg; --orbit-speed:120s; animation-delay:-32s; border-color:rgba(232,226,210,.17); }
+    .hero-planetarium .orbit-three .planet { top:-6px; width:12px; height:12px; border-color:rgba(232,226,210,.78); box-shadow:0 0 9px rgba(232,226,210,.38); }
+    @keyframes planetary-revolution { from { transform:translate(-50%,-50%) rotate(var(--orbit-tilt)) rotate(0deg); } to { transform:translate(-50%,-50%) rotate(var(--orbit-tilt)) rotate(360deg); } }
+    .meteor-field { position:absolute!important; z-index:0!important; inset:0; overflow:visible; pointer-events:none; }
+    .meteor { position:absolute; display:block; width:10px; height:10px; border:1px solid var(--meteor-color); border-radius:50%; background:rgba(16,25,27,.92); box-shadow:0 0 8px var(--meteor-glow); opacity:0; animation:meteor-cross var(--meteor-speed) linear var(--meteor-delay) infinite; }
+    .meteor::before { content:""; position:absolute; right:65%; top:50%; width:clamp(56px,8vw,104px); height:1px; transform:translateY(-50%) rotate(var(--meteor-angle)); transform-origin:right center; background:linear-gradient(90deg,transparent,var(--meteor-trail)); filter:drop-shadow(0 0 3px var(--meteor-glow)); }
+    .meteor-one { left:11%; top:12%; --meteor-color:rgba(192,164,106,.8); --meteor-trail:rgba(192,164,106,.65); --meteor-glow:rgba(192,164,106,.44); --meteor-speed:29s; --meteor-delay:-3s; --meteor-angle:19deg; --meteor-x:58vw; --meteor-y:220px; --meteor-end-x:64vw; --meteor-end-y:245px; }
+    .meteor-two { left:28%; top:-25px; --meteor-color:rgba(159,184,177,.82); --meteor-trail:rgba(159,184,177,.66); --meteor-glow:rgba(159,184,177,.44); --meteor-speed:37s; --meteor-delay:-16s; --meteor-angle:25deg; --meteor-x:64vw; --meteor-y:300px; --meteor-end-x:70vw; --meteor-end-y:325px; }
+    .meteor-three { left:4%; top:42%; --meteor-color:rgba(232,226,210,.78); --meteor-trail:rgba(232,226,210,.62); --meteor-glow:rgba(232,226,210,.4); --meteor-speed:43s; --meteor-delay:-31s; --meteor-angle:15deg; --meteor-x:72vw; --meteor-y:175px; --meteor-end-x:78vw; --meteor-end-y:195px; }
+    @keyframes meteor-cross { 0%,74%,100% { opacity:0; transform:translate3d(0,0,0); } 77% { opacity:.86; } 87% { opacity:.9; transform:translate3d(var(--meteor-x),var(--meteor-y),0); } 90% { opacity:0; transform:translate3d(var(--meteor-end-x),var(--meteor-end-y),0); } }
+    @media(max-width:650px) { .hero-planetarium { right:-10px; top:18px; width:190px; height:190px; } .hero-planetarium .orbit-one { width:320px; height:270px; } .hero-planetarium .orbit-two { width:430px; height:350px; } .hero-planetarium .orbit-three { width:560px; height:440px; } .meteor { width:8px; height:8px; } .meteor::before { width:54px; } .meteor-one { --meteor-x:72vw; --meteor-y:200px; --meteor-end-x:78vw; --meteor-end-y:220px; } .meteor-two { --meteor-x:78vw; --meteor-y:250px; --meteor-end-x:84vw; --meteor-end-y:270px; } .meteor-three { --meteor-x:84vw; --meteor-y:170px; --meteor-end-x:90vw; --meteor-end-y:190px; } }
+    @media(prefers-reduced-motion:reduce) { .hero-planetarium .orbit,.meteor { animation:none; } .meteor { opacity:0; } }
+  </style>
+  <script src="assets/portfolio-route-sync.js" defer></script>
 </head>
 <body>
   <header class="shell topbar">
     <a class="wordmark" href="#top" aria-label="回到林蓁作品集顶部" data-aria-zh="回到林蓁作品集顶部" data-aria-en="Back to the top of Lin Zhen's portfolio">
-      <span class="mark">林</span><span class="cn">林蓁</span><span class="divider"></span><span>PORTFOLIO</span>
+      <span class="wordmark-logo"><img class="wordmark-logo-image" src="assets/branding/linzhen-signature.png" alt=""><span class="wordmark-logo-latin" aria-hidden="true">linzhen</span></span>
+      <span class="divider"></span><span>PORTFOLIO</span>
     </a>
     <div class="language-switch" role="group" aria-label="选择页面语言" data-aria-zh="选择页面语言" data-aria-en="Select page language">
       <button type="button" data-language-button="zh" aria-pressed="true">中文</button>
@@ -319,9 +378,11 @@
   </header>
   <div class="shell" id="top">
     <section class="hero" aria-labelledby="page-title">
+      <div class="hero-planetarium" aria-hidden="true"><span class="sun"></span><span class="orbit orbit-one"><span class="planet"></span></span><span class="orbit orbit-two"><span class="planet"></span></span><span class="orbit orbit-three"><span class="planet"></span></span></div>
+      <div class="meteor-field" aria-hidden="true"><span class="meteor meteor-one"></span><span class="meteor meteor-two"></span><span class="meteor meteor-three"></span></div>
       <div>
         <div class="eyebrow"><span data-language-content="zh">精选作品</span><span data-language-content="en" hidden>SELECTED WORK</span></div>
-        <h1 id="page-title"><span class="hero-name">林蓁</span><span class="hero-pinyin">Linzhen</span></h1>
+        <h1 id="page-title" aria-label="林蓁 Linzhen"><span class="hero-name"><img class="hero-logo-image" src="assets/branding/linzhen-signature.png" alt=""><span class="hero-logo-latin" aria-hidden="true">linzhen</span></span></h1>
       </div>
       <div class="hero-right">
         <div class="discipline-list">
@@ -617,3 +678,9 @@
   </script>
 </body>
 </html>
+
+
+
+
+
+

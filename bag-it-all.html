@@ -243,12 +243,25 @@
       window.location.replace(shell.href);
     })();
   </script>
+<style id="platinum-wordmark-style">
+.wordmark-logo { position:relative; display:inline-flex; flex:0 0 42px; align-items:center; width:42px; height:40px; letter-spacing:0; }
+.wordmark-logo-image { display:block; width:35px; height:38px; object-fit:contain; filter:drop-shadow(0 0 5px rgba(238,236,228,.28)); }
+.wordmark-logo-latin { position:absolute; top:5px; left:31px; color:#f1efe8; font:500 7px/1 "Segoe Script","Brush Script MT","Lucida Handwriting",cursive; letter-spacing:.02em; white-space:nowrap; writing-mode:vertical-rl; text-orientation:sideways; text-shadow:0 0 5px rgba(238,236,228,.68),0 0 12px rgba(238,236,228,.28); pointer-events:none; }
+.cover-signature,.hero-signature,.topbar::after { color:#f1efe8 !important; text-shadow:0 0 6px rgba(238,236,228,.68),0 0 14px rgba(238,236,228,.28) !important; }
+@keyframes signature-breathe { 0%,100% { text-shadow:0 0 5px rgba(238,236,228,.42),0 0 11px rgba(238,236,228,.16); } 50% { text-shadow:0 0 9px rgba(238,236,228,.76),0 0 18px rgba(238,236,228,.3); } }
+@media(max-width:560px) { .wordmark-logo { flex-basis:36px; width:36px; height:36px; } .wordmark-logo-image { width:32px; height:35px; } .wordmark-logo-latin { left:28px; top:5px; font-size:6.5px; } }
+@media(prefers-reduced-motion:reduce) { .wordmark-logo-latin { text-shadow:0 0 4px rgba(238,236,228,.35); } }
+</style>
+  <link rel="stylesheet" href="assets/language-switcher.css">
+  <script src="assets/portfolio-route-sync.js" defer></script>
+<link rel="stylesheet" href="assets/project-title-language.css">
+<link rel="stylesheet" href="assets/project-hero-cover.css">
   <link rel="stylesheet" href="assets/project-toc.css">
 </head>
 <body id="top">
   <header class="topbar shell">
     <a class="wordmark" href="portfolio-home.html" aria-label="返回林蓁作品集首页" data-aria-zh="返回林蓁作品集首页" data-aria-en="Back to Lin Zhen's portfolio">
-      <span class="mark">林</span><span class="cn">林蓁</span><span class="divider"></span><span>PORTFOLIO</span>
+      <span class="wordmark-logo"><img class="wordmark-logo-image" src="assets/branding/linzhen-signature.png" alt="林蓁"><span class="wordmark-logo-latin" aria-hidden="true">linzhen</span></span><span class="divider"></span><span>PORTFOLIO</span>
     </a>
     <div class="language-switch" role="group" aria-label="选择页面语言" data-aria-zh="选择页面语言" data-aria-en="Select page language">
         <button type="button" data-language-button="zh" aria-pressed="true">中文</button>
@@ -262,8 +275,8 @@
     <section class="hero" aria-labelledby="project-title">
       <div class="hero-copy">
         <div class="eyebrow"><span data-language-content="zh">02 / 合作游戏项目</span><span data-language-content="en" hidden>02 / COLLABORATIVE GAME PROJECT</span></div>
-        <h1 id="project-title"><span data-language-content="zh">袋我上岸</span><span data-language-content="en" hidden>Bag it All</span></h1>
-        <p class="hero-title-alt"><span data-language-content="zh" lang="en">BAG IT ALL</span><span data-language-content="en" lang="zh-CN" hidden>袋我上岸</span></p>
+        <h1 id="project-title"><span class="project-title-zh">袋我上岸</span><span class="project-title-en">Bag it All</span></h1>
+        <p class="hero-title-alt"><span class="project-title-en">BAG IT ALL</span><span class="project-title-zh">袋我上岸</span></p>
         <p class="project-type"><span data-language-content="zh">俯视角探索 · 海底世界</span><span data-language-content="en" hidden>TOP-DOWN EXPLORATION · UNDERWATER WORLD</span></p>
         <p class="project-note"><span data-language-content="zh">《袋我上岸》是一款以海底世界为背景的俯视角探索游戏，围绕探索与吞噬展开核心体验。</span><span data-language-content="en" hidden>Bag it All is a top-down exploration game set in an underwater world, centered on exploration and eating.</span></p>
         <div class="project-keywords" aria-label="项目关键词" data-aria-zh="项目关键词" data-aria-en="Project keywords">

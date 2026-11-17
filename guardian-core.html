@@ -64,12 +64,25 @@
       window.location.replace(shell.href);
     })();
   </script>
+<style id="platinum-wordmark-style">
+.wordmark-logo { position:relative; display:inline-flex; flex:0 0 42px; align-items:center; width:42px; height:40px; letter-spacing:0; }
+.wordmark-logo-image { display:block; width:35px; height:38px; object-fit:contain; filter:drop-shadow(0 0 5px rgba(238,236,228,.28)); }
+.wordmark-logo-latin { position:absolute; top:5px; left:31px; color:#f1efe8; font:500 7px/1 "Segoe Script","Brush Script MT","Lucida Handwriting",cursive; letter-spacing:.02em; white-space:nowrap; writing-mode:vertical-rl; text-orientation:sideways; text-shadow:0 0 5px rgba(238,236,228,.68),0 0 12px rgba(238,236,228,.28); pointer-events:none; }
+.cover-signature,.hero-signature,.topbar::after { color:#f1efe8 !important; text-shadow:0 0 6px rgba(238,236,228,.68),0 0 14px rgba(238,236,228,.28) !important; }
+@keyframes signature-breathe { 0%,100% { text-shadow:0 0 5px rgba(238,236,228,.42),0 0 11px rgba(238,236,228,.16); } 50% { text-shadow:0 0 9px rgba(238,236,228,.76),0 0 18px rgba(238,236,228,.3); } }
+@media(max-width:560px) { .wordmark-logo { flex-basis:36px; width:36px; height:36px; } .wordmark-logo-image { width:32px; height:35px; } .wordmark-logo-latin { left:28px; top:5px; font-size:6.5px; } }
+@media(prefers-reduced-motion:reduce) { .wordmark-logo-latin { text-shadow:0 0 4px rgba(238,236,228,.35); } }
+</style>
+  <link rel="stylesheet" href="assets/language-switcher.css">
+  <script src="assets/portfolio-route-sync.js" defer></script>
+<link rel="stylesheet" href="assets/project-title-language.css">
+<link rel="stylesheet" href="assets/project-hero-cover.css">
   <link rel="stylesheet" href="assets/project-toc.css">
 </head>
 <body id="top">
   <header class="topbar shell">
-    <a class="wordmark" href="portfolio-home.html#game-design"><strong>林蓁</strong><span>PORTFOLIO</span></a>
-    <div class="lang-switch" role="group" aria-label="选择页面语言"><button type="button" data-language-button="zh" aria-pressed="true">中文</button><button type="button" data-language-button="en" aria-pressed="false">English</button></div>
+    <a class="wordmark" href="portfolio-home.html#game-design"><span class="wordmark-logo"><img class="wordmark-logo-image" src="assets/branding/linzhen-signature.png" alt="林蓁"><span class="wordmark-logo-latin" aria-hidden="true">linzhen</span></span><span>PORTFOLIO</span></a>
+    <div class="language-switch" role="group" aria-label="选择页面语言"><button type="button" data-language-button="zh" aria-pressed="true">中文</button><button type="button" data-language-button="en" aria-pressed="false">English</button></div>
     <a class="back-link" href="portfolio-home.html#game-design"><span data-language-content="zh">← 返回游戏设计</span><span data-language-content="en" hidden>← Back to Game Design</span></a>
   </header>
   <div class="shell next-work-row"><a class="next-work-link prev-work-link" href="last-mission.html"><span data-language-content="zh">← 上一个作品：此行不归</span><span data-language-content="en" hidden>← Previous project: The Last Mission</span></a><a class="next-work-link next-work-top" href="rene.html"><span data-language-content="zh">下一个作品：瑞尼 →</span><span data-language-content="en" hidden>Next project: Rene →</span></a></div>
@@ -89,7 +102,7 @@
     <section class="hero" aria-labelledby="project-title">
       <div>
         <div class="eyebrow"><span data-language-content="zh">游戏系统设计 / 数值平衡</span><span data-language-content="en" hidden>GAME SYSTEMS / NUMERICAL BALANCE</span></div>
-        <h1 id="project-title">Protect The Core!<span data-language-content="zh">守护核心</span><span data-language-content="en" hidden>ARENA DEFENCE PROTOTYPE</span></h1>
+        <h1 id="project-title"><span class="project-title-zh">守护核心</span><span class="project-title-en">Protect The Core!</span></h1><p class="hero-title-alt"><span class="project-title-en">PROTECT THE CORE!</span><span class="project-title-zh">守护核心</span></p>
         <p class="hero-lead"><span data-language-content="zh">在遗迹竞技场中坚守魔法核心，迎战逐波增强的爆炸怪物。通过击败敌人获取金币与能量，再分配资源、升级属性并选择技能，撑过六波攻势。</span><span data-language-content="en" hidden>Defend a magical core in a ruined arena against escalating waves of explosive monsters. Defeat enemies for gold and energy, then allocate resources, upgrade attributes and choose how to use three spells to survive all six waves.</span></p>
         <div class="hero-tags"><span class="tag"><strong data-language-content="zh">循环</strong><strong data-language-content="en" hidden>LOOP</strong> · <span data-language-content="zh">击杀 / 收集 / 升级 / 防守</span><span data-language-content="en" hidden>DEFEAT / COLLECT / UPGRADE / DEFEND</span></span><span class="tag"><strong data-language-content="zh">重点</strong><strong data-language-content="en" hidden>FOCUS</strong> · <span data-language-content="zh">敌人、技能与经济平衡</span><span data-language-content="en" hidden>ENEMY, SPELL & ECONOMY BALANCE</span></span></div>
         <div class="hero-facts"><div><small data-language-content="zh">项目类型</small><small data-language-content="en" hidden>PROJECT</small><strong data-language-content="zh">塔防射击</strong><strong data-language-content="en" hidden>Arena defence shooter</strong></div><div><small data-language-content="zh">关卡规模</small><small data-language-content="en" hidden>STRUCTURE</small><strong data-language-content="zh">6 波 / 80 敌人</strong><strong data-language-content="en" hidden>6 waves / 80 enemies</strong></div><div><small data-language-content="zh">资料范围</small><small data-language-content="en" hidden>SOURCE SET</small><strong data-language-content="zh">设计文档 + 7 张工作表</strong><strong data-language-content="en" hidden>Design docs + 7 worksheets</strong></div><div><small data-language-content="zh">项目时间</small><small data-language-content="en" hidden>PROJECT YEAR</small><strong data-language-content="zh">2026 年</strong><strong data-language-content="en" hidden>2026</strong></div><div><small data-language-content="zh">制作工具</small><small data-language-content="en" hidden>TOOLS</small><strong>Unreal Engine · Excel</strong></div></div>

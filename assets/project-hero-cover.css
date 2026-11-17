@@ -1,0 +1,25 @@
+/* Shared aspect ratio and clean caption treatment for project hero covers. */
+.hero .cover {
+  position: relative !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  height: auto !important;
+  max-height: none !important;
+  aspect-ratio: 16 / 10 !important;
+  overflow: hidden !important;
+}
+
+.hero .cover > img {
+  position: absolute !important;
+  inset: 0 !important;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-height: none !important;
+  object-fit: cover !important;
+  object-position: center !important;
+}
+
+.hero .cover > figcaption:not(.cover-title):not(.cover-overlay-label) {
+  display: none !important;
+}
